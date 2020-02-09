@@ -1,0 +1,22 @@
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.csprojAssemblyReference.cache
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\staticwebassets\Undergraduate thesis.StaticWebAssets.Manifest.cache
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\staticwebassets\Undergraduate thesis.StaticWebAssets.xml
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.RazorAssemblyInfo.cache
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.RazorAssemblyInfo.cs
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.AssemblyInfoInputs.cache
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.AssemblyInfo.cs
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.TagHelpers.input.cache
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.TagHelpers.output.cache
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.RazorCoreGenerate.cache
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Razor\Pages\Error.cshtml.g.cs
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Razor\Pages\Index.cshtml.g.cs
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Razor\Pages\Privacy.cshtml.g.cs
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_Layout.cshtml.g.cs
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.RazorTargetAssemblyInfo.cache
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.RazorTargetAssemblyInfo.cs
