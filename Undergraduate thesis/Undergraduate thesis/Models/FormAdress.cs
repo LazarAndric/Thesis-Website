@@ -9,6 +9,7 @@ namespace Undergraduate_thesis.Models
     public class FormAdress
     {
         [Required]
+        [Display(Name ="BLABLA")]
         public string FirstName { get; set; }
         public string SurName { get; set; }
         public string City { get; set;}

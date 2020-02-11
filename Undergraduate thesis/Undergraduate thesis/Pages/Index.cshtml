@@ -9,34 +9,7 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#"><font size="3">POČETNA</font></a></li>
-                    <li><a href="#"><font size="3">O NAMA</font></a></li>
-                    <li><a href="#"><font size="3">ŠOP</font></a></li>
-                    <li><a href="#"><font size="3">SLIKE</font></a></li>
-                    <li><a href="#"><font size="3">KONTAKT</font></a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="fa fa-facebook" style="font-size:16px"></span></a></li>
-                    <li><a href="#"><span class="fa fa-youtube" style="font-size:16px"></span></a> </li>
-                    <li><a href="#"><span class="fa fa-twitch" style="font-size:16px"></span></a> </li>
-                    <li><a href="#"><span class="fa fa-instagram" style="font-size:16px"></span></a> </li>
-                    <li><a href="#"><span class="fa fa-steam-square" style="font-size:16px"></span></a> </li>
-                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart" style="font-size:16px"></span></a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in" style="font-size: 16px"></span> Login</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+   
     <div class="jumbotron">
         <div class="container text-center">
             <img src="slike/logo.png" height="300" width="300">
@@ -148,33 +121,3 @@
     <div class="container">
         <p style="font-size: 20px; text-align: center; "><strong>Games.con je najveći festival gejminga i pop kulture u regionu, stvoren sa idejom da na jednom mestu okupi sve ljubitelje svih vrsta igara – od virtuelne realnosti, preko PC i mobile gejminga i konzola, sve do tradicionalnih društvenih igara.</strong></p>
     </div>
-
-    <br><br>
-
-    <!--dugme-->
-    <button class="open-button" onclick="openForm()"><img src="slike/logo.png" height="50" width="50"></button>
-
-    <div class="chat-popup" id="myForm">
-        <form action="/action_page.php" class="form-container">
-            <h1>Čet</h1>
-
-            <label for="msg"><b>Poruka</b></label>
-            <textarea placeholder="Napiši poruku..." name="msg" required></textarea>
-
-            <button type="submit" class="btn">Pošalji</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Zatvori</button>
-        </form>
-    </div>
-
-
-    
-
-    <script>
-        function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
-
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
-    </script>

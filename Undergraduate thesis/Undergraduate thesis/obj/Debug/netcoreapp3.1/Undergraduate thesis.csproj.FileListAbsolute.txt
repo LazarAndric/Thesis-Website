@@ -236,3 +236,4 @@ D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\
 D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.csproj.CopyComplete
 D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.dll
 D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.pdb
+D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Razor\Pages\Contact.cshtml.g.cs
