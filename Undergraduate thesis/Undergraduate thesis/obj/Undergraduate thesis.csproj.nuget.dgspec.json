@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\unLa4ky\\Documents\\GitHub\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\Undergraduate thesis.csproj": {}
+    "D:\\PROJEKTI\\GitHub\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\Undergraduate thesis.csproj": {}
   },
   "projects": {
-    "C:\\Users\\unLa4ky\\Documents\\GitHub\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\Undergraduate thesis.csproj": {
+    "D:\\PROJEKTI\\GitHub\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\Undergraduate thesis.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\unLa4ky\\Documents\\GitHub\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\Undergraduate thesis.csproj",
+        "projectUniqueName": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\Undergraduate thesis.csproj",
         "projectName": "Undergraduate thesis",
-        "projectPath": "C:\\Users\\unLa4ky\\Documents\\GitHub\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\Undergraduate thesis.csproj",
+        "projectPath": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\Undergraduate thesis.csproj",
         "packagesPath": "C:\\Users\\unLa4ky\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\unLa4ky\\Documents\\GitHub\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\obj\\",
+        "outputPath": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\unLa4ky\\AppData\\Roaming\\NuGet\\NuGet.Config",
