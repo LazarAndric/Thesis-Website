@@ -357,3 +357,4 @@ E:\GIT HUB\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\ne
 E:\GIT HUB\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.RazorTargetAssemblyInfo.cs
 E:\GIT HUB\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.Views.pdb
 E:\GIT HUB\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.csproj.CopyComplete
+E:\GIT HUB\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Razor\Pages\O_nama.cshtml.g.cs
