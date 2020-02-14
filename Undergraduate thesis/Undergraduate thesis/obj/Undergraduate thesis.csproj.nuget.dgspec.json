@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\GIT HUB\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\Undergraduate thesis.csproj": {}
+    "D:\\PROJEKTI\\GitHub\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\Undergraduate thesis.csproj": {}
   },
   "projects": {
-    "E:\\GIT HUB\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\Undergraduate thesis.csproj": {
+    "D:\\PROJEKTI\\GitHub\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\Undergraduate thesis.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\GIT HUB\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\Undergraduate thesis.csproj",
+        "projectUniqueName": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\Undergraduate thesis.csproj",
         "projectName": "Undergraduate thesis",
-        "projectPath": "E:\\GIT HUB\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\Undergraduate thesis.csproj",
-        "packagesPath": "C:\\Users\\neman\\.nuget\\packages\\",
-        "outputPath": "E:\\GIT HUB\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\obj\\",
+        "projectPath": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\Undergraduate thesis.csproj",
+        "packagesPath": "C:\\Users\\unLa4ky\\.nuget\\packages\\",
+        "outputPath": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\neman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\unLa4ky\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,6 +45,22 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.1, )"
+            },
+            "System.ServiceModel.Duplex": {
+              "target": "Package",
+              "version": "[4.4.*, )"
+            },
+            "System.ServiceModel.Http": {
+              "target": "Package",
+              "version": "[4.4.*, )"
+            },
+            "System.ServiceModel.NetTcp": {
+              "target": "Package",
+              "version": "[4.4.*, )"
+            },
+            "System.ServiceModel.Security": {
+              "target": "Package",
+              "version": "[4.4.*, )"
             },
             "bootstrap": {
               "target": "Package",

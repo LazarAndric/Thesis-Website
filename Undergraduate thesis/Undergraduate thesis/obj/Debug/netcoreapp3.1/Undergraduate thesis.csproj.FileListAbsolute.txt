@@ -214,7 +214,6 @@ D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\
 D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.csprojAssemblyReference.cache
 D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\staticwebassets\Undergraduate thesis.StaticWebAssets.Manifest.cache
 D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\staticwebassets\Undergraduate thesis.StaticWebAssets.xml
-D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.MvcApplicationPartsAssemblyInfo.cache
 D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.RazorAssemblyInfo.cache
 D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.RazorAssemblyInfo.cs
 D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.AssemblyInfoInputs.cache
@@ -358,3 +357,16 @@ E:\GIT HUB\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\ne
 E:\GIT HUB\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.Views.pdb
 E:\GIT HUB\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.csproj.CopyComplete
 E:\GIT HUB\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Razor\Pages\O_nama.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Razor\Pages\O_nama.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\System.Net.Http.WinHttpHandler.dll
+D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\System.ServiceModel.Duplex.dll
+D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\System.ServiceModel.Http.dll
+D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\System.ServiceModel.NetTcp.dll
+D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\System.ServiceModel.Primitives.dll
+D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\System.ServiceModel.dll
+D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\System.ServiceModel.Security.dll
+D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Net.Http.WinHttpHandler.dll
+D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netstandard2.0\System.Private.ServiceModel.dll
+D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\runtimes\win7\lib\netstandard2.0\System.Private.ServiceModel.dll
+D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.MvcApplicationPartsAssemblyInfo.cache
+D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\Connected Services\ServiceReference1\ConnectedService.json

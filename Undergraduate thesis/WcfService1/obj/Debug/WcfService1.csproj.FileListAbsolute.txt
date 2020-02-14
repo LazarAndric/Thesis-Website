@@ -1,0 +1,6 @@
+D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\WcfService1\bin\WcfService1.dll.config
+D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\WcfService1\bin\WcfService1.dll
+D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\WcfService1\bin\WcfService1.pdb
+D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\WcfService1\obj\Debug\WcfService1.csprojAssemblyReference.cache
+D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\WcfService1\obj\Debug\WcfService1.dll
+D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\WcfService1\obj\Debug\WcfService1.pdb
