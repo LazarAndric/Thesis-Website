@@ -11,7 +11,7 @@ namespace WcfService1
     public class Service1 : IService1
     {
         string n;
-        float rez=0;
+        float rez;
 
         public void SaveData(string name)
         {
