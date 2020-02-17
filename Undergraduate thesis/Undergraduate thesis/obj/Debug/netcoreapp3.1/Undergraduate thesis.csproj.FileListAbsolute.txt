@@ -370,3 +370,16 @@ D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\
 D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\runtimes\win7\lib\netstandard2.0\System.Private.ServiceModel.dll
 D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Undergraduate thesis.MvcApplicationPartsAssemblyInfo.cache
 D:\PROJEKTI\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\Connected Services\ServiceReference1\ConnectedService.json
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\System.Net.Http.WinHttpHandler.dll
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\System.ServiceModel.Duplex.dll
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\System.ServiceModel.Http.dll
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\System.ServiceModel.NetTcp.dll
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\System.ServiceModel.Primitives.dll
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\System.ServiceModel.dll
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\System.ServiceModel.Security.dll
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Net.Http.WinHttpHandler.dll
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netstandard2.0\System.Private.ServiceModel.dll
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\runtimes\win7\lib\netstandard2.0\System.Private.ServiceModel.dll
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Razor\Pages\Contact.cshtml.g.cs
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Razor\Pages\O_nama.cshtml.g.cs
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\Connected Services\ServiceReference\ConnectedService.json

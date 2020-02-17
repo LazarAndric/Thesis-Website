@@ -7,48 +7,30 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ServiceReference1
+namespace ServiceReference
 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IService1")]
     public interface IService1
     {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SaveData", ReplyAction="http://tempuri.org/IService1/SaveDataResponse")]
-        void SaveData(string name);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Insert", ReplyAction="http://tempuri.org/IService1/InsertResponse")]
+        string Insert(string name, string email);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SaveData", ReplyAction="http://tempuri.org/IService1/SaveDataResponse")]
-        System.Threading.Tasks.Task SaveDataAsync(string name);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LoadData", ReplyAction="http://tempuri.org/IService1/LoadDataResponse")]
-        string LoadData();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LoadData", ReplyAction="http://tempuri.org/IService1/LoadDataResponse")]
-        System.Threading.Tasks.Task<string> LoadDataAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Sum", ReplyAction="http://tempuri.org/IService1/SumResponse")]
-        void Sum(float x, float y);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Sum", ReplyAction="http://tempuri.org/IService1/SumResponse")]
-        System.Threading.Tasks.Task SumAsync(float x, float y);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrintEnd", ReplyAction="http://tempuri.org/IService1/PrintEndResponse")]
-        float PrintEnd();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PrintEnd", ReplyAction="http://tempuri.org/IService1/PrintEndResponse")]
-        System.Threading.Tasks.Task<float> PrintEndAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Insert", ReplyAction="http://tempuri.org/IService1/InsertResponse")]
+        System.Threading.Tasks.Task<string> InsertAsync(string name, string email);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
-    public interface IService1Channel : ServiceReference1.IService1, System.ServiceModel.IClientChannel
+    public interface IService1Channel : ServiceReference.IService1, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<ServiceReference1.IService1>, ServiceReference1.IService1
+    public partial class Service1Client : System.ServiceModel.ClientBase<ServiceReference.IService1>, ServiceReference.IService1
     {
         
         /// <summary>
@@ -91,44 +73,14 @@ namespace ServiceReference1
         {
         }
         
-        public void SaveData(string name)
+        public string Insert(string name, string email)
         {
-            base.Channel.SaveData(name);
+            return base.Channel.Insert(name, email);
         }
         
-        public System.Threading.Tasks.Task SaveDataAsync(string name)
+        public System.Threading.Tasks.Task<string> InsertAsync(string name, string email)
         {
-            return base.Channel.SaveDataAsync(name);
-        }
-        
-        public string LoadData()
-        {
-            return base.Channel.LoadData();
-        }
-        
-        public System.Threading.Tasks.Task<string> LoadDataAsync()
-        {
-            return base.Channel.LoadDataAsync();
-        }
-        
-        public void Sum(float x, float y)
-        {
-            base.Channel.Sum(x, y);
-        }
-        
-        public System.Threading.Tasks.Task SumAsync(float x, float y)
-        {
-            return base.Channel.SumAsync(x, y);
-        }
-        
-        public float PrintEnd()
-        {
-            return base.Channel.PrintEnd();
-        }
-        
-        public System.Threading.Tasks.Task<float> PrintEndAsync()
-        {
-            return base.Channel.PrintEndAsync();
+            return base.Channel.InsertAsync(name, email);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

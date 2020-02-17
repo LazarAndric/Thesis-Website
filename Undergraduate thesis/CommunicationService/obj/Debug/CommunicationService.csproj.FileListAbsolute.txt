@@ -1,0 +1,6 @@
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\CommunicationService\bin\CommunicationService.dll.config
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\CommunicationService\bin\CommunicationService.dll
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\CommunicationService\bin\CommunicationService.pdb
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\CommunicationService\obj\Debug\CommunicationService.csprojAssemblyReference.cache
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\CommunicationService\obj\Debug\CommunicationService.dll
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\Undergraduate thesis\CommunicationService\obj\Debug\CommunicationService.pdb
