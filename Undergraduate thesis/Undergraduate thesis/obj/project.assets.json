@@ -6977,19 +6977,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\unLa4ky\\.nuget\\packages\\": {}
+    "C:\\Users\\neman\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\Undergraduate thesis.csproj",
+      "projectUniqueName": "E:\\GIT HUB\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\Undergraduate thesis.csproj",
       "projectName": "Undergraduate thesis",
-      "projectPath": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\Undergraduate thesis.csproj",
-      "packagesPath": "C:\\Users\\unLa4ky\\.nuget\\packages\\",
-      "outputPath": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\obj\\",
+      "projectPath": "E:\\GIT HUB\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\Undergraduate thesis.csproj",
+      "packagesPath": "C:\\Users\\neman\\.nuget\\packages\\",
+      "outputPath": "E:\\GIT HUB\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\unLa4ky\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\neman\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
