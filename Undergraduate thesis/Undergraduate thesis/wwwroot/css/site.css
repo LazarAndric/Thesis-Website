@@ -63,8 +63,6 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 0px;
-   
-    background-color: #33066F;
 }
 .footer {
   position: relative;
