@@ -10,12 +10,12 @@ namespace Undergraduate_thesis
 {
     public class O_namaModel : PageModel
     {
-        Service1Client client = new Service1Client();
+        /*Service1Client client = new Service1Client();
         public string MyProperty { get; set; }
         public float Sum { get; set; }
         public void OnGet()
         {
             Sum = client.PrintEnd();
-        }
+        }*/
     }
 }
