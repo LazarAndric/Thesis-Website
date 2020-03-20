@@ -381,3 +381,4 @@ E:\GIT HUB\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\ne
 E:\GIT HUB\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Net.Http.WinHttpHandler.dll
 E:\GIT HUB\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netstandard2.0\System.Private.ServiceModel.dll
 E:\GIT HUB\Thesis-Website\Undergraduate thesis\Undergraduate thesis\bin\Debug\netcoreapp3.1\runtimes\win7\lib\netstandard2.0\System.Private.ServiceModel.dll
+E:\GIT HUB\Thesis-Website\Undergraduate thesis\Undergraduate thesis\obj\Debug\netcoreapp3.1\Razor\Pages\Sop.cshtml.g.cs
