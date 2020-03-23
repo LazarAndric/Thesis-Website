@@ -3,159 +3,43 @@
 @{
     ViewData["Title"] = "Šop";
 }
-</br>
-<h1 style="text-align:center">Šop</h1>
-</br>
-<!--Prvi segment-->
-<div class="row">
-    <div class="col-md-4">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Pretraži proizvod">
-            <div class="input-group-append">
-                <button class="btn btn-secondary" type="button">
-                    <i class="fa fa-search"></i>
-                </button>
+    <div class="container">
+        </br>
+        <h1 style="text-align:center">Šop</h1>
+        </br>
+        <h2>Filter DIV Elements</h2>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div id="myBtnContainer">
+                    <button class="btn active" onclick="filterSelection('all')"> Izaberi sve</button>
+                    <button class="btn" onclick="filterSelection('majice')"> Majice</button>
+                    <button class="btn" onclick="filterSelection('duksevi')"> Duksevi</button>
+                    <button class="btn" onclick="filterSelection('rancevi')"> Rančevi</button>
+                    <button class="btn" onclick="filterSelection('kape')"> Kape</button>
+                </div>
             </div>
-        </div></br>
-
-        <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action">Majice</a>
-            <a href="#" class="list-group-item list-group-item-action">Duksevi</a>
-            <a href="#" class="list-group-item list-group-item-action">Kape</a>
-            <a href="#" class="list-group-item list-group-item-action">Rančevi</a>
         </div>
-
-    </div>
-    <div class="col-md-4">
-
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        
+        <div class="container" style="width:100%">
+            <div class="filterDiv majice col-md-4">
+                <img src="https://s5.gifyu.com/images/580b57fcd9996e24bc43c540.png" height="50" width="50" class="img-fluid">
                 <a href="#" class="btn btn-primary">Go somewhere</a>
+
             </div>
-        </div>
-
-    </div>
-
-    <div class="col-md-4">
-
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="filterDiv majice col-md-4">
+                <img src="https://s5.gifyu.com/images/580b57fcd9996e24bc43c540.png" height="50" width="50" class="img-fluid">
                 <a href="#" class="btn btn-primary">Go somewhere</a>
+
             </div>
-        </div>
-
-    </div>
-</div></br>
-
-<!--Drugi segment-->
-<div class="row">
-    <div class="col-md-4">
-        <h6 style="text-align:center">Sniženja</h6>
-        <div>
-            <button class="btn"><img src="https://s5.gifyu.com/images/logo9844754e8f83dfa4.png" height="50" width="50" class="img-fluid"> Dugme</button>
-        </div>
-        <div>
-            <button class="btn"><img src="https://s5.gifyu.com/images/logo9844754e8f83dfa4.png" height="50" width="50" class="img-fluid"> Dugme</button>
-        </div>
-        <div>
-            <button class="btn"><img src="https://s5.gifyu.com/images/logo9844754e8f83dfa4.png" height="50" width="50" class="img-fluid"> Dugme</button>
-        </div>
-        <div>
-            <button class="btn"><img src="https://s5.gifyu.com/images/logo9844754e8f83dfa4.png" height="50" width="50" class="img-fluid"> Dugme</button>
-        </div>
-    </div>
-    
-
-
-    <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="filterDiv majice col-md-4">
+                <img src="https://s5.gifyu.com/images/580b57fcd9996e24bc43c540.png" height="50" width="50" class="img-fluid">
                 <a href="#" class="btn btn-primary">Go somewhere</a>
+
             </div>
         </div>
-    </div>
+      
 
 
-    <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-</div></br>
-
-<!--Treci segment-->
-<div class="row">
-    <div class="col-md-4">
 
     </div>
-
-
-    <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-</div></br>
-
-<!--Cetvrti segment-->
-<div class="row">
-    <div class="col-md-4">
-
-    </div>
-
-
-    <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-</div></br>
-
