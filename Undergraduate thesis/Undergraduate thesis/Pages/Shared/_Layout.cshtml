@@ -12,33 +12,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
 </head>
-<body style="background: url(https://s5.gifyu.com/images/pozadina8650a01e5ce6d2a6.png); background-size: 100% 100%;">
+
+<body style="background-image:url(https://s5.gifyu.com/images/pozadina8650a01e5ce6d2a6.png); height:100%; width:100%">
     <div class="container">
         <header>
             <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
                 <div class="container">
-                    <a class="navbar-brand" asp-area="" asp-page="/Index">Početna</a>
+                    <a class="navbar-brand" href="#">
+                        <img src="https://s5.gifyu.com/images/logo9844754e8f83dfa4.png" alt="" width="50" height="50" class="img-fluid">
+                    </a>
+
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                         <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="navbar-brand" asp-area="" asp-page="/Index">Početna</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white" asp-area="" asp-page="/O_nama">O nama</a>
                             </li>
@@ -78,16 +71,15 @@
                 </div>
             </nav>
         </header>
-    </div>
 
 
-    <div class="container">
+
         <main role="main" class="pb-3" style="background-color:white; margin-top:-17px">
             @RenderBody()
         </main>
-    </div>
 
-    <div class="container">
+
+
 
         <footer>
 
@@ -110,87 +102,45 @@
                 &copy; 2020 - Lazar Andric - Nemanja Zagorac <a asp-area="" asp-page="/Privacy">Privacy</a>
             </div>
         </footer>
-    </div>
+</div>
 
-    <!--dugme
-    <button class="open-button" onclick="openForm()"><img src="slike/logo.png" height="50" width="50"></button>
+        <!--dugme
+        <button class="open-button" onclick="openForm()"><img src="slike/logo.png" height="50" width="50"></button>
 
-    <div class="chat-popup" id="myForm">
-        <form action="/action_page.php" class="form-container">
-            <h1>Čet</h1>
+        <div class="chat-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
+                <h1>Čet</h1>
 
-            <label for="msg"><b>Poruka</b></label>
-            <textarea placeholder="Napiši poruku..." name="msg" required></textarea>
+                <label for="msg"><b>Poruka</b></label>
+                <textarea placeholder="Napiši poruku..." name="msg" required></textarea>
 
-            <button type="submit" class="btn">Pošalji</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Zatvori</button>
-        </form>
-    </div>
+                <button type="submit" class="btn">Pošalji</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Zatvori</button>
+            </form>
+        </div>
 
-        -->
-    <!--<script>
-        function openForm() {
-            document.getElementById("myForm").style.display = "block";
-        }
-
-        function closeForm() {
-            document.getElementById("myForm").style.display = "none";
-        }
-    </script>
-        -->
-    <script>
-        filterSelection("all")
-        function filterSelection(c) {
-            var x, i;
-            x = document.getElementsByClassName("filterDiv");
-            if (c == "all") c = "";
-            for (i = 0; i < x.length; i++) {
-                w3RemoveClass(x[i], "show");
-                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            -->
+        <!--<script>
+            function openForm() {
+                document.getElementById("myForm").style.display = "block";
             }
-        }
 
-        function w3AddClass(element, name) {
-            var i, arr1, arr2;
-            arr1 = element.className.split(" ");
-            arr2 = name.split(" ");
-            for (i = 0; i < arr2.length; i++) {
-                if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+            function closeForm() {
+                document.getElementById("myForm").style.display = "none";
             }
-        }
-
-        function w3RemoveClass(element, name) {
-            var i, arr1, arr2;
-            arr1 = element.className.split(" ");
-            arr2 = name.split(" ");
-            for (i = 0; i < arr2.length; i++) {
-                while (arr1.indexOf(arr2[i]) > -1) {
-                    arr1.splice(arr1.indexOf(arr2[i]), 1);
-                }
-            }
-            element.className = arr1.join(" ");
-        }
-
-        // Add active class to the current button (highlight it)
-        var btnContainer = document.getElementById("myBtnContainer");
-        var btns = btnContainer.getElementsByClassName("btn");
-        for (var i = 0; i < btns.length; i++) {
-            btns[i].addEventListener("click", function () {
-                var current = document.getElementsByClassName("active");
-                current[0].className = current[0].className.replace(" active", "");
-                this.className += " active";
-            });
-        }
-    </script>
+        </script>
+            -->
 
 
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
+
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @RenderSection("Scripts", required: false)
 
 
 
 </body>
+
 </html>
