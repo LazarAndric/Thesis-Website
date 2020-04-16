@@ -17,12 +17,19 @@
 <body style="background-image:url(https://s5.gifyu.com/images/pozadina8650a01e5ce6d2a6.png); height:100%; width:100%">
     <div class="container">
         <header>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div style="text-align:center; background-color:#202020; color:white">
+                        &copy; 2020 - Lazar Andric - Nemanja Zagorac
+                    </div>
+                </div>
+            </div>
             <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
                 <div class="container">
                     <a class="navbar-brand" href="#">
-                        <img src="https://s5.gifyu.com/images/logo9844754e8f83dfa4.png" alt="" width="50" height="50" class="img-fluid">
+                        <img src="https://s5.gifyu.com/images/logo9844754e8f83dfa4.png" alt="logo" width="50" height="50" class="img-fluid">
                     </a>
-
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -30,7 +37,7 @@
                     <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                         <ul class="navbar-nav flex-grow-1">
                             <li class="nav-item">
-                                <a class="navbar-brand" asp-area="" asp-page="/Index">Početna</a>
+                                <a class="nav-link text-white" asp-area="" asp-page="/Index">Početna</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white" asp-area="" asp-page="/O_nama">O nama</a>
@@ -85,9 +92,7 @@
 
             <div class="container text-center">
                 <br />
-                <a class="fa fa-youtube" href="https://www.youtube.com/channel/UCteDbLO-9Uz2YmlfNEwaSfg" style="        font-size: 36px;
-        color: #bb0000
-"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a class="fa fa-youtube" href="https://www.youtube.com/channel/UCteDbLO-9Uz2YmlfNEwaSfg" style="font-size: 36px; color: #bb0000"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a class="fa fa-twitch" href="" style="font-size:36px; color: #350E6E"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a class="fa fa-instagram" href="" style="font-size:36px; color: #125688"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a class="fa fa-steam-square" href="" style="font-size:36px; color: #000000"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -102,34 +107,34 @@
                 &copy; 2020 - Lazar Andric - Nemanja Zagorac <a asp-area="" asp-page="/Privacy">Privacy</a>
             </div>
         </footer>
-</div>
-
-        <!--dugme
-        <button class="open-button" onclick="openForm()"><img src="slike/logo.png" height="50" width="50"></button>
-
-        <div class="chat-popup" id="myForm">
-            <form action="/action_page.php" class="form-container">
-                <h1>Čet</h1>
-
-                <label for="msg"><b>Poruka</b></label>
-                <textarea placeholder="Napiši poruku..." name="msg" required></textarea>
-
-                <button type="submit" class="btn">Pošalji</button>
-                <button type="button" class="btn cancel" onclick="closeForm()">Zatvori</button>
-            </form>
         </div>
 
-            -->
-        <!--<script>
-            function openForm() {
-                document.getElementById("myForm").style.display = "block";
-            }
+        <!--dugme
+    <button class="open-button" onclick="openForm()"><img src="slike/logo.png" height="50" width="50"></button>
 
-            function closeForm() {
-                document.getElementById("myForm").style.display = "none";
-            }
-        </script>
-            -->
+    <div class="chat-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+            <h1>Čet</h1>
+
+            <label for="msg"><b>Poruka</b></label>
+            <textarea placeholder="Napiši poruku..." name="msg" required></textarea>
+
+            <button type="submit" class="btn">Pošalji</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Zatvori</button>
+        </form>
+    </div>
+
+        -->
+        <!--<script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
+        -->
 
 
 
