@@ -11,9 +11,10 @@
     margin-bottom: -5em;
     text-align: center;
 }
-.navbar {
+navbar {
     margin-bottom: 0px;
     border-radius: 0;
+    position:fixed;
 }
 footer {
     background-color: grey;
@@ -113,7 +114,6 @@ footer {
     .form-container .btn:hover, .open-button:hover {
         opacity: 1;
     }
-
 
 
 
