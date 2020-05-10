@@ -1,0 +1,82 @@
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\appsettings.json
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\ASP.NET Core.StaticWebAssets.xml
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\ASP.NET Core.exe
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\ASP.NET Core.deps.json
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\ASP.NET Core.runtimeconfig.json
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\ASP.NET Core.runtimeconfig.dev.json
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\ASP.NET Core.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\ASP.NET Core.pdb
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\ASP.NET Core.Views.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\ASP.NET Core.Views.pdb
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.csprojAssemblyReference.cache
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\staticwebassets\ASP.NET Core.StaticWebAssets.Manifest.cache
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\staticwebassets\ASP.NET Core.StaticWebAssets.xml
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.MvcApplicationPartsAssemblyInfo.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.MvcApplicationPartsAssemblyInfo.cache
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.RazorAssemblyInfo.cache
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.RazorAssemblyInfo.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.AssemblyInfoInputs.cache
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.AssemblyInfo.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.TagHelpers.input.cache
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.TagHelpers.output.cache
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.RazorCoreGenerate.cache
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.RazorTargetAssemblyInfo.cache
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.RazorTargetAssemblyInfo.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.Views.pdb
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.csproj.CopyComplete
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.pdb
