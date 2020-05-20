@@ -1,0 +1,17 @@
+﻿@page
+@model Undergraduate_thesis.FormModel
+@{
+    ViewData["Title"] = "Form";
+}
+
+<h1>Form</h1>
+<form method="post">
+    <input type="text" asp-for="Adress.FirstName" placeholder="First Name" /><br />
+    <input type="text" asp-for="Adress.SurName" placeholder="Sur Name" /><br />
+    <input type="text" asp-for="Adress.House" placeholder="Adress" /><br />
+    <input type="text" asp-for="Adress.City" placeholder="City" /><br />
+    <input type="text" asp-for="Adress.State" placeholder="State" /><br />
+    <input type="text" asp-for="Adress.ZipCode" placeholder="Zip Code" /><br />
+    <button type="submit">Submit</button>
+</form>
+

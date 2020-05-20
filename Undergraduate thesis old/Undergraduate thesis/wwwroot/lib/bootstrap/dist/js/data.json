@@ -1,0 +1,20 @@
+[
+	{
+		"ime":"Nemanja Zagorac",
+		"adresa":
+		{
+			"ulica":"mileve maric",
+			"grad":"beograd",
+			"drzava":"srbija"
+		}
+	},
+	{
+		"ime":"Nikola Zagorac",
+		"adresa":
+		{
+			"ulica":"mileve maric",
+			"grad":"beograd",
+			"drzava":"srbija"
+		}
+	}
+]
