@@ -6982,11 +6982,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\GIT HUB\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\Undergraduate thesis.csproj",
+      "projectUniqueName": "E:\\GIT HUB\\Thesis-Website\\Undergraduate thesis old\\Undergraduate thesis\\Undergraduate thesis.csproj",
       "projectName": "Undergraduate thesis",
-      "projectPath": "E:\\GIT HUB\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\Undergraduate thesis.csproj",
+      "projectPath": "E:\\GIT HUB\\Thesis-Website\\Undergraduate thesis old\\Undergraduate thesis\\Undergraduate thesis.csproj",
       "packagesPath": "C:\\Users\\neman\\.nuget\\packages\\",
-      "outputPath": "E:\\GIT HUB\\Thesis-Website\\Undergraduate thesis\\Undergraduate thesis\\obj\\",
+      "outputPath": "E:\\GIT HUB\\Thesis-Website\\Undergraduate thesis old\\Undergraduate thesis\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\neman\\AppData\\Roaming\\NuGet\\NuGet.Config",
