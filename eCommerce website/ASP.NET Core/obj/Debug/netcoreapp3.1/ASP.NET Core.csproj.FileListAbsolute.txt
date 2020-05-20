@@ -242,7 +242,6 @@ E:\GIT HUB\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1
 E:\GIT HUB\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Home\Shop.cshtml.g.cs
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET_Core.Properties.Resources.resources
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.csproj.GenerateResource.cache
-D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Connected Services\ServiceReference\ConnectedService.json
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
@@ -319,3 +318,32 @@ D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netco
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Home\Gallery.cshtml.g.cs
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Home\Shop.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\AccessDenied.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ConfirmEmail.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ExternalLogin.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ForgotPassword.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\LoginWith2fa.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\LoginWithRecoveryCode.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Logout.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\ChangePassword.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Email.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\EnableAuthenticator.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\ExternalLogins.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\GenerateRecoveryCodes.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\ResetAuthenticator.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\SetPassword.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\TwoFactorAuthentication.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_Layout.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\RegisterConfirmation.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResendEmailConfirmation.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResetPassword.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResetPasswordConfirmation.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerce website\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
