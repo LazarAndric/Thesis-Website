@@ -1,0 +1,54 @@
+﻿@page
+@model Undergraduate_thesis.KontaktModel
+@{
+    ViewData["Title"] = "Kontakt";
+}
+
+<div class="container">
+    <br /><br />
+    <div class="text-center">
+        <h1 class="display-4">Kontakt</h1>
+    </div>
+    <hr />
+</div>
+
+<div class="container">
+<div class="row">
+    <div class="col-md-6">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputName1">Ime i prezime</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Unesite Vase ime i prezime">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email adresa</label>
+                <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Unesite Vasu e-mail adresu">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPhone1">Telefon</label>
+                <input type="tel" class="form-control" id="exampleInputPassword1" placeholder="Unesite Vas broj telefona">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputSubject1">Naslov poruke</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Unesite naslov Vase poruke">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputSubject1">Poruka</label>
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-light btn-lg btn-block" style="background-color:#200843;color:white">Posalji</button>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <ul class="list-unstyled">
+            <li><i class="fa fa-map-marker" area-hidden="true"></i>Adresa: <span class="pull-right">Vojvode Stepe 283, Vozdovac </span></li>
+            <li><i class="fa fa-phone" area-hidden="true"></i>Telefon:  <span class="pull-right"><a href="tel:+11-1234-777">011/1234-777</a></span></li>
+            <li><i class="fa fa-envelope-o" area-hidden="true"></i>E-mail:  <span class="pull-right"><a href="mailto:office@viser.edu.rs">office@viser.edu.rs</a></span></li>
+        </ul>
+        <div class="map-responsive">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2832.6893487677253!2d20.479373615860514!3d44.76674987909886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a70fead602cdb%3A0xc5d8ed1c464c1d1f!2z0JLQvtGY0LLQvtC00LUg0KHRgtC10L_QtSAyODMsINCR0LXQvtCz0YDQsNC0!5e0!3m2!1ssr!2srs!4v1512125373528" width="500" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        </div>
+</div>
+</div>
+
