@@ -65,7 +65,7 @@
     <div class="container">
         <main role="main" class="pb-3" style="background-color:white; margin-top:90px; border-radius:0">
             @RenderBody()
-            
+
         </main>
     </div>
 
@@ -143,6 +143,19 @@
         baguetteBox.run('.tz-gallery');
     </script>
 
+    <script>
+        $('#search').keyup(function () {
+            $('.card').removeClass('d-none');
+            var filter = $(this).val(); // get the value of the input, which we filter on
+            $('.card-deck').find('.card .card-body h4:not(:contains("' + filter + '"))').parent().parent().addClass('d-none');
+        })
+
+        $('#btnSort').click(function () {
+            $('.card-deck .card').sort(function (a, b) {
+                return $(a).find(".card-title").text() > $(b).find(".card-title").text() ? 1 : -1;
+            }).appendTo(".card-deck");
+        })
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
 
