@@ -231,6 +231,8 @@ body {
     background-color: #005EB8;
 }
 /*MODAL*/
-
+.show-cart li {
+    display: flex;
+}
 
 
