@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace Commander
 {
@@ -32,6 +33,13 @@ namespace Commander
                 opt =>opt.UseSqlServer(Configuration.GetConnectionString("CommanderConnection"))
             );
 
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(opt =>
+                    {
+                        opt.Audience = Configuration["AAD:ResourceId"];
+                        opt.Authority = $"{Configuration["AAD:InstanceId"]}{Configuration["AAD:TenantId"]}";
+                    }
+                );
             services.AddControllers().AddNewtonsoftJson(s => { 
                 s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
                 });
@@ -51,6 +59,8 @@ namespace Commander
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

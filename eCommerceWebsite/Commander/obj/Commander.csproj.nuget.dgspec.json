@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\Commander\\Commander.csproj": {}
+    "C:\\Users\\unLa4ky\\Documents\\GitHub\\Thesis-Website\\eCommerceWebsite\\Commander\\Commander.csproj": {}
   },
   "projects": {
-    "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\Commander\\Commander.csproj": {
+    "C:\\Users\\unLa4ky\\Documents\\GitHub\\Thesis-Website\\eCommerceWebsite\\Commander\\Commander.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\Commander\\Commander.csproj",
+        "projectUniqueName": "C:\\Users\\unLa4ky\\Documents\\GitHub\\Thesis-Website\\eCommerceWebsite\\Commander\\Commander.csproj",
         "projectName": "Commander",
-        "projectPath": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\Commander\\Commander.csproj",
+        "projectPath": "C:\\Users\\unLa4ky\\Documents\\GitHub\\Thesis-Website\\eCommerceWebsite\\Commander\\Commander.csproj",
         "packagesPath": "C:\\Users\\unLa4ky\\.nuget\\packages\\",
-        "outputPath": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\Commander\\obj\\",
+        "outputPath": "C:\\Users\\unLa4ky\\Documents\\GitHub\\Thesis-Website\\eCommerceWebsite\\Commander\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\unLa4ky\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -41,6 +41,10 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.5, )"
             },
             "Microsoft.AspNetCore.JsonPatch": {
               "target": "Package",
@@ -83,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

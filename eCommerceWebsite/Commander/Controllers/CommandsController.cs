@@ -5,6 +5,7 @@ using Commander.Data;
 using AutoMapper;
 using Commander.Dtos;
 using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Commander.Conrollers
 {
@@ -22,6 +23,7 @@ namespace Commander.Conrollers
         }
         
         //GET api/comands
+        [Authorize]
         [HttpGet]
         public ActionResult <IEnumerable<CommandReadDto>> GetAllComands()
         {
