@@ -29,24 +29,17 @@ namespace Commander
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<CommanderContext>(
-                opt =>opt.UseSqlServer(Configuration.GetConnectionString("CommanderConnection"))
+            services.AddDbContext<Context>(
+                optUser =>optUser.UseSqlServer(Configuration.GetConnectionString("Connection"))
             );
-
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(opt =>
-                    {
-                        opt.Audience = Configuration["AAD:ResourceId"];
-                        opt.Authority = $"{Configuration["AAD:InstanceId"]}{Configuration["AAD:TenantId"]}";
-                    }
-                );
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddControllers().AddNewtonsoftJson(s => { 
                 s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
                 });
-
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             
-            services.AddScoped<ICommanderRepo, SqlCommanderRepo>();
+            services.AddScoped<ICategoryRepo, SqlCategoryRepo>();
+            services.AddScoped<IUserRepo, SqlUserRepo>();
+            services.AddScoped<IProductRepo, SqlProductRepo>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

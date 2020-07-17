@@ -1,11 +1,11 @@
 using System.ComponentModel.DataAnnotations;
+using Commander.Models;
 
 namespace Commander.Dtos
 {
-    public class CommandReadDto
+    public class CategoryReadDto
     {
         public int Id { get; set; }
-        public string HowTo{get;set;}
-        public string Line { get; set; }
+        public string Name { get; set; }
     }
 }

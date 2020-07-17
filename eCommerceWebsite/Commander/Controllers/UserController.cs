@@ -11,56 +11,55 @@ namespace Commander.Conrollers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CommandsController : ControllerBase
+    public class UserController : ControllerBase
     {
-        private ICommanderRepo _repository;
+        private IUserRepo _repository;
         private IMapper _mapper;
 
-        public CommandsController(ICommanderRepo repostory, IMapper mapper)
+        public UserController(IUserRepo repostory, IMapper mapper)
         {
             _repository = repostory;
             _mapper= mapper;
         }
         
         //GET api/comands
-        [Authorize]
         [HttpGet]
-        public ActionResult <IEnumerable<CommandReadDto>> GetAllComands()
+        public ActionResult <IEnumerable<UserReadDto>> GetAllUsers()
         {
-            var commandItems = _repository.GetAllComands();
-            return Ok(_mapper.Map<IEnumerable<CommandReadDto>>(commandItems));
+            var userItems = _repository.GetAllUsers();
+            return Ok(_mapper.Map<IEnumerable<UserReadDto>>(userItems));
         }
 
         //GET api/commands/{id}
-        [HttpGet("{id}", Name="GetCommandById")]
-        public ActionResult <CommandReadDto> GetCommandById(int id)
+        [HttpGet("{id}", Name="GetUserByIdd")]
+        public ActionResult <UserReadDto> GetUserById(int id)
         {
-            var commandItem = _repository.GetCommandById(id);
-            if(commandItem!=null)
+            var userItem = _repository.GetUserById(id);
+            if(userItem!=null)
             {
-                return Ok(_mapper.Map<CommandReadDto>(commandItem));
+                return Ok(_mapper.Map<UserReadDto>(userItem));
             }
             return NotFound();
         }
 
         //POST api/command/{id}
         [HttpPost]
-        public ActionResult<CommandReadDto> CreateComand(CommandCreateDto commndCreateDto)
+        public ActionResult<UserReadDto> CreateUser(UserCreateDto userCreateDto)
         {
-            var commandModel = _mapper.Map<Command>(commndCreateDto);
-            _repository.CreateCommand(commandModel);
+            var userModel = _mapper.Map<User>(userCreateDto);
+            _repository.CreateUser(userModel);
             _repository.SaveChanges();
 
-            var commandReadDto = _mapper.Map<CommandReadDto>(commandModel);
+            var userReadDto = _mapper.Map<UserReadDto>(userModel);
 
-            return CreatedAtRoute(nameof(GetCommandById), new {Id = commandReadDto.Id}, commandReadDto);
+            return GetUserById(userReadDto.Id);
         }
 
         //PUT api/command/{id}
         [HttpPut("{id}")]
-        public ActionResult UpdateCommand(int id, CommandUpdateDto commandUpdateDto)
+        public ActionResult UpdateCommand(int id, UserUpdateDto commandUpdateDto)
         {
-            var commandModelFromRepo = _repository.GetCommandById(id);
+            var commandModelFromRepo = _repository.GetUserById(id);
             if(commandUpdateDto == null)
             {
                 return NotFound();
@@ -68,7 +67,7 @@ namespace Commander.Conrollers
 
             _mapper.Map(commandUpdateDto, commandModelFromRepo);
 
-            _repository.UpdateCommand(commandModelFromRepo);
+            _repository.UpdateUser(commandModelFromRepo);
 
             _repository.SaveChanges();
 
@@ -77,15 +76,15 @@ namespace Commander.Conrollers
 
         //PATCH api/comands/{id}
         [HttpPatch("{id}")]
-        public ActionResult PartialCommandUpdate(int id, JsonPatchDocument<CommandUpdateDto> pathDoc)
+        public ActionResult PartialCommandUpdate(int id, JsonPatchDocument<UserUpdateDto> pathDoc)
         {
-            var commandModelFromRepo = _repository.GetCommandById(id);
+            var commandModelFromRepo = _repository.GetUserById(id);
             if(commandModelFromRepo == null)
             {
                 return NotFound();
             }
 
-            var commandToPatch = _mapper.Map<CommandUpdateDto>(commandModelFromRepo);
+            var commandToPatch = _mapper.Map<UserUpdateDto>(commandModelFromRepo);
             pathDoc.ApplyTo(commandToPatch, ModelState);
             if(!TryValidateModel(commandToPatch))
             {
@@ -94,7 +93,7 @@ namespace Commander.Conrollers
 
             _mapper.Map(commandToPatch,commandModelFromRepo);
 
-            _repository.UpdateCommand(commandModelFromRepo);
+            _repository.UpdateUser(commandModelFromRepo);
 
             _repository.SaveChanges();
 
@@ -106,13 +105,13 @@ namespace Commander.Conrollers
         [HttpDelete("{id}")]
         public ActionResult DeleteCommand(int id)
         {
-            var commandModelFromRepo = _repository.GetCommandById(id);
+            var commandModelFromRepo = _repository.GetUserById(id);
             if(commandModelFromRepo == null)
             {
                 return NotFound();
             }
 
-            _repository.DeleteCommand(commandModelFromRepo);
+            _repository.DeleteUser(commandModelFromRepo);
             _repository.SaveChanges();
 
             return NoContent();

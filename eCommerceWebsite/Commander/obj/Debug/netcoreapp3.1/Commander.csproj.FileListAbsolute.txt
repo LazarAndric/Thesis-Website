@@ -129,3 +129,10 @@ C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\eCommerceWebsite\Commander\obj\
 C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\eCommerceWebsite\Commander\obj\Debug\netcoreapp3.1\Commander.dll
 C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\eCommerceWebsite\Commander\obj\Debug\netcoreapp3.1\Commander.pdb
 C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\eCommerceWebsite\Commander\obj\Debug\netcoreapp3.1\Commander.genruntimeconfig.cache
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\Commander\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\Commander\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\Commander\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\Commander\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\Commander\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\Commander\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\Commander\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll

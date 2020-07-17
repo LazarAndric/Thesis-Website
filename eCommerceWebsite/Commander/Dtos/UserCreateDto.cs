@@ -1,13 +1,9 @@
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Commander.Models
+namespace Commander.Dtos
 {
-    [Table("tblUser")]
-    public class User
+    public class UserCreateDto
     {
-        [Key]
-        public int Id { get; set; }
         [Required]
         [MaxLength]
         public string FirstName { get; set; }
@@ -34,11 +30,5 @@ namespace Commander.Models
         [Required]
         [DisplayFormat(ApplyFormatInEditMode=true, DataFormatString="{0:dd/MM/yyyy}")]
         public string DateOfBirth { get; set; }
-        
-        [DisplayFormat(ApplyFormatInEditMode=true, DataFormatString="{0:dd/MM/yyyy}")]
-        public string DateOfRegistration { get; set; }
-        
-        [DisplayFormat(ApplyFormatInEditMode=true, DataFormatString="{0:dd/MM/yyyy}")]
-        public string LastLogin { get; set; }
     }
 }
