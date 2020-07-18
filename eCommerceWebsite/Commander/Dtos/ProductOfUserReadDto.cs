@@ -9,6 +9,7 @@ namespace Commander.Dtos
         public int Id { get; set; }
         public int? UserId { get; set; }
         public int? ProductId { get; set; }
+        
         [DisplayFormat(ApplyFormatInEditMode=true, DataFormatString="{0:dd/MM/yyyy}")]
         public string DateOfProductPurchased { get; set; }
     }

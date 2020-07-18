@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Commander.Models
 {
+    [Table("tblUserProduct")]
     public class ProductOfUser
     {
         [Key]
