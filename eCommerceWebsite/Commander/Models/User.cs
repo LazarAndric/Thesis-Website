@@ -31,7 +31,6 @@ namespace Commander.Models
         public string EMail { get; set; }
         [Required]
         public string Password { get; set; }
-        [Required]
         [DisplayFormat(ApplyFormatInEditMode=true, DataFormatString="{0:dd/MM/yyyy}")]
         public string DateOfBirth { get; set; }
         

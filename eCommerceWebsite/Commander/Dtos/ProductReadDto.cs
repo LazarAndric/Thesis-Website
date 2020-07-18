@@ -12,5 +12,7 @@ namespace Commander.Dtos
         public int? ProductCategoryId { get; set; }
         public float NumberOfViews { get; set; }
         public float NumberOfBought { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode=true, DataFormatString="{0:dd/MM/yyyy}")]
+        public string DateOfCreate { get; set; }
     }
 }

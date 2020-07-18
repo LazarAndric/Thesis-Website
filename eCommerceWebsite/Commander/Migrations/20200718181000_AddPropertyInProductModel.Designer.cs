@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Commander.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20200717002219_UpdateMigration2")]
-    partial class UpdateMigration2
+    [Migration("20200718181000_AddPropertyInProductModel")]
+    partial class AddPropertyInProductModel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -43,6 +43,9 @@ namespace Commander.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("DateOfCreate")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImgUrl")
                         .IsRequired()

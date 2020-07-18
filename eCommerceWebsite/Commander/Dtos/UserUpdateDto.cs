@@ -4,12 +4,19 @@ namespace Commander.Dtos
 {
     public class UserUpdateDto
     {
+        [Required]
         public string FirstName { get; set; }
+        [Required]
         public string LastName { get; set; }
+        [Required]
         public string Adress { get; set; }
+        [Required]
         public string AdressNumber { get; set; }
+        [Required]
         public string Place { get; set; }
+        [Required]
         public string Contry { get; set; }
+        [Required]
         public string PostalCode { get; set; }
         [Phone]
         public string PhoneNumber { get; set; }

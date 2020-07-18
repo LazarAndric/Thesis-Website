@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Commander.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20200716235527_AddForeignKey")]
-    partial class AddForeignKey
+    [Migration("20200718173709_InitializeMigration")]
+    partial class InitializeMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

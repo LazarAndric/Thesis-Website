@@ -2,7 +2,7 @@
 
 namespace Commander.Migrations
 {
-    public partial class UpdateMigration : Migration
+    public partial class MinorMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

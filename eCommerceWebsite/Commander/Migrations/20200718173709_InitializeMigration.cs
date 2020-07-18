@@ -2,7 +2,7 @@
 
 namespace Commander.Migrations
 {
-    public partial class AddForeignKey : Migration
+    public partial class InitializeMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

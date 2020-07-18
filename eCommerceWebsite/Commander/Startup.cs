@@ -40,6 +40,7 @@ namespace Commander
             services.AddScoped<ICategoryRepo, SqlCategoryRepo>();
             services.AddScoped<IUserRepo, SqlUserRepo>();
             services.AddScoped<IProductRepo, SqlProductRepo>();
+            services.AddScoped<IProductOfUserRepo, SqlProductOfUser>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

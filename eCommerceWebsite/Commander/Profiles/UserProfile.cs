@@ -21,6 +21,10 @@ namespace Commander.Profiles
             CreateMap<CategoryCreateDto, Category>();
             CreateMap<CategoryUpdateDto, Category>();
             CreateMap<Category, CategoryUpdateDto>();
+            CreateMap<ProductOfUser, ProductOfUserReadDto>();  
+            CreateMap<ProductOfUserCreateDto, ProductOfUser>();
+            CreateMap<ProductOfUserUpdateDto, ProductOfUser>();
+            CreateMap<ProductOfUser, ProductOfUserUpdateDto>();
         }
     }
 }

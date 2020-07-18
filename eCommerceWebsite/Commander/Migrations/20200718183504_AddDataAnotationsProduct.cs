@@ -2,7 +2,7 @@
 
 namespace Commander.Migrations
 {
-    public partial class UpdateMigration11 : Migration
+    public partial class AddDataAnotationsProduct : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

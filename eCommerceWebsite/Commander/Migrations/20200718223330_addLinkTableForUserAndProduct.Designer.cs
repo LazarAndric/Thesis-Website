@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Commander.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20200717003706_UpdateMigration3")]
-    partial class UpdateMigration3
+    [Migration("20200718223330_addLinkTableForUserAndProduct")]
+    partial class addLinkTableForUserAndProduct
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -44,8 +44,10 @@ namespace Commander.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("DateOfCreate")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ImgUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -58,10 +60,14 @@ namespace Commander.Migrations
                     b.Property<float>("NumberOfViews")
                         .HasColumnType("real");
 
-                    b.Property<float>("Price")
+                    b.Property<float?>("Price")
+                        .IsRequired()
                         .HasColumnType("real");
 
                     b.Property<int?>("ProductCategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Sale")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -69,6 +75,33 @@ namespace Commander.Migrations
                     b.HasIndex("ProductCategoryId");
 
                     b.ToTable("tblProduct");
+                });
+
+            modelBuilder.Entity("Commander.Models.ProductOfUser", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("DateOfProductPurchased")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("ProductId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UserId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("ProductsOfUsers");
                 });
 
             modelBuilder.Entity("Commander.Models.User", b =>
@@ -91,7 +124,6 @@ namespace Commander.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DateOfBirth")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DateOfRegistration")
@@ -137,6 +169,21 @@ namespace Commander.Migrations
                     b.HasOne("Commander.Models.Category", "ProductCategory")
                         .WithMany()
                         .HasForeignKey("ProductCategoryId");
+                });
+
+            modelBuilder.Entity("Commander.Models.ProductOfUser", b =>
+                {
+                    b.HasOne("Commander.Models.Product", "product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Commander.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
