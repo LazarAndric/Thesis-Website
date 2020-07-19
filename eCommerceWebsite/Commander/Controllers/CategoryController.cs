@@ -27,14 +27,14 @@ namespace Commander.Controllers
         //     return Ok(_mapper.Map<(T)(Items));
         // }
 
-        [HttpGet]
+        [HttpGet("{action}")]
         public ActionResult <IEnumerable<CategoryReadDto>> GetAllCategories()
         {
             var categoryItems = _repository.GetAllCategories();
             return Ok(_mapper.Map<IEnumerable<CategoryReadDto>>(categoryItems));
         }
 
-        [HttpGet("{id}", Name="GetCategoryById")]
+        [HttpGet("{action}/{id}", Name="GetCategoryById")]
         public ActionResult <CategoryReadDto> GetCategoryById(int id)
         {
             var categoryItem = _repository.GetCategoryById(id);
@@ -46,7 +46,7 @@ namespace Commander.Controllers
         }
 
         //POST api/command/{id}
-        [HttpPost]
+        [HttpPost("{action}")]
         public ActionResult<CategoryReadDto> CreateCategory(CategoryCreateDto categoryCreateDto)
         {
             var categoryModel = _mapper.Map<Category>(categoryCreateDto);
@@ -59,7 +59,7 @@ namespace Commander.Controllers
         }
 
         //PUT api/command/{id}
-        [HttpPut("{id}")]
+        [HttpPut("{action}/{id}")]
         public ActionResult UpdateCategory(int id, CategoryUpdateDto categoryUpdateDto)
         {
             var categoryModelFromRepo = _repository.GetCategoryById(id);
@@ -78,7 +78,7 @@ namespace Commander.Controllers
         }
 
         //PATCH api/comands/{id}
-        [HttpPatch("{id}")]
+        [HttpPatch("{action}/{id}")]
         public ActionResult PartialCategoryUpdate(int id, JsonPatchDocument<CategoryUpdateDto> pathDoc)
         {
             var categoryModelFromRepo = _repository.GetCategoryById(id);
@@ -105,7 +105,7 @@ namespace Commander.Controllers
         }
 
         //DELETE api/comands/{id}
-        [HttpDelete("{id}")]
+        [HttpDelete("{action}/{id}")]
         public ActionResult DeleteCategory(int id)
         {
             var categoryModelFromRepo = _repository.GetCategoryById(id);

@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -30,14 +31,14 @@ namespace Commander.Models
         [Required]
         public string EMail { get; set; }
         [Required]
-        public string Password { get; set; }
+        public DateTime Password { get; set; }
         [DisplayFormat(ApplyFormatInEditMode=true, DataFormatString="{0:dd/MM/yyyy}")]
-        public string DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
         
         [DisplayFormat(ApplyFormatInEditMode=true, DataFormatString="{0:dd/MM/yyyy}")]
-        public string DateOfRegistration { get; set; }
+        public DateTime DateOfRegistration { get; set; }
         
         [DisplayFormat(ApplyFormatInEditMode=true, DataFormatString="{0:dd/MM/yyyy}")]
-        public string LastLogin { get; set; }
+        public DateTime LastLogin { get; set; }
     }
 }
