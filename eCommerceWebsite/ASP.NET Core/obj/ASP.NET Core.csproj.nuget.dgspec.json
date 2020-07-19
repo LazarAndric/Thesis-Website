@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "E:\\GIT HUB\\Thesis-Website\\eCommerce website\\ASP.NET Core\\ASP.NET Core.csproj": {}
   },
   "projects": {
@@ -16,22 +15,6 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\neman\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-    "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerce website\\ASP.NET Core\\ASP.NET Core.csproj": {}
-  },
-  "projects": {
-    "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerce website\\ASP.NET Core\\ASP.NET Core.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerce website\\ASP.NET Core\\ASP.NET Core.csproj",
-        "projectName": "ASP.NET Core",
-        "projectPath": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerce website\\ASP.NET Core\\ASP.NET Core.csproj",
-        "packagesPath": "C:\\Users\\unLa4ky\\.nuget\\packages\\",
-        "outputPath": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerce website\\ASP.NET Core\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\unLa4ky\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> FrontMerge
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -100,11 +83,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
-=======
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
->>>>>>> FrontMerge
         }
       }
     }
