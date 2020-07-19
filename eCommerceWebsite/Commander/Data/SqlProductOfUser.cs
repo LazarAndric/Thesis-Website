@@ -53,7 +53,7 @@ namespace Commander.Data
 
         public ProductOfUser GetProductOfUserById(int id)
         {
-            return _context.ProductsOfUsers.FirstOrDefault();
+            return _context.ProductsOfUsers.FirstOrDefault(p=> p.Id == id);
         }
 
         public bool SaveChanges()

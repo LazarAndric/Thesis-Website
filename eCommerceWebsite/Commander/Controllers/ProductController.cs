@@ -6,6 +6,7 @@ using AutoMapper;
 using Commander.Dtos;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Authorization;
+using Commander.Utility;
 
 namespace Commander.Conrollers
 {
@@ -13,11 +14,13 @@ namespace Commander.Conrollers
     [ApiController]
     public class ProductController : ControllerBase
     {
+        private ICategoryRepo _categoryRepo;
         private IProductRepo _repository;
         private IMapper _mapper;
 
-        public ProductController(IProductRepo repostory, IMapper mapper)
+        public ProductController(IProductRepo repostory, IMapper mapper, ICategoryRepo categoryRepo)
         {
+            _categoryRepo=categoryRepo;
             _repository = repostory;
             _mapper= mapper;
         }
@@ -46,6 +49,8 @@ namespace Commander.Conrollers
         [HttpPost]
         public ActionResult<ProductReadDto> CreateProduct(ProductCreateDto productCreateDto)
         {
+            if(_categoryRepo.GetCategoryById((int)productCreateDto.ProductCategoryId)==null)
+                return NoContent();
             var productModel = _mapper.Map<Product>(productCreateDto);
             _repository.CreateProduct(productModel);
             _repository.SaveChanges();
@@ -59,6 +64,8 @@ namespace Commander.Conrollers
         [HttpPut("{id}")]
         public ActionResult UpdateProduct(int id, ProductUpdateDto productUpdateDto)
         {
+             if(_categoryRepo.GetCategoryById((int)productUpdateDto.ProductCategoryId)==null)
+                return NoContent();
             var productModelFromRepo = _repository.GetProductById(id);
             if(productUpdateDto == null)
             {
@@ -83,7 +90,9 @@ namespace Commander.Conrollers
             {
                 return NotFound();
             }
-
+            
+            if(_categoryRepo.GetCategoryById((int)productModelFromRepo.ProductCategoryId)==null)
+                return NoContent();
             var productToPatch = _mapper.Map<ProductUpdateDto>(productModelFromRepo);
             pathDoc.ApplyTo(productToPatch, ModelState);
             if(!TryValidateModel(productToPatch))

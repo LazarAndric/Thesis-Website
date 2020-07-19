@@ -5,6 +5,7 @@ using Commander.Data;
 using AutoMapper;
 using Commander.Dtos;
 using Microsoft.AspNetCore.JsonPatch;
+using System;
 
 namespace Commander.Controllers
 {
@@ -12,10 +13,14 @@ namespace Commander.Controllers
     [ApiController]
     public class ProductOfUserController : ControllerBase
     {
+        private IProductRepo _productRepo;
+        private IUserRepo _userRepo;
         private IProductOfUserRepo _repository;
         private IMapper _mapper;
-        public ProductOfUserController(IProductOfUserRepo repository, IMapper mapper)
+        public ProductOfUserController(IProductOfUserRepo repository, IMapper mapper, IUserRepo userRepo, IProductRepo productRepo)
         {
+            _productRepo=productRepo;
+            _userRepo=userRepo;
             _repository=repository;
             _mapper=mapper;
         }
@@ -24,6 +29,7 @@ namespace Commander.Controllers
             var productOfUsers = _repository.GetAllProductOfUsers();
             return Ok(_mapper.Map<IEnumerable<ProductOfUserReadDto>>(productOfUsers));
         }
+
         [HttpGet("{id}", Name="GetProductOfUserById")]
         public ActionResult <ProductOfUser> GetProductOfUserById(int id)
         {
@@ -42,6 +48,8 @@ namespace Commander.Controllers
         [HttpPost]
         public ActionResult<ProductReadDto> CreateProductOfUser(ProductOfUserCreateDto prodcutOfUserCreateDto)
         {
+            if(_userRepo.GetUserById((int)prodcutOfUserCreateDto.UserId)==null || _productRepo.GetProductById((int)prodcutOfUserCreateDto.UserId)==null)
+                return NoContent();
             var productOfUserModel = _mapper.Map<ProductOfUser>(prodcutOfUserCreateDto);
             _repository.CreateProductOfUser(productOfUserModel);
             _repository.SaveChanges();

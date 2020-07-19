@@ -38,7 +38,7 @@ namespace Commander.Data
         }
 
         public User GetUserById(int id)
-        {
+        { 
             return _context.Users.FirstOrDefault(p=> p.Id == id);
         }
 
