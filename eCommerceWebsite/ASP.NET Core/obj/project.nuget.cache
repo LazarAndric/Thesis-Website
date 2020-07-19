@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ee6lCspNnxdqKjcSfJRKOPIyv+PBLxLNM1sI9q2P8rRDnYXw/q5PIbTpH3yScx1tOuvr9DU1R+TdOOotJ01oUQ==",
+  "dgSpecHash": "HvF5Prvl/+Wlk2WkQRX7UeOPPbKd1PtHxcYULvWwQKpnHSw41zCpB9k+FKoJKMbJ8c8Lm+Bi13NOCQXVDeEdKw==",
   "success": true,
-  "projectFilePath": "E:\\GIT HUB\\Thesis-Website\\eCommerce website\\ASP.NET Core\\ASP.NET Core.csproj",
+  "projectFilePath": "E:\\GIT HUB\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\ASP.NET Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\neman\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.4\\microsoft.aspnetcore.cryptography.internal.3.1.4.nupkg.sha512",
     "C:\\Users\\neman\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.4\\microsoft.aspnetcore.cryptography.keyderivation.3.1.4.nupkg.sha512",
