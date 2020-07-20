@@ -8,21 +8,27 @@ for details on configuring this project to bundle and minify static web assets. 
     z-index: 1030;
 }
 
-
-
-
 a.navbar-brand {
     white-space: normal;
     text-align: center;
     word-break: break-all;
 }
 
+.navigacijaboja {
+    
+}
 
+    .navigacijaboja:hover {
+        background-color:dimgray
+        
+    }
 
 /* Provide sufficient contrast against white background */
 a {
     color: #0366d6;
 }
+
+    
 
 .btn-primary {
     color: #fff;
@@ -235,4 +241,83 @@ body {
     display: flex;
 }
 
+/*DUGME Za JUmbotron*/
+.dugmejumbotron {
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: 0.3s;
+    border-radius: 12px;
+}
+
+    .dugmejumbotron:hover {
+        background-color: #2E0D5F;
+        color: white;
+    }
+
+.iconyt {
+    color:white;
+}
+
+    .iconyt:hover {
+        color:red;
+    }
+
+.iconinsta {
+    color: white;
+}
+
+    .iconinsta:hover {
+        color: dodgerblue;
+    }
+
+.icontwitch {
+    color: white;
+}
+
+    .icontwitch:hover {
+        color: #200843;
+    }
+
+.iconsteam {
+    color: white;
+}
+
+    .iconsteam:hover {
+        color: black;
+    }
+
+.iconcart {
+    color: white;
+}
+    .iconcart:hover {
+        color: orange;
+    }
+
+.iconregister {
+    color: white;
+}
+
+    .iconregister:hover {
+        color: lightskyblue;
+    }
+.iconlogin {
+    color: white;
+}
+
+    .iconlogin:hover {
+        color: forestgreen;
+    }
+
+.icondiscord {
+    color: white;
+}
+
+    .icondiscord:hover {
+        color: #7289da;
+    }
 
