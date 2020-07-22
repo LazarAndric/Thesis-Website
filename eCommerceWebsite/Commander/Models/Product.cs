@@ -23,7 +23,7 @@ namespace Commander.Models
         // [Required]
         // public int Quantity{get; set;}
         [Range(0,100)]
-        public int? Sale {get;set;}
+        public int Sale {get;set;}
         public string ImgUrl { get; set; }
         public float NumberOfViews { get; set; }
         public float NumberOfPurchases { get; set; }
