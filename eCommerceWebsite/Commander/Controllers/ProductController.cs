@@ -6,7 +6,6 @@ using AutoMapper;
 using Commander.Dtos;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Authorization;
-using Commander.Utility;
 
 namespace Commander.Conrollers
 {

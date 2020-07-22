@@ -6,11 +6,8 @@ namespace Commander.Models
 {
     public class GenderOfProductReadDto
     {
-        [Key]
         public int Id { get; set; }
-        [Required]
-        public int? ProductId { get; set; }
-        [Required]
-        public int? GenderId { get; set; }
+        public int ProductId { get; set; }
+        public int GenderId { get; set; }
     }
 }
