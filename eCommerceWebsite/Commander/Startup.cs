@@ -47,6 +47,11 @@ namespace Commander
             services.AddScoped<IUserRepo, SqlUserRepo>();
             services.AddScoped<IProductRepo, SqlProductRepo>();
             services.AddScoped<IProductOfUserRepo, SqlProductOfUser>();
+            services.AddScoped<ISizeRepo, SqlSizeRepo>();
+            services.AddScoped<ISizeOfProductRepo, SqlSizeOfProductRepo>();
+            services.AddScoped<IGenderRepo, SqlGenderRepo>();
+            services.AddScoped<IGenderOfProductRepo, SqlGendersOfProductRepo>();
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

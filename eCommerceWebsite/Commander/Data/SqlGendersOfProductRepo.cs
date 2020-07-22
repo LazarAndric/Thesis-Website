@@ -5,7 +5,7 @@ using Commander.Models;
 
 namespace Commander.Data
 {
-    public class SqlGendersOfProductRepo : IGendersOfProductRepo
+    public class SqlGendersOfProductRepo : IGenderOfProductRepo
     {
         private Context _context;
 
@@ -14,7 +14,7 @@ namespace Commander.Data
             _context = context;
         }
 
-        public void CreateGendersOfProduct(GenderOfProduct gendersOfProduct)
+        public void CreateGenderOfProduct(GenderOfProduct gendersOfProduct)
         {
             if(gendersOfProduct==null)
             {
@@ -23,7 +23,7 @@ namespace Commander.Data
             _context.GendersOfProducts.Add(gendersOfProduct);
         }
 
-        public void DeleteGendersOfProduct(GenderOfProduct gendersOfProduct)
+        public void DeleteGenderOfProduct(GenderOfProduct gendersOfProduct)
         {
             if(gendersOfProduct == null)
             {
@@ -32,12 +32,12 @@ namespace Commander.Data
             _context.GendersOfProducts.Remove(gendersOfProduct);
         }
 
-        public IEnumerable<GenderOfProduct> GetAllGendersOfProduct()
+        public IEnumerable<GenderOfProduct> GetAllGenderOfProducts()
         {
             return _context.GendersOfProducts.ToList(); 
         }
 
-        public GenderOfProduct GetGendersOfProductById(int id)
+        public GenderOfProduct GetGenderOfProductById(int id)
         {
             return _context.GendersOfProducts.FirstOrDefault(p=> p.Id == id);
         }
@@ -47,7 +47,7 @@ namespace Commander.Data
             return (_context.SaveChanges()>=0);
         }
 
-        public void UpdateGendersOfProduct(GenderOfProduct gendersOfProduct)
+        public void UpdateGenderOfProduct(GenderOfProduct gendersOfProduct)
         {
             //Nothing
         }

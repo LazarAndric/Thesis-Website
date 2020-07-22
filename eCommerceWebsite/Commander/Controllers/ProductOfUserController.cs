@@ -6,6 +6,7 @@ using AutoMapper;
 using Commander.Dtos;
 using Microsoft.AspNetCore.JsonPatch;
 using System;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Commander.Controllers
 {
@@ -24,12 +25,14 @@ namespace Commander.Controllers
             _repository=repository;
             _mapper=mapper;
         }
+        //[Authorize]
         [HttpGet]
         public ActionResult <IEnumerable<ProductOfUser>> GetAllProductsOfUsers(){
             var productOfUsers = _repository.GetAllProductOfUsers();
             return Ok(_mapper.Map<IEnumerable<ProductOfUserReadDto>>(productOfUsers));
         }
 
+        //[Authorize]
         [HttpGet("{id}", Name="GetProductOfUserById")]
         public ActionResult <ProductOfUser> GetProductOfUserById(int id)
         {
@@ -37,6 +40,7 @@ namespace Commander.Controllers
             return Ok(_mapper.Map<ProductOfUserReadDto>(productOfUserItem));
         }
 
+        //[Authorize]
         [HttpGet("user{id}", Name="GetProductsOfUserById")]
         public ActionResult <IEnumerable<ProductOfUser>> GetProductsOfUserById(int id)
         {
@@ -44,7 +48,7 @@ namespace Commander.Controllers
             return Ok(_mapper.Map<IEnumerable<ProductOfUserReadDto>>(productsOfUser));
         }
 
-        //POST api/command{id}
+        //[Authorize]
         [HttpPost]
         public ActionResult<ProductReadDto> CreateProductOfUser(ProductOfUserCreateDto prodcutOfUserCreateDto)
         {
@@ -59,6 +63,7 @@ namespace Commander.Controllers
             return CreatedAtRoute(nameof(GetProductOfUserById), new {Id= prodcutOfUserReadDto.Id}, prodcutOfUserReadDto);
         }
 
+        //[Authorize]
         [HttpPut("{id}")]
         public ActionResult UpdateCategory(int id, ProductOfUserUpdateDto productOfUserUpdateDto)
         {
@@ -77,6 +82,7 @@ namespace Commander.Controllers
             return NoContent();
         }
 
+        //[Authorize]
         [HttpPatch("{id}")]
         public ActionResult PartialProductOfUserUpdate(int id, JsonPatchDocument<ProductOfUserUpdateDto> pathDoc)
         {
@@ -102,6 +108,7 @@ namespace Commander.Controllers
             return NoContent();
         }
 
+        //[Authorize]
         [HttpDelete("{id}")]
         public ActionResult DeleteProductOfUser(int id)
         {

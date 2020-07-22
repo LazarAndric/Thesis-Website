@@ -21,16 +21,16 @@ namespace Commander.Controllers
             _repository = repostory;
             _mapper= mapper;
         }
-        [Authorize]
-        [HttpGet("{action}")]
+        //[Authorize]
+        [HttpGet("")]
         public ActionResult <IEnumerable<CategoryReadDto>> GetAllCategories()
         {
             var categoryItems = _repository.GetAllCategories();
             return Ok(_mapper.Map<IEnumerable<CategoryReadDto>>(categoryItems));
         }
 
-        [Authorize]
-        [HttpGet("{action}/{id}", Name="GetCategoryById")]
+        //[Authorize]
+        [HttpGet("/{id}", Name="GetCategoryById")]
         public ActionResult <CategoryReadDto> GetCategoryById(int id)
         {
             var categoryItem = _repository.GetCategoryById(id);
@@ -41,8 +41,8 @@ namespace Commander.Controllers
             return NotFound();
         }
 
-        [Authorize]
-        [HttpPost("{action}")]
+        //[Authorize]
+        [HttpPost]
         public ActionResult<CategoryReadDto> CreateCategory(CategoryCreateDto categoryCreateDto)
         {
             var categoryModel = _mapper.Map<Category>(categoryCreateDto);
@@ -54,8 +54,8 @@ namespace Commander.Controllers
             return CreatedAtRoute(nameof(GetCategoryById), new {Id = categoryReadDto.Id}, categoryReadDto);
         }
 
-        [Authorize]
-        [HttpPut("{action}/{id}")]
+        //[Authorize]
+        [HttpPut("/{id}")]
         public ActionResult UpdateCategory(int id, CategoryUpdateDto categoryUpdateDto)
         {
             var categoryModelFromRepo = _repository.GetCategoryById(id);
@@ -73,8 +73,8 @@ namespace Commander.Controllers
             return NoContent();
         }
 
-        [Authorize]
-        [HttpPatch("{action}/{id}")]
+        //[Authorize]
+        [HttpPatch("/{id}")]
         public ActionResult PartialCategoryUpdate(int id, JsonPatchDocument<CategoryUpdateDto> pathDoc)
         {
             var categoryModelFromRepo = _repository.GetCategoryById(id);
@@ -100,8 +100,8 @@ namespace Commander.Controllers
 
         }
         
-        [Authorize]
-        [HttpDelete("{action}/{id}")]
+        //[Authorize]
+        [HttpDelete("/{id}")]
         public ActionResult DeleteCategory(int id)
         {
             var categoryModelFromRepo = _repository.GetCategoryById(id);

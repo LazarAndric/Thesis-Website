@@ -24,7 +24,7 @@ namespace Commander.Conrollers
             _mapper= mapper;
         }
         
-        //GET api/comands
+        //[Authorize]
         [HttpGet]
         public ActionResult <IEnumerable<ProductReadDto>> GetAllProducts()
         {
@@ -32,7 +32,7 @@ namespace Commander.Conrollers
             return Ok(_mapper.Map<IEnumerable<ProductReadDto>>(productItems));
         }
 
-        //GET api/commands/{id}
+        //[Authorize]
         [HttpGet("{id}", Name="GetProductById")]
         public ActionResult <ProductReadDto> GetProductById(int id)
         {
@@ -44,7 +44,7 @@ namespace Commander.Conrollers
             return NotFound();
         }
 
-        //POST api/command/{id}
+        //[Authorize]
         [HttpPost]
         public ActionResult<ProductReadDto> CreateProduct(ProductCreateDto productCreateDto)
         {
@@ -59,7 +59,7 @@ namespace Commander.Conrollers
             return CreatedAtRoute(nameof(GetProductById), new {Id = productReadDto}, productReadDto);
         }
 
-        //PUT api/command/{id}
+        //[Authorize]
         [HttpPut("{id}")]
         public ActionResult UpdateProduct(int id, ProductUpdateDto productUpdateDto)
         {
@@ -80,7 +80,7 @@ namespace Commander.Conrollers
             return NoContent();
         }
 
-        //PATCH api/comands/{id}
+        //[Authorize]
         [HttpPatch("{id}")]
         public ActionResult PartialProductUpdate(int id, JsonPatchDocument<ProductUpdateDto> pathDoc)
         {

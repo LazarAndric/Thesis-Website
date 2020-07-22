@@ -23,7 +23,7 @@ namespace Commander.Conrollers
             _mapper= mapper;
         }
         
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         public ActionResult<IEnumerable<UserReadDto>> GetAllUsers()
         {
@@ -31,7 +31,7 @@ namespace Commander.Conrollers
             return Ok(_mapper.Map<IEnumerable<UserReadDto>>(userItems));
         }
 
-        //GET api/commands/{id}
+        //[Authorize]
         [HttpGet("{id}", Name="GetUserByIdd")]
         public ActionResult <UserReadDto> GetUserById(int id)
         {
@@ -43,7 +43,7 @@ namespace Commander.Conrollers
             return NotFound();
         }
 
-        //POST api/command/{id}
+        //[Authorize]
         [HttpPost]
         public ActionResult<UserReadDto> CreateUser(UserCreateDto userCreateDto)
         {
@@ -56,45 +56,45 @@ namespace Commander.Conrollers
             return GetUserById(userReadDto.Id);
         }
 
-        //PUT api/command/{id}
+        //[Authorize]
         [HttpPut("{id}")]
-        public ActionResult UpdateCommand(int id, UserUpdateDto commandUpdateDto)
+        public ActionResult UpdateUser(int id, UserUpdateDto userUpdateDto)
         {
-            var commandModelFromRepo = _repository.GetUserById(id);
-            if(commandUpdateDto == null)
+            var userModelFromRepo = _repository.GetUserById(id);
+            if(userUpdateDto == null)
             {
                 return NotFound();
             }
 
-            _mapper.Map(commandUpdateDto, commandModelFromRepo);
+            _mapper.Map(userUpdateDto, userModelFromRepo);
 
-            _repository.UpdateUser(commandModelFromRepo);
+            _repository.UpdateUser(userModelFromRepo);
 
             _repository.SaveChanges();
 
             return NoContent();
         }
 
-        //PATCH api/comands/{id}
+        //[Authorize]
         [HttpPatch("{id}")]
-        public ActionResult PartialCommandUpdate(int id, JsonPatchDocument<UserUpdateDto> pathDoc)
+        public ActionResult PartialUserUpdate(int id, JsonPatchDocument<UserUpdateDto> pathDoc)
         {
-            var commandModelFromRepo = _repository.GetUserById(id);
-            if(commandModelFromRepo == null)
+            var userModelFromRepo = _repository.GetUserById(id);
+            if(userModelFromRepo == null)
             {
                 return NotFound();
             }
 
-            var commandToPatch = _mapper.Map<UserUpdateDto>(commandModelFromRepo);
-            pathDoc.ApplyTo(commandToPatch, ModelState);
-            if(!TryValidateModel(commandToPatch))
+            var userToPatch = _mapper.Map<UserUpdateDto>(userModelFromRepo);
+            pathDoc.ApplyTo(userToPatch, ModelState);
+            if(!TryValidateModel(userToPatch))
             {
                 return ValidationProblem(ModelState);
             }
 
-            _mapper.Map(commandToPatch,commandModelFromRepo);
+            _mapper.Map(userToPatch,userModelFromRepo);
 
-            _repository.UpdateUser(commandModelFromRepo);
+            _repository.UpdateUser(userModelFromRepo);
 
             _repository.SaveChanges();
 
@@ -102,17 +102,17 @@ namespace Commander.Conrollers
 
         }
 
-        //DELETE api/comands/{id}
+        //[Authorize]
         [HttpDelete("{id}")]
-        public ActionResult DeleteCommand(int id)
+        public ActionResult DeleteUser(int id)
         {
-            var commandModelFromRepo = _repository.GetUserById(id);
-            if(commandModelFromRepo == null)
+            var userModelFromRepo = _repository.GetUserById(id);
+            if(userModelFromRepo == null)
             {
                 return NotFound();
             }
 
-            _repository.DeleteUser(commandModelFromRepo);
+            _repository.DeleteUser(userModelFromRepo);
             _repository.SaveChanges();
 
             return NoContent();
