@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System;
 
 namespace Commander.Models
 {
@@ -15,8 +16,7 @@ namespace Commander.Models
         [Required]
         public int? ProductId { get; set; }
         [ForeignKey("ProductId")]
-        public Product product { get; set; }
-        [DisplayFormat(ApplyFormatInEditMode=true, DataFormatString="{0:dd/MM/yyyy}")]
-        public string DateOfProductPurchased { get; set; }
+        public Product Product { get; set; }
+        public DateTime DateOfProductPurchased { get; set; }
     }
 }

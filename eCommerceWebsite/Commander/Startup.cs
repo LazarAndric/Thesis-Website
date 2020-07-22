@@ -33,6 +33,12 @@ namespace Commander
                 optUser =>optUser.UseSqlServer(Configuration.GetConnectionString("Connection"))
             );
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(opt =>{
+                    opt.Audience = Configuration["AAD:ResourceId"];
+                    opt.Authority = $"{Configuration["AAD:InstanceId"]}{Configuration["AAD:TenantId"]}";
+
+                });
             services.AddControllers().AddNewtonsoftJson(s => { 
                 s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
                 });

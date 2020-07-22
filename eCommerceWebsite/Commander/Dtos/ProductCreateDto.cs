@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System;
 using Commander.Models;
 
 namespace Commander.Dtos
@@ -14,5 +15,6 @@ namespace Commander.Dtos
         [Required]
         public string ImgUrl { get; set; }  
         public int? ProductCategoryId { get; set; }
+        public DateTime DateOfCreate{get; set;}
     }
 }

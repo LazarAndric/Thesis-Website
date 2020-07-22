@@ -136,3 +136,4 @@ D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\Commander\bin\Debug\netcoreap
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\Commander\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\Commander\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\Commander\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\Commander\bin\Debug\netcoreapp3.1\web.config

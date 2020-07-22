@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System;
 
 namespace Commander.Dtos
 {
@@ -29,5 +30,6 @@ namespace Commander.Dtos
         public string Password { get; set; }
         [Required]
         public string DateOfBirth { get; set; }
+        public DateTime DateOfRegistration{get; set;}
     }
 }

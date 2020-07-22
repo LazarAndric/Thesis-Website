@@ -15,30 +15,24 @@ namespace Commander.Models
         [Required]
         [MaxLength]
         public string LastName { get; set; }
-        [Required]
-        public string Adress { get; set; }
-        [Required]
-        public string AdressNumber { get; set; }
-        [Required]
-        public string Place { get; set; }
-        [Required]
-        public string Contry { get; set; }
-        [Required]
-        public string PostalCode { get; set; }
-        [Phone]
-        public string PhoneNumber { get; set; }
         [EmailAddress]
         [Required]
         public string EMail { get; set; }
         [Required]
-        public DateTime Password { get; set; }
-        [DisplayFormat(ApplyFormatInEditMode=true, DataFormatString="{0:dd/MM/yyyy}")]
+        public string Password { get; set; }
+        [Required]
         public DateTime DateOfBirth { get; set; }
-        
-        [DisplayFormat(ApplyFormatInEditMode=true, DataFormatString="{0:dd/MM/yyyy}")]
+        [Required]
+        public int GenderId{get;set;}
+        [ForeignKey("GenderId")]
+        public Gender Gender{get;set;}
+        public string Adress { get; set; }
+        public string AdressNumber { get; set; }
+        public string Place { get; set; }
+        public string Contry { get; set; }
+        public string PostalCode { get; set; }
+        public string PhoneNumber { get; set; }
         public DateTime DateOfRegistration { get; set; }
-        
-        [DisplayFormat(ApplyFormatInEditMode=true, DataFormatString="{0:dd/MM/yyyy}")]
         public DateTime LastLogin { get; set; }
     }
 }

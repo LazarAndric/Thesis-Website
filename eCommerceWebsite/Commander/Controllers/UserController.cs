@@ -6,6 +6,7 @@ using AutoMapper;
 using Commander.Dtos;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Authorization;
+using System.Threading.Tasks;
 
 namespace Commander.Conrollers
 {
@@ -22,9 +23,9 @@ namespace Commander.Conrollers
             _mapper= mapper;
         }
         
-        //GET api/comands
+        [Authorize]
         [HttpGet]
-        public ActionResult <IEnumerable<UserReadDto>> GetAllUsers()
+        public ActionResult<IEnumerable<UserReadDto>> GetAllUsers()
         {
             var userItems = _repository.GetAllUsers();
             return Ok(_mapper.Map<IEnumerable<UserReadDto>>(userItems));
