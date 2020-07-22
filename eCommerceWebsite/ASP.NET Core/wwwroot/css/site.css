@@ -280,3 +280,10 @@ body {
         border-radius: 0;
     }
 }
+
+.table-r {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
