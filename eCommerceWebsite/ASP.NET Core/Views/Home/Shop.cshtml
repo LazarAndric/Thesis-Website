@@ -11,45 +11,149 @@
     <hr />
 </div>
 
-<input class="form-control form-control-lg mr-auto ml-auto" type="search" placeholder="Type a name" aria-label="Search" id="search">
+<br />
+<div class="row">
+    <div class="container">
+        <div class="col-md-3">
+            
+            <section class="mb-4">
+                <h5 class="filter-text">Pretraga</h5><hr />
+                <div class="md-form md-outline mt-0 d-flex justify-content-between align-items-center">
+                    <input class="form-control form-control-lg mx:auto" type="search" placeholder="Pretraži..." aria-label="Search" id="search">
+                </div>
+            </section>
+
+            <section class="filters">
+                <h5 class="filter-text">Sortiranje</h5><hr />
+                <!-- Section: Condition -->
+                <section filter="condition" class="mb-4">
+                    <h6 class="font-weight-bold mb-3 filter-text"></h6>
+                    <div class="form-check pl-0 mb-3">
+                        <input type="checkbox">
+                        <label for="male">Majice</label><br>
+                    </div>
+                    <div class="form-check pl-0 mb-3">
+                        <input type="checkbox">
+                        <label for="male">Duksevi</label><br>
+                    </div>
+                    <div class="form-check pl-0 mb-3">
+                        <input type="checkbox">
+                        <label for="male">Kape</label><br>
+                    </div>
+                    <div class="form-check pl-0 mb-3 pb-1">
+                        <input type="checkbox">
+                        <label for="male">Rancevi</label><br>
+                    </div>
+                </section>               
+            </section>
 
 
-<div class="layout-margin-8 mt-4">
-    <div class="card-deck">
-        <div class="card card-shadow text-center" style="background-color: #200843; ">
-            <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h4 class="card-title" style="color:white">Majica swiftclaw</h4>
-                <div class="dropdown-divider"></div>
-                <p class="card-text" style="color:white">Price: $0.5</p>
-                <a href="#" data-name="Majica_swiftclaw" data-price="0.5" class="add-to-cart btn btn-light">Add to cart</a>
-            </div>
-        </div>        
-        <div class="card card-shadow text-center" style="background-color: #200843; ">
-            <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h4 class="card-title" style="color:white">Duks swiftclaw</h4>
-                <div class="dropdown-divider"></div>
-                <p class="card-text" style="color:white">Price: $1</p>
-                <a href="#" data-name="Duks_swiftclaw" data-price="1" class="add-to-cart btn btn-light">Add to cart</a>
-            </div>
+
+            <section class="filters">
+                <h5 class="filter-text">Filteri</h5><hr />
+                <!-- Section: Condition -->
+                <section filter="condition" class="mb-4">
+                    <h6 class="font-weight-bold mb-3 filter-text">Kategorije</h6>
+                    <div class="form-check pl-0 mb-3">
+                        <input type="checkbox">
+                        <label for="male">Majice</label><br>
+                    </div>
+                    <div class="form-check pl-0 mb-3">
+                        <input type="checkbox">
+                        <label for="male">Duksevi</label><br>
+                    </div>
+                    <div class="form-check pl-0 mb-3">
+                        <input type="checkbox">
+                        <label for="male">Kape</label><br>
+                    </div>
+                    <div class="form-check pl-0 mb-3 pb-1">
+                        <input type="checkbox">
+                        <label for="male">Rancevi</label><br>
+                    </div>
+                </section>
+                <hr />
+                <section class="mb-4">
+
+                    <h6 class="font-weight-bold mb-3">Cena</h6>
+
+                    <div class="slider-price d-flex align-items-center my-4">
+                        <span class="font-weight-normal small text-muted mr-2">$0</span>
+                        <form class="multi-range-field w-100 mb-1">
+                            <input id="multi" class="multi-range" type="range" />
+                        </form>
+                        <span class="font-weight-normal small text-muted ml-2">$100</span>
+                    </div>
+
+                </section>
+                <hr />
+
+                <!-- Section: Size -->
+                <section class="mb-4" filter="size">
+                    <h6 class="font-weight-bold mb-3 filter-text">Veličina</h6>
+
+                    <div class="form-check pl-0 mb-3">
+                        <input type="radio">
+                        <label for="male">XS</label><br>
+                    </div>
+                    <div class="form-check pl-0 mb-3">
+                        <input type="radio">
+                        <label for="male">S</label><br>
+                    </div>
+                    <div class="form-check pl-0 mb-3">
+                        <input type="radio">
+                        <label for="male">M</label><br>
+                    </div>
+                    <div class="form-check pl-0 mb-3">
+                        <input type="radio">
+                        <label for="male">L</label><br>
+                    </div>
+                    <div class="collapse pt-3" id="collapseExample">
+                        <div class="form-check pl-0 mb-3">
+                            <input type="radio">
+                            <label for="male">XL</label><br>
+                        </div>
+                    </div>
+                </section>
+                <hr />
+                <!-- Section: Size -->
+                <!-- Section: Gender -->
+                <section class="mb-4" filter="size">
+                    <h6 class="font-weight-bold mb-3 filter-text">Pol</h6>
+
+                    <div class="form-check pl-0 mb-3">
+                        <input type="radio">
+                        <label for="male">M</label><br>
+                    </div>
+                    <div class="form-check pl-0 mb-3">
+                        <input type="radio">
+                        <label for="male">Ž</label><br>
+                    </div>
+                </section>
+                <!-- Section: Gender -->
+            </section>
         </div>
-    </div>
-</div>
-     
-<div class="layout-margin-8 mt-4">
+
+        <div class="col-md-9">
             <div class="card-deck">
-                <div class="card card-shadow text-center" style="background-color: #200843; ">
+                <div class="card card-shadow text-center " style="background-color: #200843; ">
                     <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
                     <div class="card-body">
-                        <link href="~/lib/bootstrap/dist/css/bootstrap-reboot.css" rel="stylesheet" />
                         <h4 class="card-title" style="color:white">Majica swiftclaw</h4>
                         <div class="dropdown-divider"></div>
                         <p class="card-text" style="color:white">Price: $0.5</p>
                         <a href="#" data-name="Majica_swiftclaw" data-price="0.5" class="add-to-cart btn btn-light">Add to cart</a>
                     </div>
                 </div>
-                <div class="card card-shadow text-center" style="background-color: #200843; ">
+                <div class="card card-shadow text-center " style="background-color: #200843; ">
+                    <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color:white">Majica swiftclaw</h4>
+                        <div class="dropdown-divider"></div>
+                        <p class="card-text" style="color:white">Price: $0.5</p>
+                        <a href="#" data-name="Majica_swiftclaw" data-price="0.5" class="add-to-cart btn btn-light">Add to cart</a>
+                    </div>
+                </div>
+                <div class="card card-shadow text-center " style="background-color: #200843; ">
                     <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h4 class="card-title" style="color:white">Duks swiftclaw</h4>
@@ -58,6 +162,47 @@
                         <a href="#" data-name="Duks_swiftclaw" data-price="1" class="add-to-cart btn btn-light">Add to cart</a>
                     </div>
                 </div>
-            </div>
-     </div>
+            </div> <br />
+            <div class="card-deck">
+                <div class="card card-shadow text-center " style="background-color: #200843; ">
+                    <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color:white">Majica swiftclaw</h4>
+                        <div class="dropdown-divider"></div>
+                        <p class="card-text" style="color:white">Price: $0.5</p>
+                        <a href="#" data-name="Majica_swiftclaw" data-price="0.5" class="add-to-cart btn btn-light">Add to cart</a>
+                    </div>
+                </div>
+            <div class="card card-shadow text-center " style="background-color: #200843; ">
+                    <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color:white">Majica swiftclaw</h4>
+                        <div class="dropdown-divider"></div>
+                        <p class="card-text" style="color:white">Price: $0.5</p>
+                        <a href="#" data-name="Majica_swiftclaw" data-price="0.5" class="add-to-cart btn btn-light">Add to cart</a>
+                    </div>
+                </div>
+                <div class="card card-shadow text-center " style="background-color: #200843; ">
+                    <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color:white">Duks swiftclaw</h4>
+                        <div class="dropdown-divider"></div>
+                        <p class="card-text" style="color:white">Price: $1</p>
+                        <a href="#" data-name="Duks_swiftclaw" data-price="1" class="add-to-cart btn btn-light">Add to cart</a>
+                    </div>
+                </div>
+            </div> <br />
+        </div>
+    </div>
+</div>
 
+<!--<div class="layout-margin-8 mt-4">
+    <div class="container">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-10">
+
+        </div>
+    </div>
+</div>-->

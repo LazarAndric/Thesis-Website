@@ -369,9 +369,9 @@
                     + "<td ><div class='input-group class='col-md-12''><button class='minus-item input-group-addon btn btn-primary' data-name=" + cartArray[i].name + ">-</button>"
                     + "<input type='number' class='item-count form-control' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "'>"
                     + "<button class='plus-item btn btn-primary input-group-addon' data-name=" + cartArray[i].name + ">+</button>"
-                    + "<button class='delete-item btn btn-danger' data-name=" + cartArray[i].name + ">X</button>"                   
+                    + "<button class='delete-item btn btn-danger' data-name=" + cartArray[i].name + ">X</button>"
                     + cartArray[i].total + "</div></td>"
-                    + "</tr>"; 
+                    + "</tr>";
             }
             $('.show-cart').html(output);
             $('.total-cart').html(shoppingCart.totalCart());
@@ -409,6 +409,139 @@
         });
 
         displayCart();
+    </script>
+
+    <!----------------------------------FILTER ZA KATEGORIJE-------------------------------------------------------->
+    <script>
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        function filterFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myDropdown");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+    <script>
+        $(document).ready(() => {
+            $(".mdb-select").materialSelect();
+
+            let filters = getFilters();
+
+            getProducts(filters);
+
+            $(".mdb-select").change((e) => {
+                e.stopImmediatePropagation();
+                const property = e.target.value === "1" ? "rating" : "price";
+                const increase = e.target.value === "2";
+                getProducts(filters, property, increase);
+            });
+
+            $(".filter-option").change((e) => {
+                e.stopImmediatePropagation();
+                for (let filter of Object.keys(filters)) {
+                    if (e.target.attributes[filter]) {
+                        filters = updateFilters(
+                            filters,
+                            filter,
+                            e.target.attributes[filter].value,
+                            e.target.checked
+                        );
+                    }
+                }
+
+                getProducts(filters);
+            });
+        });
+
+        function getFilters() {
+            const filters = Array.from($("[filter]")).map(
+                (el) => el.attributes.filter.value
+            );
+            const dict = {};
+
+            filters.forEach((filter) => {
+                dict[filter] = [];
+            });
+
+            return dict;
+        }
+
+        function updateFilters(filters, filter, option, value) {
+            const dict = { ...filters };
+            if (filter === "price") {
+                dict.price = [option];
+            } else if (filter === "rating") {
+                dict.rating = [option];
+            } else if (value && filters[filter].indexOf(option) === -1)
+                dict[filter].push(option);
+            else if (!value)
+                dict[filter] = dict[filter].filter((entry) => entry !== option);
+
+            return dict;
+        }
+
+        function getProducts(filters, property = "rating", increase = false) {
+            $('#loader').css("display", "flex")
+            $.get(
+                YOUR_URL,
+                { filters, sort: { property, increase } },
+                (products) => {
+                    renderProducts(products);
+                }
+            )
+                .fail(() => {
+                    renderProducts([])
+                })
+        }
+
+        function createTemplate(product) {
+            return `
+        <div class="col-md-4 mb-5">
+            <div>
+                <div class="view zoom overlay rounded z-depth-2" style="height: 260px;">
+                    <img class="img-fluid w-100"
+                         src="${product.image}" alt="Sample">
+                    <a href="#!">
+                        <div class="mask">
+                            <img class="img-fluid w-100"
+                                 src="${product.image}">
+                            <div class="mask rgba-black-slight"></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="text-center pt-4">
+                    <h5>${product.name}</h5>
+                    <p><span class="mr-1"><strong>$${product.price}</strong></span></p>
+                </div>
+            </div>
+        </div>
+        `;
+        }
+
+        function renderProducts(products) {
+            $('#loader').css('display', 'none');
+
+            const template =
+                products.length === 0
+                    ? `<p>No matching results found.</p>`
+                    : products.map((product) => createTemplate(product)).join("\n");
+            $("#products").html(template);
+        }
     </script>
 
 </body>
