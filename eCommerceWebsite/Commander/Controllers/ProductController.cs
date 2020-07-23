@@ -15,10 +15,12 @@ namespace Commander.Conrollers
     {
         private ICategoryRepo _categoryRepo;
         private IProductRepo _repository;
+        private IGenderOfProductRepo _genderOfProductRepo;
         private IMapper _mapper;
 
-        public ProductController(IProductRepo repostory, IMapper mapper, ICategoryRepo categoryRepo)
+        public ProductController(IProductRepo repostory, IMapper mapper, ICategoryRepo categoryRepo, IGenderOfProductRepo genderOfProductRepo)
         {
+            _genderOfProductRepo=genderOfProductRepo;
             _categoryRepo=categoryRepo;
             _repository = repostory;
             _mapper= mapper;
@@ -30,6 +32,32 @@ namespace Commander.Conrollers
         {
             var productItems = _repository.GetAllProduct();
             return Ok(_mapper.Map<IEnumerable<ProductReadDto>>(productItems));
+        }
+        //[Authorize]
+        [HttpGet("Filtrate")]
+        public ActionResult <IEnumerable<ProductReadDto>> GetProductsOfFilters(Filters filter)
+        {
+            if(_categoryRepo.GetCategoryById(filter.CategoryFilter.Id)==null)
+                return NotFound();
+
+            var listOfProducts=_repository.GetAllProductOfPriceRange(filter.PriceFilter);
+            if(listOfProducts==null)
+                return NotFound();
+
+            var filtratedProductWithCategory = _repository.GetAllProductOfCategory(filter.CategoryFilter, listOfProducts);
+            if(filtratedProductWithCategory==null)
+                return Ok(_mapper.Map<IEnumerable<ProductReadDto>>(listOfProducts));
+
+            var filtratedProductWithGender = _genderOfProductRepo.GetAllProductOfGender(filter.GenderFilter);
+            if(filtratedProductWithGender==null)
+                return Ok(_mapper.Map<IEnumerable<ProductReadDto>>(filtratedProductWithCategory));
+
+            var filtratedProductWithGenderPartTwo = _repository.GetAllProductOfGender(filtratedProductWithGender, filtratedProductWithCategory);
+            if(filtratedProductWithGender==null)
+                return Ok(_mapper.Map<IEnumerable<ProductReadDto>>(filtratedProductWithCategory));
+            _repository.SaveChanges();
+
+            return Ok(_mapper.Map<IEnumerable<ProductReadDto>>(filtratedProductWithGenderPartTwo));
         }
 
         //[Authorize]
@@ -49,7 +77,7 @@ namespace Commander.Conrollers
         public ActionResult<ProductReadDto> CreateProduct(ProductCreateDto productCreateDto)
         {
             if(_categoryRepo.GetCategoryById((int)productCreateDto.ProductCategoryId)==null)
-                return NoContent();
+                return NotFound();
             var productModel = _mapper.Map<Product>(productCreateDto);
             _repository.CreateProduct(productModel);
             _repository.SaveChanges();
@@ -64,7 +92,7 @@ namespace Commander.Conrollers
         public ActionResult UpdateProduct(int id, ProductUpdateDto productUpdateDto)
         {
              if(_categoryRepo.GetCategoryById((int)productUpdateDto.ProductCategoryId)==null)
-                return NoContent();
+                return NotFound();
             var productModelFromRepo = _repository.GetProductById(id);
             if(productUpdateDto == null)
             {
@@ -91,7 +119,7 @@ namespace Commander.Conrollers
             }
             
             if(_categoryRepo.GetCategoryById((int)productModelFromRepo.ProductCategoryId)==null)
-                return NoContent();
+                return NotFound();
             var productToPatch = _mapper.Map<ProductUpdateDto>(productModelFromRepo);
             pathDoc.ApplyTo(productToPatch, ModelState);
             if(!TryValidateModel(productToPatch))

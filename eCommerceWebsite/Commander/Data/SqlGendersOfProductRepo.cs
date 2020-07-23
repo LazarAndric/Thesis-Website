@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Commander.Dtos;
 using Commander.Models;
 
 namespace Commander.Data
@@ -32,10 +33,23 @@ namespace Commander.Data
             _context.GendersOfProducts.Remove(gendersOfProduct);
         }
 
-        public IEnumerable<GenderOfProduct> GetAllGenderOfProducts()
+        public List<GenderOfProduct> GetAllGenderOfProducts()
         {
             return _context.GendersOfProducts.ToList(); 
         }
+
+        public List<GenderOfProduct> GetAllProductOfGender(FilterForGender genderFilter)
+        {
+            List<GenderOfProduct> finalList = new List<GenderOfProduct>();
+            foreach(GenderOfProduct genderOfProduct in _context.GendersOfProducts)
+            {
+                foreach(int id in genderFilter.Id)
+                    if(genderOfProduct.GenderId.Equals(id))
+                        finalList.Add(genderOfProduct);
+            }
+            return finalList;
+        }
+
 
         public GenderOfProduct GetGenderOfProductById(int id)
         {

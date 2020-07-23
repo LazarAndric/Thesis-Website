@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using Commander.Models;
-using Commander.Data;
+using Commander.Dtos;
 
 namespace Commander.Data
 {
@@ -13,5 +13,8 @@ namespace Commander.Data
         void CreateProduct(Product product);
         void UpdateProduct(Product product);
         void DeleteProduct(Product product);
+        List<Product> GetAllProductOfPriceRange(FilterForPrice filterForPrice);
+        List<Product> GetAllProductOfCategory(FilterForCategory filterForCategory, List<Product> productList);
+        List<Product> GetAllProductOfGender(List<GenderOfProduct> genderOfProducts, List<Product> productList);
     }
 }
