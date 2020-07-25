@@ -2,11 +2,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Commander.Dtos
 {
-    public class FilterForPrice
+    public class FilterForPriceReadDto
     {
-        [Required]
         public float PriceFrom { get; set; }
-        [Required]
         public float PriceTo { get; set; }
+        public float MaxPriceFrom { get; set; }
+        public float MaxPriceTo { get; set; }
     }
 }

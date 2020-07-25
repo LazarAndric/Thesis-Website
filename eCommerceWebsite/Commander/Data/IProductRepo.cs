@@ -13,8 +13,9 @@ namespace Commander.Data
         void CreateProduct(Product product);
         void UpdateProduct(Product product);
         void DeleteProduct(Product product);
-        List<Product> GetAllProductOfPriceRange(FilterForPrice filterForPrice);
-        List<Product> GetAllProductOfCategory(FilterForCategory filterForCategory, List<Product> productList);
+        List<Product> GetAllProductOfPriceRange(FilterForPriceSearchDto filterForPrice);
+        List<Product> GetAllProductOfCategory(FilterForCategorySearchDto filterForCategory, List<Product> productList);
         List<Product> GetAllProductOfGender(List<GenderOfProduct> genderOfProducts, List<Product> productList);
+        List<Product> GetAllProductOfSize(List<SizeOfProduct> sizeOfProducts, List<Product> productList);
     }
 }

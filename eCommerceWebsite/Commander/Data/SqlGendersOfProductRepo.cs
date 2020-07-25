@@ -38,15 +38,14 @@ namespace Commander.Data
             return _context.GendersOfProducts.ToList(); 
         }
 
-        public List<GenderOfProduct> GetAllProductOfGender(FilterForGender genderFilter)
+        public List<GenderOfProduct> GetAllProductOfGender(FilterForGenderSearchDto genderFilter)
         {
             List<GenderOfProduct> finalList = new List<GenderOfProduct>();
             foreach(GenderOfProduct genderOfProduct in _context.GendersOfProducts)
-            {
                 foreach(int id in genderFilter.Id)
                     if(genderOfProduct.GenderId.Equals(id))
-                        finalList.Add(genderOfProduct);
-            }
+                            finalList.Add(genderOfProduct);
+                        
             return finalList;
         }
 

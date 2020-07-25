@@ -10,7 +10,7 @@ namespace Commander.Data
         bool SaveChanges();
 
         List<GenderOfProduct> GetAllGenderOfProducts();
-        List<GenderOfProduct> GetAllProductOfGender(FilterForGender genderFilter);
+        List<GenderOfProduct> GetAllProductOfGender(FilterForGenderSearchDto genderFilter);
         GenderOfProduct GetGenderOfProductById(int id);
         void CreateGenderOfProduct(GenderOfProduct gendersOfProduct);
         void UpdateGenderOfProduct(GenderOfProduct gendersOfProduct);

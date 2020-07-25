@@ -38,7 +38,7 @@ namespace Commander.Data
         {
             return _context.Products.ToList(); 
         }
-        public List<Product> GetAllProductOfPriceRange(FilterForPrice filterForPrice)
+        public List<Product> GetAllProductOfPriceRange(FilterForPriceSearchDto filterForPrice)
         {
             List<Product> finalList = new List<Product>();
             foreach(Product product in _context.Products)
@@ -48,7 +48,7 @@ namespace Commander.Data
             }
             return finalList; 
         }
-        public List<Product> GetAllProductOfCategory(FilterForCategory filterForCategory, List<Product> productList)
+        public List<Product> GetAllProductOfCategory(FilterForCategorySearchDto filterForCategory, List<Product> productList)
         {
             List<Product> finalList = new List<Product>();
             foreach(Product product in productList)
@@ -59,18 +59,28 @@ namespace Commander.Data
             return finalList;
         }
 
+        public List<Product> GetAllProductOfSize(List<SizeOfProduct> sizeOfProducts, List<Product> productList)
+        {
+            List<Product> finalList = new List<Product>();
+            foreach(Product product in productList)
+                foreach(SizeOfProduct sizeOf in sizeOfProducts)
+                    if(product.Id.Equals(sizeOf.ProductId))
+                        if(!finalList.Contains(product))
+                            finalList.Add(product);
+            return finalList;
+        }
+
         public List<Product> GetAllProductOfGender(List<GenderOfProduct> genderOfProducts, List<Product> productList)
         {
             List<Product> finalList = new List<Product>();
             foreach(Product product in productList)
-            {
                 foreach(GenderOfProduct genderOfProduct in genderOfProducts)
-                {
                     if(product.Id.Equals(genderOfProduct.ProductId))
-                        finalList.Add(product);
-                }
-            }
-            return finalList;
+                        if(!finalList.Contains(product))
+                            finalList.Add(product);
+            _context.Products.UpdateRange(finalList);
+            _context.SaveChanges();
+            return _context.Products.ToList();
         }
 
         public Product GetProductById(int id)
