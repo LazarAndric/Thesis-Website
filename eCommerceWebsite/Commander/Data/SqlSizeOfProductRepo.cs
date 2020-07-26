@@ -40,11 +40,12 @@ namespace Commander.Data
 
         public List<SizeOfProduct> GetAllProductsOfSize(FilterForSizeSearchDto sizeFilter)
         {
+            if(sizeFilter==null)
+                return null;
             List<SizeOfProduct> sizeOfProducts = new List<SizeOfProduct>();
             foreach(SizeOfProduct sizeOf in _context.SizeOfProducts)
-                foreach(int id in sizeFilter.Id)
-                    if(sizeOf.SizeId.Equals(id))
-                        sizeOfProducts.Add(sizeOf);
+                if(sizeOf.SizeId.Equals(sizeFilter.Id))
+                    sizeOfProducts.Add(sizeOf);
             return sizeOfProducts;
 
         }

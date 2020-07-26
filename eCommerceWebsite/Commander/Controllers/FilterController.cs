@@ -6,6 +6,7 @@ using AutoMapper;
 using Commander.Dtos;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Authorization;
+using System;
 
 namespace Commander.Conrollers
 {
@@ -34,34 +35,29 @@ namespace Commander.Conrollers
         [HttpGet("{action}")]
         public ActionResult <IEnumerable<ProductReadDto>> Search(FiltersSearchDto filter)
         {
-            //ADD EVERYTHING WITH CONTEXT NOT WITH products
-            if(_categoryRepo.GetCategoryById(filter.CategoryFilter.Id)==null)
+            var productList=_productRepo.GetAllProductOfPriceRange(filter.PriceFilter);
+            if(productList==null)
                 return NoContent();
+            products=productList;
 
-            products=_productRepo.GetAllProductOfPriceRange(filter.PriceFilter);
-            if(products==null)
-                return NotFound();
-
-            products=_productRepo.GetAllProductOfCategory(filter.CategoryFilter, products);
-            if(products==null)
-                return NotFound();
+            productList=_productRepo.GetAllProductOfCategory(filter.CategoryFilter, products);
+            if(productList!=null)
+                products=productList;
 
             var filtratedProductWithGender = _genderOfProductRepo.GetAllProductOfGender(filter.GenderFilter);
-            if(filtratedProductWithGender==null)
-                return NotFound();
-
-            products=_productRepo.GetAllProductOfGender(filtratedProductWithGender, products);
-            if(filtratedProductWithGender==null)
-                return NotFound();
-
+            if(filtratedProductWithGender!=null)
+            {
+                productList=_productRepo.GetAllProductOfGender(filtratedProductWithGender, products);
+                if(productList!=null)
+                    products=productList;
+            }
             var filtratedProductWithSize = _sizeOfProductRepo.GetAllProductsOfSize(filter.SizeFilter);
-            if(filtratedProductWithGender==null)
-                return NotFound();
-
-            products=_productRepo.GetAllProductOfSize(filtratedProductWithSize, products);
-            if(filtratedProductWithGender==null)
-                return NotFound();
-
+            if(filtratedProductWithSize!=null)
+            {
+                productList=_productRepo.GetAllProductOfSize(filtratedProductWithSize, products);
+                if(productList!=null)
+                    products=productList;
+            }
             return Ok(_mapper.Map<IEnumerable<ProductReadDto>>(products));
         }
     }

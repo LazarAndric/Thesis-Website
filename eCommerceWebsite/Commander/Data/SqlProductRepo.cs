@@ -34,7 +34,7 @@ namespace Commander.Data
             _context.Products.Remove(product);
         }
 
-        public IEnumerable<Product> GetAllProduct()
+        public List<Product> GetAllProduct()
         {
             return _context.Products.ToList(); 
         }
@@ -50,17 +50,20 @@ namespace Commander.Data
         }
         public List<Product> GetAllProductOfCategory(FilterForCategorySearchDto filterForCategory, List<Product> productList)
         {
+            if(filterForCategory==null)
+                return null;
             List<Product> finalList = new List<Product>();
             foreach(Product product in productList)
-            {
-                if(product.ProductCategoryId.Equals(filterForCategory.Id))
+                foreach(int id in filterForCategory.Id)
+                if(product.ProductCategoryId.Equals(id))
                     finalList.Add(product);
-            }
             return finalList;
         }
 
         public List<Product> GetAllProductOfSize(List<SizeOfProduct> sizeOfProducts, List<Product> productList)
         {
+            if(sizeOfProducts==null)
+                return null;
             List<Product> finalList = new List<Product>();
             foreach(Product product in productList)
                 foreach(SizeOfProduct sizeOf in sizeOfProducts)
@@ -72,15 +75,15 @@ namespace Commander.Data
 
         public List<Product> GetAllProductOfGender(List<GenderOfProduct> genderOfProducts, List<Product> productList)
         {
+            if(genderOfProducts==null)
+                return null;
             List<Product> finalList = new List<Product>();
             foreach(Product product in productList)
                 foreach(GenderOfProduct genderOfProduct in genderOfProducts)
                     if(product.Id.Equals(genderOfProduct.ProductId))
                         if(!finalList.Contains(product))
                             finalList.Add(product);
-            _context.Products.UpdateRange(finalList);
-            _context.SaveChanges();
-            return _context.Products.ToList();
+            return finalList;
         }
 
         public Product GetProductById(int id)
@@ -95,7 +98,6 @@ namespace Commander.Data
 
         public void UpdateProduct(Product product)
         {
-            //Nothing
         }
     }
 }

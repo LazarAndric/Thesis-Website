@@ -4,7 +4,6 @@ namespace Commander.Dtos
 {
     public class FilterForCategorySearchDto
     {
-        [Required]
-        public int Id { get; set; }
+        public int?[] Id { get; set; }
     }
 }

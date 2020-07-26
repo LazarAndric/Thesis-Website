@@ -40,12 +40,15 @@ namespace Commander.Data
 
         public List<GenderOfProduct> GetAllProductOfGender(FilterForGenderSearchDto genderFilter)
         {
+            if(genderFilter==null)
+                return null;
             List<GenderOfProduct> finalList = new List<GenderOfProduct>();
             foreach(GenderOfProduct genderOfProduct in _context.GendersOfProducts)
-                foreach(int id in genderFilter.Id)
-                    if(genderOfProduct.GenderId.Equals(id))
-                            finalList.Add(genderOfProduct);
-                        
+            {
+                if(genderOfProduct.GenderId.Equals(genderFilter.Id))
+                    if(!finalList.Contains(genderOfProduct))
+                        finalList.Add(genderOfProduct);
+            }
             return finalList;
         }
 

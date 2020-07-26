@@ -4,7 +4,6 @@ namespace Commander.Dtos
 {
     public class FilterForGenderReadDto
     {
-        [Required]
-        public float[] Id { get; set; }
+        public int[] Id { get; set; }
     }
 }

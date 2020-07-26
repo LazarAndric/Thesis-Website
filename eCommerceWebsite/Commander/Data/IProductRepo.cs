@@ -8,7 +8,7 @@ namespace Commander.Data
     {
         bool SaveChanges();
 
-        IEnumerable<Product> GetAllProduct();
+        List<Product> GetAllProduct();
         Product GetProductById(int id);
         void CreateProduct(Product product);
         void UpdateProduct(Product product);
