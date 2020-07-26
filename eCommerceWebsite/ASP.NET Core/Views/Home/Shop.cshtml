@@ -26,25 +26,33 @@
             <section class="filters">
                 <h5 class="filter-text">Sortiranje</h5><hr />
                 <!-- Section: Condition -->
-                <section filter="condition" class="mb-4">
-                    <h6 class="font-weight-bold mb-3 filter-text"></h6>
-                    <div class="form-check pl-0 mb-3">
-                        <input type="checkbox">
-                        <label for="male">Majice</label><br>
-                    </div>
-                    <div class="form-check pl-0 mb-3">
-                        <input type="checkbox">
-                        <label for="male">Duksevi</label><br>
-                    </div>
-                    <div class="form-check pl-0 mb-3">
-                        <input type="checkbox">
-                        <label for="male">Kape</label><br>
-                    </div>
-                    <div class="form-check pl-0 mb-3 pb-1">
-                        <input type="checkbox">
-                        <label for="male">Rancevi</label><br>
-                    </div>
-                </section>               
+                                                       <section filter="condition" class="mb-4">
+                                                           <h6 class="font-weight-bold mb-3 filter-text"></h6>
+                                                           <div class="form-check pl-0 mb-3">
+                                                               <input type="radio">
+                                                               <label for="male">Najeftiniji</label><br>
+                                                           </div>
+                                                           <div class="form-check pl-0 mb-3">
+                                                               <input type="radio">
+                                                               <label for="male">Najskuplji</label><br>
+                                                           </div>
+                                                           <div class="form-check pl-0 mb-3">
+                                                               <input type="radio">
+                                                               <label for="male">A-Z</label><br>
+                                                           </div>
+                                                           <div class="form-check pl-0 mb-3 pb-1">
+                                                               <input type="radio">
+                                                               <label for="male">Z-A</label><br>
+                                                           </div>
+                                                           <div class="form-check pl-0 mb-3 pb-1">
+                                                               <input type="radio">
+                                                               <label for="male">Najnoviji</label><br>
+                                                           </div>
+                                                           <div class="form-check pl-0 mb-3 pb-1">
+                                                               <input type="radio">
+                                                               <label for="male">Popust</label><br>
+                                                           </div>
+                                                       </section>               
             </section>
 
 
@@ -73,17 +81,23 @@
                 </section>
                 <hr />
                 <section class="mb-4">
-
                     <h6 class="font-weight-bold mb-3">Cena</h6>
-
                     <div class="slider-price d-flex align-items-center my-4">
-                        <span class="font-weight-normal small text-muted mr-2">$0</span>
-                        <form class="multi-range-field w-100 mb-1">
-                            <input id="multi" class="multi-range" type="range" />
-                        </form>
-                        <span class="font-weight-normal small text-muted ml-2">$100</span>
+                        <div class="price-slider">
+                            <div class="row">
+                                <span>
+                                    od
+                                    <input type="number" value="0" min="0" max="3700" />    do
+                                    <input type="number" value="4000" min="0" max="4000" />
+                                </span>
+                            </div>                           
+                            <input value="0" min="0" max="3700" step="300" type="range" />
+                            <input value="4001" min="0" max="4000" step="100" type="range" />
+                            <svg width="100%" height="24">
+                                <line x1="4" y1="0" x2="300" y2="0" stroke="#212121" stroke-width="12" stroke-dasharray="1 28"></line>
+                            </svg>
+                        </div>
                     </div>
-
                 </section>
                 <hr />
 
@@ -195,6 +209,8 @@
         </div>
     </div>
 </div>
+
+
 
 <!--<div class="layout-margin-8 mt-4">
     <div class="container">
