@@ -97,7 +97,7 @@
 
     <main role="main" class="pb-3" style="background-color:white; margin-top:90px; border-radius:0">
         @RenderBody()
-       
+
     </main>
 
 
@@ -184,9 +184,6 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
     @RenderSection("Scripts", required: false)
 
@@ -518,26 +515,26 @@
 
         function createTemplate(product) {
             return `
-                                        <div class="col-md-4 mb-5">
-                                            <div>
-                                                <div class="view zoom overlay rounded z-depth-2" style="height: 260px;">
-                                                    <img class="img-fluid w-100"
-                                                         src="${product.image}" alt="Sample">
-                                                    <a href="#!">
-                                                        <div class="mask">
-                                                            <img class="img-fluid w-100"
-                                                                 src="${product.image}">
-                                                            <div class="mask rgba-black-slight"></div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="text-center pt-4">
-                                                    <h5>${product.name}</h5>
-                                                    <p><span class="mr-1"><strong>$${product.price}</strong></span></p>
+                                            <div class="col-md-4 mb-5">
+                                                <div>
+                                                    <div class="view zoom overlay rounded z-depth-2" style="height: 260px;">
+                                                        <img class="img-fluid w-100"
+                                                             src="${product.image}" alt="Sample">
+                                                        <a href="#!">
+                                                            <div class="mask">
+                                                                <img class="img-fluid w-100"
+                                                                     src="${product.image}">
+                                                                <div class="mask rgba-black-slight"></div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="text-center pt-4">
+                                                        <h5>${product.name}</h5>
+                                                        <p><span class="mr-1"><strong>$${product.price}</strong></span></p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        `;
+                                            `;
         }
 
         function renderProducts(products) {
@@ -676,13 +673,23 @@
         })();
     </script>
 
+    <script>
 
-    <script type="text/javascript">
-        window.addEventListener("load", function () {
-            const loader = document.querySelector(".loader");
-            loader.className += " hidden";
-        });
-    </script>
+        if (document.getElementById('radio1').checked) {
+        } else if (document.getElementById('radio2').checked) {
+        }
+        else if (document.getElementById('radio3').checked) {
+        }
+        else if (document.getElementById('radio4').checked) {
+        }
+        else if (document.getElementById('radio5').checked) {
+        }
+        else {
+            alert("You must select a button");
+            return false;
+        }
+</script>
+   
 
 
 

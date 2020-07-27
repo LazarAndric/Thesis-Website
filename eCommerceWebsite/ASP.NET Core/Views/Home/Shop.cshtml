@@ -104,28 +104,25 @@
                 <!-- Section: Size -->
                 <section class="mb-4" filter="size">
                     <h6 class="font-weight-bold mb-3 filter-text">Veličina</h6>
-
                     <div class="form-check pl-0 mb-3">
-                        <input type="radio">
+                        <input type="radio" value="option1" name="radiobutton">
                         <label for="male">XS</label><br>
                     </div>
                     <div class="form-check pl-0 mb-3">
-                        <input type="radio">
+                        <input type="radio" value="option2" name="radiobutton">
                         <label for="male">S</label><br>
                     </div>
                     <div class="form-check pl-0 mb-3">
-                        <input type="radio">
+                        <input type="radio" value="option3" name="radiobutton">
                         <label for="male">M</label><br>
                     </div>
                     <div class="form-check pl-0 mb-3">
-                        <input type="radio">
+                        <input type="radio" value="option4" name="radiobutton">
                         <label for="male">L</label><br>
                     </div>
-                    <div class="collapse pt-3" id="collapseExample">
-                        <div class="form-check pl-0 mb-3">
-                            <input type="radio">
-                            <label for="male">XL</label><br>
-                        </div>
+                    <div class="form-check pl-0 mb-3">
+                        <input type="radio" value="option5" name="radiobutton">
+                        <label for="male">XL</label><br>
                     </div>
                 </section>
                 <hr />
@@ -148,34 +145,37 @@
         </div>
 
         <div class="col-md-9">
-            <div class="card-deck">
-                <div class="card card-shadow text-center " style="background-color: #200843; ">
-                    <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h4 class="card-title" style="color:white">Majica swiftclaw</h4>
-                        <div class="dropdown-divider"></div>
-                        <p class="card-text" style="color:white">Price: $0.5</p>
-                        <a href="#" data-name="Majica_swiftclaw" data-price="0.5" class="add-to-cart btn btn-light">Add to cart</a>
+            <div class="card-deck">                
+                    <div class="card card-shadow text-center " style="background-color: #200843; ">
+                        <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <a asp-action="Product">
+                                <h4 class="card-title" style="color:white">Majica swiftclaw</h4>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <p class="card-text" style="color:white">Price: $0.5</p>
+                            <a href="#" data-name="Majica_swiftclaw" data-price="0.5" class="add-to-cart btn btn-light">Dodaj u korpu</a>
+                        </div>
                     </div>
-                </div>
-                <div class="card card-shadow text-center " style="background-color: #200843; ">
-                    <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h4 class="card-title" style="color:white">Majica swiftclaw</h4>
-                        <div class="dropdown-divider"></div>
-                        <p class="card-text" style="color:white">Price: $0.5</p>
-                        <a href="#" data-name="Majica_swiftclaw" data-price="0.5" class="add-to-cart btn btn-light">Add to cart</a>
+               
+                    <div class="card card-shadow text-center " style="background-color: #200843; ">
+                        <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title" style="color:white">Majica swiftclaw</h4>
+                            <div class="dropdown-divider"></div>
+                            <p class="card-text" style="color:white">Price: $0.5</p>
+                            <a href="#" data-name="Majica_swiftclaw" data-price="0.5" class="add-to-cart btn btn-light">Add to cart</a>
+                        </div>
                     </div>
-                </div>
-                <div class="card card-shadow text-center " style="background-color: #200843; ">
-                    <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h4 class="card-title" style="color:white">Duks swiftclaw</h4>
-                        <div class="dropdown-divider"></div>
-                        <p class="card-text" style="color:white">Price: $1</p>
-                        <a href="#" data-name="Duks_swiftclaw" data-price="1" class="add-to-cart btn btn-light">Add to cart</a>
+                    <div class="card card-shadow text-center " style="background-color: #200843; ">
+                        <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title" style="color:white">Duks swiftclaw</h4>
+                            <div class="dropdown-divider"></div>
+                            <p class="card-text" style="color:white">Price: $1</p>
+                            <a href="#" data-name="Duks_swiftclaw" data-price="1" class="add-to-cart btn btn-light">Add to cart</a>
+                        </div>
                     </div>
-                </div>
             </div> <br />
             <div class="card-deck">
                 <div class="card card-shadow text-center " style="background-color: #200843; ">

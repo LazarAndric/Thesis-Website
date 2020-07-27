@@ -822,3 +822,4 @@ E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\Commander.pdb
+E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Home\Product.cshtml.g.cs
