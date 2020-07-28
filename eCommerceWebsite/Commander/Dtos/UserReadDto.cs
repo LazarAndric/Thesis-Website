@@ -10,7 +10,6 @@ namespace Commander.Dtos
         public string LastName { get; set; }
         public string EMail { get; set; }
         public string Password { get; set; }
-        public DateTime DateOfBirth { get; set; }
         public int GenderId{get;set;}
         public string Adress { get; set; }
         public string AdressNumber { get; set; }

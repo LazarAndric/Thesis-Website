@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Commander.Models;
+using Commander.Dtos;
+using Microsoft.EntityFrameworkCore;
 
 namespace Commander.Data
 {
@@ -32,9 +34,56 @@ namespace Commander.Data
             _context.Products.Remove(product);
         }
 
-        public IEnumerable<Product> GetAllProduct()
+        public List<Product> GetAllProduct()
         {
             return _context.Products.ToList(); 
+        }
+        public List<Product> GetAllProductOfPriceRange(FilterForPriceSearchDto filterForPrice)
+        {
+            List<Product> finalList = new List<Product>();
+            foreach(Product product in _context.Products)
+            {
+                if(product.Price>filterForPrice.PriceFrom && product.Price<filterForPrice.PriceTo)
+                    finalList.Add(product);
+            }
+            return finalList; 
+        }
+        public List<Product> GetAllProductOfCategory(FilterForCategorySearchDto filterForCategory, List<Product> productList)
+        {
+            if(filterForCategory==null)
+                return null;
+            List<Product> finalList = new List<Product>();
+            foreach(Product product in productList)
+                foreach(int id in filterForCategory.Id)
+                if(product.ProductCategoryId.Equals(id))
+                    finalList.Add(product);
+            return finalList;
+        }
+
+        public List<Product> GetAllProductOfSize(List<SizeOfProduct> sizeOfProducts, List<Product> productList)
+        {
+            if(sizeOfProducts==null)
+                return null;
+            List<Product> finalList = new List<Product>();
+            foreach(Product product in productList)
+                foreach(SizeOfProduct sizeOf in sizeOfProducts)
+                    if(product.Id.Equals(sizeOf.ProductId))
+                        if(!finalList.Contains(product))
+                            finalList.Add(product);
+            return finalList;
+        }
+
+        public List<Product> GetAllProductOfGender(List<GenderOfProduct> genderOfProducts, List<Product> productList)
+        {
+            if(genderOfProducts==null)
+                return null;
+            List<Product> finalList = new List<Product>();
+            foreach(Product product in productList)
+                foreach(GenderOfProduct genderOfProduct in genderOfProducts)
+                    if(product.Id.Equals(genderOfProduct.ProductId))
+                        if(!finalList.Contains(product))
+                            finalList.Add(product);
+            return finalList;
         }
 
         public Product GetProductById(int id)
@@ -49,7 +98,6 @@ namespace Commander.Data
 
         public void UpdateProduct(Product product)
         {
-            //Nothing
         }
     }
 }

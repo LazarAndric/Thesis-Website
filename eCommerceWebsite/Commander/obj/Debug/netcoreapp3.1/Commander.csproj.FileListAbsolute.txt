@@ -205,3 +205,4 @@ E:\GIT HUB\Thesis-Website\eCommerceWebsite\Commander\obj\Debug\netcoreapp3.1\sta
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\Commander\obj\Debug\netcoreapp3.1\Commander.dll
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\Commander\obj\Debug\netcoreapp3.1\Commander.pdb
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\Commander\obj\Debug\netcoreapp3.1\Commander.genruntimeconfig.cache
+C:\Users\unLa4ky\Documents\GitHub\Thesis-Website\eCommerceWebsite\Commander\bin\Debug\netcoreapp3.1\web.config

@@ -28,6 +28,6 @@ namespace Commander.Dtos
         public string PostalCode { get; set; }
         public string PhoneNumber { get; set; }
         public DateTime DateOfRegistration { get; set; }
-        public DateTime LastLogin { get; set; }
+        public DateTime? LastLogin { get; set; }
     }
 }

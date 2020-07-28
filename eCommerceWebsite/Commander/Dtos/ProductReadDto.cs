@@ -10,6 +10,7 @@ namespace Commander.Dtos
         public string Name { get; set; }
         public int? ProductCategoryId { get; set; }
         public float? Price { get; set; }
+        public bool IsOnSale { get; set; }
         public int Sale {get;set;}
         public string ImgUrl { get; set; }
         public float NumberOfViews { get; set; }

@@ -39,6 +39,9 @@ namespace Commander.Data
 
         public Category GetCategoryById(int id)
         {
+            Console.WriteLine(id);
+            if(id==0)
+                return null;
             return _context.Categories.FirstOrDefault(p=> p.Id == id);
         }
 

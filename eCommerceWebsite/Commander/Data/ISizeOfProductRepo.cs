@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Commander.Models;
 using Commander.Data;
+using Commander.Dtos;
 
 namespace Commander.Data
 {
@@ -13,5 +14,6 @@ namespace Commander.Data
         void CreateSizeOfProduct(SizeOfProduct sizeOfProduct);
         void UpdateSizeOfProduct(SizeOfProduct sizeOfProduct);
         void DeleteSizeOfProduct(SizeOfProduct sizeOfProduct);
+        List<SizeOfProduct> GetAllProductsOfSize(FilterForSizeSearchDto sizeFilter);
     }
 }

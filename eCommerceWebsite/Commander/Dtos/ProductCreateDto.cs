@@ -13,6 +13,7 @@ namespace Commander.Dtos
         public int? ProductCategoryId { get; set; }
         [Required]
         public float? Price { get; set; }
+        public bool IsOnSale { get; set; }
         [Range(0,100)]
         public int Sale {get;set;}
         public string ImgUrl { get; set; }

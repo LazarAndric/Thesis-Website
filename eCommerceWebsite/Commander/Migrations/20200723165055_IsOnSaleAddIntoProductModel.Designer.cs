@@ -4,14 +4,16 @@ using Commander.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Commander.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20200723165055_IsOnSaleAddIntoProductModel")]
+    partial class IsOnSaleAddIntoProductModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -222,7 +224,7 @@ namespace Commander.Migrations
                     b.Property<int>("GenderId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("LastLogin")
+                    b.Property<DateTime>("LastLogin")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("LastName")

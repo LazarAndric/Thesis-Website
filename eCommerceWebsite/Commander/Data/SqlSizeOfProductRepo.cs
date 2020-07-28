@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Commander.Dtos;
 using Commander.Models;
 
 namespace Commander.Data
@@ -35,6 +36,18 @@ namespace Commander.Data
         public IEnumerable<SizeOfProduct> GetAllSizeOfProducts()
         {
             return _context.SizeOfProducts.ToList(); 
+        }
+
+        public List<SizeOfProduct> GetAllProductsOfSize(FilterForSizeSearchDto sizeFilter)
+        {
+            if(sizeFilter==null)
+                return null;
+            List<SizeOfProduct> sizeOfProducts = new List<SizeOfProduct>();
+            foreach(SizeOfProduct sizeOf in _context.SizeOfProducts)
+                if(sizeOf.SizeId.Equals(sizeFilter.Id))
+                    sizeOfProducts.Add(sizeOf);
+            return sizeOfProducts;
+
         }
 
         public SizeOfProduct GetSizeOfProductById(int id)

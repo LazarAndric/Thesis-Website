@@ -49,7 +49,7 @@ namespace Commander.Conrollers
         public ActionResult<ProductReadDto> CreateProduct(ProductCreateDto productCreateDto)
         {
             if(_categoryRepo.GetCategoryById((int)productCreateDto.ProductCategoryId)==null)
-                return NoContent();
+                return NotFound();
             var productModel = _mapper.Map<Product>(productCreateDto);
             _repository.CreateProduct(productModel);
             _repository.SaveChanges();
@@ -58,13 +58,14 @@ namespace Commander.Conrollers
 
             return CreatedAtRoute(nameof(GetProductById), new {Id = productReadDto}, productReadDto);
         }
+        
 
         //[Authorize]
         [HttpPut("{id}")]
         public ActionResult UpdateProduct(int id, ProductUpdateDto productUpdateDto)
         {
              if(_categoryRepo.GetCategoryById((int)productUpdateDto.ProductCategoryId)==null)
-                return NoContent();
+                return NotFound();
             var productModelFromRepo = _repository.GetProductById(id);
             if(productUpdateDto == null)
             {
@@ -91,7 +92,7 @@ namespace Commander.Conrollers
             }
             
             if(_categoryRepo.GetCategoryById((int)productModelFromRepo.ProductCategoryId)==null)
-                return NoContent();
+                return NotFound();
             var productToPatch = _mapper.Map<ProductUpdateDto>(productModelFromRepo);
             pathDoc.ApplyTo(productToPatch, ModelState);
             if(!TryValidateModel(productToPatch))
