@@ -7,6 +7,8 @@ using Commander.Dtos;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Authorization;
 using System.Threading.Tasks;
+using Commander.Utility;
+using System;
 
 namespace Commander.Conrollers
 {
@@ -14,6 +16,7 @@ namespace Commander.Conrollers
     [ApiController]
     public class UserController : ControllerBase
     {
+        Cryptography crypt = new Cryptography();
         private IUserRepo _repository;
         private IMapper _mapper;
 
@@ -38,6 +41,7 @@ namespace Commander.Conrollers
             var userItem = _repository.GetUserById(id);
             if(userItem!=null)
             {
+                userItem.Password=crypt.Decrypt(userItem.Password);
                 return Ok(_mapper.Map<UserReadDto>(userItem));
             }
             return NotFound();
@@ -47,6 +51,9 @@ namespace Commander.Conrollers
         [HttpPost]
         public ActionResult<UserReadDto> CreateUser(UserCreateDto userCreateDto)
         {
+            userCreateDto.Password = crypt.Encrypt(userCreateDto.Password);
+            userCreateDto.DateOfRegistration=DateTime.Now;
+            userCreateDto.LastLogin=DateTime.Now;
             var userModel = _mapper.Map<User>(userCreateDto);
             _repository.CreateUser(userModel);
             _repository.SaveChanges();

@@ -51,6 +51,7 @@ namespace Commander.Conrollers
                 if(productList!=null)
                     products=productList;
             }
+            
             var filtratedProductWithSize = _sizeOfProductRepo.GetAllProductsOfSize(filter.SizeFilter);
             if(filtratedProductWithSize!=null)
             {
