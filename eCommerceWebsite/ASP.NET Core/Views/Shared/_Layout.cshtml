@@ -194,17 +194,21 @@
 
     <!--FILTER FOR SHOP-->
     <script>
-        $('#search').keyup(function () {
-            $('.card').removeClass('d-none');
-            var filter = $(this).val(); // get the value of the input, which we filter on
-            $('.card-deck').find('.card .card-body h4:not(:contains("' + filter + '"))').parent().parent().addClass('d-none');
-        })
-
-        $('#btnSort').click(function () {
-            $('.card-deck .card').sort(function (a, b) {
-                return $(a).find(".card-title").text() > $(b).find(".card-title").text() ? 1 : -1;
-            }).appendTo(".card-deck");
-        })
+        function myFunction() {
+            var input, filter, cards, cardContainer, title, i;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            cardContainer = document.getElementById("cardDeck");
+            cards = cardContainer.getElementsByClassName("card");
+            for (i = 0; i < cards.length; i++) {
+                title = cards[i].querySelector(".card-title");
+                if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+                    cards[i].style.display = "block";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        };
     </script>
 
     <!--MODAL SHOP-->

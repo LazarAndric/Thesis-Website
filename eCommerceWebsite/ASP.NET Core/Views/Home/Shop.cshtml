@@ -18,9 +18,11 @@
             
             <section class="mb-4">
                 <h5 class="filter-text">Pretraga</h5><hr />
-                <div class="md-form md-outline mt-0 d-flex justify-content-between align-items-center">
-                    <input class="form-control form-control-lg mx:auto" type="search" placeholder="Pretraži..." aria-label="Search" id="search">
-                </div>
+                                                     <div class="md-form md-outline mt-0 d-flex justify-content-between align-items-center">
+                                                      
+                                                             <input class="form-control mr-sm-2" type="search" onkeyup="myFunction()" placeholder="Pretraga" id="search" aria-label="search">
+                                                         
+                                                     </div>
             </section>
 
             <section class="filters">
@@ -58,26 +60,7 @@
             <section class="filters">
                 <h5 class="filter-text">Filteri</h5><hr />
                 <!-- Section: Condition -->
-                <section filter="condition" class="mb-4">
-                    <h6 class="font-weight-bold mb-3 filter-text">Kategorije</h6>
-                    <div class="form-check pl-0 mb-3">
-                        <input type="checkbox">
-                        <label for="male">Majice</label><br>
-                    </div>
-                    <div class="form-check pl-0 mb-3">
-                        <input type="checkbox">
-                        <label for="male">Duksevi</label><br>
-                    </div>
-                    <div class="form-check pl-0 mb-3">
-                        <input type="checkbox">
-                        <label for="male">Kape</label><br>
-                    </div>
-                    <div class="form-check pl-0 mb-3 pb-1">
-                        <input type="checkbox">
-                        <label for="male">Rancevi</label><br>
-                    </div>
-                </section>
-                <hr />
+
                 <section class="mb-4">
                     <h6 class="font-weight-bold mb-3">Cena</h6>
                     <div class="slider-price d-flex align-items-center my-4">
@@ -88,7 +71,7 @@
                                     <input type="number" value="0" min="0" max="3700" />    do
                                     <input type="number" value="4000" min="0" max="4000" />
                                 </span>
-                            </div>                           
+                            </div>
                             <input value="0" min="0" max="3700" step="300" type="range" />
                             <input value="4001" min="0" max="4000" step="100" type="range" />
                             <svg width="100%" height="24">
@@ -98,29 +81,49 @@
                     </div>
                 </section>
                 <hr />
-
                 <!-- Section: Size -->
+                <section filter="condition" class="mb-4">
+                    <h6 class="font-weight-bold mb-3 filter-text">Kategorije</h6>
+                    <div class="form-check pl-0 mb-3">
+                        <input type="checkbox">
+                        <label for="male">Majice &nbsp;<label style="color:darkgray">(0)</label></label><br>
+                    </div>
+                    <div class="form-check pl-0 mb-3">
+                        <input type="checkbox">
+                        <label for="male">Duksevi &nbsp;<label style="color:darkgray">(0)</label></label><br>
+                    </div>
+                    <div class="form-check pl-0 mb-3">
+                        <input type="checkbox">
+                        <label for="male">Kape &nbsp;<label style="color:darkgray">(0)</label></label><br>
+                    </div>
+                    <div class="form-check pl-0 mb-3 pb-1">
+                        <input type="checkbox">
+                        <label for="male">Rancevi &nbsp;<label style="color:darkgray">(0)</label></label><br>
+                    </div>
+                </section>
+                <hr />
+
                 <section class="mb-4" filter="size">
                     <h6 class="font-weight-bold mb-3 filter-text">Veličina</h6>
                     <div class="form-check pl-0 mb-3">
                         <input type="radio" value="option1" name="radiobutton">
-                        <label for="male">XS</label><br>
+                        <label for="male">XS  &nbsp;<label style="color:darkgray">(0)</label></label><br>
                     </div>
                     <div class="form-check pl-0 mb-3">
                         <input type="radio" value="option2" name="radiobutton">
-                        <label for="male">S</label><br>
+                        <label for="male">S  &nbsp;<label style="color:darkgray">(0)</label></label><br>
                     </div>
                     <div class="form-check pl-0 mb-3">
                         <input type="radio" value="option3" name="radiobutton">
-                        <label for="male">M</label><br>
+                        <label for="male">M  &nbsp;<label style="color:darkgray">(0)</label></label><br>
                     </div>
                     <div class="form-check pl-0 mb-3">
                         <input type="radio" value="option4" name="radiobutton">
-                        <label for="male">L</label><br>
+                        <label for="male">L  &nbsp;<label style="color:darkgray">(0)</label></label><br>
                     </div>
                     <div class="form-check pl-0 mb-3">
                         <input type="radio" value="option5" name="radiobutton">
-                        <label for="male">XL</label><br>
+                        <label for="male">XL  &nbsp;<label style="color:darkgray">(0)</label></label><br>
                     </div>
                 </section>
                 <hr />
@@ -131,11 +134,11 @@
 
                     <div class="form-check pl-0 mb-3">
                         <input type="radio" value="option1" name="radiobutton">
-                        <label for="male">M</label><br>
+                        <label for="male">M  &nbsp;<label style="color:darkgray">(0)</label></label><br>
                     </div>
                     <div class="form-check pl-0 mb-3">
                         <input type="radio" value="option2" name="radiobutton">
-                        <label for="male">Ž</label><br>
+                        <label for="male">Ž  &nbsp;<label style="color:darkgray">(0)</label></label><br>
                     </div>
                 </section>
                 <!-- Section: Gender -->
@@ -143,40 +146,18 @@
         </div>
 
         <div class="col-md-9">
-            <div class="card-deck">                
+            <div class="card-deck" id="cardDeck">
+                <div class="row">
                     <div class="card card-shadow text-center " style="background-color: #200843; ">
                         <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
                         <div class="card-body">
-                            <!--  <a asp-action="Product">
-
-        </a>-->
-                            <h4 class="card-title" style="color:white">Duks swiftclaw</h4>
+                            <h4 class="card-title"><a asp-action="Product" style="color:white">Duks swiftclaw</a></h4>
                             <div class="dropdown-divider"></div>
                             <p class="card-text" style="color:white">Price: $0.5</p>
                             <a href="#" data-name="Duks_swiftclaw" data-price="0.5" class="add-to-cart btn btn-light">Dodaj u korpu</a>
                         </div>
-                        </div>
+                    </div>
 
-                        <div class="card card-shadow text-center " style="background-color: #200843; ">
-                            <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h4 class="card-title" style="color:white">Majica swiftclaw</h4>
-                                <div class="dropdown-divider"></div>
-                                <p class="card-text" style="color:white">Price: $0.5</p>
-                                <a href="#" data-name="Majica_swiftclaw" data-price="0.5" class="add-to-cart btn btn-light">Add to cart</a>
-                            </div>
-                        </div>
-                        <div class="card card-shadow text-center " style="background-color: #200843; ">
-                            <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h4 class="card-title" style="color:white">Duks swiftclaw</h4>
-                                <div class="dropdown-divider"></div>
-                                <p class="card-text" style="color:white">Price: $1</p>
-                                <a href="#" data-name="Duks_swiftclaw" data-price="1" class="add-to-cart btn btn-light">Add to cart</a>
-                            </div>
-                        </div>
-                </div> <br />
-                <div class="card-deck">
                     <div class="card card-shadow text-center " style="background-color: #200843; ">
                         <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
                         <div class="card-body">
@@ -186,15 +167,7 @@
                             <a href="#" data-name="Majica_swiftclaw" data-price="0.5" class="add-to-cart btn btn-light">Add to cart</a>
                         </div>
                     </div>
-                <div class="card card-shadow text-center " style="background-color: #200843; ">
-                        <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h4 class="card-title" style="color:white">Kapa swiftclaw</h4>
-                            <div class="dropdown-divider"></div>
-                            <p class="card-text" style="color:white">Price: $0.5</p>
-                            <a href="#" data-name="Kapa_swiftclaw" data-price="0.5" class="add-to-cart btn btn-light">Add to cart</a>
-                        </div>
-                    </div>
+
                     <div class="card card-shadow text-center " style="background-color: #200843; ">
                         <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
                         <div class="card-body">
@@ -204,10 +177,42 @@
                             <a href="#" data-name="Duks_swiftclaw" data-price="1" class="add-to-cart btn btn-light">Add to cart</a>
                         </div>
                     </div>
-                </div> <br />
-            </div>
-        </div>
-    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="card card-shadow text-center " style="background-color: #200843; ">
+                        <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title" style="color:white">Majica swiftclaw</h4>
+                            <div class="dropdown-divider"></div>
+                            <p class="card-text" style="color:white">Price: $0.5</p>
+                            <a href="#" data-name="Majica_swiftclaw" data-price="0.5" class="add-to-cart btn btn-light">Add to cart</a>
+                        </div>
+                    </div>
+
+                    <div class="card card-shadow text-center " style="background-color: #200843; ">
+                        <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title" style="color:white">Kapa swiftclaw</h4>
+                            <div class="dropdown-divider"></div>
+                            <p class="card-text" style="color:white">Price: $0.5</p>
+                            <a href="#" data-name="Kapa_swiftclaw" data-price="0.5" class="add-to-cart btn btn-light">Add to cart</a>
+                        </div>
+                    </div>
+
+                    <div class="card card-shadow text-center " style="background-color: #200843; ">
+                        <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title" style="color:white">Duks swiftclaw</h4>
+                            <div class="dropdown-divider"></div>
+                            <p class="card-text" style="color:white">Price: $1</p>
+                            <a href="#" data-name="Duks_swiftclaw" data-price="1" class="add-to-cart btn btn-light">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+           </div>
+     </div>
+ </div>
 
 
 
