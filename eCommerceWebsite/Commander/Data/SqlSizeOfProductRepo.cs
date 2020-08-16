@@ -47,7 +47,16 @@ namespace Commander.Data
                 if(sizeOf.SizeId.Equals(sizeFilter.Id))
                     sizeOfProducts.Add(sizeOf);
             return sizeOfProducts;
-
+        }
+        public List<SizeOfProduct> GetAllProductsOfSize(List<Product> listOfProduct)
+        {
+            List<SizeOfProduct> sizeOfProducts = new List<SizeOfProduct>();
+            foreach(Product product in listOfProduct)
+                foreach(SizeOfProduct size in _context.SizeOfProducts)
+                    if(size.ProductId.Equals(product.Id))
+                        if(!sizeOfProducts.Contains(size))
+                            sizeOfProducts.Add(size);
+            return sizeOfProducts;
         }
 
         public SizeOfProduct GetSizeOfProductById(int id)

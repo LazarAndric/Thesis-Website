@@ -61,5 +61,35 @@ namespace Commander.Conrollers
             }
             return Ok(_mapper.Map<IEnumerable<ProductReadDto>>(products));
         }
+
+        [HttpGet("{action}")]
+        public ActionResult <IEnumerable<ProductReadDto>> Read()
+        {
+            FiltersReadDto filter = new FiltersReadDto();
+            filter.PriceFilter.MaxPriceFrom=_productRepo.GetMaxPriceOfProducts();
+            filter.PriceFilter.MaxPriceTo=_productRepo.GetMinPriceOfProducts();
+
+
+            var list=_productRepo.GetAllProductsOfCategory(products);
+            if(list==null)
+                NoContent();
+            List<Category> categories = new List<Category>();
+            foreach(int id in list)
+            {
+                var category =_categoryRepo.GetCategoryById(id);
+                    if(!categories.Contains(category))
+                        categories.Add(category);
+            }
+            for(int i=0;i<categories.Count;i++)
+            {
+                var filterCategory  = new FilterForCategoryReadDto();
+                filterCategory.Id =  categories[i].Id;
+                filterCategory.Name =  categories[i].Name;
+                filterCategory.Length =  _productRepo.GetLegthOfProductList(categories[i], products);
+                filter.CategoriesFilter.listOfCategoryFilter.Add(filterCategory);
+            }
+
+            return Ok(_mapper.Map<IEnumerable<ProductReadDto>>(filter));
+        }
     }
 }

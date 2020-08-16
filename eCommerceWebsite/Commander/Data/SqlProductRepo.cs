@@ -55,8 +55,17 @@ namespace Commander.Data
             List<Product> finalList = new List<Product>();
             foreach(Product product in productList)
                 foreach(int id in filterForCategory.Id)
-                if(product.ProductCategoryId.Equals(id))
-                    finalList.Add(product);
+                    if(product.ProductCategoryId.Equals(id))
+                        finalList.Add(product);
+            return finalList;
+        }
+        public List<int> GetAllProductsOfCategory(List<Product> productList)
+        {
+            List<int> finalList = new List<int>();
+            foreach(Product product in productList)
+            {
+                finalList.Add(product.Id);
+            }
             return finalList;
         }
 
@@ -98,6 +107,32 @@ namespace Commander.Data
 
         public void UpdateProduct(Product product)
         {
+        }
+
+        public float? GetMaxPriceOfProducts()
+        {
+            var maxPrice =_context.Products.First().Price;
+            foreach(Product product in _context.Products)
+                if(product.Price > maxPrice)
+                    maxPrice=product.Price;
+            return maxPrice;
+        }
+        public float? GetMinPriceOfProducts()
+        {
+            var minPrice =_context.Products.First().Price;
+            foreach(Product product in _context.Products)
+                if(product.Price < minPrice)
+                    minPrice=product.Price;
+            return minPrice;
+        }
+
+        public int GetLegthOfProductList(Category category, List<Product> productList)
+        {
+            int countOfProducts=0;
+            foreach(Product product in productList)
+                if(category.Id.Equals(product.ProductCategoryId))
+                    countOfProducts++;
+            return countOfProducts;
         }
     }
 }
