@@ -147,7 +147,7 @@
       "Microsoft.CodeAnalysis.Analyzers/2.9.4": {
         "type": "package",
         "build": {
-          "build/_._": {}
+          "build/Microsoft.CodeAnalysis.Analyzers.props": {}
         }
       },
       "Microsoft.CodeAnalysis.Common/3.3.1": {
@@ -8633,6 +8633,7 @@
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 3.1.5",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.5",
       "Microsoft.AspNetCore.Identity.UI >= 3.1.5",
+      "Microsoft.CodeAnalysis.Analyzers >= 2.9.4",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.5",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.5",
       "Microsoft.Extensions.Configuration >= 3.1.5",
@@ -8642,19 +8643,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\unLa4ky\\.nuget\\packages\\": {}
+    "C:\\Users\\neman\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\ASP.NET Core.csproj",
+      "projectUniqueName": "E:\\GIT HUB\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\ASP.NET Core.csproj",
       "projectName": "ASP.NET Core",
-      "projectPath": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\ASP.NET Core.csproj",
-      "packagesPath": "C:\\Users\\unLa4ky\\.nuget\\packages\\",
-      "outputPath": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\obj\\",
+      "projectPath": "E:\\GIT HUB\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\ASP.NET Core.csproj",
+      "packagesPath": "C:\\Users\\neman\\.nuget\\packages\\",
+      "outputPath": "E:\\GIT HUB\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\unLa4ky\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\neman\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8689,6 +8690,12 @@
           "Microsoft.AspNetCore.Identity.UI": {
             "target": "Package",
             "version": "[3.1.5, )"
+          },
+          "Microsoft.CodeAnalysis.Analyzers": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[2.9.4, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
@@ -8735,7 +8742,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
