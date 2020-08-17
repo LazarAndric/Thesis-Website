@@ -6,7 +6,7 @@ namespace Commander.Dtos
     {
         public FilterForPriceReadDto PriceFilter { get; set; }
         public FilterForCategoriesReadDto CategoriesFilter { get; set; }
-        public FilterForGenderReadDto GenderFilter { get; set; }
-        public FilterForSizeReadDto SizeFilter { get; set; }
+        public GendersFilter GenderFilter { get; set; }
+        public FilterSizes SizeFilter { get; set; }
     }
 }

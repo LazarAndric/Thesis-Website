@@ -11,9 +11,11 @@ namespace Commander.Data
 
         IEnumerable<SizeOfProduct> GetAllSizeOfProducts();
         SizeOfProduct GetSizeOfProductById(int id);
+        int LengthOfSize(Size size);
         void CreateSizeOfProduct(SizeOfProduct sizeOfProduct);
         void UpdateSizeOfProduct(SizeOfProduct sizeOfProduct);
         void DeleteSizeOfProduct(SizeOfProduct sizeOfProduct);
+        List<int> GetAllIdOfSize(List<Product> products);
         List<SizeOfProduct> GetAllProductsOfSize(FilterForSizeSearchDto sizeFilter);
     }
 }

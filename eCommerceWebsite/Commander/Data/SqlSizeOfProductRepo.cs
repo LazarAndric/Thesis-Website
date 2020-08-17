@@ -59,6 +59,19 @@ namespace Commander.Data
             return sizeOfProducts;
         }
 
+        public List<int> GetAllIdOfSize(List<Product> products)
+        {
+            if(products==null)
+                return null;
+            var finalList = new List<int>();
+            foreach(SizeOfProduct sizeOfProduct in _context.SizeOfProducts)
+                foreach(Product product in products)
+                    if(sizeOfProduct.ProductId.Equals(product.Id))
+                        if(!finalList.Contains(sizeOfProduct.Id))
+                            finalList.Add(sizeOfProduct.Id);
+            return finalList;
+        }
+
         public SizeOfProduct GetSizeOfProductById(int id)
         {
             return _context.SizeOfProducts.FirstOrDefault(p=> p.Id == id);
@@ -72,6 +85,15 @@ namespace Commander.Data
         public void UpdateSizeOfProduct(SizeOfProduct SizeOfProduct)
         {
             //Nothing
+        }
+        public int LengthOfSize(Size size)
+        {
+            int counter=0;
+            if(size!=null)
+                foreach(SizeOfProduct product in _context.SizeOfProducts)
+                    if(product.SizeId.Equals(size.Id))
+                        counter++;
+            return counter;
         }
     }
 }

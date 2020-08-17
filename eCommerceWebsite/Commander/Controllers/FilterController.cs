@@ -4,9 +4,6 @@ using Commander.Models;
 using Commander.Data;
 using AutoMapper;
 using Commander.Dtos;
-using Microsoft.AspNetCore.JsonPatch;
-using Microsoft.AspNetCore.Authorization;
-using System;
 
 namespace Commander.Conrollers
 {
@@ -15,20 +12,24 @@ namespace Commander.Conrollers
     public class FilterController : ControllerBase
     {
         List<Product> products = new List<Product>();
+        private IGenderRepo _genderRepo;
         private ISizeOfProductRepo _sizeOfProductRepo;
         private ICategoryRepo _categoryRepo;
         private IProductRepo _productRepo;
         private IGenderOfProductRepo _genderOfProductRepo;
+        private ISizeRepo _sizeRepo;
         private IMapper _mapper;
 
-        public FilterController(ISizeOfProductRepo sizeOfProductRepo, IProductRepo repostory, IMapper mapper, ICategoryRepo categoryRepo, IGenderOfProductRepo genderOfProductRepo)
+        public FilterController(ISizeRepo sizeRepo, IGenderRepo genderRepo, ISizeOfProductRepo sizeOfProductRepo, IProductRepo repostory, IMapper mapper, ICategoryRepo categoryRepo, IGenderOfProductRepo genderOfProductRepo)
         {
+            _sizeRepo=sizeRepo;
             _sizeOfProductRepo=sizeOfProductRepo;
             _genderOfProductRepo=genderOfProductRepo;
+            _genderRepo=genderRepo;
             _categoryRepo=categoryRepo;
             _productRepo = repostory;
             _mapper= mapper;
-            products.AddRange(_productRepo.GetAllProduct());
+            products=_productRepo.GetAllProduct();
         }
 
         //[Authorize]
@@ -66,10 +67,14 @@ namespace Commander.Conrollers
         public ActionResult <IEnumerable<ProductReadDto>> Read()
         {
             FiltersReadDto filter = new FiltersReadDto();
-            filter.PriceFilter.MaxPriceFrom=_productRepo.GetMaxPriceOfProducts();
-            filter.PriceFilter.MaxPriceTo=_productRepo.GetMinPriceOfProducts();
 
+            //ReadPrice
+            var priceFilter = new FilterForPriceReadDto();
+            priceFilter.MaxPriceFrom=_productRepo.GetMinPriceOfProducts();
+            priceFilter.MaxPriceTo=_productRepo.GetMaxPriceOfProducts();
+            filter.PriceFilter=priceFilter;
 
+            //ReadCategory
             var list=_productRepo.GetAllProductsOfCategory(products);
             if(list==null)
                 NoContent();
@@ -80,16 +85,70 @@ namespace Commander.Conrollers
                     if(!categories.Contains(category))
                         categories.Add(category);
             }
+            var categoriesFilter = new FilterForCategoriesReadDto();
+            var categoryList = new List<FilterForCategoryReadDto>();
             for(int i=0;i<categories.Count;i++)
             {
                 var filterCategory  = new FilterForCategoryReadDto();
-                filterCategory.Id =  categories[i].Id;
-                filterCategory.Name =  categories[i].Name;
-                filterCategory.Length =  _productRepo.GetLegthOfProductList(categories[i], products);
-                filter.CategoriesFilter.listOfCategoryFilter.Add(filterCategory);
+                var length=  _productRepo.GetLegthOfProductList(categories[i], products);
+                if(length>0)
+                {
+                    filterCategory.Length=length;
+                    filterCategory.Id =  categories[i].Id;
+                    filterCategory.Name =  categories[i].Name;
+                    categoryList.Add(filterCategory);
+                }
             }
+            categoriesFilter.listOfCategoryFilter=categoryList;
+            filter.CategoriesFilter=categoriesFilter;
 
-            return Ok(_mapper.Map<IEnumerable<ProductReadDto>>(filter));
+            //ReadGender
+            var genderFilterList= new GendersFilter();
+            var genderList= new List<FilterForGenderReadDto>();
+            var listOfGenderId= _genderOfProductRepo.GetAllIdOfGender(products);
+            if(listOfGenderId!=null)
+            {
+                foreach(int Id in listOfGenderId)
+                {
+                    var genderFilter= new FilterForGenderReadDto();
+                    var gender=_genderRepo.GetGenderById(Id);
+                    var length=_genderOfProductRepo.LengthOfGender(gender);
+                    if(length>0)
+                    {
+                        genderFilter.Id=gender.Id;
+                        genderFilter.Name=gender.Name;
+                        genderFilter.Length=length;
+                        genderList.Add(genderFilter);
+                    }
+                }
+                genderFilterList.GenderList=genderList;
+            }
+            filter.GenderFilter=genderFilterList;
+
+            //ReadSize
+            var sizeFilter= new FilterSizes();
+            var sizeFilters = new List<FilterForSizeReadDto>();
+            var sizesList = _sizeOfProductRepo.GetAllIdOfSize(products);
+            if(sizesList!=null)
+            {
+                foreach (var Id in sizesList)
+                {
+                    var sizes= new FilterForSizeReadDto();
+                    var size=_sizeRepo.GetSizeById(Id);
+                    var length=_sizeOfProductRepo.LengthOfSize(size);
+                    if(length>0)
+                    {
+                        sizes.Id=size.Id;
+                        sizes.Name=size.Name;
+                        sizes.Length=length;
+                        sizeFilters.Add(sizes);
+                    }
+                }
+                sizeFilter.sizesFilterList=sizeFilters;
+                filter.SizeFilter=sizeFilter;
+                
+            }
+            return Ok(filter);
         }
     }
 }
