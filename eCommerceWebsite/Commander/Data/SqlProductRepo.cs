@@ -36,6 +36,12 @@ namespace Commander.Data
 
         public List<Product> GetAllProduct()
         {
+            var list = _context.Products.ToList();
+            foreach(Product product in list)
+            {
+                var category= _context.Categories.FirstOrDefault(p=> p.Id == product.CategoryId);
+                product.Category=category;
+            }
             return _context.Products.ToList(); 
         }
         public List<Product> GetAllProductOfPriceRange(FilterForPriceSearchDto filterForPrice)
@@ -55,7 +61,7 @@ namespace Commander.Data
             List<Product> finalList = new List<Product>();
             foreach(Product product in productList)
                 foreach(int id in filterForCategory.Id)
-                    if(product.ProductCategoryId.Equals(id))
+                    if(product.CategoryId.Equals(id))
                         finalList.Add(product);
             return finalList;
         }
@@ -64,7 +70,7 @@ namespace Commander.Data
             List<int> finalList = new List<int>();
             foreach(Product product in productList)
             {
-                finalList.Add(product.Id);
+                finalList.Add((int)product.CategoryId);
             }
             return finalList;
         }
@@ -130,7 +136,7 @@ namespace Commander.Data
         {
             int countOfProducts=0;
             foreach(Product product in productList)
-                if(category.Id.Equals(product.ProductCategoryId))
+                if(category.Id.Equals(product.CategoryId))
                     countOfProducts++;
             return countOfProducts;
         }

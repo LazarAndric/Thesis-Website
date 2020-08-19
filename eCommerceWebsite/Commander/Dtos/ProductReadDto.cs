@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Commander.Models;
 using System;
+using System.Collections.Generic;
 
 namespace Commander.Dtos
 {
@@ -9,7 +10,9 @@ namespace Commander.Dtos
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description{get;set;}
-        public int? ProductCategoryId { get; set; }
+        public Category Category { get; set; }
+        public List<Size> Size {get; set;}
+        public List<Gender> Genders {get; set;}
         public float? Price { get; set; }
         public bool IsOnSale { get; set; }
         public int Sale {get;set;}

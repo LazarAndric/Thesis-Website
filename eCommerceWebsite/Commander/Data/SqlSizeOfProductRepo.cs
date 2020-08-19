@@ -67,8 +67,8 @@ namespace Commander.Data
             foreach(SizeOfProduct sizeOfProduct in _context.SizeOfProducts)
                 foreach(Product product in products)
                     if(sizeOfProduct.ProductId.Equals(product.Id))
-                        if(!finalList.Contains(sizeOfProduct.Id))
-                            finalList.Add(sizeOfProduct.Id);
+                        if(!finalList.Contains((int)sizeOfProduct.SizeId))
+                            finalList.Add((int)sizeOfProduct.SizeId);
             return finalList;
         }
 
@@ -86,13 +86,15 @@ namespace Commander.Data
         {
             //Nothing
         }
-        public int LengthOfSize(Size size)
+        public int LengthOfSize(Size size, List<Product> products)
         {
             int counter=0;
             if(size!=null)
-                foreach(SizeOfProduct product in _context.SizeOfProducts)
-                    if(product.SizeId.Equals(size.Id))
-                        counter++;
+                foreach(SizeOfProduct sizeProduct in _context.SizeOfProducts)
+                    if(sizeProduct.SizeId.Equals(size.Id))
+                        foreach(Product product in products)
+                            if(sizeProduct.ProductId.Equals(product.Id))
+                                counter++;
             return counter;
         }
     }

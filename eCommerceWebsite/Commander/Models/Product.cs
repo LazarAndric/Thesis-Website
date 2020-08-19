@@ -16,10 +16,10 @@ namespace Commander.Models
         [MaxLength]
         public string Description{get;set;}
         [Required]
-        public int? ProductCategoryId { get; set; }
+        public int? CategoryId { get; set; }
 
-        [ForeignKey("ProductCategoryId")]
-        public Category ProductCategory { get; set; }
+        [ForeignKey("CategoryId")]
+        public Category Category { get; set; }
         [Required]
         public float? Price { get; set; }
         // [Required]

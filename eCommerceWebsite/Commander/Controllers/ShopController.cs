@@ -9,9 +9,9 @@ namespace Commander.Conrollers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class FilterController : ControllerBase
+    public class ShopController : ControllerBase
     {
-        List<Product> products = new List<Product>();
+        static List<Product> products = new List<Product>();
         private IGenderRepo _genderRepo;
         private ISizeOfProductRepo _sizeOfProductRepo;
         private ICategoryRepo _categoryRepo;
@@ -20,7 +20,7 @@ namespace Commander.Conrollers
         private ISizeRepo _sizeRepo;
         private IMapper _mapper;
 
-        public FilterController(ISizeRepo sizeRepo, IGenderRepo genderRepo, ISizeOfProductRepo sizeOfProductRepo, IProductRepo repostory, IMapper mapper, ICategoryRepo categoryRepo, IGenderOfProductRepo genderOfProductRepo)
+        public ShopController(ISizeRepo sizeRepo, IGenderRepo genderRepo, ISizeOfProductRepo sizeOfProductRepo, IProductRepo repostory, IMapper mapper, ICategoryRepo categoryRepo, IGenderOfProductRepo genderOfProductRepo)
         {
             _sizeRepo=sizeRepo;
             _sizeOfProductRepo=sizeOfProductRepo;
@@ -29,12 +29,18 @@ namespace Commander.Conrollers
             _categoryRepo=categoryRepo;
             _productRepo = repostory;
             _mapper= mapper;
-            products=_productRepo.GetAllProduct();
         }
 
         //[Authorize]
         [HttpGet("{action}")]
-        public ActionResult <IEnumerable<ProductReadDto>> Search(FiltersSearchDto filter)
+        public ActionResult <IEnumerable<ProductReadDto>> Initialize()
+        {
+            products=_productRepo.GetAllProduct();
+            return Ok(products);
+        }
+        //[Authorize]
+        [HttpGet("filter/{action}")]
+        public ActionResult <IEnumerable<ProductReadDto>> Filtrate(FiltersSearchDto filter)
         {
             var productList=_productRepo.GetAllProductOfPriceRange(filter.PriceFilter);
             if(productList==null)
@@ -63,8 +69,8 @@ namespace Commander.Conrollers
             return Ok(_mapper.Map<IEnumerable<ProductReadDto>>(products));
         }
 
-        [HttpGet("{action}")]
-        public ActionResult <IEnumerable<ProductReadDto>> Read()
+        [HttpGet("filter/{action}")]
+        public ActionResult <IEnumerable<ProductReadDto>> Create()
         {
             FiltersReadDto filter = new FiltersReadDto();
 
@@ -75,24 +81,19 @@ namespace Commander.Conrollers
             filter.PriceFilter=priceFilter;
 
             //ReadCategory
-            var list=_productRepo.GetAllProductsOfCategory(products);
-            if(list==null)
-                NoContent();
-            List<Category> categories = new List<Category>();
-            foreach(int id in list)
-            {
-                var category =_categoryRepo.GetCategoryById(id);
-                    if(!categories.Contains(category))
-                        categories.Add(category);
-            }
+            var categories= new List<Category>();
+            if(products!=null)
+                foreach(Product product in products)
+                    if(!categories.Contains(product.Category))
+                        categories.Add(product.Category);
             var categoriesFilter = new FilterForCategoriesReadDto();
             var categoryList = new List<FilterForCategoryReadDto>();
             for(int i=0;i<categories.Count;i++)
             {
-                var filterCategory  = new FilterForCategoryReadDto();
-                var length=  _productRepo.GetLegthOfProductList(categories[i], products);
+                var length= _productRepo.GetLegthOfProductList(categories[i], products);
                 if(length>0)
                 {
+                    var filterCategory  = new FilterForCategoryReadDto();
                     filterCategory.Length=length;
                     filterCategory.Id =  categories[i].Id;
                     filterCategory.Name =  categories[i].Name;
@@ -105,7 +106,7 @@ namespace Commander.Conrollers
             //ReadGender
             var genderFilterList= new GendersFilter();
             var genderList= new List<FilterForGenderReadDto>();
-            var listOfGenderId= _genderOfProductRepo.GetAllIdOfGender(products);
+            var listOfGenderId= _genderOfProductRepo.GetAllIdOfGenders(products);
             if(listOfGenderId!=null)
             {
                 foreach(int Id in listOfGenderId)
@@ -135,7 +136,7 @@ namespace Commander.Conrollers
                 {
                     var sizes= new FilterForSizeReadDto();
                     var size=_sizeRepo.GetSizeById(Id);
-                    var length=_sizeOfProductRepo.LengthOfSize(size);
+                    var length=_sizeOfProductRepo.LengthOfSize(size, products);
                     if(length>0)
                     {
                         sizes.Id=size.Id;
@@ -149,6 +150,22 @@ namespace Commander.Conrollers
                 
             }
             return Ok(filter);
+        }
+        //[Authorize]
+        [HttpGet("{action}/{name}")]
+        public ActionResult <List<ProductReadDto>> Search(string name)
+        {
+            if(string.IsNullOrWhiteSpace(name) || string.IsNullOrEmpty(name))
+            {
+                products=_productRepo.GetAllProduct();
+                return NoContent();
+            }
+            var newList= new List<Product>();
+            foreach(Product product in products)
+                if(product.Name.ToLower().Contains(name.ToLower()))
+                    newList.Add(product);
+            products=newList;
+            return Ok(products);
         }
     }
 }
