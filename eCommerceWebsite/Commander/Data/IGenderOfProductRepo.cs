@@ -16,6 +16,6 @@ namespace Commander.Data
         void CreateGenderOfProduct(GenderOfProduct gendersOfProduct);
         void UpdateGenderOfProduct(GenderOfProduct gendersOfProduct);
         void DeleteGenderOfProduct(GenderOfProduct gendersOfProduct);
-        int LengthOfGender(Gender gender);
+        int LengthOfGender(Gender gender, List<Product> products);
     }
 }

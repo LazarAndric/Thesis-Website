@@ -90,13 +90,15 @@ namespace Commander.Data
             //Nothing
         }
 
-        public int LengthOfGender(Gender gender)
+        public int LengthOfGender(Gender gender, List<Product> products)
         {
             int counter=0;
-            if(gender!=null)
-                foreach(GenderOfProduct product in _context.GendersOfProducts)
-                    if(product.GenderId.Equals(gender.Id))
-                        counter++;
+            if(gender!=null || products!=null)
+                foreach(GenderOfProduct genderOfProduct in _context.GendersOfProducts)
+                    if(genderOfProduct.GenderId.Equals(gender.Id))
+                        foreach(Product product in products)
+                            if(genderOfProduct.ProductId.Equals(product.Id))
+                                counter++;
             return counter;
         }
     }

@@ -113,7 +113,7 @@ namespace Commander.Conrollers
                 {
                     var genderFilter= new FilterForGenderReadDto();
                     var gender=_genderRepo.GetGenderById(Id);
-                    var length=_genderOfProductRepo.LengthOfGender(gender);
+                    var length=_genderOfProductRepo.LengthOfGender(gender, products);
                     if(length>0)
                     {
                         genderFilter.Id=gender.Id;
