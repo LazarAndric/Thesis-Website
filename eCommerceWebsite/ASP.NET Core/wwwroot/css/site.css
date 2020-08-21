@@ -473,3 +473,46 @@ input[type=range] {
     width:50px;
     position:center;
 }
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+.zoom {
+    
+    transition: transform .2s;
+   
+}
+
+    .zoom:hover {
+        -ms-transform: scale(1.2); /* IE 9 */
+        -webkit-transform: scale(1.2); /* Safari 3-8 */
+        transform: scale(1.2);
+    }
+
+.zoom1 {
+    transition: transform .2s;
+}
+
+    .zoom1:hover {
+        -ms-transform: scale(1.4); /* IE 9 */
+        -webkit-transform: scale(1.4); /* Safari 3-8 */
+        transform: scale(1.4);
+    }
+
+.video-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+    .video-responsive iframe {
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
