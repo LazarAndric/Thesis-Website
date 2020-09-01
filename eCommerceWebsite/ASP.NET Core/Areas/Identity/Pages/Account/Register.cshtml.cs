@@ -45,23 +45,21 @@ namespace ASP.NET_Core.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            [Required]
-            [EmailAddress]
+            [Required (ErrorMessage = "Polje ime je obavezno")]           
             [Display(Name = "Ime")]
             public string Name { get; set; }
 
-            [Required]
-            [EmailAddress]
+            [Required(ErrorMessage = "Polje prezime je obavezno")]
             [Display(Name = "Prezime")]
             public string Lastname { get; set; }
 
 
-            [Required]
-            [EmailAddress]
+            [Required(ErrorMessage = "Niste uneli dobar format")]
+            [EmailAddress(ErrorMessage = "Niste uneli dobar format")]
             [Display(Name = "Email")]
             public string Email { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "Polje lozinka je obavezno")]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Lozinka")]

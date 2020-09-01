@@ -1,0 +1,76 @@
+////Category
+////{id}
+// {
+//     "name": "Shirt"
+// }
+////User
+////{id}
+// {
+//     "firstName": "Nemanja",
+//     "lastName": "Zagorac",
+//     "adress": "MilevaMaric",
+//     "adressNumber": "21",
+//     "place": "NoviBeograd",
+//     "contry": "Srbija",
+//     "postalCode": "11060",
+//     "phoneNumber": "0694878488",
+//     "eMail": "nemanjazagorac97@gmail.com",
+//     "password" : "ZagiJeBratNajjaci",
+//     "dateOfBirth": "21/09/1997"
+// }
+////Product
+////{id}
+// {
+//      "name": "Headphone",
+//      "price": 900.0,
+//      "Sale" : 10,
+//      "imgUrl": "13r51asds.jpg",
+//      "productCategoryId": 1
+// }
+////ProductOfUser
+////{id}
+////POST
+////user{id}
+// {
+//     "userId": 22,
+//     "productId": 15,
+//     "dateOfProductPurchased": "1907/2020"
+// }
+////Size
+////{id}
+////POST
+// {
+//     "name": 22
+// }
+////SizeOfProduct
+////{id}
+// {
+//     "productId": 22,
+//     "sizeId": 15
+// }
+////Gender
+////{id}
+// {
+//     "name": "asdfsdf"
+// }
+////GenderOfProduct
+////{id}
+// {
+//     "productId": 22,
+//     "genderId": 15
+// }
+////PATCH
+    
+//        add	    Add a property or array element. For existing property: set value.
+//        remove	Remove a property or array element.
+//        replace	Same as remove followed by add at same location.
+//        move	Same as remove from source followed by add to destination using value from source.
+//        copy	Same as add to destination using value from source.
+//        test	Return success status code if value at path = provided value.
+// [
+//     {
+//         "op": "replace",
+//         "path" : "/firstName",
+//         "value" : "Nikola"
+//     }
+// ]
