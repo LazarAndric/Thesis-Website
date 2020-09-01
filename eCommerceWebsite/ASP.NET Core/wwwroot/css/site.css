@@ -529,8 +529,7 @@ input[type=range] {
 .flip-box {
     background-color: transparent;
     width: 250px;
-    height: 400px;
-    border: 1px solid #f1f1f1;
+    height: 400px;   
     perspective: 1000px;
 }
 
