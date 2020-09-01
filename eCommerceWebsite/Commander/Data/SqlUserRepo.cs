@@ -5,7 +5,7 @@ using Commander.Models;
 
 namespace Commander.Data
 {
-    public class SqlUserRepo : IUserRepo
+    public class SqlUserRepo : IUserRepo 
     {
         private Context _context;
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\ASP.NET Core.csproj": {}
+    "C:\\Users\\unLa4ky\\Documents\\GitHub\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\ASP.NET Core.csproj": {}
   },
   "projects": {
-    "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\ASP.NET Core.csproj": {
+    "C:\\Users\\unLa4ky\\Documents\\GitHub\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\ASP.NET Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\ASP.NET Core.csproj",
+        "projectUniqueName": "C:\\Users\\unLa4ky\\Documents\\GitHub\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\ASP.NET Core.csproj",
         "projectName": "ASP.NET Core",
-        "projectPath": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\ASP.NET Core.csproj",
+        "projectPath": "C:\\Users\\unLa4ky\\Documents\\GitHub\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\ASP.NET Core.csproj",
         "packagesPath": "C:\\Users\\unLa4ky\\.nuget\\packages\\",
-        "outputPath": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\obj\\",
+        "outputPath": "C:\\Users\\unLa4ky\\Documents\\GitHub\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\unLa4ky\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -95,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

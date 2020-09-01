@@ -89,7 +89,7 @@ namespace Commander.Data
         {
             //Nothing
         }
-
+        
         public int LengthOfGender(Gender gender, List<Product> products)
         {
             int counter=0;

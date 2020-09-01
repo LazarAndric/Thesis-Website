@@ -17,8 +17,8 @@ namespace Commander.Dtos
         public bool IsOnSale { get; set; }
         public int Sale {get;set;}
         public string ImgUrl { get; set; }
-        public float NumberOfViews { get; set; }
-        public float NumberOfPurchases { get; set; }
+        public int NumberOfViews { get; set; }
+        public int NumberOfPurchases { get; set; }
         public DateTime DateOfCreate { get; set; }
         public bool IsShowInShop { get; set; }
     }

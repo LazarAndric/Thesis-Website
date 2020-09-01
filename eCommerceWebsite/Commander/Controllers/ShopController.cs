@@ -76,9 +76,10 @@ namespace Commander.Conrollers
 
             //ReadPrice
             var priceFilter = new FilterForPriceReadDto();
-            priceFilter.MaxPriceFrom=_productRepo.GetMinPriceOfProducts();
-            priceFilter.MaxPriceTo=_productRepo.GetMaxPriceOfProducts();
-            filter.PriceFilter=priceFilter;
+            priceFilter.MaxPriceFrom=_productRepo.GetMinPriceOfProducts(products);
+            priceFilter.MaxPriceTo=_productRepo.GetMaxPriceOfProducts(products);
+            if(priceFilter.MaxPriceFrom !=null || priceFilter.MaxPriceTo!=null)
+                filter.PriceFilter=priceFilter;
 
             //ReadCategory
             var categories= new List<Category>();
@@ -166,6 +167,23 @@ namespace Commander.Conrollers
                     newList.Add(product);
             products=newList;
             return Ok(products);
+        }
+
+        //[Authorize]
+        [HttpGet("{action}/{isAsc}/{orderBy}")]
+        public ActionResult <List<ProductReadDto>> Sort(bool isAsc, string orderBy)
+        {
+            IEnumerable<Product> listOfProducts=null;
+            switch (orderBy.ToLower())
+            {
+                case "name" : listOfProducts= _productRepo.SortProductsByName(products, isAsc); break;
+                case "price" : listOfProducts= _productRepo.SortProductsByPrice(products, isAsc); break;
+                case "views" : listOfProducts= _productRepo.SortProductsByViews(products, isAsc); break;
+                default: break;
+            }
+            if(listOfProducts==null)
+                return NoContent();
+            return Ok(_mapper.Map<IEnumerable<ProductReadDto>>(listOfProducts));
         }
     }
 }
