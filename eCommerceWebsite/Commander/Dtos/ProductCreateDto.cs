@@ -9,6 +9,8 @@ namespace Commander.Dtos
         [Required]
         [MaxLength]
         public string Name { get; set; }
+        [MaxLength]
+        public string Description{get;set;}
         [Required]
         public int? ProductCategoryId { get; set; }
         [Required]

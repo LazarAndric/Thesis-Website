@@ -13,11 +13,13 @@ namespace Commander.Models
         [Required]
         [MaxLength]
         public string Name { get; set; }
+        [MaxLength]
+        public string Description{get;set;}
         [Required]
-        public int? ProductCategoryId { get; set; }
+        public int? CategoryId { get; set; }
 
-        [ForeignKey("ProductCategoryId")]
-        public Category ProductCategory { get; set; }
+        [ForeignKey("CategoryId")]
+        public Category Category { get; set; }
         [Required]
         public float? Price { get; set; }
         // [Required]
@@ -26,8 +28,8 @@ namespace Commander.Models
         [Range(0,100)]
         public int Sale {get;set;}
         public string ImgUrl { get; set; }
-        public float NumberOfViews { get; set; }
-        public float NumberOfPurchases { get; set; }
+        public int NumberOfViews { get; set; }
+        public int NumberOfPurchases { get; set; }
         public DateTime DateOfCreate { get; set; }
         public bool IsShowInShop { get; set; }
     }

@@ -51,7 +51,29 @@ namespace Commander.Data
             }
             return finalList;
         }
+        public List<int> GetAllIdOfGenders(List<Product> products)
+        {
+            if(products==null)
+                return null;
+            var finalList = new List<int>();
+            foreach(GenderOfProduct genderOfProduct in _context.GendersOfProducts)
+                foreach(Product product in products)
+                    if(genderOfProduct.ProductId.Equals(product.Id))
+                        if(!finalList.Contains((int)genderOfProduct.GenderId))
+                            finalList.Add((int)genderOfProduct.GenderId);
+            return finalList;
+        }
 
+        public List<int> GetAllIdOfGender(Product product)
+        {
+            if(product==null)
+                return null;
+            var finalList = new List<int>();
+            foreach(GenderOfProduct genderOfProduct in _context.GendersOfProducts)
+                if(genderOfProduct.ProductId.Equals(product.Id))
+                    finalList.Add((int)genderOfProduct.GenderId);
+            return finalList;
+        }
 
         public GenderOfProduct GetGenderOfProductById(int id)
         {
@@ -66,6 +88,18 @@ namespace Commander.Data
         public void UpdateGenderOfProduct(GenderOfProduct gendersOfProduct)
         {
             //Nothing
+        }
+        
+        public int LengthOfGender(Gender gender, List<Product> products)
+        {
+            int counter=0;
+            if(gender!=null || products!=null)
+                foreach(GenderOfProduct genderOfProduct in _context.GendersOfProducts)
+                    if(genderOfProduct.GenderId.Equals(gender.Id))
+                        foreach(Product product in products)
+                            if(genderOfProduct.ProductId.Equals(product.Id))
+                                counter++;
+            return counter;
         }
     }
 }

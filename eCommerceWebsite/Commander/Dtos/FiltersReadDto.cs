@@ -4,9 +4,9 @@ namespace Commander.Dtos
 {
     public class FiltersReadDto
     {
-        public FilterForPriceSearchDto PriceFilter { get; set; }
-        public FilterForCategorySearchDto CategoryFilter { get; set; }
-        public FilterForGenderSearchDto GenderFilter { get; set; }
-        public FilterForSizeSearchDto SizeFilter { get; set; }
+        public FilterForPriceReadDto PriceFilter { get; set; }
+        public FilterForCategoriesReadDto CategoriesFilter { get; set; }
+        public GendersFilter GenderFilter { get; set; }
+        public FilterSizes SizeFilter { get; set; }
     }
 }
