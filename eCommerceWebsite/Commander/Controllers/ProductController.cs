@@ -13,14 +13,22 @@ namespace Commander.Conrollers
     [ApiController]
     public class ProductController : ControllerBase
     {
+        private ISizeOfProductRepo _sizeOfProductRepo;
+        private IGenderRepo _genderRepo;
+        private ISizeRepo _sizeRepo;
+        private IGenderOfProductRepo _genderOfProductRepo;
         private ICategoryRepo _categoryRepo;
         private IProductRepo _repository;
         private IMapper _mapper;
 
-        public ProductController(IProductRepo repostory, IMapper mapper, ICategoryRepo categoryRepo)
+        public ProductController(IGenderRepo genderRepo, ISizeRepo sizeRepo, IProductRepo repostory, IMapper mapper, ICategoryRepo categoryRepo, ISizeOfProductRepo sizeOfProductRepo, IGenderOfProductRepo genderOfProductRepo)
         {
+            _genderRepo=genderRepo;
+            _sizeRepo=sizeRepo;
             _categoryRepo=categoryRepo;
             _repository = repostory;
+            _sizeOfProductRepo=sizeOfProductRepo;
+            _genderOfProductRepo=genderOfProductRepo;
             _mapper= mapper;
         }
         
@@ -28,10 +36,9 @@ namespace Commander.Conrollers
         [HttpGet]
         public ActionResult <IEnumerable<ProductReadDto>> GetAllProducts()
         {
-            var productItems = _repository.GetAllProduct();
-            return Ok(_mapper.Map<IEnumerable<ProductReadDto>>(productItems));
+            var products = _repository.GetAllProduct();
+            return Ok(_mapper.Map<IEnumerable<ProductReadDto>>(products));
         }
-
         //[Authorize]
         [HttpGet("{id}", Name="GetProductById")]
         public ActionResult <ProductReadDto> GetProductById(int id)
@@ -91,7 +98,7 @@ namespace Commander.Conrollers
                 return NotFound();
             }
             
-            if(_categoryRepo.GetCategoryById((int)productModelFromRepo.ProductCategoryId)==null)
+            if(_categoryRepo.GetCategoryById((int)productModelFromRepo.CategoryId)==null)
                 return NotFound();
             var productToPatch = _mapper.Map<ProductUpdateDto>(productModelFromRepo);
             pathDoc.ApplyTo(productToPatch, ModelState);
@@ -125,5 +132,6 @@ namespace Commander.Conrollers
 
             return NoContent();
         }
+
     }
 }

@@ -1,11 +1,8 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-.navbar-fixed-top {
-    position: fixed;
-    right: 0;
-    left: 0;
-    z-index: 1030;
+.fixed-top {
+    position: fixed;   
 }
 
 a.navbar-brand {
@@ -55,16 +52,14 @@ html {
 }
 
 .border-top {
-    border-top: 0px solid #e5e5e5;
+    border-top: 0px solid #343A40;
 }
 
 .border-bottom {
-    border-bottom: 0px solid #e5e5e5;
+    border-bottom: 0px solid #343A40;
 }
 
-.box-shadow {
-    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
+
 
 button.accept-policy {
     font-size: 1rem;
@@ -81,6 +76,11 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 0px;
+    background-image: url("https://s5.gifyu.com/images/pozadina8650a01e5ce6d2a6.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    
 }
 
 .footer {
@@ -90,9 +90,13 @@ body {
     height: 100%;
     white-space: nowrap;
     line-height: 60px; /* Vertically center the text there */
+    
 }
 
-
+.font-sajt {
+    font-family: Arial Black;
+    color: white;
+}
 
 .map-responsive {
     overflow: hidden;
@@ -123,15 +127,11 @@ body {
     text-align: center;
 }
 
-.card-shadow {
-    -webkit-box-shadow: 0px 0px 28px 14px rgba(232,232,232,1);
-    -moz-box-shadow: 0px 0px 28px 14px rgba(232,232,232,1);
-    box-shadow: 0px 0px 28px 14px rgba(232,232,232,1);
-}
+
 
 .card-deck {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-flow: row wrap;
     align-items: stretch;
 }
@@ -477,4 +477,95 @@ input[type=range] {
     }
 
     /*LOADER*/
+
+.form-controll {
+    width:50px;
+    position:center;
+}
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+.zoom {
+    
+    transition: transform .2s;
+   
+}
+
+    .zoom:hover {
+        -ms-transform: scale(1.2); /* IE 9 */
+        -webkit-transform: scale(1.2); /* Safari 3-8 */
+        transform: scale(1.2);
+    }
+
+.zoom1 {
+    transition: transform .2s;
+}
+
+    .zoom1:hover {
+        -ms-transform: scale(1.4); /* IE 9 */
+        -webkit-transform: scale(1.4); /* Safari 3-8 */
+        transform: scale(1.4);
+    }
+
+.video-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+    .video-responsive iframe {
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+
+.flip-box {
+    background-color: transparent;
+    width: 250px;
+    height: 400px;   
+    perspective: 1000px;
+}
+
+.flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-box-front {
+    background-color: #78649E;
+    color: black;
+}
+
+.flip-box-back {
+    background-color: #78649E;
+    color: black;
+    transform: rotateY(180deg);
+}
+
+.kartice-boja {
+    background-color: #78649E;
+}
 

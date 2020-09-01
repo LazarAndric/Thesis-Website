@@ -82,8 +82,15 @@ namespace Commander.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("CategoryId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("DateOfCreate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImgUrl")
                         .HasColumnType("nvarchar(max)");
@@ -98,26 +105,22 @@ namespace Commander.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("NumberOfPurchases")
-                        .HasColumnType("real");
+                    b.Property<int>("NumberOfPurchases")
+                        .HasColumnType("int");
 
-                    b.Property<float>("NumberOfViews")
-                        .HasColumnType("real");
+                    b.Property<int>("NumberOfViews")
+                        .HasColumnType("int");
 
                     b.Property<float?>("Price")
                         .IsRequired()
                         .HasColumnType("real");
-
-                    b.Property<int?>("ProductCategoryId")
-                        .IsRequired()
-                        .HasColumnType("int");
 
                     b.Property<int>("Sale")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductCategoryId");
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("tblProduct");
                 });
@@ -266,9 +269,9 @@ namespace Commander.Migrations
 
             modelBuilder.Entity("Commander.Models.Product", b =>
                 {
-                    b.HasOne("Commander.Models.Category", "ProductCategory")
+                    b.HasOne("Commander.Models.Category", "Category")
                         .WithMany()
-                        .HasForeignKey("ProductCategoryId")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

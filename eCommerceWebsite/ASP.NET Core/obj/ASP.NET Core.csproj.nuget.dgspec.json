@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\GIT HUB\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\ASP.NET Core.csproj": {}
+    "C:\\Users\\unLa4ky\\Documents\\GitHub\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\ASP.NET Core.csproj": {}
   },
   "projects": {
-    "E:\\GIT HUB\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\ASP.NET Core.csproj": {
+    "C:\\Users\\unLa4ky\\Documents\\GitHub\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\ASP.NET Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\GIT HUB\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\ASP.NET Core.csproj",
+        "projectUniqueName": "C:\\Users\\unLa4ky\\Documents\\GitHub\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\ASP.NET Core.csproj",
         "projectName": "ASP.NET Core",
-        "projectPath": "E:\\GIT HUB\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\ASP.NET Core.csproj",
-        "packagesPath": "C:\\Users\\neman\\.nuget\\packages\\",
-        "outputPath": "E:\\GIT HUB\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\obj\\",
+        "projectPath": "C:\\Users\\unLa4ky\\Documents\\GitHub\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\ASP.NET Core.csproj",
+        "packagesPath": "C:\\Users\\unLa4ky\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\unLa4ky\\Documents\\GitHub\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\neman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\unLa4ky\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -49,6 +49,12 @@
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
               "version": "[3.1.5, )"
+            },
+            "Microsoft.CodeAnalysis.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.9.4, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
@@ -95,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

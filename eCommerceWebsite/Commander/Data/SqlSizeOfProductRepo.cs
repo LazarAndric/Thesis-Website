@@ -47,7 +47,29 @@ namespace Commander.Data
                 if(sizeOf.SizeId.Equals(sizeFilter.Id))
                     sizeOfProducts.Add(sizeOf);
             return sizeOfProducts;
+        }
+        public List<SizeOfProduct> GetAllProductsOfSize(List<Product> listOfProduct)
+        {
+            List<SizeOfProduct> sizeOfProducts = new List<SizeOfProduct>();
+            foreach(Product product in listOfProduct)
+                foreach(SizeOfProduct size in _context.SizeOfProducts)
+                    if(size.ProductId.Equals(product.Id))
+                        if(!sizeOfProducts.Contains(size))
+                            sizeOfProducts.Add(size);
+            return sizeOfProducts;
+        }
 
+        public List<int> GetAllIdOfSize(List<Product> products)
+        {
+            if(products==null)
+                return null;
+            var finalList = new List<int>();
+            foreach(SizeOfProduct sizeOfProduct in _context.SizeOfProducts)
+                foreach(Product product in products)
+                    if(sizeOfProduct.ProductId.Equals(product.Id))
+                        if(!finalList.Contains((int)sizeOfProduct.SizeId))
+                            finalList.Add((int)sizeOfProduct.SizeId);
+            return finalList;
         }
 
         public SizeOfProduct GetSizeOfProductById(int id)
@@ -63,6 +85,17 @@ namespace Commander.Data
         public void UpdateSizeOfProduct(SizeOfProduct SizeOfProduct)
         {
             //Nothing
+        }
+        public int LengthOfSize(Size size, List<Product> products)
+        {
+            int counter=0;
+            if(size!=null)
+                foreach(SizeOfProduct sizeProduct in _context.SizeOfProducts)
+                    if(sizeProduct.SizeId.Equals(size.Id))
+                        foreach(Product product in products)
+                            if(sizeProduct.ProductId.Equals(product.Id))
+                                counter++;
+            return counter;
         }
     }
 }

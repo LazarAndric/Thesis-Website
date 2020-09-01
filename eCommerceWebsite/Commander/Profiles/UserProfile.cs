@@ -44,7 +44,7 @@ namespace Commander.Profiles
             CreateMap<SizeOfProductUpdateDto, SizeOfProduct>();
             CreateMap<SizeOfProduct, SizeOfProductUpdateDto>();
 
-            CreateMap<GenderOfProduct, GenderOfProductReadDto>();  
+            CreateMap<GenderOfProduct, GenderOfProductReadDto>();
             CreateMap<GenderOfProductCreateDto, GenderOfProduct>();
             CreateMap<GenderOfProductUpdateDto, GenderOfProduct>();
             CreateMap<GenderOfProduct, GenderOfProductUpdateDto>();
