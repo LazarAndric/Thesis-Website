@@ -536,7 +536,7 @@ input[type=range] {
 
 .flip-box1 {
     background-color: transparent;
-    width: 350px;
+    width: 300px;
     height: 400px;
     perspective: 1000px;
 }
