@@ -11,6 +11,7 @@ a.navbar-brand {
     word-break: break-all;
 }
 
+
 .navigacijaboja {
     
 }
@@ -25,7 +26,9 @@ a {
     color: #0366d6;
 }
 
-    
+
+
+
 
 .btn-primary {
     color: #fff;
@@ -370,7 +373,7 @@ input {
 }
 
 .price-slider {
-    width: 300px;
+    width: 200px;
     margin: auto;
     text-align: center;
     position: relative;
@@ -614,3 +617,16 @@ input[type=range] {
     background-color: #78649E;
 }
 
+.card-space {  
+    padding-top: 16px;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+    .dropdown-submenu .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -1px;
+    }
