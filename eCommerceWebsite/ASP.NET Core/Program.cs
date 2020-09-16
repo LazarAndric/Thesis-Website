@@ -45,8 +45,8 @@ namespace ASP.NET_Core
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine(result.AccessToken);
                 Console.ResetColor();
-                APIClient cli= new APIClient(result, clientHandler, config);
-                cli.SetAPIClient();
+                //APIClient cli= new APIClient(result, clientHandler, config);
+                //cli.SetAPIClient();
             }
             catch (MsalClientException ex)
             {
