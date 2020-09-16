@@ -12,7 +12,7 @@ namespace Commander.Dtos
         [MaxLength]
         public string Description{get;set;}
         [Required]
-        public int? CategoryId { get; set; }
+        public int? ProductCategoryId { get; set; }
         [Required]
         public float? Price { get; set; }
         public bool IsOnSale { get; set; }

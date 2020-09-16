@@ -6,7 +6,6 @@ using AutoMapper;
 using Commander.Dtos;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Authorization;
-using System;
 
 namespace Commander.Conrollers
 {
@@ -56,9 +55,8 @@ namespace Commander.Conrollers
         [HttpPost]
         public ActionResult<ProductReadDto> CreateProduct(ProductCreateDto productCreateDto)
         {
-            if(_categoryRepo.GetCategoryById((int)productCreateDto.CategoryId)==null)
+            if(_categoryRepo.GetCategoryById((int)productCreateDto.ProductCategoryId)==null)
                 return NotFound();
-            productCreateDto.DateOfCreate=DateTime.Now;
             var productModel = _mapper.Map<Product>(productCreateDto);
             _repository.CreateProduct(productModel);
             _repository.SaveChanges();
