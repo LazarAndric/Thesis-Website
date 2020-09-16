@@ -630,8 +630,3 @@ input[type=range] {
         left: 100%;
         margin-top: -1px;
     }
-
-
-.col-12 {
-    width: 150%;
-}
