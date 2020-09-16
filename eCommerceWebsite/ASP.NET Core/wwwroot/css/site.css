@@ -2,7 +2,11 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 .fixed-top {
-    position: fixed;   
+    overflow: hidden;
+   
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 a.navbar-brand {
@@ -621,6 +625,8 @@ input[type=range] {
     padding-top: 16px;
 }
 
+
+
 .dropdown-submenu {
     position: relative;
 }
@@ -632,6 +638,3 @@ input[type=range] {
     }
 
 
-.col-12 {
-    width: 150%;
-}
