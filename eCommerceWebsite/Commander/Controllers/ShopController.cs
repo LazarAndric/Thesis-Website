@@ -39,7 +39,7 @@ namespace Commander.Conrollers
             return Ok(products);
         }
         //[Authorize]
-        [HttpGet("Filter/{action}")]
+        [HttpGet("filter/{action}")]
         public ActionResult <IEnumerable<ProductReadDto>> Filtrate(FiltersSearchDto filter)
         {
             var productList=_productRepo.GetAllProductOfPriceRange(filter.PriceFilter);
@@ -69,7 +69,7 @@ namespace Commander.Conrollers
             return Ok(_mapper.Map<IEnumerable<ProductReadDto>>(products));
         }
 
-        [HttpGet("Filter/{action}")]
+        [HttpGet("filter/{action}")]
         public ActionResult <IEnumerable<ProductReadDto>> Create()
         {
             FiltersReadDto filter = new FiltersReadDto();
