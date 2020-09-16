@@ -41,7 +41,9 @@ namespace Commander.Conrollers
             var userItem = _repository.GetUserById(id);
             if(userItem!=null)
             {
-                return Ok(_mapper.Map<UserReadDto>(userItem));
+                var mappped=_mapper.Map<UserReadDto>(userItem);
+                mappped.Password=crypt.Decrypt(mappped.Password);
+                return Ok(mappped);
             }
             return NotFound();
         }

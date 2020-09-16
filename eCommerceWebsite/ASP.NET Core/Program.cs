@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Identity.Client;
+using ASP.NET_Core.APIComunication;
 using WebApplication1;
 
 namespace ASP.NET_Core
@@ -44,6 +45,8 @@ namespace ASP.NET_Core
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine(result.AccessToken);
                 Console.ResetColor();
+                APIClient cli= new APIClient(result, clientHandler, config);
+                cli.SetAPIClient();
             }
             catch (MsalClientException ex)
             {
