@@ -487,8 +487,8 @@ input[type=range] {
     /*LOADER*/
 
 .form-controll {
-    width:80%;
-    margin-left:10px
+    width:100%;
+   
 }
 
 
@@ -647,3 +647,47 @@ input[type=range] {
     display:block;
 }
 
+/*-------------------------------------------------------------*/
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+/* Style the label to display next to the inputs */
+
+/* Style the submit button */
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+/* Floating column for inputs: 100% width */
+.col-100 {
+    float: left;
+    width: 100%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col-100, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
