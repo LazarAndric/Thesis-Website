@@ -14,180 +14,182 @@
 <br />
 <div class="container">
     <div class="row">
-        
-            <div class="col-md-3">
 
-                <br />
-                <section class="mb-4">
-                   
-                    <div class="md-form md-outline mt-0 d-flex justify-content-between align-items-center">
-                        <input class="form-control mr-sm-2" type="search" onkeyup="myFunction()" placeholder="Pretraga" id="search" aria-label="search">
-                    </div>
-                </section>
+        <div class="col-md-3">
 
-                <section class="filters  text-center">
-                   
-                    <!-- Section: Condition -->
-                    <div class="dropdown">
-                        <button class="dugmejumbotron" type="button" data-toggle="dropdown" style="width:250px">Sort<span class="caret"></span></button>
-                        <div class="dropdown-menu">
-                            <h6 class="font-weight-bold mb-3 filter-text"></h6>
-                            <div class="form-check pl-0 mb-3">
-                                <input type="radio" value="option1" name="radiobutton">
-                                <label for="male">Najeftiniji</label><br>
-                            </div>
-                            <div class="form-check pl-0 mb-3">
-                                <input type="radio" value="option1" name="radiobutton">
-                                <label for="male">Najskuplji</label><br>
-                            </div>
-                            <div class="form-check pl-0 mb-3">
-                                <input type="radio" value="option1" name="radiobutton">
-                                <label for="male">A-Z</label><br>
-                            </div>
-                            <div class="form-check pl-0 mb-3 pb-1">
-                                <input type="radio" value="option1" name="radiobutton">
-                                <label for="male">Z-A</label><br>
-                            </div>
-                            <div class="form-check pl-0 mb-3 pb-1">
-                                <input type="radio" value="option1" name="radiobutton">
-                                <label for="male">Najnoviji</label><br>
-                            </div>
-                            <div class="form-check pl-0 mb-3 pb-1">
-                                <input type="radio" value="option1" name="radiobutton">
-                                <label for="male">Popust</label><br>
+            <br />
+            <section class="mb-4">
+                <div class="md-form md-outline mt-0 d-flex justify-content-between align-items-center">
+                    <input class="form-control mr-sm-2" type="search" onkeyup="myFunction()" placeholder="Pretraga" id="search" aria-label="search">
+                </div>
+            </section>       
+
+            
+
+            
+
+            <!--NOVI PADAJUCI MENI-->
+            <section>
+                <div id="accordion">
+                    <div class="card">
+                        <button class="btn collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+
+                            <h5 class="mb-0" style="text-align:center; color:black">
+
+                                SORT
+
+                            </h5>
+
+                        </button>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body" style="color:black">
+                                <section class="filters">
+
+                                    <!-- Section: Condition -->
+                                    <section filter="condition" class="mb-4">
+                                        <h6 class="font-weight-bold mb-3 filter-text"></h6>
+                                        <div class="form-check pl-0 mb-3">
+                                            <input type="radio">
+                                            <label for="male">Najeftiniji</label><br>
+                                        </div>
+                                        <div class="form-check pl-0 mb-3">
+                                            <input type="radio">
+                                            <label for="male">Najskuplji</label><br>
+                                        </div>
+                                        <div class="form-check pl-0 mb-3">
+                                            <input type="radio">
+                                            <label for="male">A-Z</label><br>
+                                        </div>
+                                        <div class="form-check pl-0 mb-3 pb-1">
+                                            <input type="radio">
+                                            <label for="male">Z-A</label><br>
+                                        </div>
+                                        <div class="form-check pl-0 mb-3 pb-1">
+                                            <input type="radio">
+                                            <label for="male">Najnoviji</label><br>
+                                        </div>
+                                        <div class="form-check pl-0 mb-3 pb-1">
+                                            <input type="radio">
+                                            <label for="male">Popust</label><br>
+                                        </div>
+                                    </section>
+                                </section>
                             </div>
                         </div>
                     </div>
-                </section>
+                    <br />
+                    <div class="card">
+                        <button class="btn collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 
-                <br />
+                            <h5 class="mb-0" style="text-align:center; color:black">
 
-                <section class="filters  text-center">
-                   
-                    <!-- Section: Condition -->
+                                FILTER
 
-                                                        <div class="dropdown">
-                                                            <button class="dugmejumbotron " type="button" data-toggle="dropdown" style="width:250px">Filter<span class="caret"></span></button>
-                                                            <div class="dropdown-menu">
+                            </h5>
 
-                                                                <section class="mb-4">
-                                                                    <div class="dropdown-submenu">
-                                                                        <h6 class="font-weight-bold mb-3">Cena</h6>
-                                                                        <div class="slider-price d-flex align-items-center my-4">
-                                                                            <div class="price-slider">
-                                                                                <div class="row">
-                                                                                    <span>
-                                                                                        od
-                                                                                        <input style="color:black" type="number" value="0" min="0" max="3700" />    do
-                                                                                        <input style="color:black" type="number" value="4000" min="0" max="4000" />
-                                                                                    </span>
-                                                                                </div>
-                                                                                <input value="0" min="0" max="3800" step="300" type="range" />
-                                                                                <input value="4001" min="0" max="4000" step="100" type="range" />
-                                                                                <svg width="100%" height="24">
-                                                                                    <line x1="4" y1="0" x2="300" y2="0" stroke="#212121" stroke-width="12" stroke-dasharray="1 28"></line>
-                                                                                </svg>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
+                        </button>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                            <div class="card-body" style="color:black">
+                                <section class="filters">
 
-                                                                </section>
-
-                                                                <section filter="condition" class="mb-4">
-                                                                    <div class="dropdown-submenu">
-                                                                        <a class="test" tabindex="-1" href="#" style="color:black">Kategorije <span class="caret"></span></a>
-                                                                        <ul class="dropdown-menu">
-                                                                            <li>
-                                                                                <input type="checkbox">
-                                                                                <label for="male">Majice &nbsp;<label style="color:darkgray">(0)</label></label><br>
-                                                                            </li>
-                                                                            <li>
-                                                                                <input type="checkbox">
-                                                                                <label for="male">Duksevi &nbsp;<label style="color:darkgray">(0)</label></label><br>
-                                                                            </li>
-                                                                            <li>
-                                                                                <input type="checkbox">
-                                                                                <label for="male">Kape &nbsp;<label style="color:darkgray">(0)</label></label><br>
-                                                                            </li>
-                                                                            <li>
-                                                                                <input type="checkbox">
-                                                                                <label for="male">Rancevi &nbsp;<label style="color:darkgray">(0)</label></label><br>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </section>
-
-                                                                <section filter="size" class="mb-4">
-                                                                    <div class="dropdown-submenu">
-                                                                        <a class="test" tabindex="-1" href="#" style="color:black">Veličina <span class="caret"></span></a>
-                                                                        <ul class="dropdown-menu">
-                                                                            <li>
-                                                                                <input type="radio" value="option1" name="radiobutton">
-                                                                                <label for="male">XS  &nbsp;<label style="color:darkgray">(0)</label></label><br>
-                                                                            </li>
-                                                                            <li>
-                                                                                <input type="radio" value="option2" name="radiobutton">
-                                                                                <label for="male">S  &nbsp;<label style="color:darkgray">(0)</label></label><br>
-                                                                            </li>
-                                                                            <li>
-                                                                                <input type="radio" value="option3" name="radiobutton">
-                                                                                <label for="male">M  &nbsp;<label style="color:darkgray">(0)</label></label><br>
-                                                                            </li>
-                                                                            <li>
-                                                                                <input type="radio" value="option4" name="radiobutton">
-                                                                                <label for="male">L  &nbsp;<label style="color:darkgray">(0)</label></label><br>
-                                                                            </li>
-                                                                            <li>
-                                                                                <input type="radio" value="option5" name="radiobutton">
-                                                                                <label for="male">XL  &nbsp;<label style="color:darkgray">(0)</label></label><br>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </section>
-
-                                                                <section filter="gender" class="mb-4">
-                                                                    <div class="dropdown-submenu">
-                                                                        <a class="test" tabindex="-1" href="#" style="color:black">Pol <span class="caret"></span></a>
-                                                                        <ul class="dropdown-menu">
-                                                                            <li>
-                                                                                <input type="radio" value="option1" name="radiobutton">
-                                                                                <label for="male">M  &nbsp;<label style="color:darkgray">(0)</label></label><br>
-                                                                            </li>
-                                                                            <li>
-                                                                                <input type="radio" value="option2" name="radiobutton">
-                                                                                <label for="male">Ž  &nbsp;<label style="color:darkgray">(0)</label></label><br>
-                                                                            </li>                                                                           
-                                                                        </ul>
-                                                                    </div>
-                                                                </section>
+                                    <!-- Section: Condition -->
 
 
+                                    <section class="mb-4">
+                                        <h6 class="font-weight-bold mb-3" style="text-align:center">Cena</h6>
+                                        <div class="slider-price d-flex align-items-center my-4">
+                                            <div class="price-slider">
+                                                <div class="row">
+                                                    <span>
+                                                        od
+                                                        <input type="number" value="0" min="0" max="3700" />    do
+                                                        <input type="number" value="4000" min="0" max="4000" />
+                                                    </span>
+                                                </div>
+                                                <input value="0" min="0" max="3700" step="300" type="range" />
+                                                <input value="4001" min="0" max="4000" step="100" type="range" />
+                                                <svg width="100%" height="24">
+                                                    <line x1="4" y1="0" x2="300" y2="0" stroke="#212121" stroke-width="12" stroke-dasharray="1 28"></line>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <hr />
+
+                                    <section filter="condition" class="mb-4">
+                                        <h6 class="font-weight-bold mb-3 filter-text">Kategorije</h6>
+                                        <div class="form-check pl-0 mb-3">
+                                            <input type="checkbox">
+                                            <label for="male">Majice</label><br>
+                                        </div>
+                                        <div class="form-check pl-0 mb-3">
+                                            <input type="checkbox">
+                                            <label for="male">Duksevi</label><br>
+                                        </div>
+                                        <div class="form-check pl-0 mb-3">
+                                            <input type="checkbox">
+                                            <label for="male">Kape</label><br>
+                                        </div>
+                                        <div class="form-check pl-0 mb-3 pb-1">
+                                            <input type="checkbox">
+                                            <label for="male">Rancevi</label><br>
+                                        </div>
+                                    </section>
+                                    <hr />
+                                    <!-- Section: Size -->
+                                    <section class="mb-4" filter="size">
+                                        <h6 class="font-weight-bold mb-3 filter-text">Veličina</h6>
+                                        <div class="form-check pl-0 mb-3">
+                                            <input type="radio" value="option1" name="radiobutton">
+                                            <label for="male">XS</label><br>
+                                        </div>
+                                        <div class="form-check pl-0 mb-3">
+                                            <input type="radio" value="option2" name="radiobutton">
+                                            <label for="male">S</label><br>
+                                        </div>
+                                        <div class="form-check pl-0 mb-3">
+                                            <input type="radio" value="option3" name="radiobutton">
+                                            <label for="male">M</label><br>
+                                        </div>
+                                        <div class="form-check pl-0 mb-3">
+                                            <input type="radio" value="option4" name="radiobutton">
+                                            <label for="male">L</label><br>
+                                        </div>
+                                        <div class="form-check pl-0 mb-3">
+                                            <input type="radio" value="option5" name="radiobutton">
+                                            <label for="male">XL</label><br>
+                                        </div>
+                                    </section>
+                                    <hr />
+                                    <!-- Section: Size -->
+                                    <!-- Section: Gender -->
+                                    <section class="mb-4" filter="size">
+                                        <h6 class="font-weight-bold mb-3 filter-text">Pol</h6>
+
+                                        <div class="form-check pl-0 mb-3">
+                                            <input type="radio">
+                                            <label for="male">M</label><br>
+                                        </div>
+                                        <div class="form-check pl-0 mb-3">
+                                            <input type="radio">
+                                            <label for="male">Ž</label><br>
+                                        </div>
+                                    </section>
+                                    <!-- Section: Gender -->
+                                </section>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            
 
 
+        </div>
 
-                                                               
-                                                              
-                                                            </div>
-                                                        </div>                     
-                   
-                    <!-- Section: Size -->
-                                                      
-                    <hr />
-
-                  
-                        
-                        
-                            
-                     
-                    <hr />
-                    <!-- Section: Size -->
-                    <!-- Section: Gender -->
-                   
-                    <!-- Section: Gender -->
-                </section>
-            </div>
-
-            <div class="col-md-9">                
+            <div class="col-md-9">
                 <div class="card-deck" id="cardDeck">
                     <div class="row">
                         <div class="container">
@@ -356,11 +358,14 @@
                             </div>
                         </div>
                     </div>
-                </div>  
-             </div>
-       
-    </div>
+                </div>
+            </div>
+
+        </div>
+
+    
 </div>
+
 
 
 
