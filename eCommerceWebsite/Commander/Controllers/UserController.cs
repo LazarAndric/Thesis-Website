@@ -9,44 +9,21 @@ using Microsoft.AspNetCore.Authorization;
 using System.Threading.Tasks;
 using Commander.Utility;
 using System;
-using Microsoft.Extensions.Configuration;
 
 namespace Commander.Conrollers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {
-        IConfiguration _config;
         Cryptography crypt = new Cryptography();
         private IUserRepo _repository;
         private IMapper _mapper;
 
-        public UserController(IUserRepo repostory, IMapper mapper, IConfiguration config)
+        public UserController(IUserRepo repostory, IMapper mapper)
         {
-            _config=config;
             _repository = repostory;
             _mapper= mapper;
-        }
-        
-
-        [AllowAnonymous]
-        [HttpGet("{action}")]
-        public ActionResult<string> Login(LoginModel loginModel)
-        {
-            AuthRepository auth= new AuthRepository(_config);
-            User user = _repository.LoginUser(loginModel.Email);
-            if (user != null)
-            {
-                var dcrpt =crypt.Decrypt(user.Password);
-                if ( dcrpt==loginModel.Password)
-                {
-                    var info=auth.CreateToken(user);
-                    return Ok(info);
-                }
-            }
-            return NotFound();
         }
         
         //[Authorize]
