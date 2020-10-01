@@ -40,56 +40,5 @@ namespace Commander
             SecurityToken token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token); //token;
         }
-
-        public ClaimsPrincipal GetPrincipal(string token)
-        {
-            try
-            {
-                JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
-                JwtSecurityToken jwtToken = (JwtSecurityToken)tokenHandler.ReadToken(token);
-                if(jwtToken==null)
-                {
-                    return null;
-                }
-                SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8
-                .GetBytes(_configuration.GetSection("AppSettings:Token").Value));
-                TokenValidationParameters parameters = new TokenValidationParameters()
-                {
-                    RequireExpirationTime=true,
-                    ValidateIssuer=false,
-                    ValidateAudience = false,
-                    IssuerSigningKey = key
-                };
-                SecurityToken securityToken;
-                ClaimsPrincipal principal = tokenHandler.ValidateToken(token,parameters,out securityToken);
-                return principal;
-            }
-            catch
-            {
-                return null;
-            }
-        }
-        public string ValidateToken(string token)
-        {
-            ClaimsPrincipal principal=GetPrincipal(token);
-            if(principal==null)
-            {
-                return null;
-            }
-            ClaimsIdentity identity;
-            try
-            {
-                identity=(ClaimsIdentity)principal.Identity;
-            }
-            catch
-            {
-                return null;
-            }
-
-            Claim emailClaim = identity.FindFirst(ClaimTypes.NameIdentifier);
-            var email = emailClaim.Value;
-            Console.WriteLine(email);
-            return email;
-        }
     }
 }

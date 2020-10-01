@@ -1,9 +1,9 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@*@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager*@
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 
 <ul class="navbar-nav">
-@*@if (SignInManager.IsSignedIn(User))
+@if (SignInManager.IsSignedIn(User))
 {
     <li class="nav-item">
         <a  class="nav-link text-light" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
@@ -22,5 +22,5 @@ else
     <li class="nav-item">
         <a class="nav-link text-light zoom" asp-area="Identity" asp-page="/Account/Login"  style="margin-right: 1em;"><i class="fa fa-user fa-2x iconlogin "></i></a>
     </li>
-}*@
+}
 </ul>

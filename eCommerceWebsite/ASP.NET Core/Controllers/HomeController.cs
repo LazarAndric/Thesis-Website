@@ -1,11 +1,11 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.Identity;
 using ASP.NET_Core.Models;
-using Microsoft.AspNetCore.Http;
-using System;
 
 namespace ASP.NET_Core.Controllers
 {
@@ -20,10 +20,6 @@ namespace ASP.NET_Core.Controllers
 
         public IActionResult Index()
         {
-            Console.WriteLine(User.Identity.IsAuthenticated.ToString());
-
-            //APIClient client = new APIClient();
-            //var token = await client.Connect("User/Login");
             return View();
         }
 
