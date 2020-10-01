@@ -1,4 +1,4 @@
-﻿
+﻿@model Product
 @{
     ViewData["Title"] = "Šop";
 }
@@ -188,178 +188,52 @@
 
 
         </div>
-
+        @{ 
+            Product product = new Product();
+            product.Name = "Duks";
+        }
         <div class="col-md-9">
             <div class="card-deck" id="cardDeck">
-                <div class="row">
-                    <div class="container">
-                        <div class="col-md-4 card-space ">
-                            <div class="flip-box">
-                                <div class="flip-box-inner">
-                                    <div class="flip-box-front">
-                                        <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
-                                        <div class="card-body mt-4 mr-1">
-                                            <h4 class="card-title"><a style="color:white">Duks swiftclaw</a></h4>
-                                            <div class="dropdown-divider"></div>
-                                            <p class="card-text" style="color:white">Price: $0.5</p>
+                @for (int i = 0; i < 3; i++)
+                {
+                    <div class="row">
+                        <div class="container">
+                            @for (int j = 0; j < 3; j++)
+                            {
+                                <div class="col-md-4 card-space ">
+                                    <div class="flip-box">
+                                        <div class="flip-box-inner">
+                                            <div class="flip-box-front">
+                                                <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
+                                                <div class="card-body mt-4 mr-1">
+                                                    <h4 class="card-title"><a style="color:white">@product.Name</a></h4>
+                                                    <div class="dropdown-divider"></div>
+                                                    <p class="card-text" style="color:white">Price: $0.5</p>
+                                                </div>
+                                            </div>
+                                            <a asp-action="Product">
+                                                <div class="flip-box-back" style="font-size: 30px; font-family: Impact;"> <br /><br /><br /><br />KUPI ODMAH!</div>
+                                            </a>
                                         </div>
                                     </div>
-                                    <a asp-action="Product">
-                                        <div class="flip-box-back" style="font-size: 30px; font-family: Impact;"> <br /><br /><br /><br />KUPI ODMAH!</div>
-                                    </a>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 card-space">
-                            <div class="flip-box">
-                                <div class="flip-box-inner">
-                                    <div class="flip-box-front">
-                                        <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
-                                        <div class="card-body mt-4">
-                                            <h4 class="card-title"><a style="color:white">Duks swiftclaw</a></h4>
-                                            <div class="dropdown-divider"></div>
-                                            <p class="card-text" style="color:white">Price: $0.5</p>
-                                        </div>
-                                    </div>
-                                    <a asp-action="Product">
-                                        <div class="flip-box-back" style="font-size: 30px; font-family: Impact;"> <br /><br /><br /><br />KUPI ODMAH!</div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 card-space ">
-                            <div class="flip-box">
-                                <div class="flip-box-inner">
-                                    <div class="flip-box-front">
-                                        <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
-                                        <div class="card-body mt-4 ml-1">
-                                            <h4 class="card-title"><a style="color:white">Duks swiftclaw</a></h4>
-                                            <div class="dropdown-divider"></div>
-                                            <p class="card-text" style="color:white">Price: $0.5</p>
-                                        </div>
-                                    </div>
-                                    <a asp-action="Product">
-                                        <div class="flip-box-back" style="font-size: 30px; font-family: Impact;"> <br /><br /><br /><br />KUPI ODMAH!</div>
-                                    </a>
-                                </div>
-                            </div>
+                            }
                         </div>
                     </div>
-                </div>
-
-                <div class="row my-3">
-                    <div class="container">
-                        <div class="col-md-4 card-space">
-                            <div class="flip-box">
-                                <div class="flip-box-inner">
-                                    <div class="flip-box-front">
-                                        <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
-                                        <div class="card-body mt-4">
-                                            <h4 class="card-title"><a style="color:white">Duks swiftclaw</a></h4>
-                                            <div class="dropdown-divider"></div>
-                                            <p class="card-text" style="color:white">Price: $0.5</p>
-                                        </div>
-                                    </div>
-                                    <a asp-action="Product">
-                                        <div class="flip-box-back" style="font-size: 30px; font-family: Impact;"> <br /><br /><br /><br />KUPI ODMAH!</div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 card-space">
-                            <div class="flip-box">
-                                <div class="flip-box-inner">
-                                    <div class="flip-box-front">
-                                        <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
-                                        <div class="card-body mt-4">
-                                            <h4 class="card-title"><a style="color:white">Duks swiftclaw</a></h4>
-                                            <div class="dropdown-divider"></div>
-                                            <p class="card-text" style="color:white">Price: $0.5</p>
-                                        </div>
-                                    </div>
-                                    <a asp-action="Product">
-                                        <div class="flip-box-back" style="font-size: 30px; font-family: Impact;"> <br /><br /><br /><br />KUPI ODMAH!</div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 card-space">
-                            <div class="flip-box">
-                                <div class="flip-box-inner">
-                                    <div class="flip-box-front">
-                                        <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
-                                        <div class="card-body mt-4">
-                                            <h4 class="card-title"><a style="color:white">Duks swiftclaw</a></h4>
-                                            <div class="dropdown-divider"></div>
-                                            <p class="card-text" style="color:white">Price: $0.5</p>
-                                        </div>
-                                    </div>
-                                    <a asp-action="Product">
-                                        <div class="flip-box-back" style="font-size: 30px; font-family: Impact;"> <br /><br /><br /><br />KUPI ODMAH!</div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row my-3">
-                    <div class="container">
-                        <div class="col-md-4 card-space">
-                            <div class="flip-box">
-                                <div class="flip-box-inner">
-                                    <div class="flip-box-front">
-                                        <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
-                                        <div class="card-body mt-4">
-                                            <h4 class="card-title"><a style="color:white">Duks swiftclaw</a></h4>
-                                            <div class="dropdown-divider"></div>
-                                            <p class="card-text" style="color:white">Price: $0.5</p>
-                                        </div>
-                                    </div>
-                                    <a asp-action="Product">
-                                        <div class="flip-box-back" style="font-size: 30px; font-family: Impact;"> <br /><br /><br /><br />KUPI ODMAH!</div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 card-space">
-                            <div class="flip-box">
-                                <div class="flip-box-inner">
-                                    <div class="flip-box-front">
-                                        <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
-                                        <div class="card-body mt-4">
-                                            <h4 class="card-title"><a style="color:white">Duks swiftclaw</a></h4>
-                                            <div class="dropdown-divider"></div>
-                                            <p class="card-text" style="color:white">Price: $0.5</p>
-                                        </div>
-                                    </div>
-                                    <a asp-action="Product">
-                                        <div class="flip-box-back" style="font-size: 30px; font-family: Impact;"> <br /><br /><br /><br />KUPI ODMAH!</div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 card-space">
-                            <div class="flip-box">
-                                <div class="flip-box-inner">
-                                    <div class="flip-box-front">
-                                        <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
-                                        <div class="card-body mt-4">
-                                            <h4 class="card-title"><a style="color:white">Duks swiftclaw</a></h4>
-                                            <div class="dropdown-divider"></div>
-                                            <p class="card-text" style="color:white">Price: $0.5</p>
-                                        </div>
-                                    </div>
-                                    <a asp-action="Product">
-                                        <div class="flip-box-back" style="font-size: 30px; font-family: Impact;"> <br /><br /><br /><br />KUPI ODMAH!</div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                }
             </div>
+            @for (int i = 0; i < 10; i++)
+            {
+                if (i < 3)
+                {
+                    <a type="button" asp-action="Shop">@i</a>
+                }
+
+            }
+            <a>....</a><a type="button" asp-action="Shop">10</a>
         </div>
+        @{ 
+        }
 
     </div>
 
