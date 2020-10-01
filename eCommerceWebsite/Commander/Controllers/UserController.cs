@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Commander.Utility;
 using System;
 using Microsoft.Extensions.Configuration;
+using System.Security.Claims;
 
 namespace Commander.Conrollers
 {
@@ -36,6 +37,7 @@ namespace Commander.Conrollers
         public ActionResult<string> Login(LoginModel loginModel)
         {
             AuthRepository auth= new AuthRepository(_config);
+
             User user = _repository.LoginUser(loginModel.Email);
             if (user != null)
             {
@@ -43,11 +45,13 @@ namespace Commander.Conrollers
                 if ( dcrpt==loginModel.Password)
                 {
                     var info=auth.CreateToken(user);
+                    auth.ValidateToken(info);
                     return Ok(info);
                 }
             }
             return NotFound();
         }
+        
         
         //[Authorize]
         [HttpGet]
