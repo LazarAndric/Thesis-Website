@@ -8,6 +8,7 @@ namespace Commander.Data
     {
         bool SaveChanges();
 
+        User LoginUser(string email);
         IEnumerable<User> GetAllUsers();
         User GetUserById(int id);
         void CreateUser(User user);
