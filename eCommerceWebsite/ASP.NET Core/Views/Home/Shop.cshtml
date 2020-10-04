@@ -1,4 +1,4 @@
-﻿@model Product
+﻿
 @{
     ViewData["Title"] = "Šop";
 }
@@ -6,7 +6,7 @@
 <div class="container">
     <div class="text-center" style="margin-top:95px;">
         <hr />
-        <h1 class="display-4">Šop</h1>
+        <h1 style="font-size:2em">Šop</h1>
     </div>
     <hr />
 </div>
@@ -20,7 +20,14 @@
             <br />
             <section class="mb-4">
                 <div class="md-form md-outline mt-0 d-flex justify-content-between align-items-center">
-                    <input class="form-control mr-sm-2" type="search" onkeyup="myFunction()" placeholder="Pretraga" id="search" aria-label="search">
+                    @*<input class="form-control" type="search" onkeyup="myFunction()" placeholder="Pretraga" id="search" aria-label="search">*@
+                    @*<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-unique btn-rounded btn-sm my-0" type="submit">Search</button>*@
+
+                    <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+                        <input type="text" placeholder="Search.." name="search2">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
                 </div>
             </section>
 
@@ -188,10 +195,7 @@
 
 
         </div>
-        @{ 
-            Product product = new Product();
-            product.Name = "Duks";
-        }
+     
         <div class="col-md-9">
             <div class="card-deck" id="cardDeck">
                 @for (int i = 0; i < 3; i++)
@@ -206,7 +210,7 @@
                                             <div class="flip-box-front">
                                                 <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
                                                 <div class="card-body mt-4 mr-1">
-                                                    <h4 class="card-title"><a style="color:white">@product.Name</a></h4>
+                                                    <h4 class="card-title"><a style="color:white">Duks</a></h4>
                                                     <div class="dropdown-divider"></div>
                                                     <p class="card-text" style="color:white">Price: $0.5</p>
                                                 </div>
