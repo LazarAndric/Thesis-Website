@@ -1,5 +1,4 @@
-﻿@model Product
-@{
+﻿@{
     ViewData["Title"] = "Šop";
 }
 
@@ -188,11 +187,7 @@
 
 
         </div>
-        @{ 
-            Product product = new Product();
-            product.Name = "Duks";
-        }
-        <div class="col-md-9">
+                <div class="col-md-9">
             <div class="card-deck" id="cardDeck">
                 @for (int i = 0; i < 3; i++)
                 {
@@ -206,7 +201,7 @@
                                             <div class="flip-box-front">
                                                 <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
                                                 <div class="card-body mt-4 mr-1">
-                                                    <h4 class="card-title"><a style="color:white">@product.Name</a></h4>
+                                                    <h4 class="card-title"><a style="color:white">Duks</a></h4>
                                                     <div class="dropdown-divider"></div>
                                                     <p class="card-text" style="color:white">Price: $0.5</p>
                                                 </div>
