@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Proizvod";
 }
 
@@ -33,7 +32,7 @@
                         <!--FILTERs-->
                         <div class="mb-3">
                             <a href="">
-                                <span class="badge purple mr-1">Kategorija</span>
+                                <span class="badge purple mr-1"></span> 
                             </a>
                             <a href="">
                                 <span class="badge blue mr-1">New</span>
@@ -61,21 +60,14 @@
                         <p class="lead font-weight-bold">Veličina</p>                        
 
                         <form>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio" checked value="option1" >XS
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio" value="option2">S
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio" value="option3">M
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio" value="option4">L
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio" value="option5">XL
-                            </label>
+                            @for (int i = 0; i < 5; i++)
+                            {
+                                <label class="dugmeProizvod1 dugmeProizvod" checked>
+                                    <input type="radio" name="button" checked value="option1" >XS
+                                </label>
+                                
+                            }
+
                         </form>
 
                         <form class="d-flex justify-content-left">
