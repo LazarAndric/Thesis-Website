@@ -52,7 +52,7 @@ namespace Commander.Conrollers
             return NotFound();
         }
         
-        
+        [AllowAnonymous]
         //[Authorize]
         [HttpGet]
         public ActionResult<IEnumerable<UserReadDto>> GetAllUsers()
@@ -61,6 +61,7 @@ namespace Commander.Conrollers
             return Ok(_mapper.Map<IEnumerable<UserReadDto>>(userItems));
         }
 
+        [AllowAnonymous]
         //[Authorize]
         [HttpGet("{id}", Name="GetUserByIdd")]
         public ActionResult <UserReadDto> GetUserById(int id)

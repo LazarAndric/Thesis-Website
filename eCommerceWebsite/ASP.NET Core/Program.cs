@@ -10,7 +10,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Identity.Client;
 using ASP.NET_Core.APIComunication;
-using WebApplication1;
 
 namespace ASP.NET_Core
 {
@@ -23,11 +22,13 @@ namespace ASP.NET_Core
             CreateHostBuilder(args).Build().Run();
         }
 
+        
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+        
     }
 }

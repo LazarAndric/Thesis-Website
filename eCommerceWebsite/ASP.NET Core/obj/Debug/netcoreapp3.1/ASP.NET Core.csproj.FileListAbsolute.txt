@@ -825,5 +825,9 @@ E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Cryptography.Pkcs.dll
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.PlatformAbstractions.dll
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\Nancy.dll
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.MvcApplicationPartsAssemblyInfo.cs
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.MvcApplicationPartsAssemblyInfo.cache

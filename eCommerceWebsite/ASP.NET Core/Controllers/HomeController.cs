@@ -5,7 +5,14 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Identity;
 using ASP.NET_Core.Models;
 using Microsoft.AspNetCore.Http;
+using ASP.NET_Core.APIComunication;
 using System;
+using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
+using System.Text.Json;
+using System.Collections.Generic;
+using System.IO;
+using Nancy.Json;
 
 namespace ASP.NET_Core.Controllers
 {
@@ -20,10 +27,6 @@ namespace ASP.NET_Core.Controllers
 
         public IActionResult Index()
         {
-            Console.WriteLine(User.Identity.IsAuthenticated.ToString());
-
-            //APIClient client = new APIClient();
-            //var token = await client.Connect("User/Login");
             return View();
         }
 
