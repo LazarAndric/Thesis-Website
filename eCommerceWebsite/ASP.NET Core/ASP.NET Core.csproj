@@ -35,11 +35,4 @@
     <Folder Include="Connected Services\" />
   </ItemGroup>
 
-
-  <ItemGroup>
-    <Reference Include="Commander">
-      <HintPath>..\Commander\bin\Debug\netcoreapp3.1\Commander.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>

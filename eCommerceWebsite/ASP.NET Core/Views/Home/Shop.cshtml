@@ -1,4 +1,5 @@
 ﻿@using ASP.NET_Core.APIComunication
+@using System.Net.Http;
 @using Nancy.Json;
 @{
     ViewData["Title"] = "Šop";
@@ -194,7 +195,7 @@
             </section>
         </div>
         @{
-            var jsonString = APIClient.SetAPIClient();
+            var jsonString = APIClient.SetAPIClient("Product", "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI1IiwiZW1haWwiOiJuZW1hbmphemFnb3JhYzk3QGdtYWlsLmNvbSIsIm5iZiI6MTYwMTkyNTAxNCwiZXhwIjoxNjMzNDYxMDE0LCJpYXQiOjE2MDE5MjUwMTR9.x7f1t4lH52OvdLLhJpe1_NMocLXO136dJ0NhG3Y0rUN4DKbNBMaXxMzOpkLnGcCtUFS72ip7Sz0NEeXv-ow66w",HttpMethod.Get);
             JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
             var items = javaScriptSerializer.Deserialize<List<Product>>(jsonString);
         }
@@ -202,6 +203,8 @@
             <div class="card-deck" id="cardDeck">
                 <div class="row">
                     <div class="container">
+                        @if (items != null)
+                        {
                         @foreach (var item in items)
                         {
                             <div class="col-md-4 card-space ">
@@ -221,6 +224,11 @@
                                     </div>
                                 </div>
                             </div>
+                        }
+                        }
+                        else
+                        {
+                            <a>Jbg</a>
                         }
                     </div>
                 </div>
