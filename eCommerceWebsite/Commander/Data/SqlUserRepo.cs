@@ -14,11 +14,6 @@ namespace Commander.Data
             _context = context;
         }
 
-        public User LoginUser(string email)
-        {
-            return _context.Users.FirstOrDefault(x => x.EMail.ToLower().Equals(email.ToLower()));
-        }
-        
         public void CreateUser(User usr)
         {
             if(usr==null)
