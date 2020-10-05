@@ -1,23 +1,26 @@
-﻿
+﻿@using Microsoft.AspNetCore.Identity
+@*@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager*@
+
 <ul class="navbar-nav">
-@*@if (SignInManager.IsSignedIn(User))*@
-@*{*@
+@*@if (SignInManager.IsSignedIn(User))
+{
     <li class="nav-item">
         <a  class="nav-link text-light" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
     </li>
     <li class="nav-item">
         <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button  type="submit" class="nav-link btn btn-link text-light">Logout</button>
+            <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
         </form>
     </li>
-@*}*@
-@*else*@
+}
+else*@
 @*{*@
-    @*<li class="nav-item">
+    <li class="nav-item">
         <a class="nav-link text-light zoom" asp-area="Identity" asp-page="/Account/Register"  style="margin-right: 1em;"><i class="fa fa-sign-in fa-2x iconregister"></i></a>
     </li>
     <li class="nav-item">
         <a class="nav-link text-light zoom" asp-area="Identity" asp-page="/Account/Login"  style="margin-right: 1em;"><i class="fa fa-user fa-2x iconlogin "></i></a>
-    </li>*@
+    </li>
 @*}*@
 </ul>

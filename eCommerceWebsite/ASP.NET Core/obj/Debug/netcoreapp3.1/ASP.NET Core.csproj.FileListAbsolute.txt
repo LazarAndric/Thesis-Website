@@ -831,3 +831,4 @@ D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcor
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\Nancy.dll
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.MvcApplicationPartsAssemblyInfo.cs
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.MvcApplicationPartsAssemblyInfo.cache
+E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
