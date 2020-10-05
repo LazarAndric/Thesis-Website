@@ -1,4 +1,5 @@
-﻿
+﻿@using ASP.NET_Core.APIComunication
+@using Nancy.Json;
 @{
     ViewData["Title"] = "Šop";
 }
@@ -22,7 +23,7 @@
                 <div class="md-form md-outline mt-0 d-flex justify-content-between align-items-center">
                     @*<input class="form-control" type="search" onkeyup="myFunction()" placeholder="Pretraga" id="search" aria-label="search">*@
                     @*<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-unique btn-rounded btn-sm my-0" type="submit">Search</button>*@
+                        <button class="btn btn-unique btn-rounded btn-sm my-0" type="submit">Search</button>*@
 
                     <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
                         <input type="text" placeholder="Search.." name="search2">
@@ -195,36 +196,37 @@
 
 
         </div>
-     
+        @{
+            var jsonString = APIClient.SetAPIClient();
+            JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
+            var items = javaScriptSerializer.Deserialize<List<Product>>(jsonString);
+        }
         <div class="col-md-9">
             <div class="card-deck" id="cardDeck">
-                @for (int i = 0; i < 3; i++)
-                {
-                    <div class="row">
-                        <div class="container">
-                            @for (int j = 0; j < 3; j++)
-                            {
-                                <div class="col-md-4 card-space ">
-                                    <div class="flip-box">
-                                        <div class="flip-box-inner">
-                                            <div class="flip-box-front">
-                                                <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
-                                                <div class="card-body mt-4 mr-1">
-                                                    <h4 class="card-title"><a style="color:white">Duks</a></h4>
-                                                    <div class="dropdown-divider"></div>
-                                                    <p class="card-text" style="color:white">Price: $0.5</p>
-                                                </div>
+                <div class="row">
+                    <div class="container">
+                        @foreach (var item in items)
+                        {
+                            <div class="col-md-4 card-space ">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img class="card-img-top" src="@item.ImgUrl" alt="Card image cap">
+                                            <div class="card-body mt-4 mr-1">
+                                                <h4 class="card-title"><a style="color:white">@item.Name</a></h4>
+                                                <div class="dropdown-divider"></div>
+                                                <p class="card-text" style="color:white">Price: @item.Price</p>
                                             </div>
-                                            <a asp-action="Product">
-                                                <div class="flip-box-back" style="font-size: 30px; font-family: Impact;"> <br /><br /><br /><br />KUPI ODMAH!</div>
-                                            </a>
                                         </div>
+                                        <a asp-action="Product">
+                                            <div class="flip-box-back" style="font-size: 30px; font-family: Impact;"> <br /><br /><br /><br />KUPI ODMAH!</div>
+                                        </a>
                                     </div>
                                 </div>
-                            }
-                        </div>
+                            </div>
+                        }
                     </div>
-                }
+                </div>
             </div>
             @for (int i = 0; i < 10; i++)
             {
@@ -236,25 +238,25 @@
             }
             <a>....</a><a type="button" asp-action="Shop">10</a>
         </div>
-        @{ 
+        @{
         }
 
     </div>
 
 
-</div>
-
-
-
-
-
-<!--<div class="layout-margin-8 mt-4">
-    <div class="container">
-        <div class="col-md-2">
-
-        </div>
-        <div class="col-md-10">
-
-        </div>
     </div>
-</div>-->
+
+
+
+
+
+    <!--<div class="layout-margin-8 mt-4">
+        <div class="container">
+            <div class="col-md-2">
+
+            </div>
+            <div class="col-md-10">
+
+            </div>
+        </div>
+    </div>-->
