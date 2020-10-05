@@ -83,7 +83,7 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 0px;
-    background-image: url("https://s5.gifyu.com/images/pozadina8650a01e5ce6d2a6.png");
+    background-image: url("https://s1.gifyu.com/images/sajt.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
@@ -100,7 +100,7 @@ body {
 
 .font-sajt {
     font-family: Arial Black;
-    color: white;
+    color: black;
 }
 
 .map-responsive {
