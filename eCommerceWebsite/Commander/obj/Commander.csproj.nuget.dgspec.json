@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\Commander\\Commander.csproj": {}
+    "E:\\GIT HUB\\Thesis-Website\\eCommerceWebsite\\Commander\\Commander.csproj": {}
   },
   "projects": {
-    "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\Commander\\Commander.csproj": {
+    "E:\\GIT HUB\\Thesis-Website\\eCommerceWebsite\\Commander\\Commander.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\Commander\\Commander.csproj",
+        "projectUniqueName": "E:\\GIT HUB\\Thesis-Website\\eCommerceWebsite\\Commander\\Commander.csproj",
         "projectName": "Commander",
-        "projectPath": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\Commander\\Commander.csproj",
-        "packagesPath": "C:\\Users\\unLa4ky\\.nuget\\packages\\",
-        "outputPath": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\Commander\\obj\\",
+        "projectPath": "E:\\GIT HUB\\Thesis-Website\\eCommerceWebsite\\Commander\\Commander.csproj",
+        "packagesPath": "C:\\Users\\neman\\.nuget\\packages\\",
+        "outputPath": "E:\\GIT HUB\\Thesis-Website\\eCommerceWebsite\\Commander\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\unLa4ky\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\neman\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -87,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
