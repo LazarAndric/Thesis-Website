@@ -1,11 +1,7 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-.fixed-top {      
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
+
 
 a.navbar-brand {
     white-space: normal;
@@ -553,6 +549,7 @@ input[type=range] {
     }
 }
 
+
 .flip-box-inner1 {
     position: relative;
     width: 100%;
@@ -565,6 +562,12 @@ input[type=range] {
 @media screen and (min-width:1024px) and (max-width:1024px) {
     .flip-box-inner1 {
         width: 90%
+    }
+}
+
+@media screen and (min-width:320px) and (max-width:320px) {
+    .flip-box-inner1 {
+        width: 80%
     }
 }
 
@@ -778,14 +781,3 @@ form.example::after {
     margin-top:20%
 }
 
-
-
-@media screen and (min-device-width: 320px) and (max-device-width:844px) {
-    .container1 {
-        width: 50% !important;  
-        align-content: center !important;
-    }
-    .navbar {
-        width:100% !important;
-    }
-}
