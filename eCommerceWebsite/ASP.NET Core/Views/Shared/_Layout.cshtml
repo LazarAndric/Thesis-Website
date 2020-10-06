@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <title>@ViewData["Title"]</title>
     <link rel="icon" href="https://s5.gifyu.com/images/logo72fbcc5f4776d2a4.png" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -15,7 +16,9 @@
 
 </head>
 <body>
+
    
+
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark fixed-top font-sajt" style="border-radius:0;">
             <div class="container" style="text-align:center">
@@ -46,56 +49,53 @@
                             <a class="nav-link text-light navigacijaboja zoom" asp-area="" asp-controller="Home" asp-action="Contact">Kontakt</a>
                         </li>
                     </ul>
-                </div>                
+                </div>
             </div>
-        </nav>      
-
+        </nav>
     </header>
 
-   
-    <!--MODAL-->
 
-    <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog " role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Korpa</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row justify-content-center">
-                        <table class="show-cart table-responsive text-nowrap center" align="center"></table>
-                        Total price: $<span class="total-cart"></span>
+
+
+
+    <!--MODAL-->
+    @*<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog " role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Korpa</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row justify-content-center">
+                            <table class="show-cart table-responsive text-nowrap center" align="center"></table>
+                            Total price: $<span class="total-cart"></span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Order now</button>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Order now</button>
-                </div>
             </div>
-        </div>
-    </div>
+        </div>*@
 
 
 
 
 
 
+    
+        <main role="main" class="font-sajt">
+            @RenderBody()            
+        </main>
+    
 
 
 
-    <main role="main" class="pb-3 font-sajt">
-        @RenderBody()
-
-    </main>
-
-
-
-
-
-
+    
 
 
 
@@ -174,6 +174,7 @@
             © 2020 Copyright: Lazar Andrić - Nemanja Zagorac
         </div>
     </footer>
+
 
 
 
