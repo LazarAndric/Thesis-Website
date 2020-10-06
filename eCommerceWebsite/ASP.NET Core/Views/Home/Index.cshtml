@@ -5,13 +5,13 @@
 
 
 <div class="container">
-    
+
     <div class="text-center" style="margin-top:95px;">
         <hr />
         <h1 style="font-size:2em">Swift Claw</h1>
     </div>
     <hr />
-        </div>
+</div>
 
 
 
@@ -24,43 +24,46 @@
                 <input type="submit" class="dugmejumbotron zoom" value="Kupi odmah!" />
             </form>
         </div>
-        
+
     </div>
     <hr />
 </div>
 
-
+@{
+    string str = ((User)ViewData["msg"]).FirstName;
+        }
+<a>@str</a>
 <div class="container">
     <p style="font-size: 25px;  text-align: center;"><em>Naši proizvodi</em></p>
-    
+
     <div class="card-deck" id="cardDeck">
-        @for  (int i = 0; i < 3; i++)
-        { 
-        <div class="row">
-            <div class="container">
-                <div class="col-md-4 card-space">
-                    <div class="flip-box1 ">
-                        <div class="flip-box-inner1 ">
-                            <div class="flip-box-front1">
-                                <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
-                                <div class="card-body mt-4">
-                                    <h4 class="card-title"><a style="color:white">Najprodavaniji</a></h4>
-                                    <div class="dropdown-divider"></div>
-                                    <p class="card-text" style="color:white">Price: $0.5</p>
+        @for (int i = 0; i < 3; i++)
+        {
+            <div class="row">
+                <div class="container">
+                    <div class="col-md-4 card-space">
+                        <div class="flip-box1 ">
+                            <div class="flip-box-inner1 ">
+                                <div class="flip-box-front1">
+                                    <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
+                                    <div class="card-body mt-4">
+                                        <h4 class="card-title"><a style="color:white">Najprodavaniji</a></h4>
+                                        <div class="dropdown-divider"></div>
+                                        <p class="card-text" style="color:white">Price: $0.5</p>
+                                    </div>
                                 </div>
+                                <a asp-action="Product">
+                                    <div class="flip-box-back1" style="font-size: 30px; font-family: Impact;"> <br /><br /><br /><br />KUPI ODMAH!</div>
+                                </a>
                             </div>
-                            <a asp-action="Product">
-                                <div class="flip-box-back1" style="font-size: 30px; font-family: Impact;"> <br /><br /><br /><br />KUPI ODMAH!</div>
-                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-         }
+        }
     </div>
 
-    
+
 
 
 
@@ -72,7 +75,7 @@
 <!--
     <div class="container">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            
+
 <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -123,6 +126,6 @@
         <iframe width="420" height="315" src="https://www.youtube.com/embed/RiV000Xg65c?autoplay=0" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
-    
+
 
 

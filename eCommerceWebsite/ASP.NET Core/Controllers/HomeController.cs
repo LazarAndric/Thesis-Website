@@ -2,22 +2,15 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.Identity;
 using ASP.NET_Core.Models;
 using Microsoft.AspNetCore.Http;
-using ASP.NET_Core.APIComunication;
-using System;
-using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
-using System.Text.Json;
-using System.Collections.Generic;
-using System.IO;
-using Nancy.Json;
 
 namespace ASP.NET_Core.Controllers
 {
     public class HomeController : Controller
     {
+        public static string token { get; set; }
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -27,6 +20,8 @@ namespace ASP.NET_Core.Controllers
 
         public IActionResult Index()
         {
+
+            ViewData["msg"] = new User() { FirstName="Lazar", LastName="Andric"};
             return View();
         }
 
