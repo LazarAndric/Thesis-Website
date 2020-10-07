@@ -18,6 +18,7 @@ namespace ASP.NET_Core.Controllers
             return View();
         }
 
+
         public IActionResult ForgotPassword()
         {
             return View();

@@ -824,8 +824,6 @@ E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.PlatformAbstractions.dll
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\Nancy.dll
-E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
-E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
@@ -845,5 +843,6 @@ E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
-E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Account\ForgotPassword.cshtml.g.cs
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Home\ViewTest.cshtml.g.cs
+E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Account\ForgotPassword.cshtml.g.cs
