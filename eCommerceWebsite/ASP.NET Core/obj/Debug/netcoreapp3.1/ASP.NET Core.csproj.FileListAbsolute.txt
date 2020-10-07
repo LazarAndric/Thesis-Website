@@ -807,9 +807,6 @@ E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Home\Product.cshtml.g.cs
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Home\Product.cshtml.g.cs
-E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.csproj.CoreCompileInputs.cache
-E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.MvcApplicationPartsAssemblyInfo.cs
-E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.MvcApplicationPartsAssemblyInfo.cache
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Cryptography.Pkcs.dll
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
@@ -843,6 +840,9 @@ E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
-E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Home\ViewTest.cshtml.g.cs
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.csproj.CoreCompileInputs.cache
+E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.MvcApplicationPartsAssemblyInfo.cs
+E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.MvcApplicationPartsAssemblyInfo.cache
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Account\ForgotPassword.cshtml.g.cs

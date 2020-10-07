@@ -1,5 +1,5 @@
 ﻿@page
-@model  LoginUserModel
+@model LoginUserModel
 
 @{
     ViewData["Title"] = "Log in";
@@ -18,7 +18,6 @@
                     <section>
                         <form id="account" method="post">
                             <h4></h4>
-
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
                                 <label asp-for="Email"></label>
@@ -35,7 +34,7 @@
                             </div>
                             <div class="form-group">
                                 <p>
-                                    <a id="forgot-password" asp-page="./ForgotPassword">Zaboravljena lozinka?</a>
+                                    <button type="button" data-toggle="modal" data-target="#exampleModal">Zaboravljena lozinka?</button>
                                 </p>
                                 <p>
                                     <a asp-page="./Register" asp-route-returnUrl="@User">Registracija novog korisnika</a>
@@ -43,11 +42,34 @@
                             </div>
                         </form>
                         <br />
+                        
                     </section>
                 </div>
             </div>
-        </div>
+        </div>        
     </div>
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>*@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</div>

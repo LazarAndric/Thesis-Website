@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-group">
                         <p>
-                            <a id="forgot-password" asp-action="ForgotPassword">Zaboravljena lozinka?</a>
+                            <a  data-toggle="modal" data-target="#exampleModal" @*asp-action="#exampleModal"*@ href="#exampleModal">Zaboravljena lozinka?</a>
                         </p>
                         <p>
                             <a asp-action="Register" asp-route-returnUrl="">Registracija novog korisnika</a>
@@ -41,6 +41,29 @@
                 </form>
                 <br />
             </div>
-        </div>       
+        </div>
     </div>
 </div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+            <label asp-for="Password" class="control-label"></label>
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>*@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</div>
+
