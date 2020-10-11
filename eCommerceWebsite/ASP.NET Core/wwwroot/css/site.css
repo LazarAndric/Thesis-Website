@@ -239,6 +239,14 @@ body {
         color: #7289da;
     }
 
+.iconlogout {
+    color: white;
+}
+
+    .iconlogout:hover {
+        color:darkred;
+    }
+
 
 /*GALERIJA*/
 

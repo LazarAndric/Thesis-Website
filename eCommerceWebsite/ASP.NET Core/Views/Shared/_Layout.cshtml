@@ -17,7 +17,7 @@
 </head>
 <body>
 
-   
+
 
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark fixed-top font-sajt" style="border-radius:0;">
@@ -31,7 +31,7 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse ">
                     <i class="fa fa-shopping-cart fa-2x iconcart zoom" aria-hidden="true" type="button" data-toggle="modal" data-target="#cart">(<span class="total-count"></span>)</i>
-                    <partial name="_LoginPartial" />   
+                    <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1 ">
                         <li class="nav-item">
                             <a class="nav-link text-light navigacijaboja zoom" asp-area="" asp-controller="Home" asp-action="Index">Početna</a>
@@ -59,42 +59,42 @@
 
     @*KORPA*@
     <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog " role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Korpa</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+        <div class="modal-dialog " role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Korpa</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row justify-content-center">
+                        <table class="show-cart table-responsive text-nowrap center" align="center"></table>
+                        Total price: $<span class="total-cart"></span>
                     </div>
-                    <div class="modal-body">
-                        <div class="row justify-content-center">
-                            <table class="show-cart table-responsive text-nowrap center" align="center"></table>
-                            Total price: $<span class="total-cart"></span>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Order now</button>
-                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Order now</button>
                 </div>
             </div>
         </div>
+    </div>
 
 
 
 
 
 
-    
-        <main role="main" class="font-sajt">
-            @RenderBody()
-        </main>
-    
+
+    <main role="main" class="font-sajt">
+        @RenderBody()
+    </main>
 
 
 
-    
+
+
 
 
 
@@ -564,6 +564,17 @@
         });
     </script>
 
+    <!--TACKICE DA SE NE VIDI PASSWORD-->
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
 
 </body>
 </html>

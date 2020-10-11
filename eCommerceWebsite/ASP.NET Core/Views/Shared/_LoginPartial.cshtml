@@ -16,12 +16,13 @@
     {
         <li class="nav-item">
             <form method="post">
-                <button class="nav-link text-light" type="submit" asp-controller="Account" asp-action="Profile" title="Manage">Profil</button>
+                @*<button class="nav-link text-light" type="submit" asp-controller="Account" asp-action="Profile" title="Manage">Profil</button>*@
+                <a class="nav-link text-light zoom" asp-area="" asp-controller="Account" asp-action="Profile" title="Manage"><i class="fa fa-user fa-2x iconlogin "></i></a>
             </form>
         </li>
         <li class="nav-item">
             <form class="form-inline" asp-area="" asp-controller="Account" asp-action="LogOut">
-                <button type="submit" class="nav-link btn btn-link text-light">Logout</button>
+                <button type="submit" class="nav-link btn btn-link text-light zoom"><i class="fa fa-sign-out fa-2x iconlogout"></i></button>               
             </form>
         </li>
     }
