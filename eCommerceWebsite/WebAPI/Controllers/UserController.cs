@@ -89,7 +89,7 @@ namespace WebAPI.Conrollers
             return NotFound();
         }
 
-        //[Authorize]
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult<UserReadDto> CreateUser(UserCreateDto userCreateDto)
         {
