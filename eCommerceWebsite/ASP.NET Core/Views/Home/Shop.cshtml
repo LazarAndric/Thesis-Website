@@ -195,7 +195,7 @@
             </section>
         </div>
         @{
-            var jsonString = APIClient.SetAPIClient("Product", APIClient.Token,HttpMethod.Get);
+            var jsonString = APIClient.SetAPIClient("Product/", APIClient.Token,HttpMethod.Get);
             JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
             var items = javaScriptSerializer.Deserialize<List<Product>>(jsonString);
         }

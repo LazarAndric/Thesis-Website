@@ -1,4 +1,8 @@
-﻿@model User
+﻿@using System.Net.Http;
+@using ASP.NET_Core.APIComunication
+@using Nancy.Json;
+@using System.Collections;
+@model User
 
 @{
     ViewData["Title"] = "Register";
@@ -12,15 +16,15 @@
     <hr />
     <br />
     <div class="container">
+        @{
+            var response = APIClient.SetAPIClient("Gender/", HttpMethod.Get);
+            JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
+            var items = javaScriptSerializer.Deserialize<List<Gender>>(response);
+        }
         <div class="row">
             <div class="col-md-6 mx-auto">
-                <form asp-action="View">
+                <form asp-controller="Account" asp-action="Register" method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="form-group">
-                        <label asp-for="Id" class="control-label"></label>
-                        <input asp-for="Id" class="form-control" />
-                        <span asp-validation-for="Id" class="text-danger"></span>
-                    </div>
                     <div class="form-group">
                         <label asp-for="FirstName" class="control-label"></label>
                         <input asp-for="FirstName" class="form-control" />
@@ -47,8 +51,15 @@
                         <span asp-validation-for="DateOfBirth" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="GenderId" class="control-label"></label>
-                        <input asp-for="GenderId" class="form-control" />
+                        <label asp-for="GenderId" class="control-label">Gender</label>
+                        @{
+                            foreach (var item in items)
+                            {
+                                    <input type="radio" asp-for="GenderId" asp-controller="Account" value="@item.Id">@item.Name
+                            }
+                        @*<input type="submit"/>*@
+                        }
+
                         <span asp-validation-for="GenderId" class="text-danger"></span>
                     </div>
                     <div class="form-group">
@@ -82,26 +93,26 @@
                         <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                     </div>
                     @*<div class="form-group">
-                <label asp-for="DateOfRegistration" class="control-label"></label>
-                <input asp-for="DateOfRegistration" class="form-control" />
-                <span asp-validation-for="DateOfRegistration" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LastLogin" class="control-label"></label>
-                <input asp-for="LastLogin" class="form-control" />
-                <span asp-validation-for="LastLogin" class="text-danger"></span>
-            </div>*@
+                            <label asp-for="DateOfRegistration" class="control-label"></label>
+                            <input asp-for="DateOfRegistration" class="form-control" />
+                            <span asp-validation-for="DateOfRegistration" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="LastLogin" class="control-label"></label>
+                            <input asp-for="LastLogin" class="form-control" />
+                            <span asp-validation-for="LastLogin" class="text-danger"></span>
+                        </div>*@
                     <div class="form-group">
                         <input type="submit" value="Napravi" class="btn btn-primary" />
                     </div>
                 </form>
                 <div>
-                    <a asp-controller="Home" asp-action="Index">Back to List</a>
+                    <a asp-controller="Account">Back to List</a>
                 </div>
 
             </div>
         </div>
 
-       
-        </div>
+
+    </div>
 </div>

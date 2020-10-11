@@ -12,12 +12,20 @@ namespace ASP.NET_Core.Controllers
 {
     public class AccountController : Controller
     {
-        public AccountController()
-        {
-        }
         public IActionResult Register()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult Register(User user)
+        {
+            var response = APIClient.SetAPIClient<User>("User/CreateUser", user, APIClient.Token, HttpMethod.Post);
+            if (response == null)
+            {
+                ViewData["LoginMessage"] = "Nesto ste uneli pogresno";
+                return View();
+            }
+            return RedirectToAction("Index", controllerName: "Home");
         }
 
         public IActionResult Login()
@@ -26,7 +34,6 @@ namespace ASP.NET_Core.Controllers
         }
         
         [HttpPost]
-        [Obsolete]
         public IActionResult Login(LoginUserModel model)
         {
             var response=APIClient.SetAPIClient<LoginUserModel>("User/Login", model ,HttpMethod.Get);

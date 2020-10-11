@@ -98,5 +98,29 @@ namespace ASP.NET_Core.APIComunication
             }
             return null;
         }
+        public static string SetAPIClient(string endPoint, HttpMethod method)
+        {
+            using HttpClientHandler handler = new HttpClientHandler
+            {
+                AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate,
+                ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+            };
+            using HttpClient client = new HttpClient(handler);
+            using HttpRequestMessage request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri(BaseAdress + endPoint)
+            };
+            using HttpResponseMessage response = client.SendAsync(request).GetAwaiter().GetResult();
+            if (response.StatusCode != HttpStatusCode.NotFound)
+            {
+                using HttpContent httpContent = response.Content;
+                byte[] buffer = httpContent.ReadAsByteArrayAsync().GetAwaiter().GetResult().ToArray();
+                string html = Encoding.UTF8.GetString(buffer, 0, buffer.Length);
+                return HttpUtility.HtmlDecode(html);
+            }
+            return null;
+        }
+
     }
 }

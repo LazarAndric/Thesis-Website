@@ -90,7 +90,7 @@ namespace WebAPI.Conrollers
         }
 
         [AllowAnonymous]
-        [HttpPost]
+        [HttpPost("{action}")]
         public ActionResult<UserReadDto> CreateUser(UserCreateDto userCreateDto)
         {
             userCreateDto.Password = crypt.Encrypt(userCreateDto.Password);

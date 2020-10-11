@@ -34,6 +34,7 @@ namespace WebAPI.Conrollers
             _mapper= mapper;
         }
         
+        [AllowAnonymous]
         //[Authorize]
         [HttpGet]
         public ActionResult <IEnumerable<ProductReadDto>> GetAllProducts()
