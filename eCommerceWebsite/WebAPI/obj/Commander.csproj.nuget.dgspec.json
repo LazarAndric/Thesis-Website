@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\Commander\\Commander.csproj": {}
+    "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\Commander\\Commander.csproj": {
+    "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\Commander\\Commander.csproj",
-        "projectName": "Commander",
-        "projectPath": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\Commander\\Commander.csproj",
+        "projectUniqueName": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\WebAPI\\WebAPI.csproj",
+        "projectName": "WebAPI",
+        "projectPath": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\WebAPI\\WebAPI.csproj",
         "packagesPath": "C:\\Users\\unLa4ky\\.nuget\\packages\\",
-        "outputPath": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\Commander\\obj\\",
+        "outputPath": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\unLa4ky\\AppData\\Roaming\\NuGet\\NuGet.Config",

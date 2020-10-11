@@ -22,7 +22,7 @@
   },
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "Commander/1.0.0": {
+      "WebAPI/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "7.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.5",
@@ -302,10 +302,10 @@
           "WindowsBase": "4.0.0.0"
         },
         "runtime": {
-          "Commander.dll": {}
+          "WebAPI.dll": {}
         },
         "compile": {
-          "Commander.dll": {}
+          "WebAPI.dll": {}
         }
       },
       "AutoMapper/9.0.0": {
@@ -3019,7 +3019,7 @@
     }
   },
   "libraries": {
-    "Commander/1.0.0": {
+    "WebAPI/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

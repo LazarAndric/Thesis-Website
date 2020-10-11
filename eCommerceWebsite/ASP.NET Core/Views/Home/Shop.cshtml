@@ -195,7 +195,7 @@
             </section>
         </div>
         @{
-            var jsonString = APIClient.SetAPIClient("Product", "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI1IiwiZW1haWwiOiJuZW1hbmphemFnb3JhYzk3QGdtYWlsLmNvbSIsIm5iZiI6MTYwMTkyNTAxNCwiZXhwIjoxNjMzNDYxMDE0LCJpYXQiOjE2MDE5MjUwMTR9.x7f1t4lH52OvdLLhJpe1_NMocLXO136dJ0NhG3Y0rUN4DKbNBMaXxMzOpkLnGcCtUFS72ip7Sz0NEeXv-ow66w",HttpMethod.Get);
+            var jsonString = APIClient.SetAPIClient("Product", APIClient.Token,HttpMethod.Get);
             JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
             var items = javaScriptSerializer.Deserialize<List<Product>>(jsonString);
         }

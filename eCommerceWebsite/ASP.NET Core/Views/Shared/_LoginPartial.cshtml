@@ -1,26 +1,37 @@
-﻿@using Microsoft.AspNetCore.Identity
-@*@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager*@
-
+﻿@using ASP.NET_Core.APIComunication;
+@using System.Net.Http;
+@using Microsoft.AspNetCore.Http;
 <ul class="navbar-nav">
-@*@if (SignInManager.IsSignedIn(User))
-{
-    <li class="nav-item">
-        <a  class="nav-link text-light" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
-    </li>
-    <li class="nav-item">
-        <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-        </form>
-    </li>
-}
-else*@
-@*{*@
-    <li class="nav-item">
-        <a class="nav-link text-light zoom" asp-area="./Account/Register" asp-page="/Account/Register"  style="margin-right: 1em;"><i class="fa fa-sign-in fa-2x iconregister"></i></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-light zoom" asp-area="./Account/Login" asp-page="/Account/Login"  style="margin-right: 1em;"><i class="fa fa-user fa-2x iconlogin "></i></a>
-    </li>
-@*}*@
+    @{
+        bool isValidate;
+        var result = APIClient.SetAPIClient("User/Validate", APIClient.Token, APIClient.Token, HttpMethod.Get);
+        if (result != null)
+            isValidate = true;
+        else
+        {
+            isValidate = false;
+        }
+    }
+    @if (isValidate)
+    {
+        <li class="nav-item">
+            <form method="post">
+                <button class="nav-link text-light" type="submit" asp-controller="Account" asp-action="Profile" title="Manage">Profil</button>
+            </form>
+        </li>
+        <li class="nav-item">
+            <form class="form-inline" asp-area="" asp-controller="Account" asp-action="LogOut">
+                <button type="submit" class="nav-link btn btn-link text-light">Logout</button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link text-light zoom" asp-area="" asp-controller="Account" asp-action="Register"><i class="fa fa-sign-in fa-2x iconregister"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light zoom" asp-area="" asp-controller="Account" asp-action="Login"><i class="fa fa-user fa-2x iconlogin "></i></a>
+        </li>
+    }
 </ul>

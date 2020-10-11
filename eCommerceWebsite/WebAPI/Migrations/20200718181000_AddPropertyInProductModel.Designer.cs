@@ -21,7 +21,7 @@ namespace WebAPI.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Commander.Models.Category", b =>
+            modelBuilder.Entity("WebAPI.Models.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -37,7 +37,7 @@ namespace WebAPI.Migrations
                     b.ToTable("tblCategory");
                 });
 
-            modelBuilder.Entity("Commander.Models.Product", b =>
+            modelBuilder.Entity("WebAPI.Models.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -74,7 +74,7 @@ namespace WebAPI.Migrations
                     b.ToTable("tblProduct");
                 });
 
-            modelBuilder.Entity("Commander.Models.User", b =>
+            modelBuilder.Entity("WebAPI.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -135,9 +135,9 @@ namespace WebAPI.Migrations
                     b.ToTable("tblUser");
                 });
 
-            modelBuilder.Entity("Commander.Models.Product", b =>
+            modelBuilder.Entity("WebAPI.Models.Product", b =>
                 {
-                    b.HasOne("Commander.Models.Category", "ProductCategory")
+                    b.HasOne("WebAPI.Models.Category", "ProductCategory")
                         .WithMany()
                         .HasForeignKey("ProductCategoryId");
                 });

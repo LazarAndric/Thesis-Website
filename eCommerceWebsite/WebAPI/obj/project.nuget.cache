@@ -2,7 +2,7 @@
   "version": 2,
   "dgSpecHash": "jIAw/pjb1KD4/d5Bcuh26Z+W5JSMx1FKwLP/h9FCm2bHXt9X6QGjomnjyEH96sloVYp1p6e9HGincQEZcYuGiQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\unLa4ky\\Documents\\GitHub\\Thesis-Website\\eCommerceWebsite\\Commander\\Commander.csproj",
+  "projectFilePath": "C:\\Users\\unLa4ky\\Documents\\GitHub\\Thesis-Website\\eCommerceWebsite\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\unLa4ky\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\unLa4ky\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",

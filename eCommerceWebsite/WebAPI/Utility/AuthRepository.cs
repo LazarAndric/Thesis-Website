@@ -23,7 +23,7 @@ namespace WebAPI
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new Claim(ClaimTypes.Email, user.EMail)
             };
-            SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8
+            var key = new SymmetricSecurityKey(Encoding.UTF8
                 .GetBytes(_configuration.GetSection("AppSettings:Token").Value));
 
             SigningCredentials creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
@@ -85,10 +85,10 @@ namespace WebAPI
                 return null;
             }
 
-            Claim emailClaim = identity.FindFirst(ClaimTypes.NameIdentifier);
-            var email = emailClaim.Value;
-            Console.WriteLine(email);
-            return email;
+            Claim id = identity.FindFirst(ClaimTypes.NameIdentifier);
+            var idValue = id.Value;
+            Console.WriteLine(idValue);
+            return idValue;
         }
     }
 }

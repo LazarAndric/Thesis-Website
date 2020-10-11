@@ -21,7 +21,7 @@ namespace WebAPI.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Commander.Models.Category", b =>
+            modelBuilder.Entity("WebAPI.Models.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -37,7 +37,7 @@ namespace WebAPI.Migrations
                     b.ToTable("tblCategory");
                 });
 
-            modelBuilder.Entity("Commander.Models.Gender", b =>
+            modelBuilder.Entity("WebAPI.Models.Gender", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -53,7 +53,7 @@ namespace WebAPI.Migrations
                     b.ToTable("tblGender");
                 });
 
-            modelBuilder.Entity("Commander.Models.GenderOfProduct", b =>
+            modelBuilder.Entity("WebAPI.Models.GenderOfProduct", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -77,7 +77,7 @@ namespace WebAPI.Migrations
                     b.ToTable("tblProductGender");
                 });
 
-            modelBuilder.Entity("Commander.Models.Product", b =>
+            modelBuilder.Entity("WebAPI.Models.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -124,7 +124,7 @@ namespace WebAPI.Migrations
                     b.ToTable("tblProduct");
                 });
 
-            modelBuilder.Entity("Commander.Models.ProductOfUser", b =>
+            modelBuilder.Entity("WebAPI.Models.ProductOfUser", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -151,7 +151,7 @@ namespace WebAPI.Migrations
                     b.ToTable("tblUserProduct");
                 });
 
-            modelBuilder.Entity("Commander.Models.Size", b =>
+            modelBuilder.Entity("WebAPI.Models.Size", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -167,7 +167,7 @@ namespace WebAPI.Migrations
                     b.ToTable("tblSize");
                 });
 
-            modelBuilder.Entity("Commander.Models.SizeOfProduct", b =>
+            modelBuilder.Entity("WebAPI.Models.SizeOfProduct", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -191,7 +191,7 @@ namespace WebAPI.Migrations
                     b.ToTable("tblProductSize");
                 });
 
-            modelBuilder.Entity("Commander.Models.User", b =>
+            modelBuilder.Entity("WebAPI.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -251,63 +251,63 @@ namespace WebAPI.Migrations
                     b.ToTable("tblUser");
                 });
 
-            modelBuilder.Entity("Commander.Models.GenderOfProduct", b =>
+            modelBuilder.Entity("WebAPI.Models.GenderOfProduct", b =>
                 {
-                    b.HasOne("Commander.Models.Gender", "Gender")
+                    b.HasOne("WebAPI.Models.Gender", "Gender")
                         .WithMany()
                         .HasForeignKey("GenderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Commander.Models.Product", "Product")
+                    b.HasOne("WebAPI.Models.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Commander.Models.Product", b =>
+            modelBuilder.Entity("WebAPI.Models.Product", b =>
                 {
-                    b.HasOne("Commander.Models.Category", "ProductCategory")
+                    b.HasOne("WebAPI.Models.Category", "ProductCategory")
                         .WithMany()
                         .HasForeignKey("ProductCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Commander.Models.ProductOfUser", b =>
+            modelBuilder.Entity("WebAPI.Models.ProductOfUser", b =>
                 {
-                    b.HasOne("Commander.Models.Product", "Product")
+                    b.HasOne("WebAPI.Models.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Commander.Models.User", "User")
+                    b.HasOne("WebAPI.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Commander.Models.SizeOfProduct", b =>
+            modelBuilder.Entity("WebAPI.Models.SizeOfProduct", b =>
                 {
-                    b.HasOne("Commander.Models.Product", "Product")
+                    b.HasOne("WebAPI.Models.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Commander.Models.Size", "Size")
+                    b.HasOne("WebAPI.Models.Size", "Size")
                         .WithMany()
                         .HasForeignKey("SizeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Commander.Models.User", b =>
+            modelBuilder.Entity("WebAPI.Models.User", b =>
                 {
-                    b.HasOne("Commander.Models.Gender", "Gender")
+                    b.HasOne("WebAPI.Models.Gender", "Gender")
                         .WithMany()
                         .HasForeignKey("GenderId")
                         .OnDelete(DeleteBehavior.Cascade)

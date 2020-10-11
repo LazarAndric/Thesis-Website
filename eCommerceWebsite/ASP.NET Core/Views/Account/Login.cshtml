@@ -15,7 +15,7 @@
     <div class="container mt-3">
         <div class="row">
             <div class="col-md-6 mx-auto">
-                <form asp-action="Login">
+                <form asp-controller="Account" asp-action="Login" method="post" >
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
                         <label asp-for="Email" class="control-label"></label>
@@ -27,12 +27,15 @@
                         <input asp-for="Password" class="form-control" />
                         <span asp-validation-for="Password" class="text-danger"></span>
                     </div>
+                    <div>
+                        <label>@ViewData["LoginMessage"]</label>
+                    </div>
                     <div class="form-group">
-                        <input type="submit" value="Create" class="btn btn-primary" />
+                        <input type="submit" value="Log In" class="btn btn-primary" />
                     </div>
                     <div class="form-group">
                         <p>
-                            <a  data-toggle="modal" data-target="#exampleModal" @*asp-action="#exampleModal"*@ href="#exampleModal">Zaboravljena lozinka?</a>
+                            <a  data-toggle="modal" data-target="#exampleModal" href="#exampleModal">Zaboravljena lozinka?</a>
                         </p>
                         <p>
                             <a asp-action="Register" asp-route-returnUrl="">Registracija novog korisnika</a>

@@ -23,7 +23,6 @@ namespace WebAPI.Conrollers
         Cryptography crypt = new Cryptography();
         private IUserRepo _repository;
         private IMapper _mapper;
-
         public UserController(IUserRepo repostory, IMapper mapper, IConfiguration config)
         {
             _config=config;
@@ -37,7 +36,6 @@ namespace WebAPI.Conrollers
         public ActionResult<string> Login(LoginModel loginModel)
         {
             AuthRepository auth= new AuthRepository(_config);
-
             User user = _repository.LoginUser(loginModel.Email);
             if (user != null)
             {
@@ -45,7 +43,6 @@ namespace WebAPI.Conrollers
                 if ( dcrpt==loginModel.Password)
                 {
                     var info=auth.CreateToken(user);
-                    auth.ValidateToken(info);
                     return Ok(info);
                 }
             }
@@ -68,14 +65,21 @@ namespace WebAPI.Conrollers
         public ActionResult<IEnumerable<UserReadDto>> GetAllUsers()
         {
             var userItems = _repository.GetAllUsers();
+            foreach(User user in userItems)
+            {
+                 var dcrpt =crypt.Decrypt(user.Password);
+                 user.Password=dcrpt;
+            }
             return Ok(_mapper.Map<IEnumerable<UserReadDto>>(userItems));
         }
 
         //[Authorize]
-        [HttpGet("{id}", Name="GetUserByIdd")]
-        public ActionResult <UserReadDto> GetUserById(int id)
+        [HttpGet("{action}/{token}")]
+        public ActionResult <UserReadDto> GetUserById(string token)
         {
-            var userItem = _repository.GetUserById(id);
+            AuthRepository auth= new AuthRepository(_config);
+            var info=auth.ValidateToken(token);
+            var userItem = _repository.GetUserById(Int32.Parse(info));
             if(userItem!=null)
             {
                 var mappped=_mapper.Map<UserReadDto>(userItem);
@@ -97,8 +101,7 @@ namespace WebAPI.Conrollers
             _repository.SaveChanges();
 
             var userReadDto = _mapper.Map<UserReadDto>(userModel);
-
-            return GetUserById(userReadDto.Id);
+            return Ok(userReadDto);
         }
 
         //[Authorize]

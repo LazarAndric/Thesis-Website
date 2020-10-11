@@ -13,7 +13,8 @@ namespace ASP.NET_Core.APIComunication
 {
     public class APIClient
     {
-        private static string WebAPIURL = "https://localhost:5001/api/";
+        public static string Token { get; set; } = String.Empty;
+        public static string BaseAdress { get; set; } = "https://localhost:5001/api/";
 
         public static string SetAPIClient<T>(string endPoint,T jsonContent, string jwtToken, HttpMethod method)
         {
@@ -32,7 +33,7 @@ namespace ASP.NET_Core.APIComunication
             {
                 Method = method,
                 Content = content,
-                RequestUri = new Uri(WebAPIURL+endPoint)
+                RequestUri = new Uri(BaseAdress+endPoint)
             };
             using HttpResponseMessage response = client.SendAsync(request).GetAwaiter().GetResult();
             if (response.StatusCode == HttpStatusCode.Unauthorized)
@@ -45,7 +46,7 @@ namespace ASP.NET_Core.APIComunication
             return null;
         }
 
-        public static string SetAPIClient(string endPoint, string jwtToken, HttpMethod method)
+        public static string SetAPIClient(string endPoint, string data, string jwtToken, HttpMethod method)
         {
             using HttpClientHandler handler = new HttpClientHandler
             {
@@ -59,13 +60,39 @@ namespace ASP.NET_Core.APIComunication
             using HttpRequestMessage request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri(WebAPIURL + endPoint)
+                RequestUri = new Uri(BaseAdress + endPoint+data)
             };
             using HttpResponseMessage response = client.SendAsync(request).GetAwaiter().GetResult();
-            if (response.StatusCode != HttpStatusCode.Unauthorized)
+            if (response.StatusCode != HttpStatusCode.NotFound)
             {
                 using HttpContent content = response.Content;
                 byte[] buffer = content.ReadAsByteArrayAsync().GetAwaiter().GetResult().ToArray();
+                string html = Encoding.UTF8.GetString(buffer, 0, buffer.Length);
+                return HttpUtility.HtmlDecode(html);
+            }
+            return null;
+        }
+        public static string SetAPIClient<T>(string endPoint, T jsonContent, HttpMethod method)
+        {
+            using HttpClientHandler handler = new HttpClientHandler
+            {
+                AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate,
+                ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+            };
+            using HttpClient client = new HttpClient(handler);
+            var json = JsonConvert.SerializeObject(jsonContent);
+            var content = new System.Net.Http.StringContent(json, Encoding.UTF8, "application/json");
+            using HttpRequestMessage request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                Content = content,
+                RequestUri = new Uri(BaseAdress + endPoint)
+            };
+            using HttpResponseMessage response = client.SendAsync(request).GetAwaiter().GetResult();
+            if (response.StatusCode != HttpStatusCode.NotFound)
+            {
+                using HttpContent httpContent = response.Content;
+                byte[] buffer = httpContent.ReadAsByteArrayAsync().GetAwaiter().GetResult().ToArray();
                 string html = Encoding.UTF8.GetString(buffer, 0, buffer.Length);
                 return HttpUtility.HtmlDecode(html);
             }
