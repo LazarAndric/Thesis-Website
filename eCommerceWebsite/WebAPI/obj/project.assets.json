@@ -5468,19 +5468,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nikola Grebenarovic\\.nuget\\packages\\": {}
+    "C:\\Users\\neman\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nikola Grebenarovic\\Documents\\GitHub\\Thesis-Website\\eCommerceWebsite\\WebAPI\\WebAPI.csproj",
+      "projectUniqueName": "E:\\GIT HUB\\Thesis-Website\\eCommerceWebsite\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "C:\\Users\\Nikola Grebenarovic\\Documents\\GitHub\\Thesis-Website\\eCommerceWebsite\\WebAPI\\WebAPI.csproj",
-      "packagesPath": "C:\\Users\\Nikola Grebenarovic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nikola Grebenarovic\\Documents\\GitHub\\Thesis-Website\\eCommerceWebsite\\WebAPI\\obj\\",
+      "projectPath": "E:\\GIT HUB\\Thesis-Website\\eCommerceWebsite\\WebAPI\\WebAPI.csproj",
+      "packagesPath": "C:\\Users\\neman\\.nuget\\packages\\",
+      "outputPath": "E:\\GIT HUB\\Thesis-Website\\eCommerceWebsite\\WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Nikola Grebenarovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\neman\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5553,7 +5553,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
