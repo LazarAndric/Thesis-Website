@@ -4,6 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ASP.NET_Core.Models;
 using Microsoft.AspNetCore.Http;
+using ASP.NET_Core.APIComunication;
+using System.Net.Http;
+using Nancy.Json;
+using System.Collections.Generic;
 
 namespace ASP.NET_Core.Controllers
 {
@@ -36,6 +40,18 @@ namespace ASP.NET_Core.Controllers
         }
         public IActionResult Shop()
         {
+            var jsonString = APIClient.SetAPIClient("Product/", APIClient.Token, HttpMethod.Get);
+            
+            ViewBag.Shop = jsonString;
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Shop(FiltersSearchDto filters)
+        {
+            var jsonString = APIClient.SetAPIClient<FiltersSearchDto>("Shop/Filtrate", filters, APIClient.Token, HttpMethod.Get);
+            if (jsonString == null)
+                return ViewBag.Shop = string.Empty;
+            ViewBag.Shop = jsonString;
             return View();
         }
         public IActionResult Contact()

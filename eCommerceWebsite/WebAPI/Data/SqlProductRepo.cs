@@ -44,14 +44,18 @@ namespace WebAPI.Data
             }
             return _context.Products.ToList(); 
         }
-        public List<Product> GetAllProductOfPriceRange(FilterForPriceSearchDto filterForPrice)
+        public List<Product> GetAllProductOfPriceRange(FilterForPriceSearchDto filterForPrice, List<Product> products)
         {
             List<Product> finalList = new List<Product>();
-            foreach(Product product in _context.Products)
+            if(filterForPrice!=null)
             {
-                if(product.Price>filterForPrice.PriceFrom && product.Price<filterForPrice.PriceTo)
-                    finalList.Add(product);
+                foreach(Product product in products)
+                {
+                    if(product.Price>filterForPrice.PriceFrom && product.Price<filterForPrice.PriceTo)
+                        finalList.Add(product);
+                }
             }
+            else return null;
             return finalList; 
         }
         public List<Product> GetAllProductOfCategory(FilterForCategorySearchDto filterForCategory, List<Product> productList)
@@ -147,26 +151,27 @@ namespace WebAPI.Data
             return countOfProducts;
         }
 
-        public IEnumerable<Product> SortProductsByName(List<Product> products, bool isAsc)
+        public List<Product> SortProductsByName(List<Product> products, bool isAsc)
         {
             var list=(IEnumerable<Product>)products;
             if(isAsc)
-                return list.OrderBy(p => p.Name);
-            else return list.OrderByDescending(p => p.Name);
+                return list.OrderBy(p => p.Name).ToList();
+                
+            else return list.OrderByDescending(p => p.Name).ToList();
         }
-        public IEnumerable<Product> SortProductsByPrice(List<Product> products, bool isAsc)
+        public List<Product> SortProductsByPrice(List<Product> products, bool isAsc)
         {
             var list=(IEnumerable<Product>)products;
             if(isAsc)
-                return list.OrderBy(p => p.Price);
-            else return list.OrderByDescending(p => p.Price);
+                return list.OrderBy(p => p.Price).ToList();
+            else return list.OrderByDescending(p => p.Price).ToList();
         }
-        public IEnumerable<Product> SortProductsByViews(List<Product> products, bool isAsc)
+        public List<Product> SortProductsByViews(List<Product> products, bool isAsc)
         {
             var list=(IEnumerable<Product>)products;
             if(isAsc)
-                return list.OrderBy(p => p.NumberOfViews);
-            else return list.OrderByDescending(p => p.NumberOfViews);
+                return list.OrderBy(p => p.NumberOfViews).ToList();
+            else return list.OrderByDescending(p => p.NumberOfViews).ToList();
         }
     }
 }

@@ -36,7 +36,7 @@ namespace ASP.NET_Core.APIComunication
                 RequestUri = new Uri(BaseAdress+endPoint)
             };
             using HttpResponseMessage response = client.SendAsync(request).GetAwaiter().GetResult();
-            if (response.StatusCode == HttpStatusCode.Unauthorized)
+            if (response.StatusCode != HttpStatusCode.NotFound)
             {
                 using HttpContent httpContent = response.Content;
                 byte[] buffer = httpContent.ReadAsByteArrayAsync().GetAwaiter().GetResult().ToArray();

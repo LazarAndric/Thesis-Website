@@ -4,14 +4,15 @@ using WebAPI.Models;
 using WebAPI.Data;
 using AutoMapper;
 using WebAPI.Dtos;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebAPI.Conrollers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ShopController : ControllerBase
     {
-        static List<Product> products = new List<Product>();
         private IGenderRepo _genderRepo;
         private ISizeOfProductRepo _sizeOfProductRepo;
         private ICategoryRepo _categoryRepo;
@@ -30,48 +31,80 @@ namespace WebAPI.Conrollers
             _productRepo = repostory;
             _mapper= mapper;
         }
-
-        //[Authorize]
+        [AllowAnonymous]
         [HttpGet("{action}")]
-        public ActionResult <IEnumerable<ProductReadDto>> Initialize()
+        public ActionResult <List<ProductReadDto>> Filtrate(FiltersSearchDto filter)
         {
-            products=_productRepo.GetAllProduct();
-            return Ok(products);
-        }
-        //[Authorize]
-        [HttpGet("Filter/{action}")]
-        public ActionResult <IEnumerable<ProductReadDto>> Filtrate(FiltersSearchDto filter)
-        {
-            var productList=_productRepo.GetAllProductOfPriceRange(filter.PriceFilter);
-            if(productList==null)
-                return NoContent();
-            products=productList;
-
-            productList=_productRepo.GetAllProductOfCategory(filter.CategoryFilter, products);
-            if(productList!=null)
-                products=productList;
-
-            var filtratedProductWithGender = _genderOfProductRepo.GetAllProductOfGender(filter.GenderFilter);
-            if(filtratedProductWithGender!=null)
+            List<Product> products= _productRepo.GetAllProduct();
+            var productList = new List<Product>();
+            //Search
+            if(!string.IsNullOrWhiteSpace(filter.Search) || !string.IsNullOrEmpty(filter.Search))
             {
-                productList=_productRepo.GetAllProductOfGender(filtratedProductWithGender, products);
+                foreach(Product product in products)
+                    if(product.Name.ToLower().Contains(filter.Search.ToLower()))
+                        productList.Add(product);
+                    products=productList;
+                    if(products==null)
+                        return NoContent();
+            }
+            
+
+            if(filter.PriceFilter!=null){
+                productList=_productRepo.GetAllProductOfPriceRange(filter.PriceFilter, products);
                 if(productList!=null)
                     products=productList;
             }
             
-            var filtratedProductWithSize = _sizeOfProductRepo.GetAllProductsOfSize(filter.SizeFilter);
-            if(filtratedProductWithSize!=null)
+            if(filter.CategoryFilter!=null)
             {
-                productList=_productRepo.GetAllProductOfSize(filtratedProductWithSize, products);
-                if(productList!=null)
-                    products=productList;
+            productList=_productRepo.GetAllProductOfCategory(filter.CategoryFilter, products);
+            if(productList!=null)
+                products=productList;
             }
-            return Ok(_mapper.Map<IEnumerable<ProductReadDto>>(products));
-        }
 
+            if(filter.GenderFilter!=null)
+            {
+                var filtratedProductWithGender = _genderOfProductRepo.GetAllProductOfGender(filter.GenderFilter);
+                if(filtratedProductWithGender!=null)
+                {
+                    productList=_productRepo.GetAllProductOfGender(filtratedProductWithGender, products);
+                    if(productList!=null)
+                        products=productList;
+                }
+            }
+            
+            if(filter.SizeFilter!=null){
+                var filtratedProductWithSize = _sizeOfProductRepo.GetAllProductsOfSize(filter.SizeFilter);
+                if(filtratedProductWithSize!=null)
+                {
+                    productList=_productRepo.GetAllProductOfSize(filtratedProductWithSize, products);
+                    if(productList!=null)
+                        products=productList;
+                }
+            }
+            
+            if(filter.SortItems!=null){
+                if(filter.SortItems.NameOfSort!=null){
+                    switch (filter.SortItems.NameOfSort.ToLower())
+                    {
+                        case "name" : productList= _productRepo.SortProductsByName(products, filter.SortItems.OrderBy); break;
+                        case "price" : productList= _productRepo.SortProductsByPrice(products, filter.SortItems.OrderBy); break;
+                        case "views" : productList= _productRepo.SortProductsByViews(products, filter.SortItems.OrderBy); break;
+                        default: break;
+                    }
+                    if(productList==null)
+                        return NoContent();
+                    products=productList;
+                }
+            }
+            return Ok(_mapper.Map<List<ProductReadDto>>(products));
+        }
+        
+        [AllowAnonymous]
         [HttpGet("Filter/{action}")]
-        public ActionResult <IEnumerable<ProductReadDto>> Create()
+        public ActionResult <List<ProductReadDto>> Create()
         {
+            List<Product> products = _productRepo.GetAllProduct();
             FiltersReadDto filter = new FiltersReadDto();
 
             //ReadPrice
@@ -151,39 +184,6 @@ namespace WebAPI.Conrollers
                 
             }
             return Ok(filter);
-        }
-        //[Authorize]
-        [HttpGet("{action}/{name}")]
-        public ActionResult <List<ProductReadDto>> Search(string name)
-        {
-            if(string.IsNullOrWhiteSpace(name) || string.IsNullOrEmpty(name))
-            {
-                products=_productRepo.GetAllProduct();
-                return NoContent();
-            }
-            var newList= new List<Product>();
-            foreach(Product product in products)
-                if(product.Name.ToLower().Contains(name.ToLower()))
-                    newList.Add(product);
-            products=newList;
-            return Ok(products);
-        }
-
-        //[Authorize]
-        [HttpGet("{action}/{isAsc}/{orderBy}")]
-        public ActionResult <List<ProductReadDto>> Sort(bool isAsc, string orderBy)
-        {
-            IEnumerable<Product> listOfProducts=null;
-            switch (orderBy.ToLower())
-            {
-                case "name" : listOfProducts= _productRepo.SortProductsByName(products, isAsc); break;
-                case "price" : listOfProducts= _productRepo.SortProductsByPrice(products, isAsc); break;
-                case "views" : listOfProducts= _productRepo.SortProductsByViews(products, isAsc); break;
-                default: break;
-            }
-            if(listOfProducts==null)
-                return NoContent();
-            return Ok(_mapper.Map<IEnumerable<ProductReadDto>>(listOfProducts));
         }
     }
 }

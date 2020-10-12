@@ -17,12 +17,12 @@ namespace WebAPI.Data
         float? GetMaxPriceOfProducts(List<Product> products);
         float? GetMinPriceOfProducts(List<Product> products);
         int GetLegthOfProductList(Category category, List<Product> productList);
-        List<Product> GetAllProductOfPriceRange(FilterForPriceSearchDto filterForPrice);
+        List<Product> GetAllProductOfPriceRange(FilterForPriceSearchDto filterForPrice, List<Product> products);
         List<Product> GetAllProductOfCategory(FilterForCategorySearchDto filterForCategory, List<Product> productList);
         List<Product> GetAllProductOfGender(List<GenderOfProduct> genderOfProducts, List<Product> productList);
         List<Product> GetAllProductOfSize(List<SizeOfProduct> sizeOfProducts, List<Product> productList);
-        public IEnumerable<Product> SortProductsByViews(List<Product> products, bool isAsc);
-        public IEnumerable<Product> SortProductsByName(List<Product> products, bool isAsc);
-        public IEnumerable<Product> SortProductsByPrice(List<Product> products, bool isAsc);
+        public List<Product> SortProductsByViews(List<Product> products, bool isAsc);
+        public List<Product> SortProductsByName(List<Product> products, bool isAsc);
+        public List<Product> SortProductsByPrice(List<Product> products, bool isAsc);
     }
 }

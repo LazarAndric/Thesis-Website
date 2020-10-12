@@ -1,6 +1,9 @@
 ﻿@using ASP.NET_Core.APIComunication
 @using System.Net.Http;
 @using Nancy.Json;
+@using ASP.NET_Core.Models; 
+
+@model FiltersSearchDto
 @{
     ViewData["Title"] = "Šop";
 }
@@ -14,190 +17,173 @@
 
 
 <br />
-
+    @{ 
+        string searchValue = String.Empty;
+        var response = APIClient.SetAPIClient("Shop/Filter/Create", HttpMethod.Get);
+        JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
+        var itemsShop = javaScriptSerializer.Deserialize<FiltersReadDto>(response);
+    }
     <div class="row">
-
         <div class="col-md-3">
-
             <br />
+            <form asp-controller="Home" asp-action="Shop" asp- method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>                
             <section class="mb-4">
                 <div class="md-form md-outline mt-0 d-flex justify-content-between align-items-center">
-                    @*<input class="form-control" type="search" onkeyup="myFunction()" placeholder="Pretraga" id="search" aria-label="search">*@
-                    @*<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-unique btn-rounded btn-sm my-0" type="submit">Search</button>*@
-
-                    <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
-                        <input type="text" placeholder="Search.." name="search2">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                    </form>
+                    <input placeholder="Search.." asp-for="Search" asp-controller="Home">
+                    <button type="submit"><i class="fa fa-search"></i></button>
                 </div>
             </section>
+                <!--NOVI PADAJUCI MENI-->
+                <section>
+                    <div id="accordion">
+                        <div class="card">
+                            <button type="button" class="btn collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 
+                                <h5 class="mb-0" style="text-align:center; color:black">
 
+                                    SORT
 
+                                </h5>
 
-
-            <!--NOVI PADAJUCI MENI-->
-            <section>
-                <div id="accordion">
-                    <div class="card">
-                        <button class="btn collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-
-                            <h5 class="mb-0" style="text-align:center; color:black">
-
-                                SORT
-
-                            </h5>
-
-                        </button>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                            <div class="card-body" style="color:black">
-                                <section class="filters">
-
-                                    <!-- Section: Condition -->
-                                    <section filter="condition" class="mb-4">
-                                        <h6 class="font-weight-bold mb-3 filter-text"></h6>
-                                        <div class="form-check pl-0 mb-3">
-                                            <input type="radio" value="option1" name="radiobutton">
-                                            <label for="male">Najeftiniji</label><br>
-                                        </div>
-                                        <div class="form-check pl-0 mb-3">
-                                            <input type="radio"  value="option2" name="radiobutton">
-                                            <label for="male">Najskuplji</label><br>
-                                        </div>
-                                        <div class="form-check pl-0 mb-3">
-                                            <input type="radio"  value="option3" name="radiobutton">
-                                            <label for="male">A-Z</label><br>
-                                        </div>
-                                        <div class="form-check pl-0 mb-3 pb-1">
-                                            <input type="radio"  value="option4" name="radiobutton">
-                                            <label for="male">Z-A</label><br>
-                                        </div>
-                                        <div class="form-check pl-0 mb-3 pb-1">
-                                            <input type="radio"  value="option5" name="radiobutton">
-                                            <label for="male">Najnoviji</label><br>
-                                        </div>
-                                        <div class="form-check pl-0 mb-3 pb-1">
-                                            <input type="radio"  value="option6" name="radiobutton">
-                                            <label for="male">Popust</label><br>
-                                        </div>
-                                    </section>
-                                </section>
-                            </div>
-                        </div>
-                    </div>
-                    <br />
-                    <div class="card">
-                        <button class="btn collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-
-                            <h5 class="mb-0" style="text-align:center; color:black">
-
-                                FILTER
-
-                            </h5>
-
-                        </button>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                            <div class="card-body" style="color:black">
-                                <section class="filters">
-
-                                    <!-- Section: Condition -->
-
-
-                                    <section class="mb-4">
-                                        <h6 class="font-weight-bold mb-3" style="text-align:center">Cena</h6>
-                                        <div class="slider-price d-flex align-items-center my-4">
-                                            <div class="price-slider">
-                                                <div class="row">
-                                                    <span>
-                                                        od
-                                                        <input type="number" value="0" min="0" max="3700" />    do
-                                                        <input type="number" value="4000" min="0" max="4000" />
-                                                    </span>
-                                                </div>
-                                                <input value="0" min="0" max="3700" step="300" type="range" />
-                                                <input value="4001" min="0" max="4000" step="100" type="range" />
-                                                <svg width="100%" height="24">
-                                                    <line x1="4" y1="0" x2="300" y2="0" stroke="#212121" stroke-width="12" stroke-dasharray="1 28"></line>
-                                                </svg>
+                            </button>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div class="card-body" style="color:black">
+                                    <section class="filters">
+                                        <!-- Section: Condition -->
+                                        <section filter="condition" class="mb-4">
+                                            <h6 class="font-weight-bold mb-3 filter-text"></h6>
+                                            <div class="form-check pl-0 mb-3">
+                                                <input type="radio" asp-for="SortItems.NameOfSort" asp-controller="Home" value="price" name="radiobutton">
+                                                <label for="male">Najeftiniji</label>
+                                                <input type="checkbox" asp-for="SortItems.OrderBy" asp-controller="Home" name="autoDiscovery" value="true" />
+                                                <input type="hidden" asp-for="SortItems.OrderBy" asp-controller="Home" name="autoDiscovery" value="false" />
                                             </div>
-                                        </div>
+                                            <div class="form-check pl-0 mb-3">
+                                                <input type="radio" value="option2" name="radiobutton">
+                                                <label for="male">Najskuplji</label><br>
+                                            </div>
+                                            <div class="form-check pl-0 mb-3">
+                                                <input type="radio" value="option3" name="radiobutton">
+                                                <label for="male">A-Z</label><br>
+                                            </div>
+                                            <div class="form-check pl-0 mb-3 pb-1">
+                                                <input type="radio" value="option4" name="radiobutton">
+                                                <label for="male">Z-A</label><br>
+                                            </div>
+                                            <div class="form-check pl-0 mb-3 pb-1">
+                                                <input type="radio" value="option5" name="radiobutton">
+                                                <label for="male">Najnoviji</label><br>
+                                            </div>
+                                            <div class="form-check pl-0 mb-3 pb-1">
+                                                <input type="radio" value="option6" name="radiobutton">
+                                                <label for="male">Popust</label><br>
+                                            </div>
+                                        </section>
                                     </section>
-                                    <hr />
-
-                                    <section filter="condition" class="mb-4">
-                                        <h6 class="font-weight-bold mb-3 filter-text">Kategorije</h6>
-                                        <div class="form-check pl-0 mb-3">
-                                            <input type="checkbox">
-                                            <label for="male">Majice</label><br>
-                                        </div>
-                                        <div class="form-check pl-0 mb-3">
-                                            <input type="checkbox">
-                                            <label for="male">Duksevi</label><br>
-                                        </div>
-                                        <div class="form-check pl-0 mb-3">
-                                            <input type="checkbox">
-                                            <label for="male">Kape</label><br>
-                                        </div>
-                                        <div class="form-check pl-0 mb-3 pb-1">
-                                            <input type="checkbox">
-                                            <label for="male">Rancevi</label><br>
-                                        </div>
-                                    </section>
-                                    <hr />
-                                    <!-- Section: Size -->
-                                    <section class="mb-4" filter="size">
-                                        <h6 class="font-weight-bold mb-3 filter-text">Veličina</h6>
-                                        <div class="form-check pl-0 mb-3">
-                                            <input type="radio" value="option1" name="radiobutton">
-                                            <label for="male">XS</label><br>
-                                        </div>
-                                        <div class="form-check pl-0 mb-3">
-                                            <input type="radio" value="option2" name="radiobutton">
-                                            <label for="male">S</label><br>
-                                        </div>
-                                        <div class="form-check pl-0 mb-3">
-                                            <input type="radio" value="option3" name="radiobutton">
-                                            <label for="male">M</label><br>
-                                        </div>
-                                        <div class="form-check pl-0 mb-3">
-                                            <input type="radio" value="option4" name="radiobutton">
-                                            <label for="male">L</label><br>
-                                        </div>
-                                        <div class="form-check pl-0 mb-3">
-                                            <input type="radio" value="option5" name="radiobutton">
-                                            <label for="male">XL</label><br>
-                                        </div>
-                                    </section>
-                                    <hr />
-                                    <!-- Section: Size -->
-                                    <!-- Section: Gender -->
-                                    <section class="mb-4" filter="size">
-                                        <h6 class="font-weight-bold mb-3 filter-text">Pol</h6>
-
-                                        <div class="form-check pl-0 mb-3">
-                                            <input type="radio"  value="option1" name="radiobutton">
-                                            <label for="male">M</label><br>
-                                        </div>
-                                        <div class="form-check pl-0 mb-3">
-                                            <input type="radio"  value="option2" name="radiobutton">
-                                            <label for="male">Ž</label><br>
-                                        </div>
-                                    </section>
-                                    <!-- Section: Gender -->
-                                </section>
-
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <br />
+                        <div class="card">
+                            <button type="button" class="btn collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 
-                </div>
-            </section>
+                                <h5 class="mb-0" style="text-align:center; color:black">
+
+                                    FILTER
+
+                                </h5>
+
+                            </button>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                <div class="card-body" style="color:black">
+                                    <section class="filters">
+
+                                        <!-- Section: Condition -->
+
+
+                                        <section class="mb-4">
+                                            <h6 class="font-weight-bold mb-3" style="text-align:center">Cena</h6>
+                                            <div class="slider-price d-flex align-items-center my-4">
+                                                <div class="price-slider">
+                                                    <div class="row">
+                                                        <span>
+                                                            od
+                                                            <input type="number" value="@itemsShop.PriceFilter.MaxPriceFrom" min="@itemsShop.PriceFilter.MaxPriceFrom" max="@itemsShop.PriceFilter.MaxPriceTo" />
+                                                            do <input type="number" value="@itemsShop.PriceFilter.MaxPriceTo" min="@itemsShop.PriceFilter.MaxPriceFrom" max="@itemsShop.PriceFilter.MaxPriceTo" />
+                                                        </span>
+                                                    </div>
+                                                    <input value="@itemsShop.PriceFilter.MaxPriceFrom" min="@itemsShop.PriceFilter.MaxPriceFrom" max="@itemsShop.PriceFilter.MaxPriceTo" step="100" type="range" />
+                                                    <input value="@itemsShop.PriceFilter.MaxPriceTo" min="@itemsShop.PriceFilter.MaxPriceFrom" max="@itemsShop.PriceFilter.MaxPriceTo" step="@itemsShop.PriceFilter.MaxPriceTo" type="range" />
+                                                    <svg width="100%" height="24">
+                                                        <line x1="4" y1="0" x2="300" y2="0" stroke="#212121" stroke-width="12" stroke-dasharray="1 28"></line>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <hr />
+
+                                        @{
+                                            <section filter="condition" class="mb-4">
+                                                <h6 class="font-weight-bold mb-3 filter-text">Kategorije</h6>
+                                                @{
+                                                    foreach (var item in itemsShop.CategoriesFilter.listOfCategoryFilter)
+                                                    {
+                                                        <div class="form-check pl-0 mb-3">
+                                                            <input type="checkbox" value="@item.Id">
+                                                            <label>@item.Name</label><br>
+                                                        </div>
+                                                    }
+                                                }
+
+                                            </section>
+                                        }
+                                        <hr />
+                                        <!-- Section: Size -->
+                                        <section class="mb-4" filter="size">
+                                            <h6 class="font-weight-bold mb-3 filter-text">Veličina</h6>
+                                            @{
+                                                @foreach (var item in itemsShop.SizeFilter.sizesFilterList)
+                                                {
+                                                    <div class="form-check pl-0 mb-3">
+                                                        <input type="radio" value="@item.Id" name="radiobutton">
+                                                        <label for="male">@item.Name</label><br>
+                                                    </div>
+                                                }
+                                            }
+
+
+                                        </section>
+                                        <hr />
+                                        <!-- Section: Size -->
+                                        <!-- Section: Gender -->
+                                        <section class="mb-4" filter="size">
+                                            <h6 class="font-weight-bold mb-3 filter-text">Pol</h6>
+                                            @{
+                                                @foreach (var item in itemsShop.GenderFilter.GenderList)
+                                                {
+                                                    <div class="form-check pl-0 mb-3">
+                                                        <input type="radio" value="@item.Id" name="radiobutton">
+                                                        <label>@item.Name</label><br>
+                                                    </div>
+                                                }
+                                            }
+                                        </section>
+                                        <!-- Section: Gender -->
+                                    </section>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </form>
         </div>
         @{
-            var jsonString = APIClient.SetAPIClient("Product/", APIClient.Token,HttpMethod.Get);
-            JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
-            var items = javaScriptSerializer.Deserialize<List<Product>>(jsonString);
+            var jsonString = ViewBag.Shop;
+            JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
+            var items = jsonSerializer.Deserialize<List<Product>>(jsonString);
         }
         <div class="col-md-9">
             <div class="card-deck" id="cardDeck">
