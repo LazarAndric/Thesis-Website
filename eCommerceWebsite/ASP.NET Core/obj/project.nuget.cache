@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9dWDtQkHeF7+RmesJvSvRD1qWm0KlFageoOIAJczZ0KvPZJVSdWMaPu9bZ3jFhIXmtPfO9BjKbJwInw0uO3mrQ==",
+  "dgSpecHash": "IKSzQb8CdSHqpl7sfXmxSSKIjTBtReTuyLqiGrZpdZnKBzH9bszWuGVZaFDQ7+9ZHL7MafPdLzeIRXT6kWCEfg==",
   "success": true,
   "projectFilePath": "E:\\GIT HUB\\Thesis-Website\\eCommerceWebsite\\ASP.NET Core\\ASP.NET Core.csproj",
   "expectedPackageFiles": [
@@ -31,7 +31,7 @@
     "C:\\Users\\neman\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.2.0\\microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
     "C:\\Users\\neman\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\neman\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
-    "C:\\Users\\neman\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\2.9.4\\microsoft.codeanalysis.analyzers.2.9.4.nupkg.sha512",
+    "C:\\Users\\neman\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.0\\microsoft.codeanalysis.analyzers.3.3.0.nupkg.sha512",
     "C:\\Users\\neman\\.nuget\\packages\\microsoft.codeanalysis.common\\3.3.1\\microsoft.codeanalysis.common.3.3.1.nupkg.sha512",
     "C:\\Users\\neman\\.nuget\\packages\\microsoft.codeanalysis.csharp\\3.3.1\\microsoft.codeanalysis.csharp.3.3.1.nupkg.sha512",
     "C:\\Users\\neman\\.nuget\\packages\\microsoft.codeanalysis.csharp.workspaces\\3.3.1\\microsoft.codeanalysis.csharp.workspaces.3.3.1.nupkg.sha512",

@@ -19,6 +19,7 @@ namespace ASP.NET_Core.Controllers
         [HttpPost]
         public IActionResult Register(User user)
         {
+            if (!ModelState.IsValid) { return View(); }
             var response = APIClient.SetAPIClient<User>("User/CreateUser", user, APIClient.Token, HttpMethod.Post);
             if (response == null)
             {
@@ -36,6 +37,7 @@ namespace ASP.NET_Core.Controllers
         [HttpPost]
         public IActionResult Login(LoginUserModel model)
         {
+            if (!ModelState.IsValid) { return View(); }
             var response=APIClient.SetAPIClient<LoginUserModel>("User/Login", model ,HttpMethod.Get);
             if (response == null)
             {
@@ -64,6 +66,12 @@ namespace ASP.NET_Core.Controllers
         }
         public IActionResult Edit()
         {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Edit(User user)
+        {
+            if (!ModelState.IsValid) { return View(); }
             return View();
         }
     }
