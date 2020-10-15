@@ -99,6 +99,13 @@ namespace WebAPI.Conrollers
             }
             return Ok(_mapper.Map<List<ProductReadDto>>(products));
         }
+        [AllowAnonymous]
+        [HttpGet("{action}/{skip}/{skipLast}")]
+        public ActionResult <List<Product>> Paging(int skip, int skipLast, List<Product> products)
+        {
+            var items=_productRepo.BackPaging(skip,skipLast,products);
+            return Ok(items);
+        }
         
         [AllowAnonymous]
         [HttpGet("Filter/{action}")]

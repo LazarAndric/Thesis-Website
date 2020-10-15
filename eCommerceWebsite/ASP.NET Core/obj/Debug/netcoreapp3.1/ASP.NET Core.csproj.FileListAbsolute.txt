@@ -999,3 +999,5 @@ C:\Users\Nikola Grebenarovic\Documents\GitHub\Thesis-Website\eCommerceWebsite\AS
 C:\Users\Nikola Grebenarovic\Documents\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.dll
 C:\Users\Nikola Grebenarovic\Documents\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.pdb
 C:\Users\Nikola Grebenarovic\Documents\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.genruntimeconfig.cache
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_PriceFilterPartial.cshtml.g.cs
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Home\NewPage.cshtml.g.cs

@@ -58,6 +58,16 @@ namespace WebAPI.Data
             else return null;
             return finalList; 
         }
+        public List<Product> BackPaging(int skip,int skipLast, List<Product> products)
+        {
+            var count=products.Count();
+            if(skipLast>count)
+                skipLast=count;
+            var maxItem=count-skipLast;
+            var items= _context.Products.Skip(skip).ToList();
+            var items2= items.SkipLast(maxItem).ToList();
+            return items2.ToList();
+        }
         public List<Product> GetAllProductOfCategory(FilterForCategorySearchDto filterForCategory, List<Product> productList)
         {
             if(filterForCategory==null)

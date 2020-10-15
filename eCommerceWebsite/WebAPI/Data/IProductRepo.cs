@@ -24,5 +24,6 @@ namespace WebAPI.Data
         public List<Product> SortProductsByViews(List<Product> products, bool isAsc);
         public List<Product> SortProductsByName(List<Product> products, bool isAsc);
         public List<Product> SortProductsByPrice(List<Product> products, bool isAsc);
+        public List<Product> BackPaging(int skip,int skipLast, List<Product> products);
     }
 }

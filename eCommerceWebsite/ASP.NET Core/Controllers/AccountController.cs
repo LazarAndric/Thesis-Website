@@ -48,7 +48,7 @@ namespace ASP.NET_Core.Controllers
             return RedirectToAction("Index", controllerName: "Home");
         }
 
-        public IActionResult LogOut()
+        public IActionResult LogOut(int number)
         {
             APIClient.Token = String.Empty;
             return RedirectToAction("Index", controllerName: "Home");
@@ -64,11 +64,6 @@ namespace ASP.NET_Core.Controllers
         }
         public IActionResult Edit()
         {
-            return View();
-        }
-        public IActionResult _LoginPartial()
-        {
-            ViewBag.Model = HttpContext.Session.GetString("user");
             return View();
         }
     }
