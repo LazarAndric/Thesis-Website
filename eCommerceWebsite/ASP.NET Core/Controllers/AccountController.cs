@@ -1,8 +1,12 @@
-﻿using ASP.NET_Core.APIComunication;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
+using ASP.NET_Core.APIComunication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Net.Http;
 
 namespace ASP.NET_Core.Controllers
 {
@@ -15,6 +19,7 @@ namespace ASP.NET_Core.Controllers
         [HttpPost]
         public IActionResult Register(User user)
         {
+            if (!ModelState.IsValid) { return View(); }
             var response = APIClient.SetAPIClient<User>("User/CreateUser", user, APIClient.Token, HttpMethod.Post);
             if (response == null)
             {
@@ -28,11 +33,12 @@ namespace ASP.NET_Core.Controllers
         {
             return View();
         }
-
+        
         [HttpPost]
         public IActionResult Login(LoginUserModel model)
         {
-            var response = APIClient.SetAPIClient<LoginUserModel>("User/Login", model, HttpMethod.Get);
+            if (!ModelState.IsValid) { return View(); }
+            var response=APIClient.SetAPIClient<LoginUserModel>("User/Login", model ,HttpMethod.Get);
             if (response == null)
             {
                 ViewData["LoginMessage"] = "Uneli ste pogresan e-mail ili lozinku";
@@ -60,6 +66,12 @@ namespace ASP.NET_Core.Controllers
         }
         public IActionResult Edit()
         {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Edit(User user)
+        {
+            if (!ModelState.IsValid) { return View(); }
             return View();
         }
     }
