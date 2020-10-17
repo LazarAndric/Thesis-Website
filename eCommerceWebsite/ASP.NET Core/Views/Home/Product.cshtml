@@ -1,4 +1,4 @@
-﻿
+﻿@model Product
 @{
     ViewData["Title"] = "Proizvod";
 }
@@ -7,7 +7,7 @@
        
         <div class="text-center" style="margin-top:95px;">
             <hr />
-            <h1 style="font-size:2em">Odabrani poizvod</h1>
+            <h1 style="font-size:2em">@Model.Name</h1>
         </div>
         <hr />
     </div>  
@@ -21,7 +21,7 @@
                 <!--Grid column-->
                 <div class="col-md-6 mb-4">
 
-                    <img src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" class="img-fluid" alt="">
+                    <img src="@Model.ImgUrl" class="img-fluid" alt="">
 
                 </div>
                 <!--Grid column-->
@@ -33,13 +33,10 @@
                         <!--FILTERs-->
                         <div class="mb-3">
                             <a href="">
-                                <span class="badge purple mr-1">Kategorija</span>
-                            </a>
-                            <a href="">
-                                <span class="badge blue mr-1">New</span>
-                            </a>
-                            <a href="">
-                                <span class="badge red mr-1">Bestseller</span>
+                                @if (Model.Category != null)
+                                {
+                                    <span class="badge purple mr-1">@Model.Category.Name</span>
+                                }
                             </a>
                         </div>
 
@@ -47,40 +44,31 @@
                             <!--<span class="mr-1">
             <del>$200</del>
         </span>-->
-                            <span>2000,00 RSD</span>
+                            <span>@Model.Price</span>
                         </p>
 
                         <p class="lead font-weight-bold">Opis</p>
 
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolor suscipit libero eos atque quia ipsa
-                            sint voluptatibus!
-                            Beatae sit assumenda asperiores iure at maxime atque repellendus maiores quia sapiente.
+                            @Model.Description
                         </p>
 
                         <p class="lead font-weight-bold">Veličina</p>                        
-
+                        @if (Model.Size != null)
+                        {
                         <form>
+                            @foreach (var size in Model.Size)
+                            {
                             <label class="radio-inline">
-                                <input type="radio" name="optradio" checked value="option1" >XS
+                                <input type="radio" name="optradio" checked value="@size.Id" >@size.Name
                             </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio" value="option2">S
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio" value="option3">M
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio" value="option4">L
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio" value="option5">XL
-                            </label>
+                            }
                         </form>
+                        }
 
                         <form class="d-flex justify-content-left">
                             <!-- Default input -->
-                            <a href="#" data-name="Majica_swiftclaw" data-price="1000" class="add-to-cart btn btn-primary" style="width:100%">Dodaj u korpu</a>
+                            <a href="#" data-name="@Model.Name" data-price="@Model.Price" class="add-to-cart btn btn-primary" style="width:100%">Dodaj u korpu</a>
                         </form>
 
                     </div>

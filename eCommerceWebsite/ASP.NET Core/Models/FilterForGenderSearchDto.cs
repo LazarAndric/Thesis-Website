@@ -1,5 +1,5 @@
 
-    public class FilterForGenderSearchDto
-    {
-        public int? Id { get; set; }
-    }
+public class FilterForGenderSearchDto
+{
+    public int? Id { get; set; }
+}

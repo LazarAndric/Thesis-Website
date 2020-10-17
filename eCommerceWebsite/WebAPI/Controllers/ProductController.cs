@@ -35,15 +35,15 @@ namespace WebAPI.Conrollers
         }
         
         [AllowAnonymous]
-        //[Authorize]
         [HttpGet]
         public ActionResult <IEnumerable<ProductReadDto>> GetAllProducts()
         {
             var products = _repository.GetAllProduct();
             return Ok(_mapper.Map<IEnumerable<ProductReadDto>>(products));
         }
-        //[Authorize]
-        [HttpGet("{id}", Name="GetProductById")]
+
+        [AllowAnonymous]
+        [HttpGet("{action}/{id}")]
         public ActionResult <ProductReadDto> GetProductById(int id)
         {
             var productItem = _repository.GetProductById(id);

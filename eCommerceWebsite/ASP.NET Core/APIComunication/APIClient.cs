@@ -1,12 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
 using System.Web;
 
 namespace ASP.NET_Core.APIComunication
@@ -16,7 +14,7 @@ namespace ASP.NET_Core.APIComunication
         public static string Token { get; set; } = String.Empty;
         public static string BaseAdress { get; set; } = "https://localhost:5001/api/";
 
-        public static string SetAPIClient<T>(string endPoint,T jsonContent, string jwtToken, HttpMethod method)
+        public static string SetAPIClient<T>(string endPoint, T jsonContent, string jwtToken, HttpMethod method)
         {
             using HttpClientHandler handler = new HttpClientHandler
             {
@@ -33,7 +31,7 @@ namespace ASP.NET_Core.APIComunication
             {
                 Method = method,
                 Content = content,
-                RequestUri = new Uri(BaseAdress+endPoint)
+                RequestUri = new Uri(BaseAdress + endPoint)
             };
             using HttpResponseMessage response = client.SendAsync(request).GetAwaiter().GetResult();
             if (response.StatusCode != HttpStatusCode.NotFound)
@@ -60,7 +58,7 @@ namespace ASP.NET_Core.APIComunication
             using HttpRequestMessage request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri(BaseAdress + endPoint+data)
+                RequestUri = new Uri(BaseAdress + endPoint + data)
             };
             using HttpResponseMessage response = client.SendAsync(request).GetAwaiter().GetResult();
             if (response.StatusCode != HttpStatusCode.NotFound)

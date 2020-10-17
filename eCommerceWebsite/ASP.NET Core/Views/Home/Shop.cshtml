@@ -1,7 +1,8 @@
 ﻿@using ASP.NET_Core.APIComunication
 @using System.Net.Http;
+@using System.Collections.Generic;
 @using Nancy.Json;
-@using ASP.NET_Core.Models;
+
 
 @model FiltersSearchDto
 @{
@@ -19,224 +20,213 @@
         var response = APIClient.SetAPIClient("Shop/Filter/Create", HttpMethod.Get);
         JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
         var itemsShop = javaScriptSerializer.Deserialize<FiltersReadDto>(response);
+        Model.PriceFilter.PriceFrom = (float)itemsShop.PriceFilter.MaxPriceFrom;
+        Model.PriceFilter.PriceTo = (float)itemsShop.PriceFilter.MaxPriceTo;
     }
-    <div class="row">
-        <div class="col-md-3">
-            <form asp-action="Shop" asp-controller="Home" method="post">
-                <br />
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <section class="mb-4">
-                    <div class="md-form md-outline mt-0 d-flex justify-content-between align-items-center">
-                        <input placeholder="Search.." asp-for="Search" asp-controller="Home">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                    </div>
-                </section>
-                <!--NOVI PADAJUCI MENI-->
-                <section>
-                    <div id="accordion">
-                        <div class="card">
-                            <button type="button" class="btn collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+<div class="row">
+    <div class="col-md-3">
+        <form asp-action="Shop" asp-controller="Home" method="post">
+            <br />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <section class="mb-4">
+                <div class="md-form md-outline mt-0 d-flex justify-content-between align-items-center">
+                    <input placeholder="Search.." asp-for="Search" asp-controller="Home">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </div>
+            </section>
+            <!--NOVI PADAJUCI MENI-->
+            <section>
+                <div id="accordion">
+                    <div class="card">
+                        <button type="button" class="btn collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 
-                                <h5 class="mb-0" style="text-align:center; color:black">
+                            <h5 class="mb-0" style="text-align:center; color:black">
 
-                                    SORT
+                                SORT
 
-                                </h5>
+                            </h5>
 
-                            </button>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                <div class="card-body" style="color:black">
-                                    <section class="filters">
-                                        <!-- Section: Condition -->
-                                        <section filter="condition" class="mb-4">
-                                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                                            <h6 class="font-weight-bold mb-3 filter-text"></h6>
-                                            @*<input asp-for="SortItems" value="@Model.SortItems" type="hidden" />
-                                            <div class="form-check pl-0 mb-3">
-                                                <input type="radio" asp-for="SortItems.NameOfSort" asp-controller="Home" value="price" name="radiobutton">
-                                                <label for="male">Najeftiniji</label>
-                                                <input type="checkbox" asp-for="SortItems.OrderBy" asp-controller="Home" name="autoDiscovery" value="true" />
-                                                <input type="hidden" asp-for="SortItems.OrderBy" asp-controller="Home" name="autoDiscovery" value="false" />
-                                            </div>*@
-                                            <div class="form-check pl-0 mb-3">
-                                                <input type="radio" value="option2" name="radiobutton">
-                                                <label for="male">Najskuplji</label><br>
-                                            </div>
-                                            <div class="form-check pl-0 mb-3">
-                                                <input type="radio" value="option3" name="radiobutton">
-                                                <label for="male">A-Z</label><br>
-                                            </div>
-                                            <div class="form-check pl-0 mb-3 pb-1">
-                                                <input type="radio" value="option4" name="radiobutton">
-                                                <label for="male">Z-A</label><br>
-                                            </div>
-                                            <div class="form-check pl-0 mb-3 pb-1">
-                                                <input type="radio" value="option5" name="radiobutton">
-                                                <label for="male">Najnoviji</label><br>
-                                            </div>
-                                            <div class="form-check pl-0 mb-3 pb-1">
-                                                <input type="radio" value="option6" name="radiobutton">
-                                                <label for="male">Popust</label><br>
-                                            </div>
-                                        </section>
+                        </button>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body" style="color:black">
+                                <section class="filters">
+                                    <!-- Section: Condition -->
+                                    <section filter="condition" class="mb-4">
+                                        <input asp-for="SortItems" value="@Model.SortItems" type="hidden" />
+                                        <div class="form-check pl-0 mb-3">
+                                            <input asp-for="SortItems.NameOfSort" type="radio" value=price:true>
+                                            <label for="male">Najjeftiniji</label><br>
+                                        </div>
+                                        <div class="form-check pl-0 mb-3">
+                                            <input asp-for="SortItems.NameOfSort" type="radio" value=price:false>
+                                            <label for="male">Najskuplje</label><br>
+                                        </div>
+                                        <div class="form-check pl-0 mb-3">
+                                            <input asp-for="SortItems.NameOfSort" type="radio" value=namee:true>
+                                            <label for="male">A-Z</label><br>
+                                        </div>
+                                        <div class="form-check pl-0 mb-3">
+                                            <input asp-for="SortItems.NameOfSort" type="radio" value=namee:false>
+                                            <label for="male">Z-A</label><br>
+                                        </div>
+                                        <div class="form-check pl-0 mb-3">
+                                            <input asp-for="SortItems.NameOfSort" type="radio" value=view:true>
+                                            <label for="male">Najpopularnije</label><br>
+                                        </div>
+                                        <div class="form-check pl-0 mb-3">
+                                            <input asp-for="SortItems.NameOfSort" type="radio" value=view:false>
+                                            <label for="male">Najnepopularnije</label><br>
+                                        </div>
                                     </section>
-                                </div>
+                                </section>
                             </div>
                         </div>
-                        <br />
-                        <div class="card">
-                            <button type="button" class="btn collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-
-                                <h5 class="mb-0" style="text-align:center; color:black">
-
-                                    FILTER
-
-                                </h5>
-
-                            </button>
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                <div class="card-body" style="color:black">
-                                    <section class="filters">
-
-                                        <!-- Section: Condition -->
-
-
-                                        <section class="mb-4">
-                                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                                            <h6 class="font-weight-bold mb-3" style="text-align:center">Cena</h6>
-                                            <div class="slider-price d-flex align-items-center my-4">
-                                                @*<div class="price-slider">
-                                                    <div class="row">
-                                                        <span>
-                                                            <input asp-for="PriceFilter" value="@Model.PriceFilter" type="hidden"/>
-                                                            od
-                                                            <input asp-for="PriceFilter.PriceFrom" type="number" value="@itemsShop.PriceFilter.MaxPriceFrom" min="@itemsShop.PriceFilter.MaxPriceFrom" max="@itemsShop.PriceFilter.MaxPriceTo" />
-                                                            do <input asp-for="PriceFilter.PriceTo" type="number" value="@itemsShop.PriceFilter.MaxPriceTo" min="@itemsShop.PriceFilter.MaxPriceFrom" max="@itemsShop.PriceFilter.MaxPriceTo" />
-                                                        </span>
-                                                    </div>
-                                                    <input value="@itemsShop.PriceFilter.MaxPriceFrom" min="@itemsShop.PriceFilter.MaxPriceFrom" max="@itemsShop.PriceFilter.MaxPriceTo" step="100" type="range" />
-                                                    <input value="@itemsShop.PriceFilter.MaxPriceTo" min="@itemsShop.PriceFilter.MaxPriceFrom" max="@itemsShop.PriceFilter.MaxPriceTo" step="100" type="range" />
-                                                    <svg width="100%" height="24">
-                                                        <line x1="4" y1="0" x2="300" y2="0" stroke="#212121" stroke-width="12" stroke-dasharray="1 28"></line>
-                                                    </svg>
-                                                </div>*@
-                                            </div>
-                                        </section>
-                                        <hr />
-
-                                        <section filter="condition" class="mb-4">
-                                            <h6 class="font-weight-bold mb-3 filter-text">Kategorije</h6>
-                                            @*@{
-                                                <input asp-for="CategoryFilter" value="@Model.CategoryFilter" type="hidden" />
-                                                foreach (var item in itemsShop.CategoriesFilter.listOfCategoryFilter)
-                                                {
-                                                    <div class="form-check pl-0 mb-3">
-                                                        <input type="checkbox" value="">
-                                                        <label>@item.Name</label><br>
-                                                    </div>
-                                                }
-                                            }*@
-
-                                        </section>
-                                        <hr />
-                                        <!-- Section: Size -->
-                                        <section class="mb-4" filter="size">
-                                            <h6 class="font-weight-bold mb-3 filter-text">Veličina</h6>
-                                            @*@{
-                                                <input asp-for="SizeFilter" value="@Model.SizeFilter" type="hidden" />
-                                                @foreach (var item in itemsShop.SizeFilter.sizesFilterList)
-                                                {
-                                                    <div class="form-check pl-0 mb-3">
-                                                        <input type="radio" value="@item.Id" name="radiobutton">
-                                                        <label for="male">@item.Name</label><br>
-                                                    </div>
-                                                }
-                                            }*@
-
-
-                                        </section>
-                                        <hr />
-                                        <!-- Section: Size -->
-                                        <!-- Section: Gender -->
-                                        <section class="mb-4" filter="size">
-                                            <h6 class="font-weight-bold mb-3 filter-text">Pol</h6>
-                                            @*@{
-                                                <input asp-for="GenderFilter" value="@Model.GenderFilter" type="hidden" />
-                                                @foreach (var item in itemsShop.GenderFilter.GenderList)
-                                                {
-                                                    <div class="form-check pl-0 mb-3">
-                                                        <input type="radio" value="@item.Id" name="radiobutton">
-                                                        <label>@item.Name</label><br>
-                                                    </div>
-                                                }
-                                            }*@
-                                        </section>
-                                        <!-- Section: Gender -->
-                                    </section>
-
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
-                </section>
-            </form>
-        </div>
-        @{
-            var jsonString = ViewBag.Shop;
-            JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
-            var items = jsonSerializer.Deserialize<List<Product>>(jsonString);
-        }
-        <div class="col-md-9">
-            <div class="card-deck" id="cardDeck">
-                <div class="row">
-                    <div class="container">
-                        @if (items != null)
-                        {
-                            @foreach (var item in items)
-                            {
-                                <div class="col-md-4 card-space ">
-                                    <div class="flip-box">
-                                        <div class="flip-box-inner">
-                                            <div class="flip-box-front">
-                                                <img class="card-img-top" src="@item.ImgUrl" alt="Card image cap">
-                                                <div class="card-body mt-4 mr-1">
-                                                    <h4 class="card-title"><a style="color:white">@item.Name</a></h4>
-                                                    <div class="dropdown-divider"></div>
-                                                    <p class="card-text" style="color:white">Price: @item.Price</p>
+                    <br />
+                    <div class="card">
+                        <button type="button" class="btn collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+
+                            <h5 class="mb-0" style="text-align:center; color:black">
+
+                                FILTER
+
+                            </h5>
+
+                        </button>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                            <div class="card-body" style="color:black">
+                                <section class="filters">
+
+                                    <!-- Section: Condition -->
+
+
+                                    <section class="mb-4">
+                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                        <h6 class="font-weight-bold mb-3" style="text-align:center">Cena</h6>
+                                        <div class="slider-price d-flex align-items-center my-4">
+                                            <div class="price-slider">
+                                                <div class="row">
+                                                    <span>
+                                                        <input asp-for="PriceFilter" value="@Model.PriceFilter" type="hidden" />
+                                                        od
+                                                        <input asp-for="PriceFilter.PriceFrom" type="number" value="@Model.PriceFilter.PriceFrom" min="@itemsShop.PriceFilter.MaxPriceFrom" max="@itemsShop.PriceFilter.MaxPriceTo" />
+                                                        do <input asp-for="PriceFilter.PriceTo" type="number" value="@Model.PriceFilter.PriceTo" min="@itemsShop.PriceFilter.MaxPriceFrom" max="@itemsShop.PriceFilter.MaxPriceTo" />
+                                                    </span>
                                                 </div>
+                                                <input value="@Model.PriceFilter.PriceFrom" min="@itemsShop.PriceFilter.MaxPriceFrom" max="@itemsShop.PriceFilter.MaxPriceTo" step="100" type="range" />
+                                                <input value="@Model.PriceFilter.PriceTo" min="@itemsShop.PriceFilter.MaxPriceFrom" max="@itemsShop.PriceFilter.MaxPriceTo" step="100" type="range" />
+                                                <svg width="100%" height="24">
+                                                    <line x1="4" y1="0" x2="300" y2="0" stroke="#212121" stroke-width="12" stroke-dasharray="1 28"></line>
+                                                </svg>
                                             </div>
-                                            <a asp-action="Product">
-                                                <div class="flip-box-back" style="font-size: 30px; font-family: Impact;"> <br /><br /><br /><br />KUPI ODMAH!</div>
-                                            </a>
+                                        </div>
+                                    </section>
+                                    <hr />
+
+                                    <section filter="condition" class="mb-4">
+                                        <h6 class="font-weight-bold mb-3 filter-text">Kategorije</h6>
+
+
+
+                                    </section>
+                                    <hr />
+                                    <!-- Section: Size -->
+                                    <section class="mb-4" filter="size">
+                                        <h6 class="font-weight-bold mb-3 filter-text">Veličina</h6>
+                                        <input asp-for="SizeFilter" value="@Model.SizeFilter" type="hidden" />
+                                        @foreach (var item in itemsShop.SizeFilter.sizesFilterList)
+                                        {
+                                            <div class="form-check pl-0 mb-3">
+                                                <input asp-for="SizeFilter.Id" type="radio" value=@item.Id>
+                                                <label for="male">@item.Name</label><br>
+                                            </div>
+                                        }
+
+
+                                    </section>
+                                    <hr />
+                                    <!-- Section: Size -->
+                                    <!-- Section: Gender -->
+                                    <section class="mb-4" filter="size">
+                                        <h6 class="font-weight-bold mb-3 filter-text">Pol</h6>
+                                        <input asp-for="GenderFilter" value="@Model.GenderFilter" type="hidden" />
+                                        @foreach (var item in itemsShop.GenderFilter.GenderList)
+                                        {
+                                            <div class="form-check pl-0 mb-3">
+                                                <input asp-for="GenderFilter.Id" asp-controller="Home" type="radio" value=@item.Id>
+                                                <label>@item.Name</label><br>
+                                            </div>
+                                        }
+                                    </section>
+                                    <!-- Section: Gender -->
+                                </section>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </form>
+    </div>
+    @{
+        var jsonString = ViewBag.ShopPaging;
+        JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
+        var items = jsonSerializer.Deserialize<List<Product>>(jsonString);
+    }
+<div class="col-md-9">
+        <div class="card-deck" id="cardDeck">
+            <div class="row">
+                <div class="container">
+                    @if (items != null)
+                    {
+                        @foreach (var item in items)
+                        {
+                        <div class="col-md-4 card-space ">
+                            <form method="get" asp-action="Product" asp-controller="Home">
+                                <div class="flip-box">
+                                    <div class="flip-box-inner">
+                                        <div class="flip-box-front">
+                                            <img class="card-img-top" src="@item.ImgUrl" alt="Card image cap">
+                                            <div class="card-body mt-4 mr-1">
+                                                <h4 class="card-title"><a style="color:white">@item.Name</a></h4>
+                                                <div class="dropdown-divider"></div>
+                                                <p class="card-text" style="color:white">Price: @item.Price</p>
+                                            </div>
+                                        </div>
+                                        <div class="flip-box-back form-check" style="font-size: 30px; font-family: Impact;">
+                                            <br /><br /><br /><br />
+                                            <input asp-for="ProductForViewId" value=@item.Id type="hidden" />
+                                            <input type="submit" value="Kupi" />
                                         </div>
                                     </div>
                                 </div>
-                            }
-                        }
-                        else
-                        {
-                            <a>TRENUTNO NEMA PROIZVODA U ŠOPU</a>
-                        }
-                    </div>
-                </div>
+                            </form>
+                        </div>
+                        
+                                }
+                                }
+                                else
+                                {
+                                <a>TRENUTNO NEMA PROIZVODA U ŠOPU</a>
+                                }
+                        </div>
             </div>
-            <form method="post" asp-controller="Home" asp-action="NewPage">
-                @for (int i = 0; i < 2; i++)
-                {
-                    var counter = i + 1;
-                    <input asp-for="pageNumber" type="submit" value="@counter" />
-                }
-            </form>
         </div>
-        @{
-        }
+        
+        <form method="post" asp-controller="Home" asp-action="NewPage">
+            <input asp-for="PriceFilter" value="@Model.PriceFilter" type="hidden" />
+            @for (int i = 0; i < 2; i++)
+            {
+                var counter = i + 1;
+                <input asp-for="PageNumber" type="submit" value="@counter" />
+            }
+        </form>
+</div>
 
     </div>
 
 </div>
-
-
 
 
 

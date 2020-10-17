@@ -85,11 +85,18 @@ namespace WebAPI.Conrollers
             
             if(filter.SortItems!=null){
                 if(filter.SortItems.NameOfSort!=null){
-                    switch (filter.SortItems.NameOfSort.ToLower())
+                    var split=filter.SortItems.NameOfSort.Split(":");
+                    var nameOfSort=split[0];
+                    var orderByString=split[1];
+                    bool orderBy;
+                    if(orderByString.Equals("true"))
+                        orderBy=true;
+                    else    orderBy=false;
+                    switch (nameOfSort.ToLower())
                     {
-                        case "name" : productList= _productRepo.SortProductsByName(products, filter.SortItems.OrderBy); break;
-                        case "price" : productList= _productRepo.SortProductsByPrice(products, filter.SortItems.OrderBy); break;
-                        case "views" : productList= _productRepo.SortProductsByViews(products, filter.SortItems.OrderBy); break;
+                        case "namee" : productList= _productRepo.SortProductsByName(products, orderBy); break;
+                        case "price" : productList= _productRepo.SortProductsByPrice(products, orderBy); break;
+                        case "views" : productList= _productRepo.SortProductsByViews(products, orderBy); break;
                         default: break;
                     }
                     if(productList==null)

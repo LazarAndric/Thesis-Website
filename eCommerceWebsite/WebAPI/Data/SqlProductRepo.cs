@@ -51,7 +51,7 @@ namespace WebAPI.Data
             {
                 foreach(Product product in products)
                 {
-                    if(product.Price>filterForPrice.PriceFrom && product.Price<filterForPrice.PriceTo)
+                    if(product.Price>=filterForPrice.PriceFrom && product.Price<=filterForPrice.PriceTo)
                         finalList.Add(product);
                 }
             }
@@ -64,7 +64,7 @@ namespace WebAPI.Data
             if(skipLast>count)
                 skipLast=count;
             var maxItem=count-skipLast;
-            var items= _context.Products.Skip(skip).ToList();
+            var items= products.Skip(skip).ToList();
             var items2= items.SkipLast(maxItem).ToList();
             return items2.ToList();
         }

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Threading.Tasks;
-using ASP.NET_Core.APIComunication;
+﻿using ASP.NET_Core.APIComunication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Net.Http;
 
 namespace ASP.NET_Core.Controllers
 {
@@ -32,11 +28,11 @@ namespace ASP.NET_Core.Controllers
         {
             return View();
         }
-        
+
         [HttpPost]
         public IActionResult Login(LoginUserModel model)
         {
-            var response=APIClient.SetAPIClient<LoginUserModel>("User/Login", model ,HttpMethod.Get);
+            var response = APIClient.SetAPIClient<LoginUserModel>("User/Login", model, HttpMethod.Get);
             if (response == null)
             {
                 ViewData["LoginMessage"] = "Uneli ste pogresan e-mail ili lozinku";

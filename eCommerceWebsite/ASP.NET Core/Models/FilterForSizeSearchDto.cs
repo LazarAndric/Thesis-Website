@@ -1,4 +1,4 @@
-    public class FilterForSizeSearchDto
-    {
-        public int? Id { get; set; }
-    }
+public class FilterForSizeSearchDto
+{
+    public int? Id { get; set; }
+}

@@ -1,5 +1,5 @@
 
-    public class FilterForCategorySearchDto
-    {
-        public int?[] Id { get; set; }
-    }
+public class FilterForCategorySearchDto
+{
+    public int?[] Id { get; set; }
+}
