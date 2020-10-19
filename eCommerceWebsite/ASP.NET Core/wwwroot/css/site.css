@@ -512,6 +512,16 @@ input[type=range] {
         transform: scale(1.4);
     }
 
+.zoom2 {
+    transition: transform .1s;
+}
+
+    .zoom2:hover {
+        -ms-transform: scale(1.2); /* IE 9 */
+        -webkit-transform: scale(1.2); /* Safari 3-8 */
+        transform: scale(1.2);
+    }
+
 .video-responsive {
     overflow: hidden;
     padding-bottom: 56.25%;
@@ -789,3 +799,12 @@ form.example::after {
     margin-top:20%
 }
 
+.krug-ikone {
+    background: #2E0D5F;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 100px;
+    
+}

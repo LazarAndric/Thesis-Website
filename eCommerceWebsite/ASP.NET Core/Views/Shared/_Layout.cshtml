@@ -74,8 +74,10 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Order now</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>                   
+                    <form asp-action="Order_By">
+                        <input type="submit" class="btn btn-primary" value="Poruci" />
+                    </form>
                 </div>
             </div>
         </div>
@@ -102,7 +104,7 @@
     <footer class="page-footer font-small stylish-color-dark pt-4 font-sajt" style="background-color: #343A40;color: white;">
         <div class="container text-center text-md-left">
             <div class="row">
-                <div class="col-md-3 mx-auto text-center">
+                <div class="col-md-3 mx-auto text-center zoom2">
                     <img src="https://s5.gifyu.com/images/logo9844754e8f83dfa4.png" alt="logo" height="250" width="250" class="img-fluid">
                 </div>
                 <div class="col-md-3 mx-auto">
@@ -574,6 +576,17 @@
                 x.type = "password";
             }
         }
+    </script>
+
+
+    <script>
+        $('#accept').click(function () {
+            if ($('#submitbtn').is(':disabled')) {
+                $('#submitbtn').removeAttr('disabled');
+            } else {
+                $('#submitbtn').attr('disabled', 'disabled');
+            }
+        });
     </script>
 
 </body>
