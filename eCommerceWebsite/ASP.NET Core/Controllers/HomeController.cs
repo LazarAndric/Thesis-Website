@@ -126,6 +126,7 @@ namespace ASP.NET_Core.Controllers
             var jsonString = APIClient.SetAPIClient("Product/GetProductById/", data: productId.ToString(), APIClient.Token, HttpMethod.Get);
             JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
             var product = jsonSerializer.Deserialize<Product>(jsonString);
+            APIClient.SetAPIClient("Product/ViewsCounts/", data: product.Id.ToString(), APIClient.Token, HttpMethod.Get);
             return View(product);
         }
 

@@ -11,6 +11,7 @@ namespace WebAPI.Data
 
         List<GenderOfProduct> GetAllGenderOfProducts();
         List<GenderOfProduct> GetAllProductOfGender(FilterForGenderSearchDto genderFilter);
+        public List<int> GetAllIdOfGender(Product product);
         GenderOfProduct GetGenderOfProductById(int id);
         List<int> GetAllIdOfGenders(List<Product> products);
         void CreateGenderOfProduct(GenderOfProduct gendersOfProduct);

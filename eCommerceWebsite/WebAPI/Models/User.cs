@@ -21,6 +21,8 @@ namespace WebAPI.Models
         [Required]
         public string Password { get; set; }
         [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DateOfBirth { get; set; }
         [Required]
         public int GenderId{get;set;}
@@ -32,6 +34,8 @@ namespace WebAPI.Models
         public string Contry { get; set; }
         public string PostalCode { get; set; }
         public string PhoneNumber { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DateOfRegistration { get; set; }
         public DateTime? LastLogin { get; set; }
     }

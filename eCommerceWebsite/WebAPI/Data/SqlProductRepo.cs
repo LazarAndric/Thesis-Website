@@ -183,5 +183,48 @@ namespace WebAPI.Data
                 return list.OrderBy(p => p.NumberOfViews).ToList();
             else return list.OrderByDescending(p => p.NumberOfViews).ToList();
         }
+
+        public Product GetMostPurchasesProduct()
+        {
+            var items=_context.Products.ToList();
+            int max=0;
+            Product product=new Product();
+            foreach(var item in items)
+                if(item.NumberOfPurchases>max)
+                {
+                    max=item.NumberOfPurchases;
+                    product=item;
+                }
+            return product;
+        }
+
+        public Product GetMostPopularProduct()
+        {
+            var items=_context.Products.ToList();
+            int max=0;
+            Product product=new Product();
+            foreach(var item in items)
+                if(item.NumberOfViews>max)
+                {
+                    max=item.NumberOfViews;
+                    product=item;
+                }
+            return product;
+        }
+
+        public Product GetLatestProduct()
+        {
+            var items=_context.Products.ToList();
+            Product product=new Product();
+            DateTime date=(DateTime)items[0].DateOfCreate;
+            foreach(var item in items)
+                if(item.DateOfCreate>date)
+                {
+                    date=(DateTime)item.DateOfCreate;
+                    product=item;
+                }
+
+            return product;
+        }
     }
 }

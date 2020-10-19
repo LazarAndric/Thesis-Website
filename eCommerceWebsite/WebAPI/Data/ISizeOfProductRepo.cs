@@ -16,6 +16,7 @@ namespace WebAPI.Data
         void UpdateSizeOfProduct(SizeOfProduct sizeOfProduct);
         void DeleteSizeOfProduct(SizeOfProduct sizeOfProduct);
         List<int> GetAllIdOfSize(List<Product> products);
+        List<int> GetAllProductIdsOfSize(Product product);
         List<SizeOfProduct> GetAllProductsOfSize(FilterForSizeSearchDto sizeFilter);
     }
 }

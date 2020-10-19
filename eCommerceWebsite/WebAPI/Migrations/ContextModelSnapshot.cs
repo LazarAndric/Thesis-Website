@@ -86,7 +86,7 @@ namespace WebAPI.Migrations
                         .IsRequired()
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DateOfCreate")
+                    b.Property<DateTime?>("DateOfCreate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")

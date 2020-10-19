@@ -17,6 +17,9 @@ namespace WebAPI.Data
         float? GetMaxPriceOfProducts(List<Product> products);
         float? GetMinPriceOfProducts(List<Product> products);
         int GetLegthOfProductList(Category category, List<Product> productList);
+        Product GetMostPurchasesProduct();
+        Product GetMostPopularProduct();
+        Product GetLatestProduct();
         List<Product> GetAllProductOfPriceRange(FilterForPriceSearchDto filterForPrice, List<Product> products);
         List<Product> GetAllProductOfCategory(FilterForCategorySearchDto filterForCategory, List<Product> productList);
         List<Product> GetAllProductOfGender(List<GenderOfProduct> genderOfProducts, List<Product> productList);

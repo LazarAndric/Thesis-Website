@@ -72,6 +72,18 @@ namespace WebAPI.Data
             return finalList;
         }
 
+        public List<int> GetAllProductIdsOfSize(Product product)
+        {
+            if(product==null)
+                return null;
+            var finalList = new List<int>();
+            foreach(SizeOfProduct sizeOfProduct in _context.SizeOfProducts)
+                if(sizeOfProduct.ProductId.Equals(product.Id))
+                    if(!finalList.Contains((int)sizeOfProduct.SizeId))
+                        finalList.Add((int)sizeOfProduct.SizeId);
+            return finalList;
+        }
+
         public SizeOfProduct GetSizeOfProductById(int id)
         {
             return _context.SizeOfProducts.FirstOrDefault(p=> p.Id == id);
