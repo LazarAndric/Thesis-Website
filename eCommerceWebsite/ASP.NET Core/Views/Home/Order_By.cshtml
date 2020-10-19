@@ -1,0 +1,74 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Order_By";
+}
+
+    <div class="container font-sajt" style="background-color:white">
+
+        <div class="text-center" style="margin-top:95px;">
+            <hr />
+            <h1 style="font-size:2em">Kontakt</h1>
+        </div>
+        <hr />
+        <br /><br />
+              <div class="row">
+                  <div class="col-md-6">
+                      <h6>Potrebno je uneti podatke koje niste uneli prilikom registracije</h6>
+                      <div class="form-group">
+                          <label asp-for="Adress" class="control-label"></label>
+                          <input id="accept"  asp-for="Adress" class="form-control" />
+                          <span asp-validation-for="Adress" class="text-danger"></span>
+                      </div>
+                      <div class="form-group">
+                          <label asp-for="AdressNumber" class="control-label"></label>
+                          <input id="accept"  asp-for="AdressNumber" class="form-control" />
+                          <span asp-validation-for="AdressNumber" class="text-danger"></span>
+                      </div>
+                      <div class="form-group">
+                          <label asp-for="Place" class="control-label"></label>
+                          <input id="accept"   asp-for="Place" class="form-control" />
+                          <span asp-validation-for="Place" class="text-danger"></span>
+                      </div>
+                      <div class="form-group">
+                          <label asp-for="Contry" class="control-label"></label>
+                          <input id="accept"   asp-for="Contry" class="form-control" />
+                          <span asp-validation-for="Contry" class="text-danger"></span>
+                      </div>
+                      <div class="form-group">
+                          <label asp-for="PostalCode" class="control-label"></label>
+                          <input id="accept" asp-for="PostalCode" class="form-control" />
+                          <span asp-validation-for="PostalCode" class="text-danger"></span>
+                      </div>
+                      <div class="form-group">
+                          <label asp-for="PhoneNumber" class="control-label"></label>
+                          <input id="accept"  asp-for="PhoneNumber" class="form-control" />
+                          <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                      </div>
+                      <div>
+                          <input id="submitbtn" disabled="disabled" name="Submit" type="submit" value="Sacuvaj"/>
+                      </div>
+                  </div>
+              </div>
+        <hr />
+
+              <div class="row">
+                  <div class="col-md-8">
+                      <p>SADRZAJ KORPE</p>
+                      <div class="show-cart table-responsive text-nowrap center" align="left"></div>
+                  </div>
+                  <div class="col-md-4" style="font-size:20px">
+                      <p>UKUPNA CENA: </p>
+                      <span class="total-cart"></span> din
+                      <button></button>
+                  </div>
+              </div>
+        <br />
+                  
+              
+       
+
+    </div>
+
+
+
+       
