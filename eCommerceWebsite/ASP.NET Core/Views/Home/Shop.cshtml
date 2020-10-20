@@ -175,13 +175,13 @@
         var items = jsonSerializer.Deserialize<List<Product>>(jsonString);
     }
 <div class="col-md-9">
-        <div class="card-deck" id="cardDeck" style="display:block">
-            <div class="row">
-                <div class="container">
-                    @if (items != null)
+    <div class="card-deck" id="cardDeck" style="display:block">
+        <div class="row">
+            <div class="container">
+                @if (items != null)
+                {
+                    @foreach (var item in items)
                     {
-                        @foreach (var item in items)
-                        {
                         <div class="col-md-4 card-space ">
                             <form method="get" asp-action="NewPage" asp-controller="Home">
                                 <div class="flip-box">
@@ -194,42 +194,46 @@
                                                 <p class="card-text" style="color:white">Price: @item.Price</p>
                                             </div>
                                         </div>
-                                        <div class="flip-box-back form-check" style="font-size: 30px; font-family: Impact;" >
+                                        <div class="flip-box-back form-check" style="font-size: 30px; font-family: Impact;">
                                             <br /><br /><br /><br />
-                                            <input asp-for="ProductForViewId" value=@item.Id type="hidden"/>
-                                            <input type="submit" value="Kupi" style="color: white; background-color: #78649E"/>
+                                            <input asp-for="ProductForViewId" value=@item.Id type="hidden" />
+                                            <input type="submit" value="Kupi" style="color: white; background-color: #78649E" />
                                         </div>
                                     </div>
                                 </div>
                             </form>
                         </div>
-                        
-                                }
-                                }
-                                else
-                                {
-                                <a>TRENUTNO NEMA PROIZVODA U ŠOPU</a>
-                                }
-                        </div>
+
+                    }
+                }
+                else
+                {
+                    <a>TRENUTNO NEMA PROIZVODA U ŠOPU</a>
+                }
             </div>
         </div>
-        
-        <form method="post" asp-controller="Home" asp-action="PagingView">
-            <input asp-for="PriceFilter" value="@Model.PriceFilter" type="hidden" />
-            @{
-                jsonString = ViewBag.Shop;
-                items = jsonSerializer.Deserialize<List<Product>>(jsonString);
-                var length = items.Count;
-                float numberOFPage=0;
-                if (length % 9 != 0)
-                    numberOFPage = length / 9 + 1;
-            }
-            @for (int i = 0; i < numberOFPage; i++)
-            {
-                var counter = i + 1;
-                <input asp-for="PageNumber" type="submit" value="@counter" />
-            }
-        </form>
+       
+
+    </div>
+
+    <form method="post" asp-controller="Home" asp-action="PagingView">
+        <input asp-for="PriceFilter" value="@Model.PriceFilter" type="hidden" />
+        @{
+            jsonString = ViewBag.Shop;
+            items = jsonSerializer.Deserialize<List<Product>>(jsonString);
+            var length = items.Count;
+            float numberOFPage = 0;
+            if (length % 9 != 0)
+                numberOFPage = length / 9 + 1;
+        }
+        @for (int i = 0; i < numberOFPage; i++)
+        {
+            var counter = i + 1;
+            <input asp-for="PageNumber" type="submit" value="@counter" />
+        }
+    </form>
+
+    
 </div>
 
     </div>
