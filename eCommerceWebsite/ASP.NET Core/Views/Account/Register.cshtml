@@ -26,32 +26,32 @@
                 <form asp-controller="Account" asp-action="Register" method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
-                        <label asp-for="FirstName" class="control-label"></label>
+                        <label asp-for="FirstName" class="control-label">Ime</label>
                         <input asp-for="FirstName" class="form-control" />
                         <span asp-validation-for="FirstName" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="LastName" class="control-label"></label>
+                        <label asp-for="LastName" class="control-label">Prezime</label>
                         <input asp-for="LastName" class="form-control" />
                         <span asp-validation-for="LastName" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="EMail" class="control-label"></label>
+                        <label asp-for="EMail" class="control-label">E-mail</label>
                         <input asp-for="EMail" class="form-control" />
                         <span asp-validation-for="EMail" class="text-danger"></span>
                        </div>
                     <div class="form-group">
-                        <label asp-for="Password" class="control-label"></label>
+                        <label asp-for="Password" class="control-label">Šifra</label>
                         <input asp-for="Password" class="form-control" type="password" value="" id="myInput" />
                         <span asp-validation-for="Password" class="text-danger"></span>
                         <input type="checkbox" onclick="myPassword()">Prikaži šifru
                     </div>
                     <div class="form-group">
-                        <label asp-for="DateOfBirth" class="control-label"></label>
+                        <label asp-for="DateOfBirth" class="control-label">Datum rodjenja</label>
                         <input asp-for="DateOfBirth" class="form-control" />                       
                     </div>
                     <div class="form-group">
-                        <label asp-for="GenderId" class="control-label">Gender</label>
+                        <label asp-for="GenderId" class="control-label">Pol</label>
                         @{
                             foreach (var item in items)
                             {
@@ -62,32 +62,32 @@
                         <span asp-validation-for="GenderId" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="Adress" class="control-label"></label>
+                        <label asp-for="Adress" class="control-label">Adresa</label>
                         <input asp-for="Adress" class="form-control" />
                         <span asp-validation-for="Adress" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="AdressNumber" class="control-label"></label>
+                        <label asp-for="AdressNumber" class="control-label">Broj adrese</label>
                         <input asp-for="AdressNumber" class="form-control" />
                         <span asp-validation-for="AdressNumber" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="Place" class="control-label"></label>
+                        <label asp-for="Place" class="control-label">Mesto</label>
                         <input asp-for="Place" class="form-control" />
                         <span asp-validation-for="Place" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="Contry" class="control-label"></label>
+                        <label asp-for="Contry" class="control-label">Zemlja</label>
                         <input asp-for="Contry" class="form-control" />
                         <span asp-validation-for="Contry" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="PostalCode" class="control-label"></label>
+                        <label asp-for="PostalCode" class="control-label">Poštanski broj</label>
                         <input asp-for="PostalCode" class="form-control" />
                         <span asp-validation-for="PostalCode" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="PhoneNumber" class="control-label"></label>
+                        <label asp-for="PhoneNumber" class="control-label">Broj telefona</label>
                         <input asp-for="PhoneNumber" class="form-control" />
                         <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                     </div>
@@ -102,7 +102,7 @@
                             <span asp-validation-for="LastLogin" class="text-danger"></span>
                         </div>*@
                     <div class="form-group">
-                        <input type="submit" value="Register" class="btn btn-primary" />
+                        <input type="submit" value="Registruj" class="btn btn-primary" />
                     </div>
                 </form>
                 <div>
