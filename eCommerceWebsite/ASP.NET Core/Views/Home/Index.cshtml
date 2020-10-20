@@ -51,7 +51,7 @@
                                     <div class="flip-box-front">
                                         <img class="card-img-top" src="@item.ImgUrl" alt="Card image cap">
                                         <div class="card-body mt-4 mr-1">
-                                            <h4 class="card-title"><a style="color:white">@item.Name</a></h4>
+                                            <h4 class="card-title"><a style="color:white">Najprodavaniji</a></h4>
                                             <div class="dropdown-divider"></div>
                                             <p class="card-text" style="color:white">Price: @item.Price</p>
                                         </div>
@@ -76,7 +76,7 @@
                                     <div class="flip-box-front">
                                         <img class="card-img-top" src="@item.ImgUrl" alt="Card image cap">
                                         <div class="card-body mt-4 mr-1">
-                                            <h4 class="card-title"><a style="color:white">@item.Name</a></h4>
+                                            <h4 class="card-title"><a style="color:white">Najpopularniji</a></h4>
                                             <div class="dropdown-divider"></div>
                                             <p class="card-text" style="color:white">Price: @item.Price</p>
                                         </div>
@@ -90,6 +90,10 @@
                             </div>
                         </form>
                     </div>
+                    @{
+                        jsonString = APIClient.SetAPIClient("Product/LatestProduct", HttpMethod.Get);
+                        item = jsonSerializer.Deserialize<Product>(jsonString);
+                    }
                     <div class="col-md-4 card-space ">
                         <form method="get" asp-action="Product" asp-controller="Home">
                             <div class="flip-box">
@@ -97,7 +101,7 @@
                                     <div class="flip-box-front">
                                         <img class="card-img-top" src="@item.ImgUrl" alt="Card image cap">
                                         <div class="card-body mt-4 mr-1">
-                                            <h4 class="card-title"><a style="color:white">@item.Name</a></h4>
+                                            <h4 class="card-title"><a style="color:white">Najnoviji</a></h4>
                                             <div class="dropdown-divider"></div>
                                             <p class="card-text" style="color:white">Price: @item.Price</p>
                                         </div>

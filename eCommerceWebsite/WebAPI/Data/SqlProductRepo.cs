@@ -187,8 +187,9 @@ namespace WebAPI.Data
         public Product GetMostPurchasesProduct()
         {
             var items=_context.Products.ToList();
-            int max=0;
+            int max=items[2].NumberOfPurchases;
             Product product=new Product();
+            product=items[2];
             foreach(var item in items)
                 if(item.NumberOfPurchases>max)
                 {
@@ -201,8 +202,9 @@ namespace WebAPI.Data
         public Product GetMostPopularProduct()
         {
             var items=_context.Products.ToList();
-            int max=0;
             Product product=new Product();
+            int max=items[1].NumberOfViews;
+            product=items[1];
             foreach(var item in items)
                 if(item.NumberOfViews>max)
                 {
@@ -217,6 +219,7 @@ namespace WebAPI.Data
             var items=_context.Products.ToList();
             Product product=new Product();
             DateTime date=(DateTime)items[0].DateOfCreate;
+            product=items[0];
             foreach(var item in items)
                 if(item.DateOfCreate>date)
                 {

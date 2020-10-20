@@ -68,6 +68,8 @@ namespace WebAPI.Conrollers
         {
             var product=_repository.GetProductById(id);
             product.NumberOfViews++;
+
+            _repository.SaveChanges();
             return Ok();
         }
         [AllowAnonymous]
