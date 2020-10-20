@@ -24,8 +24,6 @@ namespace ASP.NET_Core.Controllers
 
         public IActionResult Index()
         {
-
-            ViewData["msg"] = new User() { FirstName = "Lazar", LastName = "Andric" };
             return View();
         }
 
@@ -116,9 +114,11 @@ namespace ASP.NET_Core.Controllers
         }
 
         [HttpPost]
-        public IActionResult PreviewProduct(FiltersSearchDto filter)
+        public IActionResult PagingView(FiltersSearchDto filter)
         {
-            return View();
+            var jsonString = APIClient.SetAPIClient("Product/", APIClient.Token, HttpMethod.Get);
+            ViewBag.Shop = jsonString;
+            return NewPage(filter);
         }
         public IActionResult Product(FiltersSearchDto filter)
         {
@@ -126,6 +126,7 @@ namespace ASP.NET_Core.Controllers
             var jsonString = APIClient.SetAPIClient("Product/GetProductById/", data: productId.ToString(), APIClient.Token, HttpMethod.Get);
             JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
             var product = jsonSerializer.Deserialize<Product>(jsonString);
+            APIClient.SetAPIClient("Product/ViewsCounts/", data: product.Id.ToString(), APIClient.Token, HttpMethod.Get);
             return View(product);
         }
 

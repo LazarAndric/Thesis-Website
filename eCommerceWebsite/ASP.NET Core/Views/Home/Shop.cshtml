@@ -183,7 +183,7 @@
                         @foreach (var item in items)
                         {
                         <div class="col-md-4 card-space ">
-                            <form method="get" asp-action="Product" asp-controller="Home">
+                            <form method="get" asp-action="NewPage" asp-controller="Home">
                                 <div class="flip-box">
                                     <div class="flip-box-inner">
                                         <div class="flip-box-front">
@@ -214,9 +214,17 @@
             </div>
         </div>
         
-        <form method="post" asp-controller="Home" asp-action="NewPage">
+        <form method="post" asp-controller="Home" asp-action="PagingView">
             <input asp-for="PriceFilter" value="@Model.PriceFilter" type="hidden" />
-            @for (int i = 0; i < 2; i++)
+            @{
+                jsonString = ViewBag.Shop;
+                items = jsonSerializer.Deserialize<List<Product>>(jsonString);
+                var length = items.Count;
+                float numberOFPage=0;
+                if (length % 9 != 0)
+                    numberOFPage = length / 9 + 1;
+            }
+            @for (int i = 0; i < numberOFPage; i++)
             {
                 var counter = i + 1;
                 <input asp-for="PageNumber" type="submit" value="@counter" />

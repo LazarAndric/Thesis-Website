@@ -1,79 +1,139 @@
-﻿
+﻿@using Nancy.Json;
+@using System.Net.Http;
+@using ASP.NET_Core.APIComunication
+
+@model FiltersSearchDto
 @{
-    ViewData["Title"] = "Swift Claw"; 
- 
- }
+    ViewData["Title"] = "Swift Claw";
+
+}
 
 
 
 
-    <div class="container font-sajt" style="background-color:white">
+<div class="container font-sajt" style="background-color:white">
 
-        <div class="text-center" style="margin-top:95px;">
-            <hr />
-            <h1 style="font-size:2em">Swift Claw</h1>
-        </div>
+    <div class="text-center" style="margin-top:95px;">
         <hr />
-
-      
-            <div class="jumbotron jumbotron-fluid" style="background-image:url(https://s5.gifyu.com/images/IMG_20191208_180520-1-1.png); border-radius:0; max-height:600px; background-size:100% 100%">
-                <div class="col-md-6  text-center" style="margin-top:100px">
-                    <h1 class="display-4" style="-webkit-text-stroke: 3.5px #2E0D5F; color:white"><em>Postani Kandžica!</em></h1>
-                    <p class="lead" style="color:white; -webkit-text-stroke:1.25px #2E0D5F; font-size:25px; "><em>Prva kupovina 20% popusta!</em></p>                    
-                    <a class="nav-link dugmejumbotron zoom" asp-area="" asp-controller="Home" asp-action="Shop" style="color:black">Kupi odmah!</a>
-                </div>
-            </div>
-            <hr />
-       
+        <h1 style="font-size:2em">Swift Claw</h1>
+    </div>
+    <hr />
 
 
-            <div class="container">
-               
-                    <p style="font-size: 25px;  text-align: center;"><em>Naši proizvodi</em></p>
-                    <div class="card-deck" id="cardDeck">
-                        <div class="row">
-                            <div class="container">
-                                @for (int i = 0; i < 3; i++)
-                                {
+    <div class="jumbotron jumbotron-fluid" style="background-image:url(https://s5.gifyu.com/images/IMG_20191208_180520-1-1.png); border-radius:0; max-height:600px; background-size:100% 100%">
+        <div class="col-md-6  text-center" style="margin-top:100px">
+            <h1 class="display-4" style="-webkit-text-stroke: 3.5px #2E0D5F; color:white"><em>Postani Kandžica!</em></h1>
+            <p class="lead" style="color:white; -webkit-text-stroke:1.25px #2E0D5F; font-size:25px; "><em>Prva kupovina 20% popusta!</em></p>
+            <form asp-action="Shop">
+                <input type="submit" class="dugmejumbotron zoom" value="Kupi odmah!" />
+            </form>
+        </div>
+    </div>
+    <hr />
 
-                                    <div class="col-md-4 card-space">
-                                        <div class="flip-box1">
-                                            <div class="flip-box-inner1">
-                                                <div class="flip-box-front1">
-                                                    <img class="card-img-top" src="https://s6.gifyu.com/images/IMG_20191207_112344.jpg" alt="Card image cap">
-                                                    <div class="card-body mt-4">
-                                                        <h4 class="card-title"><a style="color:white">Najprodavaniji</a></h4>
-                                                        <div class="dropdown-divider"></div>
-                                                        <p class="card-text" style="color:white">Price: $0.5</p>
-                                                    </div>
-                                                </div>
-                                                <a asp-action="Product">
-                                                    <div class="flip-box-back1" style="font-size: 30px; font-family: Impact;"> <br /><br /><br /><br />KUPI ODMAH!</div>
-                                                </a>
-                                            </div>
+
+
+    <div class="container">
+
+        <p style="font-size: 25px;  text-align: center;"><em>Naši proizvodi</em></p>
+        <div class="card-deck" id="cardDeck">
+            <div class="row">
+                <div class="container">
+                    @{
+                        var jsonString = APIClient.SetAPIClient("Product/MostPurchases", HttpMethod.Get);
+                        JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
+                        var item = jsonSerializer.Deserialize<Product>(jsonString);
+                    }
+                    <div class="col-md-4 card-space ">
+                        <form method="get" asp-action="Product" asp-controller="Home">
+                            <div class="flip-box">
+                                <div class="flip-box-inner">
+                                    <div class="flip-box-front">
+                                        <img class="card-img-top" src="@item.ImgUrl" alt="Card image cap">
+                                        <div class="card-body mt-4 mr-1">
+                                            <h4 class="card-title"><a style="color:white">Najprodavaniji</a></h4>
+                                            <div class="dropdown-divider"></div>
+                                            <p class="card-text" style="color:white">Price: @item.Price</p>
                                         </div>
                                     </div>
-
-                                }
+                                    <div class="flip-box-back form-check" style="font-size: 30px; font-family: Impact;">
+                                        <br /><br /><br /><br />
+                                        <input asp-for="ProductForViewId" value=@item.Id type="hidden" />
+                                        <input type="submit" value="Kupi" />
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
-                            
-                
-            </div>        
-        <br />
-        <hr />
-
-
-
-
-
-
-        <div class="video-responsive">
-            <iframe width="420" height="315" src="https://www.youtube.com/embed/RiV000Xg65c?autoplay=0" frameborder="0" allowfullscreen></iframe>
+                    @{
+                        jsonString = APIClient.SetAPIClient("Product/MostPopular", HttpMethod.Get);
+                        item = jsonSerializer.Deserialize<Product>(jsonString);
+                    }
+                    <div class="col-md-4 card-space ">
+                        <form method="get" asp-action="Product" asp-controller="Home">
+                            <div class="flip-box">
+                                <div class="flip-box-inner">
+                                    <div class="flip-box-front">
+                                        <img class="card-img-top" src="@item.ImgUrl" alt="Card image cap">
+                                        <div class="card-body mt-4 mr-1">
+                                            <h4 class="card-title"><a style="color:white">Najpopularniji</a></h4>
+                                            <div class="dropdown-divider"></div>
+                                            <p class="card-text" style="color:white">Price: @item.Price</p>
+                                        </div>
+                                    </div>
+                                    <div class="flip-box-back form-check" style="font-size: 30px; font-family: Impact;">
+                                        <br /><br /><br /><br />
+                                        <input asp-for="ProductForViewId" value=@item.Id type="hidden" />
+                                        <input type="submit" value="Kupi" />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    @{
+                        jsonString = APIClient.SetAPIClient("Product/LatestProduct", HttpMethod.Get);
+                        item = jsonSerializer.Deserialize<Product>(jsonString);
+                    }
+                    <div class="col-md-4 card-space ">
+                        <form method="get" asp-action="Product" asp-controller="Home">
+                            <div class="flip-box">
+                                <div class="flip-box-inner">
+                                    <div class="flip-box-front">
+                                        <img class="card-img-top" src="@item.ImgUrl" alt="Card image cap">
+                                        <div class="card-body mt-4 mr-1">
+                                            <h4 class="card-title"><a style="color:white">Najnoviji</a></h4>
+                                            <div class="dropdown-divider"></div>
+                                            <p class="card-text" style="color:white">Price: @item.Price</p>
+                                        </div>
+                                    </div>
+                                    <div class="flip-box-back form-check" style="font-size: 30px; font-family: Impact;">
+                                        <br /><br /><br /><br />
+                                        <input asp-for="ProductForViewId" value=@item.Id type="hidden" />
+                                        <input type="submit" value="Kupi" />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <br />
 
 
     </div>
+    <br />
+    <hr />
+
+
+
+
+
+
+    <div class="video-responsive">
+        <iframe width="420" height="315" src="https://www.youtube.com/embed/RiV000Xg65c?autoplay=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <br />
+
+
+</div>

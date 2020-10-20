@@ -43,13 +43,69 @@ namespace WebAPI.Conrollers
         }
 
         [AllowAnonymous]
+        [HttpGet("{action}")]
+        public IActionResult MostPopular()
+        {
+            return Ok(_repository.GetMostPopularProduct());
+        }
+
+        [AllowAnonymous]
+        [HttpGet("{action}")]
+        public IActionResult MostPurchases()
+        {
+            return Ok(_repository.GetMostPurchasesProduct());
+        }
+        [AllowAnonymous]
+        [HttpGet("{action}")]
+        public IActionResult LatestProduct()
+        {
+            return Ok(_repository.GetLatestProduct());
+        }
+
+        [AllowAnonymous]
+        [HttpGet("{action}/{id}")]
+        public IActionResult ViewsCounts(int id)
+        {
+            var product=_repository.GetProductById(id);
+            product.NumberOfViews++;
+
+            _repository.SaveChanges();
+            return Ok();
+        }
+        [AllowAnonymous]
+        [HttpGet("{action}/{id}")]
+        public IActionResult PurchasesCounts(int id)
+        {
+            var product=_repository.GetProductById(id);
+            product.NumberOfPurchases++;
+            return Ok();
+        }
+        [AllowAnonymous]
         [HttpGet("{action}/{id}")]
         public ActionResult <ProductReadDto> GetProductById(int id)
         {
+            ProductReadDto product= new ProductReadDto();
             var productItem = _repository.GetProductById(id);
+            product=_mapper.Map<ProductReadDto>(productItem);
+
+            Category category= new Category();
+            category=_categoryRepo.GetCategoryById((int)productItem.CategoryId);
+            product.Category=category;
+
+            List<Gender> gender= new List<Gender>();
+            var genderId= _genderOfProductRepo.GetAllIdOfGender(productItem);
+            foreach(var gId in genderId)
+                gender.Add(_genderRepo.GetGenderById(gId));
+            product.Genders=gender;
+
+            List<Size> size = new List<Size>();
+            var sizeId= _sizeOfProductRepo.GetAllProductIdsOfSize(productItem);
+            foreach(var sId in sizeId)
+                size.Add(_sizeRepo.GetSizeById(sId));
+            product.Size=size;
             if(productItem!=null)
             {
-                return Ok(_mapper.Map<ProductReadDto>(productItem));
+                return Ok(product);
             }
             return NotFound();
         }
@@ -67,7 +123,7 @@ namespace WebAPI.Conrollers
 
             var productReadDto = _mapper.Map<ProductReadDto>(productModel);
 
-            return CreatedAtRoute(nameof(GetProductById), new {Id = productReadDto}, productReadDto);
+            return Ok(productReadDto);
         }
         
 

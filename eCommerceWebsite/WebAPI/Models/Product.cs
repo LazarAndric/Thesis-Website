@@ -22,15 +22,14 @@ namespace WebAPI.Models
         public Category Category { get; set; }
         [Required]
         public float? Price { get; set; }
-        // [Required]
-        // public int Quantity{get; set;}
         public bool IsOnSale { get; set; }
         [Range(0,100)]
         public int Sale {get;set;}
         public string ImgUrl { get; set; }
         public int NumberOfViews { get; set; }
         public int NumberOfPurchases { get; set; }
-        public DateTime DateOfCreate { get; set; }
+        public DateTime? DateOfCreate { get; set; }
+
         public bool IsShowInShop { get; set; }
     }
 }

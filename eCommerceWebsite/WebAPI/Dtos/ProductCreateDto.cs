@@ -21,5 +21,6 @@ namespace WebAPI.Dtos
         public string ImgUrl { get; set; }
         public DateTime DateOfCreate { get; set; }
         public bool IsShowInShop { get; set; }
+        public int?[] listOfSize{get;set;}
     }
 }
