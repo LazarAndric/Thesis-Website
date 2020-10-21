@@ -78,10 +78,18 @@ namespace ASP.NET_Core.Controllers
         public IActionResult Order()
         {
             ViewBag.Token = APIClient.Token;
-            var userString=HttpContext.Session.GetString("user");
-            JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
-            var user = jsonSerializer.Deserialize<User>(userString);
-            return View(user);
+            if (APIClient.Token != String.Empty)
+            {
+                var userString = HttpContext.Session.GetString("user");
+                JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
+                var user = jsonSerializer.Deserialize<User>(userString);
+                return View(user);
+            }
+            else
+            {
+                return View();
+            }
+            
         }
     }
 }
