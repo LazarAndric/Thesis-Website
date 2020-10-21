@@ -48,14 +48,14 @@
                     </div>
                     <div class="form-group">
                         <label asp-for="DateOfBirth" class="control-label">Datum rodjenja</label>
-                        <input asp-for="DateOfBirth" class="form-control" />                       
+                        <input asp-for="DateOfBirth" class="form-control"/>                       
                     </div>
                     <div class="form-group">
                         <label asp-for="GenderId" class="control-label">Pol</label>
                         @{
                             foreach (var item in items)
-                            {
-                                <input type="radio" asp-for="GenderId" asp-controller="Account" value="@item.Id">@item.Name
+                            {                                
+                                <input type="radio"  asp-for="GenderId" asp-controller="Account" value="@item.Id">@item.Name
                             }
                         }
 

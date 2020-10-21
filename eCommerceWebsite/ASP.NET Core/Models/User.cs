@@ -12,8 +12,8 @@ public class User
         public string EMail { get; set; }
         [Required(ErrorMessage = "Molimo Vas unesite šifru...")]
         public string Password { get; set; }
-        [DataType(DataType.Date)]
-        public DateTime DateOfBirth { get; set; }    
+        [DataType(DataType.Date)]        
+        public DateTime DateOfBirth { get; set; }        
         public int GenderId { get; set; }
        
         public string Adress { get; set; }
