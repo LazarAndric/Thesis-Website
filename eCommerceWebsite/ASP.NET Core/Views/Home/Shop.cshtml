@@ -223,7 +223,7 @@
         </div>
         
         <form method="post" asp-controller="Home" asp-action="PagingView">
-            <input asp-for="PageNumber" value="@Model.PageNumber" type="hidden" />
+            
             @{
                 jsonString = ViewBag.Shop;
                 items = javaScriptSerializer.Deserialize<List<ProductReadDto>>(jsonString);

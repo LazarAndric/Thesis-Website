@@ -562,8 +562,6 @@ E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
-E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.PlatformAbstractions.dll
-E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\Nancy.dll
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
@@ -585,9 +583,6 @@ E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
-E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.csproj.CoreCompileInputs.cache
-E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.MvcApplicationPartsAssemblyInfo.cs
-E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.MvcApplicationPartsAssemblyInfo.cache
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Account\ForgotPassword.cshtml.g.cs
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\RestSharp.dll
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Account\Edit.cshtml.g.cs
@@ -1003,6 +998,12 @@ D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcor
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Home\PreviewProduct.cshtml.g.cs
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Home\NewPage.cshtml.g.cs
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Home\PreviewProduct.cshtml.g.cs
-E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Home\Order.cshtml.g.cs
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Home\PagingView.cshtml.g.cs
 D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Account\Order.cshtml.g.cs
+E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Account\Order.cshtml.g.cs
+E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Home\PagingView.cshtml.g.cs
+E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.PlatformAbstractions.dll
+E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\Nancy.dll
+E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.csproj.CoreCompileInputs.cache
+E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.MvcApplicationPartsAssemblyInfo.cs
+E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.MvcApplicationPartsAssemblyInfo.cache
