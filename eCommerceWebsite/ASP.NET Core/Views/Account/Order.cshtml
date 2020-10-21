@@ -1,6 +1,6 @@
-﻿@model User
+﻿@model OrderModel
 @{
-    ViewData["Title"] = "Order_By";
+    ViewData["Title"] = "Order";
 }
 
     <div class="container font-sajt" style="background-color:white">
@@ -11,85 +11,94 @@
                 <h1 style="font-size:2em">Porucivanje</h1>
             </div>
 
-            @if (Model.Adress == null && Model.AdressNumber == null && Model.Place == null && Model.Contry == null && Model.PostalCode == null && Model.PhoneNumber == null)
+            @if (Model.User.Adress == null && Model.User.AdressNumber == null && Model.User.Place == null && Model.User.Contry == null && Model.User.PostalCode == null && Model.User.PhoneNumber == null)
             {
-                <hr />
-                <br /><br />
-                <div class="row">
-                    <div class="col-md-6">
-                        <h6>Potrebno je uneti podatke koje niste uneli prilikom registracije</h6>
-                        @if (Model.Adress == null)
-                        {
-                            <div class="form-group">
-                                <label asp-for="Adress" class="control-label"></label>
-                                <input id="accept" asp-for="Adress" class="form-control" />
-                                <span asp-validation-for="Adress" class="text-danger"></span>
+                <form method="post" asp-controller="Account" asp-action="Order">
+                    <input type="hidden" asp-for="User.FirstName" value="@Model.User.FirstName" />
+                    <input type="hidden" asp-for="User.LastName" value="@Model.User.LastName" />
+                    <input type="hidden" asp-for="User.EMail" value="@Model.User.EMail" />
+                    <input type="hidden" asp-for="User.Password" value="@Model.User.Password" />
+                    <input type="hidden" asp-for="User.DateOfBirth" value="@Model.User.DateOfBirth" />
+                    <input type="hidden" asp-for="User.GenderId" value="@Model.User.GenderId" />
+                    <hr />
+                    <br /><br />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Potrebno je uneti podatke koje niste uneli prilikom registracije</h6>
+                            @if (Model.User.Adress == null)
+                            {
+                                <div class="form-group">
+                                    <label asp-for="User.Adress" class="control-label"></label>
+                                    <input id="accept" asp-for="User.Adress" class="form-control" />
+                                    <span asp-validation-for="User.Adress" class="text-danger"></span>
+                                </div>
+                            }
+                            @if (Model.User.AdressNumber == null)
+                            {
+                                <div class="form-group">
+                                    <label asp-for="User.AdressNumber" class="control-label"></label>
+                                    <input id="accept" asp-for="User.AdressNumber" class="form-control" />
+                                    <span asp-validation-for="User.AdressNumber" class="text-danger"></span>
+                                </div>
+                            }
+                            @if (Model.User.Place == null)
+                            {
+                                <div class="form-group">
+                                    <label asp-for="User.Place" class="control-label"></label>
+                                    <input id="accept" asp-for="User.Place" class="form-control" />
+                                    <span asp-validation-for="User.Place" class="text-danger"></span>
+                                </div>
+                            }
+                            @if (Model.User.Contry == null)
+                            {
+                                <div class="form-group">
+                                    <label asp-for="User.Contry" class="control-label"></label>
+                                    <input id="accept" asp-for="User.Contry" class="form-control" />
+                                    <span asp-validation-for="User.Contry" class="text-danger"></span>
+                                </div>
+                            }
+                            @if (Model.User.PostalCode == null)
+                            {
+                                <div class="form-group">
+                                    <label asp-for="User.PostalCode" class="control-label"></label>
+                                    <input id="accept" asp-for="User.PostalCode" class="form-control" />
+                                    <span asp-validation-for="User.PostalCode" class="text-danger"></span>
+                                </div>
+                            }
+                            @if (Model.User.PhoneNumber == null)
+                            {
+                                <div class="form-group">
+                                    <label asp-for="User.PhoneNumber" class="control-label"></label>
+                                    <input id="accept" asp-for="User.PhoneNumber" class="form-control" />
+                                    <span asp-validation-for="User.PhoneNumber" class="text-danger"></span>
+                                </div>
+                            }
+                            <div>
+                                <input type="submit" value="Sacuvaj" />
                             </div>
-                        }
-                        @if (Model.AdressNumber == null)
-                        {
-                            <div class="form-group">
-                                <label asp-for="AdressNumber" class="control-label"></label>
-                                <input id="accept" asp-for="AdressNumber" class="form-control" />
-                                <span asp-validation-for="AdressNumber" class="text-danger"></span>
-                            </div>
-                        }
-                        @if (Model.Place == null)
-                        {
-                            <div class="form-group">
-                                <label asp-for="Place" class="control-label"></label>
-                                <input id="accept" asp-for="Place" class="form-control" />
-                                <span asp-validation-for="Place" class="text-danger"></span>
-                            </div>
-                        }
-                        @if (Model.Contry == null)
-                        {
-                            <div class="form-group">
-                                <label asp-for="Contry" class="control-label"></label>
-                                <input id="accept" asp-for="Contry" class="form-control" />
-                                <span asp-validation-for="Contry" class="text-danger"></span>
-                            </div>
-                        }
-                        @if (Model.PostalCode == null)
-                        {
-                            <div class="form-group">
-                                <label asp-for="PostalCode" class="control-label"></label>
-                                <input id="accept" asp-for="PostalCode" class="form-control" />
-                                <span asp-validation-for="PostalCode" class="text-danger"></span>
-                            </div>
-                        }
-                        @if (Model.PhoneNumber == null)
-                        {
-                            <div class="form-group">
-                                <label asp-for="PhoneNumber" class="control-label"></label>
-                                <input id="accept" asp-for="PhoneNumber" class="form-control" />
-                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-                            </div>
-                        }
-                        <div>
-                            <input id="submitbtn" disabled="disabled" name="Submit" type="submit" value="Sacuvaj" />
                         </div>
                     </div>
-                </div>
+                </form>
             }
+            <hr />
+            <form asp-action="SendMail" method="get">
+                <div class="row">
+                    <div class="col-md-8">
+                        <p>SADRZAJ KORPE</p>
+                        <div class="show-cart table-responsive text-nowrap center" align="left"></div>
+                    </div>
+                    <div class="col-md-4" style="font-size:20px">
+                        <p>UKUPNA CENA: </p>
+                        <span class="total-cart"></span> din
+                        <input type="submit" value="Kupi" />
+                    </div>
+                </div>
+            </form>
         }
         else
         {
             <partial name="Login" />
         }
-        <hr />
-
-        <div class="row">
-            <div class="col-md-8">
-                <p>SADRZAJ KORPE</p>
-                <div class="show-cart table-responsive text-nowrap center" align="left"></div>
-            </div>
-            <div class="col-md-4" style="font-size:20px">
-                <p>UKUPNA CENA: </p>
-                <span class="total-cart"></span> din
-                <button></button>
-            </div>
-        </div>
         <br />
         <br />
         <br />

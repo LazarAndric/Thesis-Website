@@ -104,12 +104,14 @@ namespace WebAPI.Conrollers
             return Ok(userReadDto);
         }
 
-        //[Authorize]
-        [HttpPut("{id}")]
-        public ActionResult UpdateUser(int id, UserUpdateDto userUpdateDto)
+        [HttpPut("{action}/{token}")]
+        public ActionResult UpdateUser(string token,UserUpdateDto userUpdateDto)
         {
-            var userModelFromRepo = _repository.GetUserById(id);
-            if(userUpdateDto == null)
+            AuthRepository auth= new AuthRepository(_config);
+            userUpdateDto.Password = crypt.Encrypt(userUpdateDto.Password);
+            var info=auth.ValidateToken(token);
+            var userModelFromRepo = _repository.GetUserById(Int32.Parse(info));
+            if(userModelFromRepo == null)
             {
                 return NotFound();
             }
@@ -120,7 +122,7 @@ namespace WebAPI.Conrollers
 
             _repository.SaveChanges();
 
-            return NoContent();
+            return Ok();
         }
 
         //[Authorize]

@@ -1007,3 +1007,4 @@ E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\bin\Debug\netcoreapp3.1\
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.csproj.CoreCompileInputs.cache
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.MvcApplicationPartsAssemblyInfo.cs
 E:\GIT HUB\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\ASP.NET Core.MvcApplicationPartsAssemblyInfo.cache
+D:\PROJEKTI\GitHub\Thesis-Website\eCommerceWebsite\ASP.NET Core\obj\Debug\netcoreapp3.1\Razor\Views\Account\SendMail.cshtml.g.cs

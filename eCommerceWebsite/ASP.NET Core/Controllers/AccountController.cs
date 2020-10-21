@@ -8,11 +8,14 @@ using Nancy.Json;
 using ASP.NET_Core.APIComunication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ASP.NET_Core.Models;
+using System.Net.Mail;
 
 namespace ASP.NET_Core.Controllers
 {
     public class AccountController : Controller
     {
+        private string email = "swiftclawserver@gmail.com";
         public IActionResult Register()
         {
             return View();
@@ -62,7 +65,7 @@ namespace ASP.NET_Core.Controllers
         }
         public IActionResult Profile()
         {
-            ViewBag.Model = HttpContext.Session.GetString("user");
+            ViewBag.Model = APIClient.SetAPIClient("User/GetUserById/", APIClient.Token, APIClient.Token, HttpMethod.Get);
             return View();
         }
         public IActionResult Edit()
@@ -72,7 +75,7 @@ namespace ASP.NET_Core.Controllers
         [HttpPost]
         public IActionResult Edit(User user)
         {
-            if (!ModelState.IsValid) { return View(); }
+            APIClient.SetAPIClient("User/UpdateUser/", data: APIClient.Token, user, APIClient.Token, HttpMethod.Put);
             return View();
         }
         public IActionResult Order()
@@ -80,16 +83,42 @@ namespace ASP.NET_Core.Controllers
             ViewBag.Token = APIClient.Token;
             if (APIClient.Token != String.Empty)
             {
-                var userString = HttpContext.Session.GetString("user");
+                var userString = APIClient.SetAPIClient("User/GetUserById/", APIClient.Token, APIClient.Token, HttpMethod.Get);
                 JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
                 var user = jsonSerializer.Deserialize<User>(userString);
-                return View(user);
+                OrderModel order = new OrderModel();
+                order.User = user;
+                return View(order);
             }
             else
             {
                 return View();
             }
-            
+        }
+        [HttpPost]
+        public IActionResult Order(OrderModel order)
+        {
+            APIClient.SetAPIClient("User/UpdateUser/", data: APIClient.Token, order.User, APIClient.Token, HttpMethod.Put);
+            return View(order);
+        }
+        public async Task<IActionResult> SendMail(OrderModel order)
+        {
+            var userString = APIClient.SetAPIClient("User/GetUserById/", APIClient.Token, APIClient.Token, HttpMethod.Get);
+            JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
+            var user = jsonSerializer.Deserialize<User>(userString);
+            MailMessage mm = new MailMessage();
+            mm.To.Add(user.EMail);
+            mm.Subject = "Dragi "+ user.FirstName+"e "+user.LastName+"u";
+            mm.Body = "<div>< div><p>SADRZAJ KORPE</p><div></div></div><div><p>UKUPNA CENA: </p><span></span> din<input /></div></div>";
+            mm.IsBodyHtml = true;
+            mm.From = new MailAddress(email);
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+            smtp.Port = 587;
+            smtp.UseDefaultCredentials = true;
+            smtp.EnableSsl = true;
+            smtp.Credentials = new System.Net.NetworkCredential(email, "glavudzaodsira");
+            await smtp.SendMailAsync(mm);
+            return RedirectToAction(actionName:"Index", controllerName:"Home");
         }
     }
 }

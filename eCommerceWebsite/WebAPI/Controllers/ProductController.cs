@@ -157,7 +157,7 @@ namespace WebAPI.Conrollers
 
             _repository.SaveChanges();
 
-            return NoContent();
+            return Ok();
         }
 
         //[Authorize]

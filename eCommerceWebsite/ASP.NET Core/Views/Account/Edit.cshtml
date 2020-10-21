@@ -1,102 +1,102 @@
-﻿@model User
+﻿@using System.Net.Http;
+@using ASP.NET_Core.APIComunication
+@using Nancy.Json;
+@model User
 
 @{
     ViewData["Title"] = "Edit";
 }
 
-    <div class="container font-sajt" style="background-color:white">
-        <div class="text-center" style="margin-top:95px;">
-            <hr />
-            <h1 style="font-size:2em">Promena profila</h1>
-        </div>
+<div class="container font-sajt" style="background-color:white">
+    <div class="text-center" style="margin-top:95px;">
         <hr />
-        <br />
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 mx-auto">
-                    <form asp-action="Edit" method="post">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                        <div class="form-group">
-                            <label asp-for="FirstName" class="control-label">Ime</label>
-                            <input asp-for="FirstName" class="form-control" />
-                            <span asp-validation-for="FirstName" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="LastName" class="control-label">Prezime</label>
-                            <input asp-for="LastName" class="form-control" />
-                            <span asp-validation-for="LastName" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="EMail" class="control-label">E-mail</label>
-                            <input asp-for="EMail" class="form-control" />
-                            <span asp-validation-for="EMail" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Password" class="control-label">Šifra</label>
-                            <input asp-for="Password" class="form-control" />
-                            <span asp-validation-for="Password" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="DateOfBirth" class="control-label">Datum rođenja</label>
-                            <input asp-for="DateOfBirth" class="form-control" />                            
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="GenderId" class="control-label">Pol</label>
-                            <input asp-for="GenderId" class="form-control" />
-                            <span asp-validation-for="GenderId" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Adress" class="control-label">Adresa</label>
-                            <input asp-for="Adress" class="form-control" />
-                            <span asp-validation-for="Adress" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="AdressNumber" class="control-label">Broj adrese</label>
-                            <input asp-for="AdressNumber" class="form-control" />
-                            <span asp-validation-for="AdressNumber" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Place" class="control-label">Mesto</label>
-                            <input asp-for="Place" class="form-control" />
-                            <span asp-validation-for="Place" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Contry" class="control-label">Zemlja</label>
-                            <input asp-for="Contry" class="form-control" />
-                            <span asp-validation-for="Contry" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="PostalCode" class="control-label">Poštanski broj</label>
-                            <input asp-for="PostalCode" class="form-control" />
-                            <span asp-validation-for="PostalCode" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="PhoneNumber" class="control-label"></label>
-                            <input asp-for="PhoneNumber" class="form-control" />
-                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-                        </div>
-                        @*<div class="form-group">
-                <label asp-for="DateOfRegistration" class="control-label"></label>
-                <input asp-for="DateOfRegistration" class="form-control" />
-                <span asp-validation-for="DateOfRegistration" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LastLogin" class="control-label"></label>
-                <input asp-for="LastLogin" class="form-control" />
-                <span asp-validation-for="LastLogin" class="text-danger"></span>
-            </div>*@
-                        <div class="form-group">
-                            <input type="submit" value="Sačuvaj" class="btn btn-primary" />
-                        </div>
-                    </form>
-                    <div>
-                        <a asp-controller="Home" asp-action="Index">Back to List</a>
+        <h1 style="font-size:2em">Promena profila</h1>
+    </div>
+    <hr />
+    <br />
+    @{
+        var response = APIClient.SetAPIClient("Gender/", HttpMethod.Get);
+        JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
+        var items = javaScriptSerializer.Deserialize<List<Gender>>(response);
+    }
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <form asp-action="Edit" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="FirstName" class="control-label">Ime</label>
+                        <input asp-for="FirstName" class="form-control" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label asp-for="LastName" class="control-label">Prezime</label>
+                        <input asp-for="LastName" class="form-control" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EMail" class="control-label">E-mail</label>
+                        <input asp-for="EMail" class="form-control" />
+                        <span asp-validation-for="EMail" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password" class="control-label">Šifra</label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DateOfBirth" class="control-label">Datum rođenja</label>
+                        <input asp-for="DateOfBirth" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="GenderId" class="control-label">Pol</label>
+                        @{
+                            foreach (var item in items)
+                            {
+                                <input type="radio" asp-for="GenderId" asp-controller="Account" value="@item.Id" required>@item.Name
+                            }
+                        }
+                        <span asp-validation-for="GenderId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Adress" class="control-label">Adresa</label>
+                        <input asp-for="Adress" class="form-control" />
+                        <span asp-validation-for="Adress" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AdressNumber" class="control-label">Broj adrese</label>
+                        <input asp-for="AdressNumber" class="form-control" />
+                        <span asp-validation-for="AdressNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Place" class="control-label">Mesto</label>
+                        <input asp-for="Place" class="form-control" />
+                        <span asp-validation-for="Place" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contry" class="control-label">Zemlja</label>
+                        <input asp-for="Contry" class="form-control" />
+                        <span asp-validation-for="Contry" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PostalCode" class="control-label">Poštanski broj</label>
+                        <input asp-for="PostalCode" class="form-control" />
+                        <span asp-validation-for="PostalCode" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PhoneNumber" class="control-label"></label>
+                        <input asp-for="PhoneNumber" class="form-control" />
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Sačuvaj" class="btn btn-primary" />
+                    </div>
+                </form>
             </div>
-
-           
         </div>
-       
+
 
     </div>
+
+
+</div>

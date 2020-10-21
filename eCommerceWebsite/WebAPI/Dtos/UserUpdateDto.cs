@@ -26,6 +26,5 @@ namespace WebAPI.Dtos
         public string Contry { get; set; }
         public string PostalCode { get; set; }
         public string PhoneNumber { get; set; }
-        public DateTime LastLogin { get; set; }
     }
 }

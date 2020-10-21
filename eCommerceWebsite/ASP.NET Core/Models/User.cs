@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations;
 
 public class User
     {
-   
     public string FirstName { get; set; }
     
     public string LastName { get; set; }
@@ -12,7 +11,7 @@ public class User
     public string EMail { get; set; }
     
     public string Password { get; set; }
-    [DataType(DataType.Date)]        
+    [DataType(DataType.Date)]
     public DateTime DateOfBirth { get; set; }
     
     public int GenderId { get; set; }
@@ -28,8 +27,4 @@ public class User
     public string PostalCode { get; set; }
        
     public string PhoneNumber { get; set; }
-       
-    public DateTime DateOfRegistration { get; set; }
-       
-    public DateTime? LastLogin { get; set; }
 }
