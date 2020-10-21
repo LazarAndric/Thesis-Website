@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 public class FiltersSearchDto
 {
     public string Search { get; set; }
@@ -8,5 +10,5 @@ public class FiltersSearchDto
     public Sort SortItems { get; set; }
     public int PageNumber { get; set; } = 1;
     public int ProductForViewId { get; set; }
-
+    public List<int> ChategoriesId { get; set; }
 }

@@ -128,15 +128,13 @@
 
                                             <section filter="condition" class="mb-4">
                                                 <h6 class="font-weight-bold mb-3 filter-text">Kategorije</h6>
+                                                <input asp-for="CategoryFilter" value="@Model.CategoryFilter" type="hidden" />
                                                 @foreach (var item in itemsShop.CategoriesFilter.listOfCategoryFilter)
                                                 {
                                                     <div class="form-check pl-0 mb-3">
-                                                        <input type="checkbox" value=@item.Id>
-                                                        <label for="male">@item.Name</label><br>
+                                                        <input name="ChategoriesId" type="checkbox" value="@item.Id" /> @item.Name<br />
                                                     </div>
                                                 }
-
-
                                             </section>
                                             <hr />
                                             <!-- Section: Size -->

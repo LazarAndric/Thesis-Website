@@ -1,9 +1,10 @@
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace WebAPI.Dtos
 {
     public class FilterForCategorySearchDto
     {
-        public int?[] Id { get; set; }
+        public List<int> ChategoriesId { get; set; }
     }
 }

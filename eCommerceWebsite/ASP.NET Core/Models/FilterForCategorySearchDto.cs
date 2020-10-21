@@ -1,5 +1,7 @@
 
+using System.Collections.Generic;
+
 public class FilterForCategorySearchDto
 {
-    public int?[] Id { get; set; }
+    public List<int> ChategoriesId { get; set; }
 }

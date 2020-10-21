@@ -70,11 +70,11 @@ namespace WebAPI.Data
         }
         public List<Product> GetAllProductOfCategory(FilterForCategorySearchDto filterForCategory, List<Product> productList)
         {
-            if(filterForCategory==null || filterForCategory.Id==null)
+            if(filterForCategory==null || filterForCategory.ChategoriesId==null)
                 return null;
             List<Product> finalList = new List<Product>();
             foreach(Product product in productList)
-                foreach(int id in filterForCategory.Id)
+                foreach(int id in filterForCategory.ChategoriesId)
                     if(product.CategoryId.Equals(id))
                         finalList.Add(product);
             return finalList;

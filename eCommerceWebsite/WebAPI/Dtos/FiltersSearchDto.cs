@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace WebAPI.Dtos
 {
@@ -10,5 +11,6 @@ namespace WebAPI.Dtos
         public FilterForGenderSearchDto GenderFilter { get; set; }
         public FilterForSizeSearchDto SizeFilter { get; set; }
         public Sort SortItems { get; set; }
+        public List<int> ChategoriesId {get; set;}
     }
 }

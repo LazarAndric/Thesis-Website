@@ -55,7 +55,7 @@
                         @{
                             foreach (var item in items)
                             {                                
-                                <input type="radio"  asp-for="GenderId" asp-controller="Account" value="@item.Id">@item.Name
+                                <input type="radio"  asp-for="GenderId" asp-controller="Account" value="@item.Id" required>@item.Name
                             }
                         }
 

@@ -83,9 +83,18 @@ namespace ASP.NET_Core.Controllers
         public IActionResult Shop(FiltersSearchDto filters)
         {
             JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
+            if (filters.ChategoriesId != null)
+            {
+                FilterForCategorySearchDto categoryFilter = new FilterForCategorySearchDto();
+                filters.CategoryFilter = categoryFilter;
+                List<int> intList = new List<int>();
+                filters.CategoryFilter.ChategoriesId = intList;
+                foreach (var item in filters.ChategoriesId)
+                    filters.CategoryFilter.ChategoriesId.Add(item);
+            }
             filter = filters;
             var items = jsonSerializer.Serialize(filters);
-            var jsonString = APIClient.SetAPIClient<FiltersSearchDto>("Shop/Filtrate", filters, APIClient.Token, HttpMethod.Get);
+            var jsonString = APIClient.SetAPIClient<FiltersSearchDto>("Shop/Filtrate", filter, APIClient.Token, HttpMethod.Get);
             HttpContext.Session.SetString("products", jsonString);
             ViewBag.Shop = jsonString;
             return NewPage();
