@@ -13,10 +13,10 @@ namespace WebAPI.Data
         List<GenderOfProduct> GetAllProductOfGender(FilterForGenderSearchDto genderFilter);
         public List<int> GetAllIdOfGender(Product product);
         GenderOfProduct GetGenderOfProductById(int id);
-        List<int> GetAllIdOfGenders(List<Product> products);
+        List<int> GetAllIdOfGenders(List<ProductReadDto> products);
         void CreateGenderOfProduct(GenderOfProduct gendersOfProduct);
         void UpdateGenderOfProduct(GenderOfProduct gendersOfProduct);
         void DeleteGenderOfProduct(GenderOfProduct gendersOfProduct);
-        int LengthOfGender(Gender gender, List<Product> products);
+        int LengthOfGender(Gender gender, List<ProductReadDto> products);
     }
 }

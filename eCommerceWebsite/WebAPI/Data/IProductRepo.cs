@@ -14,9 +14,9 @@ namespace WebAPI.Data
         void UpdateProduct(Product product);
         void DeleteProduct(Product product);
         List<int> GetAllProductsOfCategory(List<Product> productList);
-        float? GetMaxPriceOfProducts(List<Product> products);
-        float? GetMinPriceOfProducts(List<Product> products);
-        int GetLegthOfProductList(Category category, List<Product> productList);
+        float? GetMaxPriceOfProducts();
+        float? GetMinPriceOfProducts();
+        int GetLegthOfProductList(Category category, List<ProductReadDto> productList);
         Product GetMostPurchasesProduct();
         Product GetMostPopularProduct();
         Product GetLatestProduct();

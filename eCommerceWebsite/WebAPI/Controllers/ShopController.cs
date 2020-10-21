@@ -57,9 +57,9 @@ namespace WebAPI.Conrollers
             
             if(filter.CategoryFilter!=null)
             {
-            productList=_productRepo.GetAllProductOfCategory(filter.CategoryFilter, products);
-            if(productList!=null)
-                products=productList;
+                productList=_productRepo.GetAllProductOfCategory(filter.CategoryFilter, products);
+                if(productList!=null)
+                    products=productList;
             }
 
             if(filter.GenderFilter!=null)
@@ -116,35 +116,37 @@ namespace WebAPI.Conrollers
         
         [AllowAnonymous]
         [HttpGet("Filter/{action}")]
-        public ActionResult <List<ProductReadDto>> Create()
+        public ActionResult <List<ProductReadDto>> Create(List<ProductReadDto> products)
         {
-            List<Product> products = _productRepo.GetAllProduct();
             FiltersReadDto filter = new FiltersReadDto();
 
             //ReadPrice
             var priceFilter = new FilterForPriceReadDto();
-            priceFilter.MaxPriceFrom=_productRepo.GetMinPriceOfProducts(products);
-            priceFilter.MaxPriceTo=_productRepo.GetMaxPriceOfProducts(products);
+            priceFilter.MaxPriceFrom=_productRepo.GetMinPriceOfProducts();
+            priceFilter.MaxPriceTo=_productRepo.GetMaxPriceOfProducts();
             if(priceFilter.MaxPriceFrom !=null || priceFilter.MaxPriceTo!=null)
                 filter.PriceFilter=priceFilter;
 
             //ReadCategory
-            var categories= new List<Category>();
+            List<Category> listOfCategory= new List<Category>();
+            var categories= new List<int>();
             if(products!=null)
-                foreach(Product product in products)
-                    if(!categories.Contains(product.Category))
-                        categories.Add(product.Category);
+                foreach(var product in products)
+                    if(!categories.Contains(product.Category.Id))
+                        categories.Add(product.Category.Id);
             var categoriesFilter = new FilterForCategoriesReadDto();
             var categoryList = new List<FilterForCategoryReadDto>();
-            for(int i=0;i<categories.Count;i++)
+            foreach(var item in categories)
+                listOfCategory.Add(_categoryRepo.GetCategoryById(item));
+            foreach(var item in listOfCategory)
             {
-                var length= _productRepo.GetLegthOfProductList(categories[i], products);
+                var length= _productRepo.GetLegthOfProductList(item, products);
                 if(length>0)
                 {
                     var filterCategory  = new FilterForCategoryReadDto();
                     filterCategory.Length=length;
-                    filterCategory.Id =  categories[i].Id;
-                    filterCategory.Name =  categories[i].Name;
+                    filterCategory.Id =  item.Id;
+                    filterCategory.Name =  item.Name;
                     categoryList.Add(filterCategory);
                 }
             }

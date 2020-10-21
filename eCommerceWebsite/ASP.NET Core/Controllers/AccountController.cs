@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using Nancy.Json;
 using ASP.NET_Core.APIComunication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -73,6 +74,14 @@ namespace ASP.NET_Core.Controllers
         {
             if (!ModelState.IsValid) { return View(); }
             return View();
+        }
+        public IActionResult Order()
+        {
+            ViewBag.Token = APIClient.Token;
+            var userString=HttpContext.Session.GetString("user");
+            JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
+            var user = jsonSerializer.Deserialize<User>(userString);
+            return View(user);
         }
     }
 }

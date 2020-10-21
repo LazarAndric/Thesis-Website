@@ -1,4 +1,4 @@
-﻿@model Product
+﻿@model ProductReadDto
 @{
     ViewData["Title"] = "Proizvod";
 }
@@ -36,6 +36,14 @@
                                 @if (Model.Category != null)
                                 {
                                     <span class="badge purple mr-1">@Model.Category.Name</span>
+                                    foreach (var item in Model.Genders)
+                                    {
+                                        <span class="badge purple mr-1">@item.Name</span>
+                                    }
+                                    foreach (var item in Model.Size)
+                                    {
+                                        <span class="badge purple mr-1">@item.Name</span>
+                                    }
                                 }
                             </a>
                         </div>

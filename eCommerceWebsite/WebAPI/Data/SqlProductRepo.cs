@@ -70,7 +70,7 @@ namespace WebAPI.Data
         }
         public List<Product> GetAllProductOfCategory(FilterForCategorySearchDto filterForCategory, List<Product> productList)
         {
-            if(filterForCategory==null)
+            if(filterForCategory==null || filterForCategory.Id==null)
                 return null;
             List<Product> finalList = new List<Product>();
             foreach(Product product in productList)
@@ -129,33 +129,35 @@ namespace WebAPI.Data
         {
         }
 
-        public float? GetMaxPriceOfProducts(List<Product> products)
+        public float? GetMaxPriceOfProducts()
         {
+            var products=_context.Products.ToList();
             if(products.Count==0)
                 return null;
             var list= (IEnumerable<Product>)products;
             var maxPrice= list.First().Price;
-            foreach(Product product in list)
+            foreach(var product in list)
                 if(product.Price > maxPrice)
                     maxPrice=product.Price;
             return maxPrice;
         }
-        public float? GetMinPriceOfProducts(List<Product> products)
+        public float? GetMinPriceOfProducts()
         {
+            var products=_context.Products.ToList();
             if(products.Count==0)
                 return null;
             var list= (IEnumerable<Product>)products;
             var minPrice =list.First().Price;
-            foreach(Product product in list)
+            foreach(var product in list)
                 if(product.Price < minPrice)
                     minPrice=product.Price;
             return minPrice;
         }
 
-        public int GetLegthOfProductList(Category category, List<Product> productList)
+        public int GetLegthOfProductList(Category category, List<ProductReadDto> productList)
         {
             int countOfProducts=0;
-            foreach(Product product in productList)
+            foreach(var product in productList)
                 if(category.Id.Equals(product.CategoryId))
                     countOfProducts++;
             return countOfProducts;

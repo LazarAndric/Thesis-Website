@@ -14,8 +14,9 @@ namespace ASP.NET_Core.Controllers
     public class HomeController : Controller
     {
         public static string token { get; set; }
-
+        public static FiltersSearchDto filter;
         private readonly ILogger<HomeController> _logger;
+
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -36,43 +37,35 @@ namespace ASP.NET_Core.Controllers
         {
             return View();
         }
+        [HttpPost]
         public IActionResult NewPage()
         {
-            return View();
-        }
-        [HttpPost]
-        public IActionResult NewPage(FiltersSearchDto pagingFilter)
-        {
             JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
-            var filters = HttpContext.Session.GetString("productsPage1");
-            var itemsFilter = jsonSerializer.Deserialize<FiltersSearchDto>(filters);
-            itemsFilter.PageNumber = pagingFilter.PageNumber;
-
             var jsonString = HttpContext.Session.GetString("products");
-            var itemsProduct = jsonSerializer.Deserialize<List<Product>>(jsonString);
-            var maxItem = 9 * pagingFilter.PageNumber;
+            var itemsProduct = jsonSerializer.Deserialize<List<ProductReadDto>>(jsonString);
+            var maxItem = 9 * filter.PageNumber;
             var minItem = maxItem - 9;
+
+            //TESTIRATI
             foreach (var item in itemsProduct)
                 item.CategoryId = item.Category.Id;
-            var response = APIClient.SetAPIClient<List<Product>>("Shop/Paging/" + minItem + "/" + maxItem, itemsProduct, HttpMethod.Get);
-            ViewBag.ShopPaging = response;
-            HttpContext.Session.SetString("productsPage", response);
-            return View("Shop", itemsFilter);
+            var response = APIClient.SetAPIClient<List<ProductReadDto>>("Shop/Paging/" + minItem + "/" + maxItem, itemsProduct, HttpMethod.Get);
+            ViewBag.ShopView = response;
+            HttpContext.Session.SetString("productPaging", response);
+            return View("Shop", filter);
         }
-
-
-
         public IActionResult Shop()
         {
-            var filter = InitializeFilter();
-            var jsonString = APIClient.SetAPIClient("Product/", APIClient.Token, HttpMethod.Get);
-            ViewBag.Shop = jsonString;
+            filter = new FiltersSearchDto();
+            var jsonString = APIClient.SetAPIClient<FiltersSearchDto>("Shop/Filtrate", filter, APIClient.Token, HttpMethod.Get);
+            filter = InitializeFilter();
             HttpContext.Session.SetString("products", jsonString);
-            return NewPage(filter);
+            //BITNO
+            ViewBag.Shop = jsonString;
+            return NewPage();
         }
         public FiltersSearchDto InitializeFilter()
         {
-            FiltersSearchDto filter = new FiltersSearchDto();
             FilterForPriceSearchDto priceFilter = new FilterForPriceSearchDto();
             FilterForCategorySearchDto categoryFilter = new FilterForCategorySearchDto();
             FilterForGenderSearchDto genderFilter = new FilterForGenderSearchDto();
@@ -83,12 +76,6 @@ namespace ASP.NET_Core.Controllers
             filter.SizeFilter = sizeFilter;
             filter.SortItems = sort;
             filter.GenderFilter = genderFilter;
-            
-
-            JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
-            var items = jsonSerializer.Serialize(filter);
-            HttpContext.Session.SetString("productsPage1", items);
-
             return filter;
         }
 
@@ -96,13 +83,12 @@ namespace ASP.NET_Core.Controllers
         public IActionResult Shop(FiltersSearchDto filters)
         {
             JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
+            filter = filters;
             var items = jsonSerializer.Serialize(filters);
-            HttpContext.Session.SetString("productsPage1", items);
-
             var jsonString = APIClient.SetAPIClient<FiltersSearchDto>("Shop/Filtrate", filters, APIClient.Token, HttpMethod.Get);
             HttpContext.Session.SetString("products", jsonString);
-
-            return NewPage(filters);
+            ViewBag.Shop = jsonString;
+            return NewPage();
         }
         public IActionResult Contact()
         {
@@ -114,18 +100,19 @@ namespace ASP.NET_Core.Controllers
         }
 
         [HttpPost]
-        public IActionResult PagingView(FiltersSearchDto filter)
+        public IActionResult PagingView(FiltersSearchDto filterSearch)
         {
-            var jsonString = APIClient.SetAPIClient("Product/", APIClient.Token, HttpMethod.Get);
+            filter.PageNumber = filterSearch.PageNumber;
+            var jsonString=HttpContext.Session.GetString("products");
             ViewBag.Shop = jsonString;
-            return NewPage(filter);
+            return NewPage();
         }
         public IActionResult Product(FiltersSearchDto filter)
         {
             var productId = filter.ProductForViewId;
             var jsonString = APIClient.SetAPIClient("Product/GetProductById/", data: productId.ToString(), APIClient.Token, HttpMethod.Get);
             JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
-            var product = jsonSerializer.Deserialize<Product>(jsonString);
+            var product = jsonSerializer.Deserialize<ProductReadDto>(jsonString);
             APIClient.SetAPIClient("Product/ViewsCounts/", data: product.Id.ToString(), APIClient.Token, HttpMethod.Get);
             return View(product);
         }
@@ -134,11 +121,6 @@ namespace ASP.NET_Core.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-
-        public IActionResult Order()
-        {
-            return View();
         }
     }
 }

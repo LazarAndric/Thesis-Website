@@ -1,6 +1,7 @@
 ﻿@using Nancy.Json;
 @using System.Net.Http;
 @using ASP.NET_Core.APIComunication
+@using ASP.NET_Core.Models
 
 @model FiltersSearchDto
 @{
@@ -42,7 +43,7 @@
                     @{
                         var jsonString = APIClient.SetAPIClient("Product/MostPurchases", HttpMethod.Get);
                         JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
-                        var item = jsonSerializer.Deserialize<Product>(jsonString);
+                        var item = jsonSerializer.Deserialize<ProductReadDto>(jsonString);
                     }
                     <div class="col-md-4 card-space ">
                         <form method="get" asp-action="Product" asp-controller="Home">
@@ -67,7 +68,7 @@
                     </div>
                     @{
                         jsonString = APIClient.SetAPIClient("Product/MostPopular", HttpMethod.Get);
-                        item = jsonSerializer.Deserialize<Product>(jsonString);
+                        item = jsonSerializer.Deserialize<ProductReadDto>(jsonString);
                     }
                     <div class="col-md-4 card-space ">
                         <form method="get" asp-action="Product" asp-controller="Home">
@@ -92,7 +93,7 @@
                     </div>
                     @{
                         jsonString = APIClient.SetAPIClient("Product/LatestProduct", HttpMethod.Get);
-                        item = jsonSerializer.Deserialize<Product>(jsonString);
+                        item = jsonSerializer.Deserialize<ProductReadDto>(jsonString);
                     }
                     <div class="col-md-4 card-space ">
                         <form method="get" asp-action="Product" asp-controller="Home">

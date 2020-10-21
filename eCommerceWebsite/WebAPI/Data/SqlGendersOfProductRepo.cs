@@ -40,7 +40,7 @@ namespace WebAPI.Data
 
         public List<GenderOfProduct> GetAllProductOfGender(FilterForGenderSearchDto genderFilter)
         {
-            if(genderFilter==null)
+            if(genderFilter==null || genderFilter.Id==null)
                 return null;
             List<GenderOfProduct> finalList = new List<GenderOfProduct>();
             foreach(GenderOfProduct genderOfProduct in _context.GendersOfProducts)
@@ -51,13 +51,13 @@ namespace WebAPI.Data
             }
             return finalList;
         }
-        public List<int> GetAllIdOfGenders(List<Product> products)
+        public List<int> GetAllIdOfGenders(List<ProductReadDto> products)
         {
             if(products==null)
                 return null;
             var finalList = new List<int>();
             foreach(GenderOfProduct genderOfProduct in _context.GendersOfProducts)
-                foreach(Product product in products)
+                foreach(var product in products)
                     if(genderOfProduct.ProductId.Equals(product.Id))
                         if(!finalList.Contains((int)genderOfProduct.GenderId))
                             finalList.Add((int)genderOfProduct.GenderId);
@@ -90,13 +90,13 @@ namespace WebAPI.Data
             //Nothing
         }
         
-        public int LengthOfGender(Gender gender, List<Product> products)
+        public int LengthOfGender(Gender gender, List<ProductReadDto> products)
         {
             int counter=0;
             if(gender!=null || products!=null)
                 foreach(GenderOfProduct genderOfProduct in _context.GendersOfProducts)
                     if(genderOfProduct.GenderId.Equals(gender.Id))
-                        foreach(Product product in products)
+                        foreach(var product in products)
                             if(genderOfProduct.ProductId.Equals(product.Id))
                                 counter++;
             return counter;

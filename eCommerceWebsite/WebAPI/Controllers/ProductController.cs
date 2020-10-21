@@ -38,7 +38,10 @@ namespace WebAPI.Conrollers
         [HttpGet]
         public ActionResult <IEnumerable<ProductReadDto>> GetAllProducts()
         {
+            List<ProductReadDto> productRead = new List<ProductReadDto>();
             var products = _repository.GetAllProduct();
+            foreach(var product in products)
+                productRead.Add(GetAllProperties(product));
             return Ok(_mapper.Map<IEnumerable<ProductReadDto>>(products));
         }
 
@@ -86,8 +89,20 @@ namespace WebAPI.Conrollers
         {
             ProductReadDto product= new ProductReadDto();
             var productItem = _repository.GetProductById(id);
-            product=_mapper.Map<ProductReadDto>(productItem);
 
+            product=GetAllProperties(productItem);
+            
+            if(product!=null)
+            {
+                return Ok(product);
+            }
+            return NotFound();
+        }
+
+        ProductReadDto GetAllProperties(Product productItem)
+        {
+            ProductReadDto product = new ProductReadDto();
+            product=_mapper.Map<ProductReadDto>(productItem);
             Category category= new Category();
             category=_categoryRepo.GetCategoryById((int)productItem.CategoryId);
             product.Category=category;
@@ -103,11 +118,8 @@ namespace WebAPI.Conrollers
             foreach(var sId in sizeId)
                 size.Add(_sizeRepo.GetSizeById(sId));
             product.Size=size;
-            if(productItem!=null)
-            {
-                return Ok(product);
-            }
-            return NotFound();
+
+            return product;
         }
 
         //[Authorize]

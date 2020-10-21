@@ -2,6 +2,7 @@
 @using System.Net.Http;
 @using System.Collections.Generic;
 @using Nancy.Json;
+@using ASP.NET_Core.Models
 
 
 @model FiltersSearchDto
@@ -17,11 +18,13 @@
 
     <br />
     @{
-        var response = APIClient.SetAPIClient("Shop/Filter/Create", HttpMethod.Get);
         JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
+
+        var jsonString = ViewBag.Shop;
+        var items = javaScriptSerializer.Deserialize<List<ProductReadDto>>(jsonString);
+
+        var response = APIClient.SetAPIClient<List<ProductReadDto>>("Shop/Filter/Create", items , HttpMethod.Get);
         var itemsShop = javaScriptSerializer.Deserialize<FiltersReadDto>(response);
-        Model.PriceFilter.PriceFrom = (float)itemsShop.PriceFilter.MaxPriceFrom;
-        Model.PriceFilter.PriceTo = (float)itemsShop.PriceFilter.MaxPriceTo;
     }
 <div class="row">
     <div class="col-md-3">
@@ -109,12 +112,12 @@
                                                     <span>
                                                         <input asp-for="PriceFilter" value="@Model.PriceFilter" type="hidden" />
                                                         od
-                                                        <input asp-for="PriceFilter.PriceFrom" type="number" value="@Model.PriceFilter.PriceFrom" min="@itemsShop.PriceFilter.MaxPriceFrom" max="@itemsShop.PriceFilter.MaxPriceTo" />
-                                                        do <input asp-for="PriceFilter.PriceTo" type="number" value="@Model.PriceFilter.PriceTo" min="@itemsShop.PriceFilter.MaxPriceFrom" max="@itemsShop.PriceFilter.MaxPriceTo" />
+                                                        <input asp-for="PriceFilter.PriceFrom" type="number" value="@itemsShop.PriceFilter.MaxPriceFrom" min="@itemsShop.PriceFilter.MaxPriceFrom" max="@itemsShop.PriceFilter.MaxPriceTo" />
+                                                        do <input asp-for="PriceFilter.PriceTo" type="number" value="@itemsShop.PriceFilter.MaxPriceTo" min="@itemsShop.PriceFilter.MaxPriceFrom" max="@itemsShop.PriceFilter.MaxPriceTo" />
                                                     </span>
                                                 </div>
-                                                <input value="@Model.PriceFilter.PriceFrom" min="@itemsShop.PriceFilter.MaxPriceFrom" max="@itemsShop.PriceFilter.MaxPriceTo" step="100" type="range" />
-                                                <input value="@Model.PriceFilter.PriceTo" min="@itemsShop.PriceFilter.MaxPriceFrom" max="@itemsShop.PriceFilter.MaxPriceTo" step="100" type="range" />
+                                                <input value="@itemsShop.PriceFilter.MaxPriceFrom" min="@itemsShop.PriceFilter.MaxPriceFrom" max="@itemsShop.PriceFilter.MaxPriceTo" step="100" type="range" />
+                                                <input value="@itemsShop.PriceFilter.MaxPriceTo" min="@itemsShop.PriceFilter.MaxPriceFrom" max="@itemsShop.PriceFilter.MaxPriceTo" step="100" type="range" />
                                                 <svg width="100%" height="24">
                                                     <line x1="4" y1="0" x2="300" y2="0" stroke="#212121" stroke-width="12" stroke-dasharray="1 28"></line>
                                                 </svg>
@@ -125,7 +128,13 @@
 
                                     <section filter="condition" class="mb-4">
                                         <h6 class="font-weight-bold mb-3 filter-text">Kategorije</h6>
-
+                                        @foreach (var item in itemsShop.CategoriesFilter.listOfCategoryFilter)
+                                        {
+                                            <div class="form-check pl-0 mb-3">
+                                                <input type="checkbox" value=@item.Id>
+                                                <label for="male">@item.Name</label><br>
+                                            </div>
+                                        }
 
 
                                     </section>
@@ -169,10 +178,9 @@
             </section>
         </form>
     </div>
-    @{
-        var jsonString = ViewBag.ShopPaging;
-        JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
-        var items = jsonSerializer.Deserialize<List<Product>>(jsonString);
+    @{ 
+        jsonString = ViewBag.ShopView;
+        items = javaScriptSerializer.Deserialize<List<ProductReadDto>>(jsonString);
     }
 <div class="col-md-9">
         <div class="card-deck" id="cardDeck" style="display:block">
@@ -183,7 +191,7 @@
                         @foreach (var item in items)
                         {
                         <div class="col-md-4 card-space ">
-                            <form method="get" asp-action="NewPage" asp-controller="Home">
+                            <form method="get" asp-action="Product" asp-controller="Home">
                                 <div class="flip-box">
                                     <div class="flip-box-inner">
                                         <div class="flip-box-front">
@@ -215,14 +223,18 @@
         </div>
         
         <form method="post" asp-controller="Home" asp-action="PagingView">
-            <input asp-for="PriceFilter" value="@Model.PriceFilter" type="hidden" />
+            <input asp-for="PageNumber" value="@Model.PageNumber" type="hidden" />
             @{
                 jsonString = ViewBag.Shop;
-                items = jsonSerializer.Deserialize<List<Product>>(jsonString);
+                items = javaScriptSerializer.Deserialize<List<ProductReadDto>>(jsonString);
                 var length = items.Count;
                 float numberOFPage=0;
                 if (length % 9 != 0)
                     numberOFPage = length / 9 + 1;
+                else
+                {
+                    numberOFPage = length / 9;
+                }
             }
             @for (int i = 0; i < numberOFPage; i++)
             {

@@ -11,11 +11,11 @@ namespace WebAPI.Data
 
         IEnumerable<SizeOfProduct> GetAllSizeOfProducts();
         SizeOfProduct GetSizeOfProductById(int id);
-        int LengthOfSize(Size size, List<Product> products);
+        int LengthOfSize(Size size, List<ProductReadDto> products);
         void CreateSizeOfProduct(SizeOfProduct sizeOfProduct);
         void UpdateSizeOfProduct(SizeOfProduct sizeOfProduct);
         void DeleteSizeOfProduct(SizeOfProduct sizeOfProduct);
-        List<int> GetAllIdOfSize(List<Product> products);
+        List<int> GetAllIdOfSize(List<ProductReadDto> products);
         List<int> GetAllProductIdsOfSize(Product product);
         List<SizeOfProduct> GetAllProductsOfSize(FilterForSizeSearchDto sizeFilter);
     }

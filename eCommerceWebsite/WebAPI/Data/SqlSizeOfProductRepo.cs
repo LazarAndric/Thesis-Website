@@ -40,7 +40,7 @@ namespace WebAPI.Data
 
         public List<SizeOfProduct> GetAllProductsOfSize(FilterForSizeSearchDto sizeFilter)
         {
-            if(sizeFilter==null)
+            if(sizeFilter==null || sizeFilter.Id==null)
                 return null;
             List<SizeOfProduct> sizeOfProducts = new List<SizeOfProduct>();
             foreach(SizeOfProduct sizeOf in _context.SizeOfProducts)
@@ -59,13 +59,13 @@ namespace WebAPI.Data
             return sizeOfProducts;
         }
 
-        public List<int> GetAllIdOfSize(List<Product> products)
+        public List<int> GetAllIdOfSize(List<ProductReadDto> products)
         {
             if(products==null)
                 return null;
             var finalList = new List<int>();
             foreach(SizeOfProduct sizeOfProduct in _context.SizeOfProducts)
-                foreach(Product product in products)
+                foreach(var product in products)
                     if(sizeOfProduct.ProductId.Equals(product.Id))
                         if(!finalList.Contains((int)sizeOfProduct.SizeId))
                             finalList.Add((int)sizeOfProduct.SizeId);
@@ -98,13 +98,13 @@ namespace WebAPI.Data
         {
             //Nothing
         }
-        public int LengthOfSize(Size size, List<Product> products)
+        public int LengthOfSize(Size size, List<ProductReadDto> products)
         {
             int counter=0;
             if(size!=null)
                 foreach(SizeOfProduct sizeProduct in _context.SizeOfProducts)
                     if(sizeProduct.SizeId.Equals(size.Id))
-                        foreach(Product product in products)
+                        foreach(var product in products)
                             if(sizeProduct.ProductId.Equals(product.Id))
                                 counter++;
             return counter;
