@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "T/dvibgJ/rRr7FUqsL28BTEVM16uGZYTcVK3RsNiRIpODcTjCRu8SyHV8GErGYEFb9ju4YawyVYdWTpDh6q2yQ==",
+  "dgSpecHash": "ptrPkmnsrpKZSmXcv9uo0VkTrJiZ7hFzvvs/XS4XD1ds9zycaz0MihgOPcy056s83E8KFaCVzBu3D+Fm0lK7VQ==",
   "success": true,
   "projectFilePath": "E:\\GIT HUB\\Thesis-Website\\eCommerceWebsite\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
@@ -15,7 +15,7 @@
     "C:\\Users\\neman\\.nuget\\packages\\microsoft.data.sqlclient\\1.0.19269.1\\microsoft.data.sqlclient.1.0.19269.1.nupkg.sha512",
     "C:\\Users\\neman\\.nuget\\packages\\microsoft.entityframeworkcore\\3.1.5\\microsoft.entityframeworkcore.3.1.5.nupkg.sha512",
     "C:\\Users\\neman\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\3.1.5\\microsoft.entityframeworkcore.abstractions.3.1.5.nupkg.sha512",
-    "C:\\Users\\neman\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.5\\microsoft.entityframeworkcore.analyzers.3.1.5.nupkg.sha512",
+    "C:\\Users\\neman\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.9\\microsoft.entityframeworkcore.analyzers.3.1.9.nupkg.sha512",
     "C:\\Users\\neman\\.nuget\\packages\\microsoft.entityframeworkcore.design\\3.1.5\\microsoft.entityframeworkcore.design.3.1.5.nupkg.sha512",
     "C:\\Users\\neman\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.5\\microsoft.entityframeworkcore.relational.3.1.5.nupkg.sha512",
     "C:\\Users\\neman\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\3.1.5\\microsoft.entityframeworkcore.sqlserver.3.1.5.nupkg.sha512",

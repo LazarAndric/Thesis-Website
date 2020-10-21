@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\WebAPI\\WebAPI.csproj": {}
+    "E:\\GIT HUB\\Thesis-Website\\eCommerceWebsite\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\WebAPI\\WebAPI.csproj": {
+    "E:\\GIT HUB\\Thesis-Website\\eCommerceWebsite\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "E:\\GIT HUB\\Thesis-Website\\eCommerceWebsite\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\WebAPI\\WebAPI.csproj",
-        "packagesPath": "C:\\Users\\unLa4ky\\.nuget\\packages\\",
-        "outputPath": "D:\\PROJEKTI\\GitHub\\Thesis-Website\\eCommerceWebsite\\WebAPI\\obj\\",
+        "projectPath": "E:\\GIT HUB\\Thesis-Website\\eCommerceWebsite\\WebAPI\\WebAPI.csproj",
+        "packagesPath": "C:\\Users\\neman\\.nuget\\packages\\",
+        "outputPath": "E:\\GIT HUB\\Thesis-Website\\eCommerceWebsite\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\unLa4ky\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\neman\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
             },
             "Microsoft.EntityFrameworkCore.Analyzers": {
               "target": "Package",
-              "version": "[3.1.5, )"
+              "version": "[3.1.9, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -91,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
