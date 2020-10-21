@@ -4,17 +4,17 @@ using System.ComponentModel.DataAnnotations;
 
 public class User
     {
-    [Required(ErrorMessage = "Molimo Vas unesite ime...")]
+   
     public string FirstName { get; set; }
-    [Required(ErrorMessage = "Molimo Vas unesite prezime...")]
+    
     public string LastName { get; set; }
-    [Required(ErrorMessage = "Molimo Vas unesite email...")]
+    
     public string EMail { get; set; }
-    [Required(ErrorMessage = "Molimo Vas unesite šifru...")]
+    
     public string Password { get; set; }
     [DataType(DataType.Date)]        
     public DateTime DateOfBirth { get; set; }
-    [Required(ErrorMessage = "Molimo Vas unesite šifru...")]
+    
     public int GenderId { get; set; }
 
     public string Adress { get; set; }

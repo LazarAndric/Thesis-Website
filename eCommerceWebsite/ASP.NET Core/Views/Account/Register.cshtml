@@ -27,28 +27,28 @@
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
                         <label asp-for="FirstName" class="control-label">Ime</label>
-                        <input asp-for="FirstName" class="form-control" />
+                        <input asp-for="FirstName" class="form-control" required/>
                         <span asp-validation-for="FirstName" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="LastName" class="control-label">Prezime</label>
-                        <input asp-for="LastName" class="form-control" />
+                        <input asp-for="LastName" class="form-control" required />
                         <span asp-validation-for="LastName" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="EMail" class="control-label">E-mail</label>
-                        <input asp-for="EMail" class="form-control" />
+                        <input asp-for="EMail" class="form-control" required />
                         <span asp-validation-for="EMail" class="text-danger"></span>
                        </div>
                     <div class="form-group">
                         <label asp-for="Password" class="control-label">Šifra</label>
-                        <input asp-for="Password" class="form-control" type="password" value="" id="myInput" />
+                        <input asp-for="Password" class="form-control" type="password" value="" id="myInput" required />
                         <span asp-validation-for="Password" class="text-danger"></span>
                         <input type="checkbox" onclick="myPassword()">Prikaži šifru
                     </div>
                     <div class="form-group">
                         <label asp-for="DateOfBirth" class="control-label">Datum rodjenja</label>
-                        <input asp-for="DateOfBirth" class="form-control"/>                       
+                        <input asp-for="DateOfBirth" class="form-control" required/>                       
                     </div>
                     <div class="form-group">
                         <label asp-for="GenderId" class="control-label">Pol</label>
