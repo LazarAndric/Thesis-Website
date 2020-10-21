@@ -16,6 +16,8 @@ namespace ASP.NET_Core.Controllers
     public class AccountController : Controller
     {
         private string email = "swiftclawserver@gmail.com";
+       
+
         public IActionResult Register()
         {
             return View();
@@ -109,7 +111,7 @@ namespace ASP.NET_Core.Controllers
             MailMessage mm = new MailMessage();
             mm.To.Add(user.EMail);
             mm.Subject = "Dragi "+ user.FirstName+"e "+user.LastName+"u";
-            mm.Body = "<div>< div><p>SADRZAJ KORPE</p><div></div></div><div><p>UKUPNA CENA: </p><span></span> din<input /></div></div>";
+            mm.Body = "Uspesno ste poručili proivod.";
             mm.IsBodyHtml = true;
             mm.From = new MailAddress(email);
             SmtpClient smtp = new SmtpClient("smtp.gmail.com");
