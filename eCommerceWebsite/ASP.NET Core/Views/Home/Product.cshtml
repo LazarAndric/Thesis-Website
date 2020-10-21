@@ -3,16 +3,16 @@
     ViewData["Title"] = "Proizvod";
 }
 
-    <div class="container">
-       
-        <div class="text-center" style="margin-top:95px;">
-            <hr />
-            <h1 style="font-size:2em">@Model.Name</h1>
-        </div>
-        <hr />
-    </div>  
+<div class="container" font-sajt" style="background-color:white">
 
-    <main >
+    <div class="text-center" style="margin-top:95px;">
+        <hr />
+        <h1 style="font-size:2em">@Model.Name</h1>
+    </div>
+    <hr />
+
+
+    <main>
         <div class="container dark-grey-text mt-5">
 
             <!--Grid row-->
@@ -20,9 +20,9 @@
 
                 <!--Grid column-->
                 <div class="col-md-6 mb-4">
-
-                    <img src="@Model.ImgUrl" class="img-fluid" alt="">
-
+                    <a class="lightbox" href="@Model.ImgUrl">
+                        <img src="@Model.ImgUrl" class="img-fluid" alt="">
+                    </a>  
                 </div>
                 <!--Grid column-->
                 <!--Grid column-->
@@ -50,8 +50,8 @@
 
                         <p class="lead">
                             <!--<span class="mr-1">
-            <del>$200</del>
-        </span>-->
+                                <del>$200</del>
+                            </span>-->
                             <span>@Model.Price</span>
                         </p>
 
@@ -61,17 +61,17 @@
                             @Model.Description
                         </p>
 
-                        <p class="lead font-weight-bold">Veličina</p>                        
+                        <p class="lead font-weight-bold">Veličina</p>
                         @if (Model.Size != null)
                         {
-                        <form>
-                            @foreach (var size in Model.Size)
-                            {
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio" checked value="@size.Id" >@size.Name
-                            </label>
-                            }
-                        </form>
+                            <form>
+                                @foreach (var size in Model.Size)
+                                {
+                                    <label class="radio-inline">
+                                        <input type="radio" name="optradio" checked value="@size.Id">@size.Name
+                                    </label>
+                                }
+                            </form>
                         }
 
                         <form class="d-flex justify-content-left">
@@ -93,8 +93,10 @@
             <!--Grid row-->
 
             <hr>
-            </div>
-            </main>
+        </div>
+    </main>
+
+</div>
 
 
 
@@ -106,6 +108,3 @@
 
 
 
-
-
-    
