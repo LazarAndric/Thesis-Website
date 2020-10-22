@@ -110,8 +110,8 @@ namespace ASP.NET_Core.Controllers
             var user = jsonSerializer.Deserialize<User>(userString);
             MailMessage mm = new MailMessage();
             mm.To.Add(user.EMail);
-            mm.Subject = "Dragi "+ user.FirstName+"e "+user.LastName+"u";
-            mm.Body = "Uspesno ste poručili proivod.";
+            mm.Subject = "Dragi "+ user.FirstName+" "+user.LastName+" ";
+            mm.Body = "Usepsno ste porucili ovaj proizvod!";
             mm.IsBodyHtml = true;
             mm.From = new MailAddress(email);
             SmtpClient smtp = new SmtpClient("smtp.gmail.com");
