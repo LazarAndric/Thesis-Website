@@ -111,7 +111,7 @@ namespace ASP.NET_Core.Controllers
             MailMessage mm = new MailMessage();
             mm.To.Add(user.EMail);
             mm.Subject = "Dragi "  +user.FirstName+  " - "  +user.LastName+ " ";
-            mm.Body = "Uspešno ste porucili ovaj proizvod! Stići će Vam u roku od 2-3 radna dana na adresu " +user.Adress+ " " +user.AdressNumber+ " u " +user.Place+ " na poštanski broj " +user.PostalCode+ ". Hvala na kupovini našeg proizvoda. ";
+            mm.Body = "Uspešno ste porucili ovaj proizvod! Stići će Vam u roku od 2-3 radna dana na adresu " +user.Adress+ " " +user.AdressNumber+ " u " +user.Place+ " na poštanski broj " +user.PostalCode+ ". Hvala na kupovini našeg proizvoda. Proizvod šaljemo preko kurirske službe, a plaćanje se vrši pouzećem.";
             mm.IsBodyHtml = true;
             mm.From = new MailAddress(email);
             SmtpClient smtp = new SmtpClient("smtp.gmail.com");
