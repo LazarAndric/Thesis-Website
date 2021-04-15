@@ -20,7 +20,7 @@
                         var str = Convert.ToString(user);
                         JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
                         User item = javaScriptSerializer.Deserialize<User>(str);
-                    }                  
+                    }
 
                     <dl class="row">
                         <dt class="col-md-3">
@@ -96,24 +96,24 @@
                             @item.PhoneNumber
                         </dd>
                         @*<dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DateOfRegistration)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DateOfRegistration)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.LastLogin)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.LastLogin)
-        </dd>*@
+                            @Html.DisplayNameFor(model => model.DateOfRegistration)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.DateOfRegistration)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.LastLogin)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.LastLogin)
+                        </dd>*@
                     </dl>
                     <div>
-                        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-                        <a asp-controller="Home" asp-action="Index">Back to List</a> |
-                        <a>Delete</a>
+                        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ })
+
                     </div>
-                </div>               
+                </div>
             </div>
         </div>
+        <br /><br />
     </div>
